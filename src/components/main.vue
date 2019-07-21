@@ -1,12 +1,24 @@
 <template>
-    <h1> MAIN</h1>
+<body>
+  <welcome class="welcome" />
+</body>
 </template>
 
-<style>
+<script>
+import welcome from "./welcome.vue";
+export default {
+  name: "mainView",
+  components: {
+    welcome
+  }
+};
+</script>
 
-</style>
- 
  <style>
- 
- </style>
+.welcome {
+  height: 100vh;
+  width: 100vw;
+  align-content: center;
+}
+</style>
  
