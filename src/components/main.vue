@@ -1,7 +1,5 @@
 <template>
-<body>
   <welcome class="welcome" />
-</body>
 </template>
 
 <script>
@@ -16,8 +14,9 @@ export default {
 
  <style>
 .welcome {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  display: block;
   align-content: center;
 }
 </style>

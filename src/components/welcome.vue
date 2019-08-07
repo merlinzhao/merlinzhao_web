@@ -1,13 +1,17 @@
 <template>
-  <div class="back">
-    <div class="backTwo">
-      <div class="row nameRow">
-        <div class="col-6" style="background: white;">
-          <h1>yo</h1>
-        </div>
-        <div class="col-6" style="background: white;">
-          <h1>yo</h1>
-        </div>
+  <div class="background">
+    <div class="row nameRow">
+      <div class="col-11 leftCol" style="background: grey; height: 100%;">
+        <h class="headingOne">Merlin Zhao</h>
+        <div style="height: 3%; wigth: 100%;" />
+        <h class="headingThree">software developer</h>
+        <h class="headingThree">graphic designer</h>
+        <h class="headingThree">chipotle lover</h>
+      </div>
+      <div class="col-1 rightCol" style="background: white; height: 100%;">
+        <button class="btn">
+          <i class="fa fa-close"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -17,8 +21,12 @@ export default {};
 </script>
 
 
-<style>
-.back {
+<style scoped>
+.background {
+  height: 100vh;
+  width: 100vw;
+  min-height: 600px;
+  min-width: 800px;
   background: linear-gradient(
     0deg,
     rgba(109, 0, 189, 1) 0%,
@@ -26,12 +34,37 @@ export default {};
   );
 }
 .nameRow {
+  height: 100%;
+  width: 80%;
   max-width: 1200px;
-  min-height: 500px;
-  height: 80%;
-  padding: 25px;
-  margin: 0px;
-  align-content: center;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.247);
+}
+.leftCol {
+  line-height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: left;
+}
+.headingOne {
+  line-height: 70pt;
+  font-size: 65pt;
+  color: white;
+  font-weight: 700;
+}
+.headingThree {
+  line-height: 35pt;
+  font-size: 25pt;
+  color: white;
+  font-weight: 400;
+}
+.btn {
+  height: 80px;
+  width: 80px;
+  background: blue;
+  border: none;
 }
 </style>
 
