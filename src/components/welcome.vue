@@ -1,31 +1,41 @@
 <template>
   <div class="background">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
     <div class="row nameRow">
-      <div class="col-11 leftCol" style="background: grey; height: 100%;">
+      <div class="col-11 leftCol">
         <h class="headingOne">Merlin Zhao</h>
-        <div style="height: 3%; wigth: 100%;" />
+        <div style="height: 3%; width: 100%;" />
         <h class="headingThree">software developer</h>
         <h class="headingThree">graphic designer</h>
         <h class="headingThree">chipotle lover</h>
-
-          
-
-        </h>
       </div>
-      <div class="col-1 rightCol" style="background: rgb(255,255,255,0.2); height: 100%;">
-        <button class="btn">
-          <font-awesome-icon icon="laptop-code" size="3x" style="color:white;" />
+      <div class="col-1 rightCol">
+        <button class="btn" style="font-size: 4.3em;">
+          <i class="fas fa-file-code"></i>
         </button>
-         <button class="btn">
-          <font-awesome-icon icon="file-alt" size="4x" style="color:white;" />
+        <button class="btn" style="font-size: 4.3em;">
+          <i class="fas fa-file-alt"></i>
         </button>
-         <button class="btn">
-          <font-awesome-icon icon="linkedin" size="4x" style="color:white;" />
-        </button>
-         <button class="btn">
-          <font-awesome-icon icon="github" size="4x" style="color:white;" />
+        <button class="btn" style="font-size: 3.8em;">
+          <i class="fas fa-paper-plane"></i>
         </button>
       </div>
+    </div>
+    <div class="row externalRow">
+      <button class="btn2" style="font-size: 2.2em;">
+        <i class="fab fa-linkedin"></i>
+      </button>
+      <button class="btn2" style="font-size: 2.2em;">
+        <i class="fab fa-github"></i>
+      </button>
+      <button class="btn2" style="font-size: 2.2em;">
+        <i class="fab fa-gitlab"></i>
+      </button>
     </div>
   </div>
 </template>
@@ -33,7 +43,9 @@
 export default {
   data() {
     return {
-      currentTime: ""
+      currentTime: "",
+
+      selectFas: ""
     };
   },
   mounted() {
@@ -56,13 +68,19 @@ export default {
   );
 }
 .nameRow {
-  height: 100%;
+  height: 85%;
   width: 80%;
   max-width: 1200px;
   margin: auto;
-  background: rgba(255, 255, 255, 0.247);
+}
+.externalRow {
+  height: 15%;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
 }
 .leftCol {
+  height: 100%;
   line-height: 100%;
   display: flex;
   flex-direction: column;
@@ -81,26 +99,47 @@ export default {
   font-size: 25pt;
   color: white;
   font-weight: 400;
-  
 }
 .rightCol {
+  height: 100%;
   padding: 0px;
-   display: flex;
+  display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
 }
 .btn {
-  height: 80px;
+  height: 95px;
   width: 80px;
-  background: rgba(251, 251, 253, 0.226);
   border: none;
+  padding: 0px;
   align-items: center;
-  margin: 2vh 0px 2vh 0px;
+  margin: 1vh 0px 1vh 0px;
 }
-.fa {
-  color: white;
+
+.btn2 {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background: transparent;
+  padding: 0px;
+  align-items: center;
+  margin: 0px 15px 0px 10px;
+}
+.fas {
+  transition: color 0.3s ease-out;
+  color: rgb(255, 255, 255, 0.9);
+}
+.fas:hover {
+  color: rgb(255, 255, 255, 0.5);
+}
+.fab {
+  transition: color 0.3s ease-out;
+  color: rgb(255, 255, 255, 0.9);
+}
+.fab:hover {
+  color: rgb(255, 255, 255, 0.5);
 }
 </style>
 
