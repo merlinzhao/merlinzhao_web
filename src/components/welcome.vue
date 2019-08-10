@@ -8,50 +8,79 @@
     />
     <div class="row nameRow">
       <div class="col-11 leftCol">
-        <h class="headingThree" style="opacity: 0.9;">{{greeting}}!</h>
-        <h class="headingOne">I'm Merlin.</h>
-        <div style="height: 3%; width: 100%;" />
-        <h class="headingThree" style="opacity: 0.9;">software developer</h>
-        <h class="headingThree" style="opacity: 0.9;">graphic designer</h>
-        <h class="headingThree" style="opacity: 0.9;">chipotle lover</h>
+        <p class="headingThree" style="opacity: 0.9;">{{greeting}}!</p>
+        <p class="headingOne">I'm Merlin.</p>
+        <div style="height: 5%; width: 100%;" />
+        <p class="headingThree" style="opacity: 0.9;">software developer</p>
+        <p class="headingThree" style="opacity: 0.9;">graphic designer</p>
+        <p class="headingThree" style="opacity: 0.9;">chipotle lover</p>
+        <p class="headingThree wiz" style="opacity: 0.9;">unfortunately, not a real wizard</p>
+        <div style="height: 7%; width: 100%;" />
         <button class="projectBtn">View my Projects</button>
       </div>
-      <div class="col-1 rightCol">
-        <button class="btn" style="font-size: 4.3em;">
-          <i class="fas fa-file-code"></i>
-        </button>
-        <button class="btn" style="font-size: 4.3em;">
-          <i class="fas fa-file-alt"></i>
-        </button>
-        <button class="btn" style="font-size: 3.8em;">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
+      <div class="col-1 rightCol"></div>
     </div>
     <div class="row externalRow">
       <button class="btn2" style="font-size: 2.2em;">
+        <i class="fas fa-file-code"></i>
+      </button>
+      <button class="btn2" style="font-size: 2.2em;">
+        <i class="fas fa-file-alt"></i>
+      </button>
+      <button class="btn2" style="font-size: 2.2em;">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+      <div
+        style="font-size: 3.2em; font-weight: 200; color:white; height: 50px ;margin: -15px 35px 0px 25px;"
+      >|</div>
+      <button
+        class="btn2"
+        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
+        style="font-size: 2.2em;"
+      >
         <i class="fab fa-linkedin"></i>
       </button>
-      <button class="btn2" style="font-size: 2.2em;">
+      <button
+        class="btn2"
+        onclick="window.open('http://www.github.com/merlinzhao')"
+        style="font-size: 2.2em;"
+      >
         <i class="fab fa-github"></i>
-      </button>
-      <button class="btn2" style="font-size: 2.2em;">
-        <i class="fab fa-gitlab"></i>
       </button>
     </div>
   </div>
 </template>
 <script>
+import { setTimeout, setInterval } from "timers";
 export default {
   data() {
     return {
       currentTime: "",
       selectFas: "",
-      greeting: "여보세요"
+      greeting: "여보세요",
+      greetingArr: [
+        "여보세요",
+        "hello",
+        "hola",
+        "こんにちは",
+        "bonjour",
+        "你好"
+      ],
+      greetingIndex: 0,
+
+      testNum: 0
     };
   },
   mounted() {
     this.currentTime = new Date();
+    setInterval(() => {
+      if (this.greetingIndex < 5) {
+        this.greetingIndex++;
+      } else {
+        this.greetingIndex = 0;
+      }
+      this.greeting = this.greetingArr[this.greetingIndex];
+    }, 800);
   }
 };
 </script>
@@ -65,8 +94,8 @@ export default {
   min-width: 800px;
   background: linear-gradient(
     0deg,
-    rgba(109, 0, 189, 1) 0%,
-    rgb(14, 114, 180) 100%
+    rgb(157, 26, 250) 0%,
+    rgb(5, 132, 216) 100%
   );
 }
 .nameRow {
@@ -92,7 +121,7 @@ export default {
   align-items: left;
 }
 .headingOne {
-  line-height: 70pt;
+  line-height: 65pt;
   font-size: 65pt;
   color: white;
   font-weight: 700;
@@ -104,10 +133,14 @@ export default {
   font-weight: 400;
 }
 .headingThree {
-  line-height: 35pt;
+  line-height: 25pt;
   font-size: 25pt;
   color: white;
   font-weight: 400;
+}
+
+.wiz {
+  color: rgba(156, 145, 255, 0.664);
 }
 .rightCol {
   height: 100%;
@@ -128,13 +161,13 @@ export default {
 }
 
 .btn2 {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   border: none;
   background: transparent;
   padding: 0px;
   align-items: center;
-  margin: 0px 25px 0px 0px;
+  margin: 0px 10px 0px 0px;
 }
 .projectBtn {
   color: white;
@@ -144,7 +177,6 @@ export default {
   background: transparent;
   height: 60px;
   width: 260px;
-  margin: 5% 0px 0px 0px;
   transition: color 0.6s ease-out, border 0.6s ease-out;
 }
 .projectBtn:hover {
