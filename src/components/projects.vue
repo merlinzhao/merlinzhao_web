@@ -1,9 +1,22 @@
-<template></template>
+<template>
+  <div class="background">
+    <projectCard />
+  </div>
+</template>
 
 <script>
-export default {};
+import projectCard from "./projectCard.vue";
+export default {
+  name: "projects",
+  components: {
+    projectCard
+  }
+};
 </script>
 
- <style>
+<style scoped>
+.background {
+  background: #fcfcfc;
+}
 </style>
  

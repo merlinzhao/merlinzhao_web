@@ -21,13 +21,13 @@
       <div class="col-1 rightCol"></div>
     </div>
     <div class="row externalRow">
-      <button class="btn2" style="font-size: 2.2em;">
+      <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
         <i class="fas fa-file-code"></i>
       </button>
-      <button class="btn2" style="font-size: 2.2em;">
+      <button class="btn2" data-toggle="tooltip" title="My Resume" style="font-size: 2.2em;">
         <i class="fas fa-file-alt"></i>
       </button>
-      <button class="btn2" style="font-size: 2.2em;">
+      <button class="btn2" style="font-size: 2.2em;" data-toggle="tooltip" title="Conact Me :)">
         <i class="fas fa-paper-plane"></i>
       </button>
       <div
@@ -37,6 +37,8 @@
         class="btn2"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
         style="font-size: 2.2em;"
+        data-toggle="tooltip"
+        title="LinkedIn"
       >
         <i class="fab fa-linkedin"></i>
       </button>
@@ -44,6 +46,8 @@
         class="btn2"
         onclick="window.open('http://www.github.com/merlinzhao')"
         style="font-size: 2.2em;"
+        data-toggle="tooltip"
+        title="GitHub"
       >
         <i class="fab fa-github"></i>
       </button>
@@ -94,7 +98,7 @@ export default {
   min-width: 800px;
   background: linear-gradient(
     0deg,
-    rgb(157, 26, 250) 0%,
+    rgb(152, 12, 252) 0%,
     rgb(5, 132, 216) 100%
   );
 }
@@ -140,7 +144,7 @@ export default {
 }
 
 .wiz {
-  color: rgba(156, 145, 255, 0.664);
+  color: rgba(200, 194, 255, 0.664);
 }
 .rightCol {
   height: 100%;
@@ -177,25 +181,25 @@ export default {
   background: transparent;
   height: 60px;
   width: 260px;
-  transition: color 0.6s ease-out, border 0.6s ease-out;
+  transition: color 0.6s ease-out, border 0.4s ease-out;
 }
 .projectBtn:hover {
-  border: 3px rgba(255, 255, 255, 0.5) solid;
-  color: rgba(255, 255, 255, 0.5);
+  border: 3px rgba(255, 255, 255, 0.6) solid;
+  color: rgba(255, 255, 255, 0.6);
 }
 .fas {
   transition: color 0.3s ease-out;
   color: rgb(255, 255, 255, 0.9);
 }
 .fas:hover {
-  color: rgb(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255, 0.7);
 }
 .fab {
   transition: color 0.3s ease-out;
   color: rgb(255, 255, 255, 0.9);
 }
 .fab:hover {
-  color: rgb(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255, 0.7);
 }
 </style>
 
