@@ -7,17 +7,39 @@
         <h class="headingThree">software developer</h>
         <h class="headingThree">graphic designer</h>
         <h class="headingThree">chipotle lover</h>
+
+          
+
+        </h>
       </div>
-      <div class="col-1 rightCol" style="background: white; height: 100%;">
+      <div class="col-1 rightCol" style="background: rgb(255,255,255,0.2); height: 100%;">
         <button class="btn">
-          <i class="fa fa-close"></i>
+          <font-awesome-icon icon="laptop-code" size="3x" style="color:white;" />
+        </button>
+         <button class="btn">
+          <font-awesome-icon icon="file-alt" size="4x" style="color:white;" />
+        </button>
+         <button class="btn">
+          <font-awesome-icon icon="linkedin" size="4x" style="color:white;" />
+        </button>
+         <button class="btn">
+          <font-awesome-icon icon="github" size="4x" style="color:white;" />
         </button>
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      currentTime: ""
+    };
+  },
+  mounted() {
+    this.currentTime = new Date();
+  }
+};
 </script>
 
 
@@ -59,12 +81,26 @@ export default {};
   font-size: 25pt;
   color: white;
   font-weight: 400;
+  
+}
+.rightCol {
+  padding: 0px;
+   display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
 }
 .btn {
   height: 80px;
   width: 80px;
-  background: blue;
+  background: rgba(251, 251, 253, 0.226);
   border: none;
+  align-items: center;
+  margin: 2vh 0px 2vh 0px;
+}
+.fa {
+  color: white;
 }
 </style>
 
