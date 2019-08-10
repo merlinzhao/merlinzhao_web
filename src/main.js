@@ -6,7 +6,6 @@ import './assets/css/bootstrap.css'
 
 Vue.config.productionTip = false
 
-Vue.config.productionTip = false
 
 new Vue({
   el: '#app',

@@ -8,11 +8,13 @@
     />
     <div class="row nameRow">
       <div class="col-11 leftCol">
-        <h class="headingOne">Merlin Zhao</h>
+        <h class="headingThree" style="opacity: 0.9;">{{greeting}}!</h>
+        <h class="headingOne">I'm Merlin.</h>
         <div style="height: 3%; width: 100%;" />
-        <h class="headingThree">software developer</h>
-        <h class="headingThree">graphic designer</h>
-        <h class="headingThree">chipotle lover</h>
+        <h class="headingThree" style="opacity: 0.9;">software developer</h>
+        <h class="headingThree" style="opacity: 0.9;">graphic designer</h>
+        <h class="headingThree" style="opacity: 0.9;">chipotle lover</h>
+        <button class="projectBtn">View my Projects</button>
       </div>
       <div class="col-1 rightCol">
         <button class="btn" style="font-size: 4.3em;">
@@ -44,8 +46,8 @@ export default {
   data() {
     return {
       currentTime: "",
-
-      selectFas: ""
+      selectFas: "",
+      greeting: "여보세요"
     };
   },
   mounted() {
@@ -64,7 +66,7 @@ export default {
   background: linear-gradient(
     0deg,
     rgba(109, 0, 189, 1) 0%,
-    rgba(16, 153, 195, 1) 100%
+    rgb(14, 114, 180) 100%
   );
 }
 .nameRow {
@@ -78,6 +80,7 @@ export default {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+  padding: 15px;
 }
 .leftCol {
   height: 100%;
@@ -93,6 +96,12 @@ export default {
   font-size: 65pt;
   color: white;
   font-weight: 700;
+}
+.headingTwo {
+  line-height: 50pt;
+  font-size: 45pt;
+  color: white;
+  font-weight: 400;
 }
 .headingThree {
   line-height: 35pt;
@@ -125,7 +134,22 @@ export default {
   background: transparent;
   padding: 0px;
   align-items: center;
-  margin: 0px 15px 0px 10px;
+  margin: 0px 25px 0px 0px;
+}
+.projectBtn {
+  color: white;
+  border-radius: 12px;
+  font-size: 16pt;
+  border: 3px rgba(255, 255, 255, 0.9) solid;
+  background: transparent;
+  height: 60px;
+  width: 260px;
+  margin: 5% 0px 0px 0px;
+  transition: color 0.6s ease-out, border 0.6s ease-out;
+}
+.projectBtn:hover {
+  border: 3px rgba(255, 255, 255, 0.5) solid;
+  color: rgba(255, 255, 255, 0.5);
 }
 .fas {
   transition: color 0.3s ease-out;
