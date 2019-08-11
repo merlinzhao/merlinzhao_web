@@ -36,7 +36,7 @@ export default {
 .projectCard {
   margin: 50px;
   width: 30vw;
-  height: 650px;
+  height: 700px;
   background: white;
   border-radius: 10px;
   transition: box-shadow 0.5s ease-out;
@@ -55,7 +55,7 @@ export default {
   height: 250px;
 }
 .textRow {
-  height: 300px;
+  height: 350px;
   width: 100%;
   padding: 25px;
 }
@@ -74,7 +74,7 @@ export default {
   font-weight: 400;
 }
 .regText {
-  line-height: 16pt;
+  line-height: 18pt;
   font-size: 16pt;
   color: #222;
   font-weight: 300;

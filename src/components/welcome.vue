@@ -7,20 +7,37 @@
       crossorigin="anonymous"
     />
     <div class="row nameRow">
-      <div class="col-11 leftCol">
-        <p class="headingThree" style="opacity: 0.9;">{{greeting}}!</p>
-        <p class="headingOne">I'm Merlin.</p>
-        <div style="height: 5%; width: 100%;" />
-        <p class="headingThree" style="opacity: 0.9;">software developer</p>
-        <p class="headingThree" style="opacity: 0.9;">graphic designer</p>
-        <p class="headingThree" style="opacity: 0.9;">chipotle lover</p>
-        <p class="headingThree wiz" style="opacity: 0.9;">unfortunately, not a real wizard</p>
-        <div style="height: 7%; width: 100%;" />
-        <button class="projectBtn">View my Projects</button>
+      <div class="row nameRowCenter">
+        <div class="col-11 leftCol">
+          <p class="headingThree" style="opacity: 0.9;">{{greeting}}!</p>
+          <p class="headingOne">I'm Merlin.</p>
+          <div style="height: 5%; width: 100%;" />
+          <p class="headingThree" style="opacity: 0.9;">software developer</p>
+          <p class="headingThree" style="opacity: 0.9;">graphic designer</p>
+          <p class="headingThree" style="opacity: 0.9;">chipotle lover</p>
+          <p class="headingThree wiz" style="opacity: 0.9;">unfortunately, not a real wizard</p>
+          <!-- <div style="height: 7%; width: 100%;" /> -->
+          <!-- <button class="projectBtn">View my Projects</button> -->
+        </div>
+        <div class="col-1 rightCol"></div>
       </div>
-      <div class="col-1 rightCol"></div>
     </div>
-    <div class="row externalRow">
+    <div class="aboutMeRow">
+      <div class="aboutMeCenter">
+        <p class="headingThree aboutMeThree">About Me</p>
+        <p class="regText">
+          Red Velvet (Hangul: 레드벨벳) is a South Korean girl group formed by SM Entertainment. The group debuted on August 1, 2014, with the digital single "Happiness" and four group members: Irene, Seulgi, Wendy, and Joy. In March 2015, Yeri was added into the group.
+          <br />
+          <br />Since their debut, Red Velvet has released two studio albums, one reissue album, and eight extended plays in Korean, with nine of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon their releases. Red Velvet is regarded as one of the most popular K-pop groups worldwide by Time and Billboard and have received several awards for music, choreography, and popularity, including the Golden Disc New Artist Award in 2015 and the Mnet Asian Music Award for Best Female Group in 2017.
+        </p>
+      </div>
+    </div>
+    <div class="projectRow"></div>
+    <div class="gitRow">
+      <div class="col-6 gitRowLeft"></div>
+      <div class="col-6 gitRowRight"></div>
+    </div>
+    <!-- <div class="row externalRow">
       <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
         <i class="fas fa-file-code"></i>
       </button>
@@ -51,7 +68,7 @@
       >
         <i class="fab fa-github"></i>
       </button>
-    </div>
+    </div>-->
   </div>
 </template>
 <script>
@@ -92,28 +109,29 @@ export default {
 
 <style scoped>
 .background {
-  height: 100vh;
-  width: 100vw;
+}
+/* ======================================================================== */
+/* NAME ROW ITEMS ========= NAME NAME NAME NAME =========== NAME ROW ITEMS  */
+/* ======================================================================== */
+.nameRow {
+  height: 85vh;
   min-height: 600px;
-  min-width: 800px;
+  max-height: 1200px;
+  width: 100vw;
+  margin: auto;
   background: linear-gradient(
     0deg,
     rgb(152, 12, 252) 0%,
     rgb(5, 132, 216) 100%
   );
 }
-.nameRow {
-  height: 85%;
+.nameRowCenter {
+  height: 85vh;
+  min-height: 600px;
+  max-height: 1200px;
   width: 80%;
   max-width: 1200px;
   margin: auto;
-}
-.externalRow {
-  height: 15%;
-  width: 80%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px;
 }
 .leftCol {
   height: 100%;
@@ -124,6 +142,84 @@ export default {
   justify-content: center;
   align-items: left;
 }
+.rightCol {
+  height: 100%;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
+}
+/* ======================================================================== */
+/* ======================================================================== */
+/* ======================================================================== */
+.externalRow {
+  height: 15%;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
+}
+/* ======================================================================== */
+/* ABOUTME ROW ITEMS ========= ABOUT ABOUT ABOUT ======= ABOUT ME ROW ITEMS */
+/* ======================================================================== */
+.aboutMeRow {
+  height: 500px;
+  width: 100vw;
+  background: #fafafa;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
+}
+.aboutMeCenter {
+  width: 80vw;
+  height: 80%;
+  padding: 15px;
+}
+.aboutMeThree {
+  color: #333 !important;
+}
+.regText {
+  line-height: 18pt;
+  font-size: 16pt;
+  color: #333;
+  font-weight: 300;
+}
+
+/* ======================================================================== */
+/* PROJECT ROW ITEMS ====== PROJECT PROJECT PROJECT ===== PROJECT ROW ITEMS */
+/* ======================================================================== */
+.projectRow {
+  height: 500px;
+  width: 100vw;
+  background: green;
+}
+
+/* ======================================================================== */
+/* GIT ROW ITEMS ============= GIT GIT GIT GIT ============= GIT ROW ITEMS  */
+/* ======================================================================== */
+.gitRow {
+  height: 500px;
+  width: 100vw;
+  background: #fafafa;
+  display: flex;
+  flex-direction: row;
+}
+
+.gitRowLeft {
+  height: 100%;
+  background: rgb(29, 29, 85);
+}
+
+.gitRowRight {
+  height: 100%;
+  background: pink;
+}
+/* ======================================================================== */
+
 .headingOne {
   line-height: 65pt;
   font-size: 65pt;
@@ -146,15 +242,7 @@ export default {
 .wiz {
   color: rgba(200, 194, 255, 0.664);
 }
-.rightCol {
-  height: 100%;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-orient: vertical;
-  justify-content: center;
-  align-items: center;
-}
+
 .btn {
   height: 95px;
   width: 80px;

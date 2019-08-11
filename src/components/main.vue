@@ -1,6 +1,6 @@
 <template>
   <div>
-    <welcome class="welcome" />
+    <welcome />
     <projects style="width: 100vw; height:100%;" />
   </div>
 </template>
@@ -18,11 +18,5 @@ export default {
 </script>
 
  <style>
-.welcome {
-  height: 100%;
-  width: 100%;
-  display: block;
-  align-content: center;
-}
 </style>
  
