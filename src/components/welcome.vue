@@ -32,7 +32,11 @@
         </p>
       </div>
     </div>
-    <div class="projectRow"></div>
+    <div class="projectRow">
+      <div class="projectsCenter">
+        <p class="headingThree projectThree">PROJECTS</p>
+      </div>
+    </div>
     <div class="gitRow">
       <div class="col-6 gitRowLeft"></div>
       <div class="col-6 gitRowRight"></div>
@@ -195,7 +199,17 @@ export default {
 .projectRow {
   height: 500px;
   width: 100vw;
-  background: green;
+  background: rgb(255, 168, 6);
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
+}
+.projectCenter {
+}
+.projectThree {
+  font-weight: 700 !important;
 }
 
 /* ======================================================================== */
@@ -216,7 +230,12 @@ export default {
 
 .gitRowRight {
   height: 100%;
-  background: pink;
+  background: linear-gradient(135deg, #4501a5 0%, #ff8989 100%);
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.gitRowRight:hover {
+  opacity: 0.8;
 }
 /* ======================================================================== */
 
