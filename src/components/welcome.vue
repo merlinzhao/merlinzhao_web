@@ -26,8 +26,8 @@
         </p>
       </div>
     </div>
-    <div class="projectRow">
-      <div class="projectsCenter">
+    <div class="projectRow" style="cursor:pointer">
+      <div class="projectCenter">
         <p class="headingThree projectThree">PROJECTS</p>
       </div>
     </div>
@@ -86,7 +86,6 @@
   </div>
 </template>
 <script>
-import { setTimeout, setInterval } from "timers";
 export default {
   data() {
     return {
@@ -103,11 +102,21 @@ export default {
       ],
       greetingIndex: 0,
 
-      testNum: 0
+      testNum: 0,
+
+      // for event listeners
+      projectPanel: "",
+      projectCenter: ""
     };
   },
   mounted() {
     this.currentTime = new Date();
+
+    this.projectPanel = document.querySelector(".projectRow");
+    this.projectPanel.addEventListener("mouseover", this.overProject, false);
+    this.projectPanel.addEventListener("mouseout", this.outProject, false);
+    this.projectCenter = document.querySelector(".projectCenter");
+
     setInterval(() => {
       if (this.greetingIndex < 5) {
         this.greetingIndex++;
@@ -116,14 +125,21 @@ export default {
       }
       this.greeting = this.greetingArr[this.greetingIndex];
     }, 800);
+  },
+  methods: {
+    overProject() {
+      console.log("overproject");
+      this.projectCenter.style.transform = "translateX(-100px)";
+    },
+    outProject() {
+      this.projectCenter.style.transform = "translateX(0px)";
+    }
   }
 };
 </script>
 
 
 <style scoped>
-.background {
-}
 /* ======================================================================== */
 /* NAME ROW ITEMS ========= NAME NAME NAME NAME =========== NAME ROW ITEMS  */
 /* ======================================================================== */
@@ -215,8 +231,15 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+  transition: background 0.5s ease-out;
+}
+.projectRow:hover {
+  background: rgb(255, 178, 36);
 }
 .projectCenter {
+  width: 173px;
+  height: 35px;
+  transition: transform 0.5s ease-out;
 }
 .projectThree {
   font-weight: 700 !important;
@@ -243,8 +266,8 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.gotRowLeft:hover {
-  background: rgb(56, 56, 145);
+.gitRowLeft:hover {
+  background: rgb(40, 40, 110);
 }
 
 .gitRowRight {
