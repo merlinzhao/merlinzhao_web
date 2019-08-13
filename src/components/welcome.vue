@@ -1,11 +1,5 @@
 <template>
   <div class="background">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
     <div class="row nameRow">
       <div class="row nameRowCenter">
         <div class="col-11 leftCol">
@@ -38,8 +32,24 @@
       </div>
     </div>
     <div class="gitRow">
-      <div class="col-6 gitRowLeft"></div>
-      <div class="col-6 gitRowRight"></div>
+      <div
+        class="col-6 gitRowLeft"
+        style="cursor:pointer"
+        onclick="window.open('http://www.github.com/merlinzhao')"
+      >
+        <p class="headingThree projectThree">
+          <i class="fab fa-github" /> GITHUB
+        </p>
+      </div>
+      <div
+        class="col-6 gitRowRight"
+        style="cursor:pointer"
+        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
+      >
+        <p class="headingThree projectThree">
+          <i class="fab fa-linkedin" /> LINKEDIN
+        </p>
+      </div>
     </div>
     <!-- <div class="row externalRow">
       <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
@@ -226,6 +236,15 @@ export default {
 .gitRowLeft {
   height: 100%;
   background: rgb(29, 29, 85);
+  display: flex;
+  transition: background 0.5s ease-out;
+  flex-direction: row;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
+}
+.gotRowLeft:hover {
+  background: rgb(56, 56, 145);
 }
 
 .gitRowRight {
@@ -233,9 +252,14 @@ export default {
   background: linear-gradient(135deg, #4501a5 0%, #ff8989 100%);
   opacity: 1;
   transition: opacity 0.5s ease-out;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: center;
 }
 .gitRowRight:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 /* ======================================================================== */
 
@@ -298,15 +322,15 @@ export default {
   transition: color 0.3s ease-out;
   color: rgb(255, 255, 255, 0.9);
 }
-.fas:hover {
+/* .fas:hover {
   color: rgb(255, 255, 255, 0.7);
-}
+} */
 .fab {
   transition: color 0.3s ease-out;
-  color: rgb(255, 255, 255, 0.9);
+  color: rgb(255, 255, 255, 1);
 }
-.fab:hover {
+/* .fab:hover {
   color: rgb(255, 255, 255, 0.7);
-}
+} */
 </style>
 
