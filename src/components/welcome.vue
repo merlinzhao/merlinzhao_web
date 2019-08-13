@@ -9,7 +9,10 @@
           <p class="headingThree" style="opacity: 0.9;">software developer</p>
           <p class="headingThree" style="opacity: 0.9;">graphic designer</p>
           <p class="headingThree" style="opacity: 0.9;">chipotle lover</p>
-          <p class="headingThree wiz" style="opacity: 0.9;">unfortunately, not a real wizard</p>
+          <p class="headingThree wiz" style="opacity: 0.9;">
+            unfortunately, not a real wizard
+            <i class="far fa-sad-tear" />
+          </p>
           <!-- <div style="height: 7%; width: 100%;" /> -->
           <!-- <button class="projectBtn">View my Projects</button> -->
         </div>
@@ -106,16 +109,28 @@ export default {
 
       // for event listeners
       projectPanel: "",
-      projectCenter: ""
+      projectCenter: "",
+
+      gitPanel: "",
+      gitCenter: "",
+      linkedInPanel: "",
+      linkedInCenter: ""
     };
   },
   mounted() {
     this.currentTime = new Date();
 
+    // PROJECT
     this.projectPanel = document.querySelector(".projectRow");
     this.projectPanel.addEventListener("mouseover", this.overProject, false);
     this.projectPanel.addEventListener("mouseout", this.outProject, false);
     this.projectCenter = document.querySelector(".projectCenter");
+
+    // GIT
+    this.gitPanel = document.querySelector(".gitRowLeft");
+
+    // LINKED IN
+    this.gitCenter = document.querySelector(".gitRowRight");
 
     setInterval(() => {
       if (this.greetingIndex < 5) {
@@ -128,8 +143,7 @@ export default {
   },
   methods: {
     overProject() {
-      console.log("overproject");
-      this.projectCenter.style.transform = "translateX(-100px)";
+      this.projectCenter.style.transform = "translateX(100px)";
     },
     outProject() {
       this.projectCenter.style.transform = "translateX(0px)";
@@ -234,7 +248,7 @@ export default {
   transition: background 0.5s ease-out;
 }
 .projectRow:hover {
-  background: rgb(255, 178, 36);
+  background: rgb(252, 193, 0);
 }
 .projectCenter {
   width: 173px;
@@ -306,7 +320,7 @@ export default {
 }
 
 .wiz {
-  color: rgba(200, 194, 255, 0.664);
+  color: rgba(191, 112, 255, 0.829);
 }
 
 .btn {
