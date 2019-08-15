@@ -35,7 +35,7 @@ export default {
 <style scoped>
 .projectCard {
   margin: 50px;
-  width: 30vw;
+  width: 30%;
   height: 700px;
   background: white;
   border-radius: 10px;

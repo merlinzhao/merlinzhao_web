@@ -17,6 +17,7 @@ export default {
 <style scoped>
 .background {
   background: #fcfcfc;
+  max-width: 1350px;
 }
 </style>
  

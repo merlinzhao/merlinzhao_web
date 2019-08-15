@@ -30,9 +30,13 @@
       </div>
     </div>
     <div class="projectRow" style="cursor:pointer">
+       <div class="projectCenter2">
+        <p class="headingThree projectThree">VIEW MY</p>
+      </div>
       <div class="projectCenter">
         <p class="headingThree projectThree">PROJECTS</p>
       </div>
+     
     </div>
     <div class="gitRow">
       <div
@@ -110,6 +114,7 @@ export default {
       // for event listeners
       projectPanel: "",
       projectCenter: "",
+      projectCenter2: "",
 
       gitPanel: "",
       gitCenter: "",
@@ -125,6 +130,7 @@ export default {
     this.projectPanel.addEventListener("mouseover", this.overProject, false);
     this.projectPanel.addEventListener("mouseout", this.outProject, false);
     this.projectCenter = document.querySelector(".projectCenter");
+    this.projectCenter2 = document.querySelector(".projectCenter2");
 
     // GIT
     this.gitPanel = document.querySelector(".gitRowLeft");
@@ -143,10 +149,16 @@ export default {
   },
   methods: {
     overProject() {
-      this.projectCenter.style.transform = "translateX(100px)";
+      this.projectCenter.style.transform = "translateX(85px)";
+      this.projectCenter.style.background = 'rgb(252, 193, 0)';
+
+      this.projectCenter2.style.transform = "translateX(-85px)";
     },
     outProject() {
       this.projectCenter.style.transform = "translateX(0px)";
+       this.projectCenter.style.background = 'rgb(255, 168, 6)';
+
+       this.projectCenter2.style.transform = "translateX(0px)";
     }
   }
 };
@@ -174,7 +186,7 @@ export default {
   min-height: 600px;
   max-height: 1200px;
   width: 80%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: auto;
 }
 .leftCol {
@@ -222,6 +234,7 @@ export default {
   width: 80vw;
   height: 80%;
   padding: 15px;
+  max-width: 1350px;
 }
 .aboutMeThree {
   color: #333 !important;
@@ -251,9 +264,19 @@ export default {
   background: rgb(252, 193, 0);
 }
 .projectCenter {
+  width: 180px;
+  height: 35px;
+  transition: transform 0.5s ease-out,  background 0.5s ease-out;
+  text-align: center;
+  background: rgb(255, 168, 6);
+  position: absolute;
+}
+.projectCenter2 {
   width: 173px;
   height: 35px;
   transition: transform 0.5s ease-out;
+  text-align: center;
+  position: absolute;
 }
 .projectThree {
   font-weight: 700 !important;
