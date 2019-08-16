@@ -30,11 +30,9 @@
       </div>
     </div>
     <div class="projectRow" style="cursor:pointer">
-       <div class="projectCenter2">
-        <p class="headingThree projectThree">VIEW MY</p>
-      </div>
-      <div class="projectCenter">
-        <p class="headingThree projectThree">PROJECTS</p>
+      <div class="projectRow2">
+        <p class="headingThree projectThree projectCenter2">VIEW MY</p>
+        <p class="headingThree projectThree projectCenter">PROJECTS</p>
       </div>
      
     </div>
@@ -44,7 +42,8 @@
         style="cursor:pointer"
         onclick="window.open('http://www.github.com/merlinzhao')"
       >
-        <p class="headingThree projectThree">
+        <p class="regText regGitText gitCenter2">www.github.com/merlinzhao</p>
+        <p class="headingThree projectThree gitCenter1">
           <i class="fab fa-github" /> GITHUB
         </p>
       </div>
@@ -53,7 +52,8 @@
         style="cursor:pointer"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
       >
-        <p class="headingThree projectThree">
+        <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
+        <p class="headingThree projectThree linkedCenter1">
           <i class="fab fa-linkedin" /> LINKEDIN
         </p>
       </div>
@@ -125,41 +125,34 @@ export default {
   mounted() {
     this.currentTime = new Date();
 
-    // PROJECT
-    this.projectPanel = document.querySelector(".projectRow");
-    this.projectPanel.addEventListener("mouseover", this.overProject, false);
-    this.projectPanel.addEventListener("mouseout", this.outProject, false);
-    this.projectCenter = document.querySelector(".projectCenter");
-    this.projectCenter2 = document.querySelector(".projectCenter2");
+    //   // PROJECT
+    //   this.projectPanel = document.querySelector(".projectRow");
+    //   this.projectPanel.addEventListener("mouseover", this.overProject, false);
+    //   this.projectPanel.addEventListener("mouseout", this.outProject, false);
+    //   this.projectCenter = document.querySelector(".projectCenter");
 
-    // GIT
-    this.gitPanel = document.querySelector(".gitRowLeft");
+    //   // GIT
+    //   this.gitPanel = document.querySelector(".gitRowLeft");
 
-    // LINKED IN
-    this.gitCenter = document.querySelector(".gitRowRight");
+    //   // LINKED IN
+    //   this.gitCenter = document.querySelector(".gitRowRight");
 
-    setInterval(() => {
-      if (this.greetingIndex < 5) {
-        this.greetingIndex++;
-      } else {
-        this.greetingIndex = 0;
-      }
-      this.greeting = this.greetingArr[this.greetingIndex];
-    }, 800);
-  },
-  methods: {
-    overProject() {
-      this.projectCenter.style.transform = "translateX(85px)";
-      this.projectCenter.style.background = 'rgb(252, 193, 0)';
-
-      this.projectCenter2.style.transform = "translateX(-85px)";
-    },
-    outProject() {
-      this.projectCenter.style.transform = "translateX(0px)";
-       this.projectCenter.style.background = 'rgb(255, 168, 6)';
-
-       this.projectCenter2.style.transform = "translateX(0px)";
-    }
+    //   setInterval(() => {
+    //     if (this.greetingIndex < 5) {
+    //       this.greetingIndex++;
+    //     } else {
+    //       this.greetingIndex = 0;
+    //     }
+    //     this.greeting = this.greetingArr[this.greetingIndex];
+    //   }, 800);
+    // },
+    // methods: {
+    //   overProject() {
+    //     this.projectCenter.style.transform = "translateX(100px)";
+    //   },
+    //   outProject() {
+    //     this.projectCenter.style.transform = "translateX(0px)";
+    //   }
   }
 };
 </script>
@@ -263,20 +256,31 @@ export default {
 .projectRow:hover {
   background: rgb(252, 193, 0);
 }
-.projectCenter {
-  width: 180px;
-  height: 35px;
-  transition: transform 0.5s ease-out,  background 0.5s ease-out;
-  text-align: center;
-  background: rgb(255, 168, 6);
-  position: absolute;
+
+.projectRow:hover > .projectCenter {
+  transform: translateX(85px);
+  background: rgb(228, 206, 136);
 }
-.projectCenter2 {
-  width: 173px;
-  height: 35px;
-  transition: transform 0.5s ease-out;
-  text-align: center;
+.projectRow:hover > .projectCenter2 {
+  transform: translateX(-85px);
+  visibility: visible;
+}
+.projectCenter {
   position: absolute;
+  padding: 0px 8px 0px 8px;
+  text-align: center;
+  vertical-align: middle;
+  background: rgb(255, 168, 6);
+  transition: all 0.4s linear;
+}
+
+.projectCenter2 {
+  visibility: hidden;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+
+  transition: all 0.4s linear;
 }
 .projectThree {
   font-weight: 700 !important;
@@ -306,6 +310,34 @@ export default {
 .gitRowLeft:hover {
   background: rgb(40, 40, 110);
 }
+.gitRowLeft:hover > .gitCenter2 {
+  transform: translateY(20px);
+  opacity: 0.4;
+}
+
+.gitRowLeft:hover > .gitCenter1 {
+  transform: translateY(-10px);
+}
+
+.gitCenter1 {
+  transition: all 0.4s linear;
+  position: absolute;
+}
+
+.gitCenter2 {
+  transform: translateY(17px);
+  font-size: 12pt;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.4s linear;
+  position: absolute;
+}
+
+.regGitText {
+  color: white;
+}
+
+/* RIGHT GIT ============================================================== */
 
 .gitRowRight {
   height: 100%;
@@ -319,8 +351,28 @@ export default {
   align-items: center;
 }
 .gitRowRight:hover {
-  opacity: 0.85;
 }
+
+.gitRowRight:hover > .linkedCenter1 {
+  transform: translateY(-10px);
+}
+.gitRowRight:hover > .linkedCenter2 {
+  transform: translateY(20px);
+  opacity: 0.4;
+}
+.linkedCenter1 {
+  transition: all 0.4s linear;
+  position: absolute;
+}
+.linkedCenter2 {
+  transform: translateY(17px);
+  font-size: 12pt;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.4s linear;
+  position: absolute;
+}
+
 /* ======================================================================== */
 
 .headingOne {
