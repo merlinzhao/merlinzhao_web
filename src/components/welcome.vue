@@ -109,50 +109,28 @@ export default {
       ],
       greetingIndex: 0,
 
-      testNum: 0,
-
-      // for event listeners
-      projectPanel: "",
-      projectCenter: "",
-      projectCenter2: "",
-
-      gitPanel: "",
-      gitCenter: "",
-      linkedInPanel: "",
-      linkedInCenter: ""
+      testNum: 0
     };
   },
   mounted() {
     this.currentTime = new Date();
 
-    //   // PROJECT
-    //   this.projectPanel = document.querySelector(".projectRow");
-    //   this.projectPanel.addEventListener("mouseover", this.overProject, false);
-    //   this.projectPanel.addEventListener("mouseout", this.outProject, false);
-    //   this.projectCenter = document.querySelector(".projectCenter");
-
-    //   // GIT
-    //   this.gitPanel = document.querySelector(".gitRowLeft");
-
-    //   // LINKED IN
-    //   this.gitCenter = document.querySelector(".gitRowRight");
-
-    //   setInterval(() => {
-    //     if (this.greetingIndex < 5) {
-    //       this.greetingIndex++;
-    //     } else {
-    //       this.greetingIndex = 0;
-    //     }
-    //     this.greeting = this.greetingArr[this.greetingIndex];
-    //   }, 800);
-    // },
-    // methods: {
-    //   overProject() {
-    //     this.projectCenter.style.transform = "translateX(100px)";
-    //   },
-    //   outProject() {
-    //     this.projectCenter.style.transform = "translateX(0px)";
-    //   }
+    setInterval(() => {
+      if (this.greetingIndex < 5) {
+        this.greetingIndex++;
+      } else {
+        this.greetingIndex = 0;
+      }
+      this.greeting = this.greetingArr[this.greetingIndex];
+    }, 800);
+  },
+  methods: {
+    overProject() {
+      this.projectCenter.style.transform = "translateX(100px)";
+    },
+    outProject() {
+      this.projectCenter.style.transform = "translateX(0px)";
+    }
   }
 };
 </script>
@@ -253,8 +231,11 @@ export default {
   align-items: center;
   transition: background 0.5s ease-out;
 }
+.proectRow2 {
+  background: white;
+}
 .projectRow:hover {
-  background: rgb(252, 193, 0);
+  background: rgba(255, 168, 6, 0);
 }
 
 .projectRow:hover > .projectCenter {
