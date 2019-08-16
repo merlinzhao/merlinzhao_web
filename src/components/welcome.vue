@@ -3,13 +3,15 @@
     <div class="row nameRow">
       <div class="row nameRowCenter">
         <div class="col-11 leftCol">
-          <p class="headingThree" style="opacity: 0.9;">{{greeting}}!</p>
+          <div class="nameBG">
+          <p class="headingThree" style="opacity: 0.9; margin: 0px;">{{greeting}}!</p>
           <p class="headingOne">I'm Merlin.</p>
+          </div>
           <div style="height: 5%; width: 100%;" />
-          <p class="headingThree" style="opacity: 0.9;">software developer</p>
-          <p class="headingThree" style="opacity: 0.9;">graphic designer</p>
-          <p class="headingThree" style="opacity: 0.9;">chipotle lover</p>
-          <p class="headingThree wiz" style="opacity: 0.9;">
+          <p class="headingThree" style="opacity: 0.9; color: #333;">software developer</p>
+          <p class="headingThree" style="opacity: 0.9;  color: #333;">graphic designer</p>
+          <p class="headingThree" style="opacity: 0.9;  color: #333;">chipotle lover</p>
+          <p class="headingThree " style="opacity: 0.9;  color: #BBB;">
             unfortunately, not a real wizard
             <i class="far fa-sad-tear" />
           </p>
@@ -30,7 +32,7 @@
       </div>
     </div>
     <div class="projectRowOut">
-      <div class="projectRow" style="cursor:pointer">
+      <div class="projectRow" style="cursor:pointer; color:white" >
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>
         <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
@@ -39,17 +41,17 @@
     <div class="gitRow">
       <div
         class="col-6 gitRowLeft"
-        style="cursor:pointer"
+        style="cursor:pointer; color: white;"
         onclick="window.open('http://www.github.com/merlinzhao')"
       >
         <p class="regText regGitText gitCenter2">www.github.com/merlinzhao</p>
         <p class="headingThree projectThree gitCenter1">
-          <i class="fab fa-github" /> GITHUB
+          <i class="fab fa-github"  /> GITHUB
         </p>
       </div>
       <div
         class="col-6 gitRowRight"
-        style="cursor:pointer"
+        style="cursor:pointer; color: white;"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
       > 
         <div class="linked2">
@@ -59,6 +61,7 @@
         </p>
         </div>
       </div>
+  
     </div>
     <!-- <div class="row externalRow">
       <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
@@ -143,16 +146,13 @@ export default {
 /* NAME ROW ITEMS ========= NAME NAME NAME NAME =========== NAME ROW ITEMS  */
 /* ======================================================================== */
 .nameRow {
+  background: #fafafa;
   height: 85vh;
   min-height: 600px;
   max-height: 1200px;
   width: 100vw;
   margin: auto;
-  background: linear-gradient(
-    0deg,
-    rgb(152, 12, 252) 0%,
-    rgb(5, 132, 216) 100%
-  );
+  
 }
 .nameRowCenter {
   height: 85vh;
@@ -161,6 +161,33 @@ export default {
   width: 80%;
   max-width: 1350px;
   margin: auto;
+}
+.nameBG{
+   background: linear-gradient(271deg, #c342ff, #2694ff, #455dbd);
+background-size: 800% 800%;
+
+-webkit-animation: knockOutAnimation 5s ease infinite;
+-moz-animation: knockOutAnimation 5s ease infinite;
+animation: knockOutAnimation 5s ease infinite;
+  color: transparent !important;
+  
+   background-clip: text;
+  -webkit-background-clip: text;
+}
+ @-webkit-keyframes knockOutAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes knockOutAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes knockOutAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 .leftCol {
   height: 100%;
@@ -179,6 +206,11 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+    0deg,
+    rgb(152, 12, 252) 0%,
+    rgb(5, 132, 216) 100%
+  );
 }
 /* ======================================================================== */
 /* ======================================================================== */
@@ -225,7 +257,7 @@ export default {
 .projectRow {
   height: 500px;
   width: 100vw;
-  background: rgb(255, 123, 0);
+  background: rgb(255, 145, 0);
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
@@ -391,8 +423,7 @@ animation: GradientAnimation 7s ease-in-out infinite;
 .headingOne {
   line-height: 65pt;
   font-size: 65pt;
-  color: white;
-  font-weight: 700;
+  font-weight:bolder;
 }
 .headingTwo {
   line-height: 50pt;
@@ -403,8 +434,8 @@ animation: GradientAnimation 7s ease-in-out infinite;
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-  color: white;
-  font-weight: 400;
+
+  font-weight: 600;
 }
 
 .wiz {

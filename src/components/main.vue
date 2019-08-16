@@ -1,7 +1,7 @@
 <template>
   <div>
     <welcome />
-    <projects style="width: 100vw; height:100%;" />
+    <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
 </template>
 
