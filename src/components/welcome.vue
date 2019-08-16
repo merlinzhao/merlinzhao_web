@@ -32,7 +32,7 @@
     <div class="projectRowOut">
       <div class="projectRow" style="cursor:pointer">
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>
-        <p class="headingThree projectThree projectCenter">PROJECTS</p>
+        <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
      
     </div>
@@ -51,11 +51,13 @@
         class="col-6 gitRowRight"
         style="cursor:pointer"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-      >
+      > 
+        <div class="linked2">
         <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
         <p class="headingThree projectThree linkedCenter1">
           <i class="fab fa-linkedin" /> LINKEDIN
         </p>
+        </div>
       </div>
     </div>
     <!-- <div class="row externalRow">
@@ -223,7 +225,7 @@ export default {
 .projectRow {
   height: 500px;
   width: 100vw;
-  background: rgb(255, 168, 6);
+  background: rgb(255, 123, 0);
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
@@ -232,36 +234,55 @@ export default {
   transition: background 0.5s ease-out;
 }
 .projectRowOut {
-  background: rgb(255, 99, 99);
+   background: linear-gradient(230deg, #ff5bf1,  #fd6500 ,#fdcb00);
+background-size: 600% 600%;
+
+-webkit-animation: GradientAnimation 7s ease-in-out infinite;
+-moz-animation: GradientAnimation 7s ease-in-out infinite;
+animation: GradientAnimation 7s ease-in-out infinite;
+}
+
+@-webkit-keyframes GradientAnimation {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@-moz-keyframes GradientAnimation {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
+}
+@keyframes GradientAnimation {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
 }
 .projectRow:hover {
   background: transparent;
 }
 
 .projectRow:hover > .projectCenter {
-  transform: translateX(85px);
-  background: rgb(255, 198, 9);
+  transform: translateX(110px);
 }
 .projectRow:hover > .projectCenter2 {
-  transform: translateX(-85px);
-  visibility: visible;
+  transform: translateX(-188px);
+  opacity: 1;
 }
 .projectCenter {
   position: absolute;
   padding: 0px 8px 0px 8px;
   text-align: center;
   vertical-align: middle;
-  background: rgb(255, 168, 6);
   transition: all 0.4s linear;
 }
 
 .projectCenter2 {
-  visibility: hidden;
+  transform: translateX(-160px);
+  opacity: 0;
   position: absolute;
   text-align: center;
   vertical-align: middle;
-
-  transition: all 0.4s linear;
+  transition: all 0.4s linear, opacity 0.4s ease-in-out;
 }
 .projectThree {
   font-weight: 700 !important;
@@ -322,22 +343,33 @@ export default {
 
 .gitRowRight {
   height: 100%;
-  background: linear-gradient(135deg, #4501a5 0%, #ff8989 100%);
+  background:blue;
+  padding: 0px;
+
+}
+
+.linked2 {
+  height: 100%;
+  background-size: 100% 100% !important;
+  background: linear-gradient(135deg, #6600f3 0%, #ff8989 100%);
   opacity: 1;
-  transition: opacity 0.5s ease-out;
+  transition: all 0.5s ease-out, background-size 1s ease-in-out;
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+
 }
-.gitRowRight:hover {
+.linked2:hover {
+  background-size: 100% 250% !important;
+
 }
 
-.gitRowRight:hover > .linkedCenter1 {
+.linked2:hover > .linkedCenter1 {
   transform: translateY(-10px);
 }
-.gitRowRight:hover > .linkedCenter2 {
+.linked2:hover > .linkedCenter2 {
   transform: translateY(20px);
   opacity: 0.4;
 }
