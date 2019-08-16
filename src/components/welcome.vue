@@ -29,8 +29,8 @@
         </p>
       </div>
     </div>
-    <div class="projectRow" style="cursor:pointer">
-      <div class="projectRow2">
+    <div class="projectRowOut">
+      <div class="projectRow" style="cursor:pointer">
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>
         <p class="headingThree projectThree projectCenter">PROJECTS</p>
       </div>
@@ -229,16 +229,16 @@ export default {
   align-items: center;
   transition: background 0.5s ease-out;
 }
-.proectRow2 {
-  background: white;
+.projectRowOut {
+  background: rgb(255, 99, 99);
 }
 .projectRow:hover {
-  background: rgba(255, 168, 6, 0);
+  background: transparent;
 }
 
 .projectRow:hover > .projectCenter {
   transform: translateX(85px);
-  background: rgb(228, 206, 136);
+  background: rgb(255, 198, 9);
 }
 .projectRow:hover > .projectCenter2 {
   transform: translateX(-85px);
