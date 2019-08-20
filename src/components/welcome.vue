@@ -4,14 +4,14 @@
       <div class="row nameRowCenter">
         <div class="col-11 leftCol">
           <div class="nameBG">
-          <p class="headingThree" style="opacity: 0.9; margin: 0px;">{{greeting}}!</p>
-          <p class="headingOne">I'm Merlin.</p>
+            <p class="headingThree" style="opacity: 1; margin: 0px;">{{greeting}}!</p>
+            <p class="headingOne">I'm Merlin.</p>
           </div>
           <div style="height: 5%; width: 100%;" />
           <p class="headingThree" style="opacity: 0.9; color: #333;">software developer</p>
           <p class="headingThree" style="opacity: 0.9;  color: #333;">graphic designer</p>
           <p class="headingThree" style="opacity: 0.9;  color: #333;">chipotle lover</p>
-          <p class="headingThree " style="opacity: 0.9;  color: #BBB;">
+          <p class="headingThree" style="opacity: 0.9;  color: #BBB;">
             unfortunately, not a real wizard
             <i class="far fa-sad-tear" />
           </p>
@@ -32,11 +32,10 @@
       </div>
     </div>
     <div class="projectRowOut">
-      <div class="projectRow" style="cursor:pointer; color:white" >
+      <div class="projectRow" style="cursor:pointer; color:white">
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>
         <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
-     
     </div>
     <div class="gitRow">
       <div
@@ -46,22 +45,21 @@
       >
         <p class="regText regGitText gitCenter2">www.github.com/merlinzhao</p>
         <p class="headingThree projectThree gitCenter1">
-          <i class="fab fa-github"  /> GITHUB
+          <i class="fab fa-github" /> GITHUB
         </p>
       </div>
       <div
         class="col-6 gitRowRight"
         style="cursor:pointer; color: white;"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-      > 
+      >
         <div class="linked2">
-        <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
-        <p class="headingThree projectThree linkedCenter1">
-          <i class="fab fa-linkedin" /> LINKEDIN
-        </p>
+          <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
+          <p class="headingThree projectThree linkedCenter1">
+            <i class="fab fa-linkedin" /> LINKEDIN
+          </p>
         </div>
       </div>
-  
     </div>
     <!-- <div class="row externalRow">
       <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
@@ -152,7 +150,6 @@ export default {
   max-height: 1200px;
   width: 100vw;
   margin: auto;
-  
 }
 .nameRowCenter {
   height: 85vh;
@@ -162,32 +159,50 @@ export default {
   max-width: 1350px;
   margin: auto;
 }
-.nameBG{
-   background: linear-gradient(271deg, #c342ff, #2694ff, #455dbd);
-background-size: 800% 800%;
+.nameBG {
+  background: linear-gradient(271deg, #c342ff, #2694ff, #455dbd);
+  background-size: 800% 800%;
 
--webkit-animation: knockOutAnimation 5s ease infinite;
--moz-animation: knockOutAnimation 5s ease infinite;
-animation: knockOutAnimation 5s ease infinite;
+  -webkit-animation: knockOutAnimation 5s ease infinite;
+  -moz-animation: knockOutAnimation 5s ease infinite;
+  animation: knockOutAnimation 5s ease infinite;
   color: transparent !important;
-  
-   background-clip: text;
+
+  background-clip: text;
   -webkit-background-clip: text;
 }
- @-webkit-keyframes knockOutAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+@-webkit-keyframes knockOutAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes knockOutAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes knockOutAnimation {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .leftCol {
   height: 100%;
@@ -266,28 +281,46 @@ animation: knockOutAnimation 5s ease infinite;
   transition: background 0.5s ease-out;
 }
 .projectRowOut {
-   background: linear-gradient(230deg, #ff5bf1,  #fd6500 ,#fdcb00);
-background-size: 600% 600%;
+  background: linear-gradient(230deg, #ff5bf1, #fd6500, #fdcb00);
+  background-size: 600% 600%;
 
--webkit-animation: GradientAnimation 7s ease-in-out infinite;
--moz-animation: GradientAnimation 7s ease-in-out infinite;
-animation: GradientAnimation 7s ease-in-out infinite;
+  -webkit-animation: GradientAnimation 7s ease-in-out infinite;
+  -moz-animation: GradientAnimation 7s ease-in-out infinite;
+  animation: GradientAnimation 7s ease-in-out infinite;
 }
 
 @-webkit-keyframes GradientAnimation {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+  0% {
+    background-position: 0% 48%;
+  }
+  50% {
+    background-position: 100% 53%;
+  }
+  100% {
+    background-position: 0% 48%;
+  }
 }
 @-moz-keyframes GradientAnimation {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+  0% {
+    background-position: 0% 48%;
+  }
+  50% {
+    background-position: 100% 53%;
+  }
+  100% {
+    background-position: 0% 48%;
+  }
 }
 @keyframes GradientAnimation {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
+  0% {
+    background-position: 0% 48%;
+  }
+  50% {
+    background-position: 100% 53%;
+  }
+  100% {
+    background-position: 0% 48%;
+  }
 }
 .projectRow:hover {
   background: transparent;
@@ -375,9 +408,8 @@ animation: GradientAnimation 7s ease-in-out infinite;
 
 .gitRowRight {
   height: 100%;
-  background:blue;
+  background: blue;
   padding: 0px;
-
 }
 
 .linked2 {
@@ -391,11 +423,9 @@ animation: GradientAnimation 7s ease-in-out infinite;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
-
 }
 .linked2:hover {
   background-size: 100% 250% !important;
-
 }
 
 .linked2:hover > .linkedCenter1 {
@@ -423,7 +453,7 @@ animation: GradientAnimation 7s ease-in-out infinite;
 .headingOne {
   line-height: 65pt;
   font-size: 65pt;
-  font-weight:bolder;
+  font-weight: bolder;
 }
 .headingTwo {
   line-height: 50pt;
@@ -434,7 +464,6 @@ animation: GradientAnimation 7s ease-in-out infinite;
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-
   font-weight: 600;
 }
 
