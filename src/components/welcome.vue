@@ -1,7 +1,7 @@
 <template>
   <div class="background">
-    <div class="row nameRow">
-      <div class="row nameRowCenter">
+    <!-- <div class="row nameRow"> -->
+    <!-- <div class="row nameRowCenter">
         <div class="col-11 leftCol">
           <div class="nameBG">
             <p class="headingThree" style="opacity: 1; margin: 0px;">{{greeting}}!</p>
@@ -15,13 +15,11 @@
             unfortunately, not a real wizard
             <i class="far fa-sad-tear" />
           </p>
-          <!-- <div style="height: 7%; width: 100%;" /> -->
-          <!-- <button class="projectBtn">View my Projects</button> -->
         </div>
         <div class="col-1 rightCol"></div>
       </div>
-    </div>
-    <div class="aboutMeRow">
+    </div>-->
+    <!-- <div class="aboutMeRow">
       <div class="aboutMeCenter">
         <p class="headingThree aboutMeThree">About Me</p>
         <p class="regText">
@@ -30,7 +28,7 @@
           <br />Since their debut, Red Velvet has released two studio albums, one reissue album, and eight extended plays in Korean, with nine of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon their releases. Red Velvet is regarded as one of the most popular K-pop groups worldwide by Time and Billboard and have received several awards for music, choreography, and popularity, including the Golden Disc New Artist Award in 2015 and the Mnet Asian Music Award for Best Female Group in 2017.
         </p>
       </div>
-    </div>
+    </div>-->
     <div class="projectRowOut">
       <div class="projectRow" style="cursor:pointer; color:white">
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>

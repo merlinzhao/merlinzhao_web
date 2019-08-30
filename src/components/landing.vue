@@ -2,7 +2,7 @@
   <div class="landing">
     <div class="row firstRow">
       <div class="col-6 leftCol">
-        <div style="height: 5%; width: 100%;" />
+        <div style="height: 15%; width: 100%;" />
         <div class="nameBG">
           <p class="headingThree">HELLO! I'M</p>
           <p class="headingOne">MERLIN.</p>
@@ -19,19 +19,31 @@
       <div class="col-6 rightCol"></div>
     </div>
     <div class="row secondRow">
-      <div class="row menuBar">
+      <!-- <div class="row menuBar">
         <div class="col-3">
-          <button class="menuButton menuText">MY EXPERIENCE</button>
+          <button class="menuButton menuText">
+            <i class="fa fa-code" />
+            <p id="menuTitle">EXPERIENCE</p>
+          </button>
         </div>
         <div class="col-3">
-          <button class="menuButton menuText">GITHUB</button>
+          <button class="menuButton menuText">
+            <i class="fab fa-github" />
+            <p id="menuTitle">GITHUB</p>
+          </button>
         </div>
         <div class="col-3">
-          <button class="menuButton menuText">LIKEDIN</button>
+          <button class="menuButton menuText">
+            <i class="fab fa-linkedin" />
+            <p id="menuTitle">LIKEDIN</p>
+          </button>
         </div>
         <div class="col-3">
-          <button class="menuButton menuText">RESUME</button>
-        </div>
+          <button class="menuButton menuText">
+            <i class="fa fa-user-tie" />
+            <p id="menuTitle">RESUME</p>
+          </button>
+        </div> -->
       </div>
     </div>
   </div>
@@ -40,7 +52,7 @@
 <style scoped>
 .landing {
   background: #f4f4f4;
-  height: 100vh;
+  height: 85vh;
   width: 100vw;
   min-width: 750px;
   min-height: 400px;
@@ -97,12 +109,18 @@
   width: 80%;
 }
 .menuBar {
+  padding: 0px 2% 0px 2%;
   height: 100px;
   width: 100%;
   background: white;
   border: #eee 1px solid;
   border-radius: 50px;
-  box-shadow: 5px 5px 6px rgba(153, 153, 153, 0.205);
+  box-shadow: 5px 5px 6px rgba(153, 153, 153, 0.1);
+  transition: box-shadow 0.4s ease-out;
+}
+
+.menuBar:hover {
+  box-shadow: 5px 5px 5px rgba(153, 153, 153, 0.25);
 }
 
 .menuButton {
@@ -110,6 +128,7 @@
   width: 100%;
   background: transparent;
   border: none;
+  flex-direction: row;
 }
 
 .menuText {
@@ -117,6 +136,7 @@
   line-height: 18pt;
   font-size: 18pt;
   font-weight: 600;
+  transition: color 0.3s ease-out;
 }
 .menuText:hover {
   color: lightcoral;
