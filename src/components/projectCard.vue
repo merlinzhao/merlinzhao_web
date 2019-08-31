@@ -34,11 +34,10 @@ export default {
 
 <style scoped>
 .projectCard {
-  margin: 50px;
   width: 30%;
   height: 700px;
   background: white;
-  border-radius: 10px;
+  border-radius: 7px;
   transition: box-shadow 0.5s ease-out;
   box-shadow: 0px 0px 50px rgba(128, 128, 128, 0.1);
 }

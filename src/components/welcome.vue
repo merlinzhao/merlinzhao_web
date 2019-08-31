@@ -19,7 +19,14 @@
         <div class="col-1 rightCol"></div>
       </div>
     </div>-->
-    <!-- <div class="aboutMeRow">
+
+    <div class="projectRowOut">
+      <div class="projectRow" style="cursor:pointer; color:white" @click="nav('projects')">
+        <p class="headingThree projectThree projectCenter2">VIEW MY</p>
+        <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
+      </div>
+    </div>
+    <div class="aboutMeRow">
       <div class="aboutMeCenter">
         <p class="headingThree aboutMeThree">About Me</p>
         <p class="regText">
@@ -27,12 +34,6 @@
           <br />
           <br />Since their debut, Red Velvet has released two studio albums, one reissue album, and eight extended plays in Korean, with nine of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon their releases. Red Velvet is regarded as one of the most popular K-pop groups worldwide by Time and Billboard and have received several awards for music, choreography, and popularity, including the Golden Disc New Artist Award in 2015 and the Mnet Asian Music Award for Best Female Group in 2017.
         </p>
-      </div>
-    </div>-->
-    <div class="projectRowOut">
-      <div class="projectRow" style="cursor:pointer; color:white">
-        <p class="headingThree projectThree projectCenter2">VIEW MY</p>
-        <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
     </div>
     <div class="gitRow">
@@ -131,6 +132,9 @@ export default {
     },
     outProject() {
       this.projectCenter.style.transform = "translateX(0px)";
+    },
+    nav(event) {
+      this.$router.push({ path: event });
     }
   }
 };
@@ -355,7 +359,7 @@ export default {
 /* GIT ROW ITEMS ============= GIT GIT GIT GIT ============= GIT ROW ITEMS  */
 /* ======================================================================== */
 .gitRow {
-  height: 500px;
+  height: 300px;
   width: 100vw;
   background: #fafafa;
   display: flex;
