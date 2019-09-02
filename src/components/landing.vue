@@ -61,6 +61,7 @@
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+  font-family: 'Lato', sans-serif;
 }
 .headingOne {
   line-height: 65pt;

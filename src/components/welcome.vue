@@ -1,32 +1,12 @@
 <template>
   <div class="background">
-    <!-- <div class="row nameRow"> -->
-    <!-- <div class="row nameRowCenter">
-        <div class="col-11 leftCol">
-          <div class="nameBG">
-            <p class="headingThree" style="opacity: 1; margin: 0px;">{{greeting}}!</p>
-            <p class="headingOne">I'm Merlin.</p>
-          </div>
-          <div style="height: 5%; width: 100%;" />
-          <p class="headingThree" style="opacity: 0.9; color: #333;">software developer</p>
-          <p class="headingThree" style="opacity: 0.9;  color: #333;">graphic designer</p>
-          <p class="headingThree" style="opacity: 0.9;  color: #333;">chipotle lover</p>
-          <p class="headingThree" style="opacity: 0.9;  color: #BBB;">
-            unfortunately, not a real wizard
-            <i class="far fa-sad-tear" />
-          </p>
-        </div>
-        <div class="col-1 rightCol"></div>
-      </div>
-    </div>-->
-
     <div class="projectRowOut">
       <div class="projectRow" style="cursor:pointer; color:white" @click="nav('projects')">
         <p class="headingThree projectThree projectCenter2">VIEW MY</p>
         <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
     </div>
-    <div class="aboutMeRow">
+    <!-- <div class="aboutMeRow">
       <div class="aboutMeCenter">
         <p class="headingThree aboutMeThree">About Me</p>
         <p class="regText">
@@ -35,7 +15,7 @@
           <br />Since their debut, Red Velvet has released two studio albums, one reissue album, and eight extended plays in Korean, with nine of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon their releases. Red Velvet is regarded as one of the most popular K-pop groups worldwide by Time and Billboard and have received several awards for music, choreography, and popularity, including the Golden Disc New Artist Award in 2015 and the Mnet Asian Music Award for Best Female Group in 2017.
         </p>
       </div>
-    </div>
+    </div>-->
     <div class="gitRow">
       <div
         class="col-6 gitRowLeft"
@@ -60,38 +40,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row externalRow">
-      <button class="btn2" data-toggle="tooltip" title="My Projects" style="font-size: 2.2em;">
-        <i class="fas fa-file-code"></i>
-      </button>
-      <button class="btn2" data-toggle="tooltip" title="My Resume" style="font-size: 2.2em;">
-        <i class="fas fa-file-alt"></i>
-      </button>
-      <button class="btn2" style="font-size: 2.2em;" data-toggle="tooltip" title="Conact Me :)">
-        <i class="fas fa-paper-plane"></i>
-      </button>
-      <div
-        style="font-size: 3.2em; font-weight: 200; color:white; height: 50px ;margin: -15px 35px 0px 25px;"
-      >|</div>
-      <button
-        class="btn2"
-        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-        style="font-size: 2.2em;"
-        data-toggle="tooltip"
-        title="LinkedIn"
-      >
-        <i class="fab fa-linkedin"></i>
-      </button>
-      <button
-        class="btn2"
-        onclick="window.open('http://www.github.com/merlinzhao')"
-        style="font-size: 2.2em;"
-        data-toggle="tooltip"
-        title="GitHub"
-      >
-        <i class="fab fa-github"></i>
-      </button>
-    </div>-->
   </div>
 </template>
 <script>
@@ -158,7 +106,7 @@ export default {
   min-height: 600px;
   max-height: 1200px;
   width: 80%;
-  max-width: 1350px;
+  max-width: 1250px;
   margin: auto;
 }
 .nameBG {
@@ -256,7 +204,7 @@ export default {
   width: 80vw;
   height: 80%;
   padding: 15px;
-  max-width: 1350px;
+  max-width: 1250px;
 }
 .aboutMeThree {
   color: #333 !important;
@@ -460,7 +408,6 @@ export default {
 .headingTwo {
   line-height: 50pt;
   font-size: 45pt;
-  color: white;
   font-weight: 400;
 }
 .headingThree {
