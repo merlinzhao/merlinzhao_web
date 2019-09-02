@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="center row">
-      <div class="col-4 cardPadding">
+      <div class="col cardPadding">
         <projectCard
           style="transform: translateY(-50px);"
           :projectTitle="'Project1'"
@@ -14,7 +14,7 @@
           :icons="['A','B','D']"
         />
       </div>
-      <div class="col-4 cardPadding">
+      <div class="col cardPadding">
         <projectCard
           style="transform: translateY(-50px)"
           :projectTitle="'Project1'"
@@ -22,7 +22,7 @@
           :icons="['A','B','D']"
         />
       </div>
-      <div class="col-4 cardPadding">
+      <div class="col cardPadding">
         <projectCard
           style="transform: translateY(-50px)"
           :projectTitle="'Project1'"
@@ -38,6 +38,11 @@
 import projectCard from "./projectCard.vue";
 export default {
   name: "projects",
+  date() {
+    return {
+      col: "col-2"
+    };
+  },
   components: {
     projectCard
   }
@@ -57,6 +62,9 @@ export default {
 .center {
   width: 90%;
   max-width: 1250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* ======================================================================== */
@@ -140,6 +148,18 @@ export default {
 
 .cardPadding {
   padding: 0px 2% 0px 2%;
+  width: 33% !important;
+  min-width: 250px !important;
+}
+
+@media only screen and (max-width: 500px) {
+  .center {
+    flex-direction: column;
+  }
+  .cardPadding {
+    width: 100% !important;
+    min-width: none !important;
+  }
 }
 </style>
  

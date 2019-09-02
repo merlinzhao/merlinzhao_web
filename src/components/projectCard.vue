@@ -1,7 +1,10 @@
 <template>
   <div class="projectCard">
-    <div class="imageRow">
-      <i class="fas fa-laptop fa-10x" />
+    <div
+      class="imageRow"
+      :style="{ backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+    >
+      <!-- <i class="fas fa-laptop" /> -->
     </div>
     <div class="textRow">
       <p class="headingThree">{{projectTitle}}</p>
@@ -43,11 +46,13 @@
 <script>
 export default {
   data() {
-    return {
-      icons: ["A", "B", "G"]
-    };
+    return {};
   },
   props: {
+    imgURL: {
+      type: String,
+      default: "kang.jpg"
+    },
     icons: {
       type: Array,
       default: []
