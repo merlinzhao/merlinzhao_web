@@ -53,7 +53,7 @@
 .landing {
   background: #f4f4f4;
   height: 85vh;
-  width: 100vw;
+  width: 100%;
   min-width: 750px;
   min-height: 400px;
   display: flex;
