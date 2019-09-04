@@ -1,8 +1,13 @@
 <template>
   <div>
     <div class="intro">
-      <p class="MERLIN">MERLIN.</p>
-      <p>hello</p>
+      <div class="center">
+        <p class="MERLIN">MERLIN</p>
+      </div>
+      <p
+        style="font-size: 27pt; color: #bbb; transform: translateY(-35px)"
+      >Hello 👋 Thanks for visiting my personal website!</p>
+      <div style="height: 5%" />
     </div>
 
     <landing />
@@ -33,11 +38,10 @@ export default {
 
 <style scoped>
 .intro {
-  font-size: 1200%;
-  position: absolute;
-  height: 100%;
+  height: 100vh;
+  min-height: 500px;
   width: 100%;
-  background: #f4f4f4;
+  background: #131313;
 
   display: flex;
   flex-direction: column;
@@ -45,11 +49,9 @@ export default {
   justify-content: center;
   align-items: center;
 
-  -webkit-animation: introFade 4.5s ease-out;
+  /* -webkit-animation: introFade 4.5s ease-out;
   -moz-animation: introFade 4.5s ease-out;
-  animation: introFade 4.5s ease-out;
-
-  visibility: hidden;
+  animation: introFade 4.5s ease-out; */
 
   z-index: 1;
 }
@@ -127,9 +129,6 @@ export default {
     /* font-size: 3em; */
     background-position: 7% 0%;
   }
-  35% {
-    font-size: 1em;
-  }
   50% {
     background-position: 94% 100%;
   }
@@ -142,9 +141,7 @@ export default {
     /* font-size: 3em; */
     background-position: 7% 0%;
   }
-  35% {
-    font-size: 1em;
-  }
+
   50% {
     background-position: 94% 100%;
   }
@@ -156,9 +153,6 @@ export default {
   0% {
     /* font-size: 5em; */
     background-position: 7% 0%;
-  }
-  35% {
-    font-size: 1em;
   }
   50% {
     background-position: 94% 100%;
@@ -175,14 +169,11 @@ export default {
 .MERLIN {
   font-weight: 700;
   text-align: center;
+  margin: 0px;
 
   position: absolute;
   background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff);
   background-size: 600% 600%;
-  display: block;
-  flex-direction: column;
-  -webkit-box-orient: vertical;
-  justify-content: center;
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -190,8 +181,52 @@ export default {
   color: transparent;
   -webkit-text-fill-color: rgba(255, 0, 0, 0);
 
-  -webkit-animation: introGradientTwo 3s ease-out;
-  -moz-animation: introGradientTwo 3s ease-out;
-  animation: introGradientTwo 3s ease-out;
+  -webkit-animation: introGradientTwo 5s ease-in-out infinite;
+  -moz-animation: introGradientTwo 5s ease-in-out infinite;
+  animation: introGradientTwo 5s ease-in-out infinite;
+}
+
+.center {
+  width: 100%;
+  height: 1em;
+  font-size: 12em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateY(-50px);
+
+  -webkit-animation: introGradientTwo 3s ease-in-out infinite;
+  -moz-animation: introGradientTwo 3s ease-in-out infinite;
+  animation: shiftTitle 3s ease-in-out;
+}
+
+@-webkit-keyframes shiftTitle {
+  0% {
+    /* font-size: 3em; */
+  }
+  100% {
+  }
+}
+@-moz-keyframes shiftTitle {
+  0% {
+    /* font-size: 3em; */
+  }
+  100% {
+  }
+}
+@keyframes shiftTitle {
+  0% {
+    /* font-size: 5em; */
+    transform: translateY(0px);
+  }
+  50% {
+    /* font-size: 5em; */
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
 }
 </style>
