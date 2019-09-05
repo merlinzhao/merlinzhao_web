@@ -10,7 +10,7 @@
       <div style="height: 5%" />
     </div>
 
-    <landing />
+    <about-me />
     <welcome />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
@@ -21,6 +21,7 @@
 import welcome from "./welcome.vue";
 import projects from "./projects.vue";
 import landing from "./landing.vue";
+import aboutMe from "./about-me.vue";
 import { setTimeout } from "timers";
 
 export default {
@@ -28,7 +29,8 @@ export default {
   components: {
     welcome,
     projects,
-    landing
+    landing,
+    aboutMe
   },
   mounted() {
     const intro = document.querySelector(".intro");
