@@ -7,7 +7,6 @@
       <p
         style="font-size: 27pt; color: #bbb; transform: translateY(-35px)"
       >Hello 👋 Thanks for visiting my personal website!</p>
-      <div style="height: 5%" />
     </div>
 
     <about-me />
@@ -20,7 +19,6 @@
 <script>
 import welcome from "./welcome.vue";
 import projects from "./projects.vue";
-import landing from "./landing.vue";
 import aboutMe from "./about-me.vue";
 import { setTimeout } from "timers";
 
@@ -29,7 +27,6 @@ export default {
   components: {
     welcome,
     projects,
-    landing,
     aboutMe
   },
   mounted() {
