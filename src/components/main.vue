@@ -12,6 +12,7 @@
 
     <about-me />
     <welcome />
+    <footer />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
@@ -21,6 +22,7 @@
 import welcome from "./welcome.vue";
 import projects from "./projects.vue";
 import aboutMe from "./about-me.vue";
+import footer from "./footer.vue";
 import { setTimeout } from "timers";
 
 export default {
@@ -28,7 +30,8 @@ export default {
   components: {
     welcome,
     projects,
-    aboutMe
+    aboutMe,
+    footer
   },
   mounted() {}
 };
@@ -39,7 +42,7 @@ export default {
   height: 100vh;
   min-height: 500px;
   width: 100%;
-  background: #131313;
+  background: #111;
 
   display: flex;
   flex-direction: column;

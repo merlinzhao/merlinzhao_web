@@ -277,10 +277,10 @@ export default {
 }
 
 .projectRow:hover > .projectCenter {
-  transform: translateX(110px);
+  transform: translateX(102px);
 }
 .projectRow:hover > .projectCenter2 {
-  transform: translateX(-188px);
+  transform: translateX(-190px);
   opacity: 1;
 }
 .projectCenter {

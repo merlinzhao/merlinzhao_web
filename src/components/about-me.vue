@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <div class="absolute" />
+    <!-- <div class="absolute" /> -->
     <div class="aboutCenter">
       <p
         class="headingTwo"
@@ -19,7 +19,7 @@
       >Merlin (noun) - Mer·​lin | \ ˈmər-lən \</p>
       <p
         class="regText"
-        style="color:#777"
+        style="color:#6e737d"
       >Unfortunately, I do not have magical powers and I am unable to cast spells. Sorry for the inconvenience.</p>
       <div
         class="portrait"
@@ -28,34 +28,25 @@
       <div
         class="row"
         style="width: 100%; max-width: 1000px; display: flex; justify-content: center;
-  align-items: center; margin-bottom: 25px; "
+  align-items: center; margin-bottom: 25px; color: #bbb"
       >
         <div class="col-4">
-          <p
-            class="headingFour"
-            style="color: #aaa; margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
-          >
+          <p class="headingFour" style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;">
             <i class="fas fa-graduation-cap" /> McMaster University
           </p>
         </div>
         <div class="col-4">
-          <p
-            class="headingFour"
-            style="color: #aaa; margin: 3% 0% 2% 0%;width: 100%; text-align: center;"
-          >
+          <p class="headingFour" style=" margin: 3% 0% 2% 0%;width: 100%; text-align: center;">
             <i class="fas fa-code"></i> Computer Engineering
           </p>
         </div>
         <div class="col-4">
-          <p
-            class="headingFour"
-            style="color: #aaa; margin: 3% 0% 2% 0%;width: 100%; text-align: center;"
-          >
+          <p class="headingFour" style=" margin: 3% 0% 2% 0%;width: 100%; text-align: center;">
             <i class="fas fa-hourglass-half"></i> Junior (Level 3)
           </p>
         </div>
       </div>
-      <p class="regText" style="color: #777 ;  max-width: 850px;">
+      <p class="regText" style="color: #737780 ;  max-width: 850px;">
         Red Velvet (Hangul: 레드벨벳) is a South Korean girl group formed by SM Entertainment. The group debuted on August 1, 2014, with the digital single "Happiness" and four group members: Irene, Seulgi, Wendy, and Joy. In March 2015, Yeri was added into the group.
         Since their debut, Red Velvet has released two studio albums, one reissue album, and nine extended plays in Korean, with ten of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon release.
       </p>
@@ -72,7 +63,7 @@ export default {};
   height: auto;
   min-height: 500px;
   width: 100%;
-  background: #222;
+  background: #181818;
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
@@ -122,10 +113,10 @@ export default {};
 .headingTwo {
   line-height: 55pt;
   font-size: 45pt;
-  font-weight: 600;
+  font-weight: 500;
 }
 .headingThree {
-  line-height: 32pt;
+  line-height: 30pt;
   font-size: 25pt;
   font-weight: 400;
 }

@@ -12,13 +12,17 @@
       crossorigin="anonymous"
     />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <home />
   </div>
 </template>
 
 <script>
+import home from "./components/main.vue";
 export default {
   name: "app",
-  components: {}
+  components: {
+    home
+  }
 };
 </script>
 
