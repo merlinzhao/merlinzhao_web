@@ -111,10 +111,10 @@ export default {
   font-weight: 400;
 }
 .regText {
-  line-height: 14pt;
+  line-height: 18pt;
   font-size: 12pt;
   color: #222;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .leftCol {

@@ -4,9 +4,10 @@
       <div class="center">
         <p class="MERLIN">MERLIN</p>
       </div>
-      <p
-        style="font-size: 27pt; color: #bbb; transform: translateY(-35px)"
-      >Hello 👋 Thanks for visiting my personal website!</p>
+      <div class="hello" style="font-size: 27pt; color: #fff; transform: translateY(-35px)">
+        <p style="margin-right: 25px;">Hello 👋</p>
+        <p>Thanks for visiting my personal website!</p>
+      </div>
     </div>
 
     <about-me />
@@ -29,9 +30,7 @@ export default {
     projects,
     aboutMe
   },
-  mounted() {
-    const intro = document.querySelector(".intro");
-  }
+  mounted() {}
 };
 </script>
 
@@ -162,7 +161,7 @@ export default {
 }
 
 /* =============================================================================================== */
-/* =============================================================================================== */
+/* ========================= MERLIN MERLIN MERLIN MERLIN MERLIN MERLIN =========================== */
 /* =============================================================================================== */
 
 .MERLIN {
@@ -196,23 +195,35 @@ export default {
 
   transform: translateY(-50px);
 
-  -webkit-animation: introGradientTwo 3s ease-in-out infinite;
-  -moz-animation: introGradientTwo 3s ease-in-out infinite;
+  -webkit-animation: introGradientTwo 3s ease-in-out;
+  -moz-animation: introGradientTwo 3s ease-in-out;
   animation: shiftTitle 3s ease-in-out;
 }
 
 @-webkit-keyframes shiftTitle {
   0% {
-    /* font-size: 3em; */
+    /* font-size: 5em; */
+    transform: translateY(0px);
+  }
+  50% {
+    /* font-size: 5em; */
+    transform: translateY(0px);
   }
   100% {
+    transform: translateY(-50px);
   }
 }
 @-moz-keyframes shiftTitle {
   0% {
-    /* font-size: 3em; */
+    /* font-size: 5em; */
+    transform: translateY(0px);
+  }
+  50% {
+    /* font-size: 5em; */
+    transform: translateY(0px);
   }
   100% {
+    transform: translateY(-50px);
   }
 }
 @keyframes shiftTitle {
@@ -226,6 +237,51 @@ export default {
   }
   100% {
     transform: translateY(-50px);
+  }
+}
+
+/* =============================================================================================== */
+/* ========================= HELLO HELLO HELLO HELLO HELLO HELLO HELLO =========================== */
+/* =============================================================================================== */
+.hello {
+  display: flex;
+  flex-direction: row;
+  -webkit-animation: helloAnimation 5s ease-out;
+  -moz-animation: helloAnimation 5s ease-out;
+  animation: helloAnimation 5s ease-out;
+}
+
+@-webkit-keyframes helloAnimation {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes helloAnimation {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes helloAnimation {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
