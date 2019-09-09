@@ -2,7 +2,7 @@
   "name": "merlinzhao",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://merlinzhao.github.io/merlinzhao_web",
+  "homepage": "https://merlinzhao.github.io/merlinzhao_web/",
   "scripts": {
     "deploy": "gh-pages -d dist",
     "serve": "vue-cli-service serve",
