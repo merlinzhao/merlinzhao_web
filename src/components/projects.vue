@@ -1,41 +1,68 @@
 <template>
   <div class="background">
     <div class="projectRowOut">
-      <div class="projectRow" style="cursor:pointer; color:white" @click="nav('projects')">
+      <div class="projectRow" style="color:white">
         <p class="headingThree projectThree projectCenter">MADE BY MERLIN.</p>
       </div>
     </div>
-    <div class="center row">
-      <div class="col cardPadding">
-        <projectCard
-          style="transform: translateY(-50px);"
-          :projectTitle="'Project1'"
-          :bodyText="'BAE JOOHUYN KANG SEULGI SON SEUNGWAN PARK SOOYOUNG KIM YERIM RED DEU BEL BET UM PAH UM PAH'"
-          :icons="['A','B','D']"
-        />
+    <div class="projectContainer">
+      <div class="center row">
+        <div class="col cardPadding">
+          <projectCard
+            :projectTitle="'Kim Yerim'"
+            :bodyText="'BAE JOOHUYN KANG SEULGI SON SEUNGWAN PARK SOOYOUNG KIM YERIM RED DEU BEL BET UM PAH UM PAH'"
+            :icons="['A','B','D']"
+            :imgURL="'yeri.jpg'"
+            :gitLink="'hey'"
+          />
+        </div>
+        <div class="col cardPaddingL">
+          <project-card-large
+            :projectTitle="'Project2'"
+            :bodyText="'Wendy is from Richmond Hill, Canada. Shine on me! uwu'"
+            :icons="['A','B','C','D']"
+            :imgURL="'wendy.png'"
+            :externalLink="'hey'"
+          />
+        </div>
       </div>
-      <div class="col cardPadding">
-        <projectCard
-          style="transform: translateY(-50px)"
-          :projectTitle="'Project1'"
-          :bodyText="'des1 des1'"
-          :icons="['A','B','D']"
-        />
-      </div>
-      <div class="col cardPadding">
-        <projectCard
-          style="transform: translateY(-50px)"
-          :projectTitle="'Project1'"
-          :bodyText="'des1 des1'"
-          :icons="['A','E','D']"
-        />
+      <div class="center row">
+        <div class="col cardPadding">
+          <projectCard
+            :projectTitle="'Project3'"
+            :bodyText="'Bae joohyun has slayed with her visuals.'"
+            :icons="['A','E','D']"
+            :imgURL="'irene.jpg'"
+            :gitLink="'hey'"
+          />
+        </div>
+        <div class="col cardPadding">
+          <projectCard :projectTitle="'Project4'" :bodyText="'des1 des1'" :icons="['A','F','D']" />
+        </div>
+        <div class="col cardPadding">
+          <projectCard
+            :projectTitle="'Project4'"
+            :bodyText="'I did not forget about Park Sooyoung!'"
+            :icons="['A','E','D']"
+            :imgURL="'iPhone-6-wireframe.png'"
+            :gitLink="'hey'"
+          />
+        </div>
+        <!-- <div class="col cardPadding">
+          <projectCard :isEmpty="true" />
+        </div>-->
       </div>
     </div>
+    <myFooter />
   </div>
 </template>
 
+
+
 <script>
 import projectCard from "./projectCard.vue";
+import projectCardLarge from "./projectCardL.vue";
+import myFooter from "./footer.vue";
 export default {
   name: "projects",
   date() {
@@ -44,26 +71,51 @@ export default {
     };
   },
   components: {
-    projectCard
+    projectCard,
+    projectCardLarge,
+    myFooter
   }
 };
 </script>
 
 <style scoped>
+.test {
+  height: 800px;
+  width: 400px;
+
+  background-size: 600% 600% !important;
+
+  background: linear-gradient(230deg, #ff5bf1, #fd6500, #fdcb00);
+  -webkit-animation: GradientAnimation 4s ease-in-out infinite;
+  -moz-animation: GradientAnimation 4s ease-in-out infinite;
+  animation: GradientAnimation 4s ease-in-out infinite;
+  mask-image: url("../assets/images/iPhone-6-wireframe.png");
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+}
 .background {
+  min-width: 250px;
   display: flex;
   flex-direction: column;
-  background: #fafafa;
+  background: #181818;
   width: 100%;
-  min-width: 700px;
   align-items: center;
   font-family: "Lato", sans-serif;
 }
 .center {
   width: 90%;
-  max-width: 1250px;
+  max-width: 1100px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.projectContainer {
+  padding: 25px 0px 100px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -73,7 +125,7 @@ export default {
 .projectRow {
   height: calc(80vh + 100px);
   width: 100%;
-  background: rgb(255, 145, 0);
+  background: #111;
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
@@ -83,12 +135,7 @@ export default {
 }
 .projectRowOut {
   width: 100%;
-  background: linear-gradient(230deg, #ff5bf1, #fd6500, #fdcb00);
-  background-size: 600% 600%;
-
-  -webkit-animation: GradientAnimation 7s ease-in-out infinite;
-  -moz-animation: GradientAnimation 7s ease-in-out infinite;
-  animation: GradientAnimation 7s ease-in-out infinite;
+  margin-bottom: 25px;
 }
 
 @-webkit-keyframes GradientAnimation {
@@ -124,9 +171,6 @@ export default {
     background-position: 0% 48%;
   }
 }
-.projectRow:hover {
-  background: transparent;
-}
 
 /* .projectRow:hover > .projectCenter {
   transform: translateX(110px);
@@ -147,18 +191,48 @@ export default {
 }
 
 .cardPadding {
-  padding: 0px 2% 0px 2%;
+  padding: 10px 5px 0px 5px;
   width: 33% !important;
+  min-width: 250px !important;
+  max-width: 33%;
+}
+
+.cardPaddingL {
+  padding: 10px 5px 0px 5px;
+  width: 66% !important;
+  max-width: 66%;
   min-width: 250px !important;
 }
 
-@media only screen and (max-width: 500px) {
+/* ======================================================================== */
+/* ================ 555px 555px 555px 555px 555px 555px =================== */
+/* ======================================================================== */
+@media only screen and (max-width: 555px) {
   .center {
     flex-direction: column;
   }
   .cardPadding {
     width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+  }
+  .cardPaddingL {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media only screen and (max-width: 833px) {
+  .cardPadding {
+    width: 50% !important;
     min-width: none !important;
+    max-width: 50% !important;
+  }
+  .cardPaddingL {
+    width: 50% !important;
+    min-width: none !important;
+    max-width: 50% !important;
   }
 }
 </style>

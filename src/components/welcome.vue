@@ -18,7 +18,7 @@
     </div>-->
     <div class="gitRow">
       <div
-        class="col-6 gitRowLeft"
+        class="col gitRowLeft"
         style="cursor:pointer; color: white;"
         onclick="window.open('http://www.github.com/merlinzhao')"
       >
@@ -28,7 +28,7 @@
         </p>
       </div>
       <div
-        class="col-6 gitRowRight"
+        class="col gitRowRight"
         style="cursor:pointer; color: white;"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
       >
@@ -106,7 +106,6 @@ export default {
   min-height: 600px;
   max-height: 1200px;
   width: 80%;
-  max-width: 1250px;
   margin: auto;
 }
 .nameBG {
@@ -276,13 +275,16 @@ export default {
   background: transparent;
 }
 
-.projectRow:hover > .projectCenter {
-  transform: translateX(102px);
+@media only screen and (min-width: 700px) {
+  .projectRow:hover > .projectCenter {
+    transform: translateX(82px);
+  }
+  .projectRow:hover > .projectCenter2 {
+    transform: translateX(-210px);
+    opacity: 1;
+  }
 }
-.projectRow:hover > .projectCenter2 {
-  transform: translateX(-190px);
-  opacity: 1;
-}
+
 .projectCenter {
   position: absolute;
   padding: 0px 8px 0px 8px;
@@ -466,5 +468,25 @@ export default {
 /* .fab:hover {
   color: rgb(255, 255, 255, 0.7);
 } */
+
+/* ======================================================================== */
+/* ================ 555px 555px 555px 555px 555px 555px =================== */
+/* ======================================================================== */
+
+@media only screen and (max-width: 555px) {
+  .gitRow {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .projectRow {
+    height: 250px;
+  }
+  .gitRowLeft {
+    height: 150px;
+  }
+  .gitRowRight {
+    height: 150px;
+  }
+}
 </style>
 

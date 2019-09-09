@@ -1,13 +1,15 @@
 <template>
-  <div class="background"></div>
+  <div class="footerBackground"></div>
 </template>
 <script>
-export default {};
+export default {
+  name: "myFooter"
+};
 </script>
 <style scoped>
-.background {
+.footerBackground {
   height: 300px;
   width: 100%;
-  background: #222;
+  background: #111;
 }
 </style>

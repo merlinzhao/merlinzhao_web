@@ -1,5 +1,5 @@
 <template>
-  <div class="projectCard">
+  <div class="projectCard" :ref="projectTitle">
     <div
       class="imageRow"
       :style="{ backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
@@ -16,7 +16,7 @@
           <i
             v-if="number === 'A'"
             class="devicon-bootstrap-plain colored"
-            style="margin-right: 5px;"
+            style="margin-right: 5px; color: #D959FF;"
           />
           <i v-if="number === 'B'" class="devicon-python-plain colored" style="margin-right: 5px;" />
           <i v-if="number === 'C'" class="devicon-nodejs-plain colored" style="margin-right: 5px;" />
@@ -36,8 +36,8 @@
           />
         </div>
       </div>
-      <div class="col-3 rightCol" style="font-size: 2.5em;">
-        <i class="fab fa-github githubLogo" />
+      <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
+        <i v-if="gitLink!='none'" class="fab fa-github githubLogo" />
       </div>
     </div>
   </div>
@@ -48,14 +48,19 @@ export default {
   data() {
     return {};
   },
+
   props: {
+    isEmpty: {
+      type: Boolean,
+      default: false
+    },
     imgURL: {
       type: String,
       default: "kang.jpg"
     },
     icons: {
       type: Array,
-      default: []
+      default: () => []
     },
     projectTitle: {
       type: String,
@@ -64,7 +69,20 @@ export default {
     bodyText: {
       type: String,
       default: "Description Unavailable"
+    },
+    gitLink: {
+      type: String,
+      default: "none"
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      if (this.isEmpty) {
+        const background = this.$refs[this.projectTitle];
+        background.style.height = "0px";
+        background.style.opacity = "0";
+      }
+    });
   }
 };
 </script>
@@ -73,14 +91,9 @@ export default {
 .projectCard {
   width: 100%;
   height: 550px;
-  background: white;
-  border-radius: 7px;
+  background: #333;
   transition: box-shadow 0.5s ease-out;
-  box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.2);
   font-family: "Lato", sans-serif;
-}
-.projectCard:hover {
-  box-shadow: 8px 8px 25px rgba(128, 128, 128, 0.3);
 }
 
 .imageRow {
@@ -90,6 +103,9 @@ export default {
   margin: auto;
   width: 100%;
   height: 220px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 .textRow {
   height: 270px;
@@ -97,8 +113,11 @@ export default {
   padding: 25px;
 }
 .iconRow {
-  height: 60px;
-  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  width: calc(100% - 10px);
   display: flex;
   flex-direction: row;
   padding: 0px 25px 15px 25px;
@@ -107,13 +126,13 @@ export default {
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-  color: #222;
+  color: white;
   font-weight: 400;
 }
 .regText {
   line-height: 18pt;
   font-size: 12pt;
-  color: #222;
+  color: white;
   font-weight: 400;
 }
 
@@ -125,8 +144,10 @@ export default {
   filter: saturate(0);
   transition: filter 0.3s ease-out;
   align-items: center;
+  padding: 0px;
 }
 .projectCard:hover .leftCol {
+  opacity: 1;
   filter: saturate(1);
 }
 .rightCol {
@@ -141,7 +162,7 @@ export default {
   color: #aaa;
 }
 .projectCard:hover .githubLogo {
-  color: #222;
+  color: white;
 }
 </style>
  

@@ -4,15 +4,14 @@
       <div class="center">
         <p class="MERLIN">MERLIN</p>
       </div>
-      <div class="hello" style="font-size: 27pt; color: #fff; transform: translateY(-35px)">
-        <p style="margin-right: 25px;">Hello 👋</p>
-        <p>Thanks for visiting my personal website!</p>
+      <div class="hello">
+        <p>Hello 👋 Thanks for visiting my personal website!</p>
       </div>
     </div>
 
     <about-me />
     <welcome />
-    <footer />
+    <myFooter />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
@@ -22,7 +21,7 @@
 import welcome from "./welcome.vue";
 import projects from "./projects.vue";
 import aboutMe from "./about-me.vue";
-import footer from "./footer.vue";
+import myFooter from "./footer.vue";
 import { setTimeout } from "timers";
 
 export default {
@@ -31,7 +30,7 @@ export default {
     welcome,
     projects,
     aboutMe,
-    footer
+    myFooter
   },
   mounted() {}
 };
@@ -50,78 +49,9 @@ export default {
   justify-content: center;
   align-items: center;
 
-  /* -webkit-animation: introFade 4.5s ease-out;
-  -moz-animation: introFade 4.5s ease-out;
-  animation: introFade 4.5s ease-out; */
-
   z-index: 1;
 }
 
-@-webkit-keyframes introFade {
-  0% {
-    visibility: visible;
-    background: #131313;
-  }
-  15% {
-    background: #131313;
-  }
-  50% {
-    background: #131313;
-  }
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    background: #f4f4f4;
-  }
-}
-@-moz-keyframes introFade {
-  0% {
-    visibility: visible;
-    background: #131313;
-  }
-  15% {
-    background: #131313;
-  }
-  50% {
-    background: #131313;
-  }
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    background: #f4f4f4;
-  }
-}
-@keyframes introFade {
-  0% {
-    visibility: visible;
-    background: #131313;
-  }
-  15% {
-    background: #131313;
-  }
-  50% {
-    background: #131313;
-  }
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-    background: #f4f4f4;
-  }
-}
-
-/* =============================================================================================== */
 /* =============================================================================================== */
 /* =============================================================================================== */
 /* =============================================================================================== */
@@ -196,7 +126,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  transform: translateY(-50px);
+  transform: translateY(-40px);
 
   -webkit-animation: introGradientTwo 3s ease-in-out;
   -moz-animation: introGradientTwo 3s ease-in-out;
@@ -213,7 +143,7 @@ export default {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-50px);
+    transform: translateY(-40px);
   }
 }
 @-moz-keyframes shiftTitle {
@@ -226,7 +156,7 @@ export default {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-50px);
+    transform: translateY(-40px);
   }
 }
 @keyframes shiftTitle {
@@ -239,7 +169,7 @@ export default {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-50px);
+    transform: translateY(-40px);
   }
 }
 
@@ -247,6 +177,9 @@ export default {
 /* ========================= HELLO HELLO HELLO HELLO HELLO HELLO HELLO =========================== */
 /* =============================================================================================== */
 .hello {
+  font-size: 27pt;
+  color: #fff;
+  transform: translateY(-35px);
   display: flex;
   flex-direction: row;
   -webkit-animation: helloAnimation 5s ease-out;
@@ -285,6 +218,30 @@ export default {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* ======================================================================== */
+/* ================ 555px 555px 555px 555px 555px 555px =================== */
+/* ======================================================================== */
+
+@media only screen and (max-width: 555px) {
+  .center {
+    font-size: 4em !important;
+  }
+  .hello {
+    font-size: 14pt !important;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 833px) {
+  .center {
+    font-size: 8em;
+  }
+
+  .hello {
+    font-size: 19pt;
+    text-align: center;
   }
 }
 </style>
