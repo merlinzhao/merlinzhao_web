@@ -5,8 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://merlinzhao.github.io/merlinzhao_web",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
     "@fortawesome/fontawesome-free-regular": "^5.0.13",
