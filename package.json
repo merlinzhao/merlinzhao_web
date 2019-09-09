@@ -2,6 +2,8 @@
   "name": "merlinzhao",
   "version": "0.1.0",
   "private": true,
+  "deploy": "node ./node_modules/vue-gh-pages/index.js",
+  "homepage": "https://github.com/merlinzhao/merlinzhao-web",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
