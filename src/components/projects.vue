@@ -9,16 +9,17 @@
       <div class="center row">
         <div class="col cardPadding">
           <projectCard
-            :projectTitle="'Kim Yerim'"
+            :projectTitle="'NavText'"
             :bodyText="'BAE JOOHUYN KANG SEULGI SON SEUNGWAN PARK SOOYOUNG KIM YERIM RED DEU BEL BET UM PAH UM PAH'"
-            :icons="['A','B','D']"
-            :imgURL="'yeri.jpg'"
+            :icons="['E','C','D']"
+            :imgURL="'NavTextPic.png'"
+            :backgroundColor="'#9ab8c3'"
             :gitLink="'hey'"
           />
         </div>
         <div class="col cardPaddingL">
           <project-card-large
-            :projectTitle="'Project2'"
+            :projectTitle="'Menlolab Inc.'"
             :bodyText="'Wendy is from Richmond Hill, Canada. Shine on me! uwu'"
             :icons="['A','B','C','D']"
             :imgURL="'wendy.png'"

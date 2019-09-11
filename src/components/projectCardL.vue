@@ -2,7 +2,7 @@
   <div class="projectCard" :ref="projectTitle">
     <div
       class="col imageCol"
-      :style="{ backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+      :style="{ backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
     >
       <!-- <i class="fas fa-laptop" /> -->
     </div>
@@ -26,7 +26,7 @@
             />
             <i
               v-if="number === 'C'"
-              class="devicon-nodejs-plain colored"
+              class="devicon-swift-plain colored"
               style="margin-right: 5px;"
             />
             <i
@@ -36,7 +36,7 @@
             />
             <i
               v-if="number === 'E'"
-              class="devicon-swift-plain colored"
+              class="devicon-nodejs-plain colored"
               style="margin-right: 5px;"
             />
             <i
@@ -80,6 +80,10 @@ export default {
     imgURL: {
       type: String,
       default: "kang.jpg"
+    },
+    backgroundColor: {
+      type: String,
+      default: "transparent"
     },
     icons: {
       type: Array,
@@ -131,11 +135,21 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  filter: saturate(0.3);
+  transition: filter 0.3s ease-out;
+}
+.projectCard:hover .imageCol {
+  filter: saturate(1);
 }
 .textRow {
   height: 270px;
   width: 100%;
   padding: 25px;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease-out;
+}
+.projectCard:hover .textRow {
+  filter: brightness(1);
 }
 .iconRow {
   position: absolute;
