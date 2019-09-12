@@ -7,51 +7,60 @@
     </div>
     <div class="projectContainer">
       <div class="center row">
-        <div class="col cardPadding">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'NavText'"
-            :bodyText="'BAE JOOHUYN KANG SEULGI SON SEUNGWAN PARK SOOYOUNG KIM YERIM RED DEU BEL BET UM PAH UM PAH'"
+            :subHeading="'Second Place Overall at Hack Western 5 '"
+            :bodyText="'NavText is a SMS based navigation application. It sends directions, store and landmark information through SMS. This can help those without mobile data plans or traveling abroad get around.'"
             :icons="['E','C','D']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
             :gitLink="'hey'"
           />
         </div>
-        <div class="col cardPaddingL">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
           <project-card-large
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'Wendy is from Richmond Hill, Canada. Shine on me! uwu'"
+            :subHeading="'Front End Developer'"
             :icons="['A','B','C','D']"
-            :imgURL="'wendy.png'"
+            :imgURL="'MenloPic.png'"
             :externalLink="'hey'"
           />
         </div>
-      </div>
-      <div class="center row">
-        <div class="col cardPadding">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
-            :projectTitle="'Project3'"
+            :projectTitle="'merlinzhao.me'"
             :bodyText="'Bae joohyun has slayed with her visuals.'"
-            :icons="['A','E','D']"
-            :imgURL="'irene.jpg'"
+            :icons="['F','A','D','H','G']"
+            :imgURL="'MerlinWebPic.png'"
             :gitLink="'hey'"
+            :backgroundColor="'#555'"
+            :sizeBackground="'cover'"
           />
         </div>
-        <div class="col cardPadding">
-          <projectCard :projectTitle="'Project4'" :bodyText="'des1 des1'" :icons="['A','F','D']" />
-        </div>
-        <div class="col cardPadding">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
-            :projectTitle="'Project4'"
+            :projectTitle="'Welcome Week'"
             :bodyText="'I did not forget about Park Sooyoung!'"
             :icons="['A','E','D']"
-            :imgURL="'iPhone-6-wireframe.png'"
+            :imgURL="'WelcomePic.png'"
+            :backgroundColor="'#774545'"
+            :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
             :gitLink="'hey'"
           />
         </div>
-        <!-- <div class="col cardPadding">
-          <projectCard :isEmpty="true" />
-        </div>-->
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+          <projectCard
+            :projectTitle="'Nutryent'"
+            :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API. The data is used to keep track of the users daily nutritional intake.'"
+            :icons="['I','J','C','D']"
+            :imgURL="'NutryentPic.png'"
+            :backgroundColor="'#ffa42e'"
+            :subHeading="'Made at ArchHacks 2017'"
+            :gitLink="'hey'"
+          />
+        </div>
       </div>
     </div>
     <myFooter />
@@ -105,10 +114,11 @@ export default {
   font-family: "Lato", sans-serif;
 }
 .center {
-  width: 90%;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1250px;
   display: flex;
   flex-direction: row;
+  padding: 0px 5px 0px 5px;
   align-items: center;
 }
 
@@ -124,7 +134,8 @@ export default {
 /* PROJECT ROW ITEMS ====== PROJECT PROJECT PROJECT ===== PROJECT ROW ITEMS */
 /* ======================================================================== */
 .projectRow {
-  height: calc(80vh + 100px);
+  height: calc(80vh);
+  min-height: 200px;
   width: 100%;
   background: #111;
   display: flex;
@@ -193,48 +204,13 @@ export default {
 
 .cardPadding {
   padding: 10px 5px 0px 5px;
-  width: 33% !important;
-  min-width: 250px !important;
-  max-width: 33%;
+  /* width: 33% !important; */
+  /* min-width: 250px !important; */
+  /* max-width: 33%; */
 }
 
 .cardPaddingL {
   padding: 10px 5px 0px 5px;
-  width: 66% !important;
-  max-width: 66%;
-  min-width: 250px !important;
-}
-
-/* ======================================================================== */
-/* ================ 555px 555px 555px 555px 555px 555px =================== */
-/* ======================================================================== */
-@media only screen and (max-width: 555px) {
-  .center {
-    flex-direction: column;
-  }
-  .cardPadding {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-  }
-  .cardPaddingL {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-  }
-}
-
-@media only screen and (max-width: 833px) {
-  .cardPadding {
-    width: 50% !important;
-    min-width: none !important;
-    max-width: 50% !important;
-  }
-  .cardPaddingL {
-    width: 50% !important;
-    min-width: none !important;
-    max-width: 50% !important;
-  }
 }
 </style>
  

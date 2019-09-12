@@ -9,6 +9,7 @@
     <div class="col leftCardItems">
       <div class="textRow">
         <p class="headingThree">{{projectTitle}}</p>
+        <p v-if="subHeading!='none'" class="subHeading">{{subHeading}}</p>
         <p class="regText">{{bodyText}}</p>
       </div>
       <div class="iconRow">
@@ -93,6 +94,10 @@ export default {
       type: String,
       default: "Title Unavailable"
     },
+    subHeading: {
+      type: String,
+      default: "none"
+    },
     bodyText: {
       type: String,
       default: "Description Unavailable"
@@ -121,7 +126,7 @@ export default {
 <style scoped>
 .projectCard {
   width: 100%;
-  height: 550px;
+  height: 560px;
   background: #333;
   display: flex;
 }
@@ -135,14 +140,10 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  filter: saturate(0.3);
-  transition: filter 0.3s ease-out;
 }
-.projectCard:hover .imageCol {
-  filter: saturate(1);
-}
+
 .textRow {
-  height: 270px;
+  height: 280px;
   width: 100%;
   padding: 25px;
   filter: brightness(0.7);
@@ -167,12 +168,19 @@ export default {
   font-size: 25pt;
   color: white;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 .regText {
   line-height: 18pt;
   font-size: 12pt;
   color: white;
   font-weight: 400;
+}
+.subHeading {
+  line-height: 12pt;
+  font-size: 11pt;
+  color: #aaa;
+  margin-bottom: 5px;
 }
 .leftCardItems {
   padding: 0px;
@@ -207,9 +215,11 @@ export default {
   color: white;
 }
 
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 991px) {
   .imageCol {
     max-height: 220px;
+    width: 100%;
+    background-size: cover !important;
   }
   .projectCard {
     flex-direction: column !important;

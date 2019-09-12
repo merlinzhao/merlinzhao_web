@@ -9,7 +9,7 @@ Vue.use(vueRouter);
 
 Vue.config.productionTip = false
 
-const routes = [{ path: '/merlinzhao_web', component: home }, { path: '/projects', name: 'Projects', component: projects }];
+const routes = [{ path: '/', component: home }, { path: '/projects', name: 'Projects', component: projects }];
 
 const router = new vueRouter({ routes, mode: 'history' });
 

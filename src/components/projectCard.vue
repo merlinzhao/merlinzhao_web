@@ -2,12 +2,13 @@
   <div class="projectCard" :ref="projectTitle">
     <div
       class="imageRow"
-      :style="{  backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+      :style="{  backgroundSize: sizeBackground, backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
     >
       <!-- <i class="fas fa-laptop" /> -->
     </div>
     <div class="textRow">
       <p class="headingThree">{{projectTitle}}</p>
+      <p v-if="subHeading!='none'" class="subHeading">{{subHeading}}</p>
       <p class="regText">{{bodyText}}</p>
     </div>
     <div class="iconRow">
@@ -16,7 +17,7 @@
           <i
             v-if="number === 'A'"
             class="devicon-bootstrap-plain colored"
-            style="margin-right: 5px; color: #D959FF;"
+            style="margin-right: 5px; color: #8848b5;"
           />
           <i v-if="number === 'B'" class="devicon-python-plain colored" style="margin-right: 5px;" />
           <i v-if="number === 'C'" class="devicon-nodejs-plain colored" style="margin-right: 5px;" />
@@ -34,6 +35,7 @@
             class="devicon-android-plain colored"
             style="margin-right: 5px;"
           />
+          <i v-if="number === 'J'" class="devicon-java-plain colored" style="margin-right: 5px;" />
         </div>
       </div>
       <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
@@ -70,6 +72,10 @@ export default {
       type: String,
       default: "Title Unavailable"
     },
+    subHeading: {
+      type: String,
+      default: "none"
+    },
     bodyText: {
       type: String,
       default: "Description Unavailable"
@@ -77,6 +83,10 @@ export default {
     gitLink: {
       type: String,
       default: "none"
+    },
+    sizeBackground: {
+      type: String,
+      default: "contain"
     }
   },
   mounted() {
@@ -94,7 +104,7 @@ export default {
 <style scoped>
 .projectCard {
   width: 100%;
-  height: 550px;
+  height: 560px;
   background: #333;
   transition: box-shadow 0.5s ease-out;
   font-family: "Lato", sans-serif;
@@ -109,16 +119,11 @@ export default {
   height: 220px;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
-  filter: saturate(0.3);
   transition: filter 0.3s ease-out;
 }
 
-.projectCard:hover .imageRow {
-  filter: saturate(1);
-}
 .textRow {
-  height: 270px;
+  height: 280px;
   width: 100%;
   padding: 25px;
   filter: brightness(0.7);
@@ -144,12 +149,20 @@ export default {
   font-size: 25pt;
   color: white;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 .regText {
   line-height: 18pt;
   font-size: 12pt;
   color: white;
-  font-weight: 400;
+  font-weight: 200;
+}
+
+.subHeading {
+  line-height: 12pt;
+  font-size: 11pt;
+  color: #aaa;
+  margin-bottom: 5px;
 }
 
 .leftCol {
