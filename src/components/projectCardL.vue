@@ -240,5 +240,10 @@ export default {
     background-size: contain;
   }
 }
+@media only screen and (max-width: 768px) {
+  .leftCol {
+    filter: saturate(1) !important;
+  }
+}
 </style>
  

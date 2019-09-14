@@ -6,16 +6,6 @@
         <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
       </div>
     </div>
-    <!-- <div class="aboutMeRow">
-      <div class="aboutMeCenter">
-        <p class="headingThree aboutMeThree">About Me</p>
-        <p class="regText">
-          Red Velvet (Hangul: 레드벨벳) is a South Korean girl group formed by SM Entertainment. The group debuted on August 1, 2014, with the digital single "Happiness" and four group members: Irene, Seulgi, Wendy, and Joy. In March 2015, Yeri was added into the group.
-          <br />
-          <br />Since their debut, Red Velvet has released two studio albums, one reissue album, and eight extended plays in Korean, with nine of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon their releases. Red Velvet is regarded as one of the most popular K-pop groups worldwide by Time and Billboard and have received several awards for music, choreography, and popularity, including the Golden Disc New Artist Award in 2015 and the Mnet Asian Music Award for Best Female Group in 2017.
-        </p>
-      </div>
-    </div>-->
     <div class="gitRow">
       <div
         class="col gitRowLeft"
@@ -45,42 +35,10 @@
 <script>
 export default {
   data() {
-    return {
-      currentTime: "",
-      selectFas: "",
-      greeting: "여보세요",
-      greetingArr: [
-        "여보세요",
-        "hello",
-        "hola",
-        "こんにちは",
-        "bonjour",
-        "你好"
-      ],
-      greetingIndex: 0,
-
-      testNum: 0
-    };
+    return {};
   },
-  mounted() {
-    this.currentTime = new Date();
-
-    setInterval(() => {
-      if (this.greetingIndex < 5) {
-        this.greetingIndex++;
-      } else {
-        this.greetingIndex = 0;
-      }
-      this.greeting = this.greetingArr[this.greetingIndex];
-    }, 800);
-  },
+  mounted() {},
   methods: {
-    overProject() {
-      this.projectCenter.style.transform = "translateX(100px)";
-    },
-    outProject() {
-      this.projectCenter.style.transform = "translateX(0px)";
-    },
     nav(event) {
       this.$router.push({ path: event });
     }
@@ -473,7 +431,7 @@ export default {
 /* ================ 555px 555px 555px 555px 555px 555px =================== */
 /* ======================================================================== */
 
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 768px) {
   .gitRow {
     display: flex !important;
     flex-direction: column !important;
@@ -486,6 +444,9 @@ export default {
   }
   .gitRowRight {
     height: 150px;
+  }
+  .headingThree {
+    font-weight: 400 !important;
   }
 }
 </style>
