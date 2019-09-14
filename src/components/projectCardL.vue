@@ -65,6 +65,17 @@
               class="devicon-android-plain colored"
               style="margin-right: 5px;"
             />
+            <i
+              v-if="number === 'J'"
+              class="devicon-mongodb-plain colored"
+              style="margin-right: 5px;"
+            />
+            <i
+              v-if="number === 'K'"
+              class="devicon-docker-plain colored"
+              style="margin-right: 5px;"
+            />
+            <i v-if="number === 'L'" class="devicon-d3js-plain colored" style="margin-right: 5px;" />
           </div>
         </div>
         <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">

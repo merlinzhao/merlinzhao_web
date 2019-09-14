@@ -446,7 +446,8 @@ export default {
     height: 150px;
   }
   .headingThree {
-    font-weight: 400 !important;
+    font-size: 26pt;
+    font-weight: 500;
   }
 }
 </style>

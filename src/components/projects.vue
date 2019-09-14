@@ -12,7 +12,7 @@
             :projectTitle="'NavText'"
             :subHeading="'Second Place Overall at Hack Western 5 '"
             :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
-            :icons="['E','C','D']"
+            :icons="['E','D']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
             :gitLink="'hey'"
@@ -23,7 +23,7 @@
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
             :subHeading="'Front End Developer'"
-            :icons="['F','D','A','H','G','E']"
+            :icons="['F','D','A','H','G','L','E','J','K']"
             :imgURL="'MenloPic.png'"
             :externalLink="'hey'"
           />

@@ -36,10 +36,50 @@
           </p>
         </div>
       </div>
-      <p class="regText" style="color: #737780 ;  max-width: 850px;">
-        Red Velvet (Hangul: 레드벨벳) is a South Korean girl group formed by SM Entertainment. The group debuted on August 1, 2014, with the digital single "Happiness" and four group members: Irene, Seulgi, Wendy, and Joy. In March 2015, Yeri was added into the group.
-        Since their debut, Red Velvet has released two studio albums, one reissue album, and nine extended plays in Korean, with ten of them topping South Korea's Gaon Album Chart. Their singles "Happiness", "Ice Cream Cake", "Dumb Dumb", "Russian Roulette", "Rookie", "Peek-a-Boo", and "Bad Boy" have all charted in the top five on Gaon Digital Chart, while their singles "Red Flavor" and "Power Up" topped the chart upon release.
-      </p>
+      <p
+        class="regText"
+        style="color: #737780 ;  max-width: 850px;"
+      >Hey there! My name is Merlin Zhao. I am currently a third year Computer Engineering student at McMaster University. Im originally from New York, New York but (for now), I am happily settled in Canada. Ive had a long passion for technology, especially how it can be utilized to enhance the everyday lives of people. I cant wait to be a part of the technological advances of the future. I also hope you are enjoying the site!</p>
+      <div class="row summaryRow">
+        <p
+          class="headingFour"
+          style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
+        >What do I know?</p>
+        <div class="row" style="font-size:16pt;">
+          <i class="devicon-swift-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-vuejs-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-react-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-html5-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-css3-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-bootstrap-plain colored" style="margin-right: 30px; color: #D959FF;" />
+
+          <i class="devicon-python-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-javascript-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-c-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-cplusplus-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-java-plain colored" style="margin-right: 30px;" />
+
+          <i class="devicon-mongodb-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-docker-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-git-plain colored" style="margin-right: 30px;" />
+
+          <i class="devicon-photoshop-plain colored" style="margin-right: 10px;" />
+          <i class="devicon-illustrator-plain colored" />
+        </div>
+        <p
+          class="headingFour"
+          style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
+        >Chill Times</p>
+        <div class="row" style="font-size:16pt;">
+          <i class="fas fa-dumbbell" style="margin-right: 10px;"></i>
+          <i class="fas fa-baseball-ball" style="margin-right: 10px;"></i>
+          <i class="fas fa-code" style="margin-right: 10px;"></i>
+          <i class="fas fa-camera" style="margin-right: 10px;"></i>
+          <i class="fas fa-headphones-alt" style="margin-right: 10px;"></i>
+          <i class="fas fa-plane" style="margin-right: 10px;"></i>
+          <i class="fas fa-hands-helping"></i>
+        </div>
+      </div>
     </div>
   </div>
 </template>

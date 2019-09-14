@@ -60,4 +60,9 @@ export default {
   color: #999;
   font-size: 12pt;
 }
+@media only screen and (max-width: 768px) {
+  .footerButton {
+    padding: 0px 10px 0px 10px;
+  }
+}
 </style>
