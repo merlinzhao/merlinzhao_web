@@ -1,0 +1,3 @@
+[submodule "merlinzhao_web"]
+    path = /dist
+    url = https://github.com/merlinzhao/merlinzhao_web
