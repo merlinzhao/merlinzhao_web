@@ -17,7 +17,7 @@
       >Unfortunately, I do not have magical powers and I am unable to cast spells. Sorry for the inconvenience.</p>
       <div
         class="portrait"
-        :style="{ backgroundImage: 'url(' + require('../assets/images/kang.jpg') + ')' }"
+        :style="{ backgroundImage: 'url('+require('../assets/images/merlin.jpg')+')'}"
       />
       <div class="row summaryRow">
         <div class="col">
@@ -45,7 +45,7 @@
           class="headingFour"
           style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
         >What do I know?</p>
-        <div class="row" style="font-size:16pt;">
+        <div class="row" style="font-size:16pt; align-items: center, justify-content: center;">
           <i class="devicon-swift-plain colored" style="margin-right: 10px;" />
           <i class="devicon-vuejs-plain colored" style="margin-right: 10px;" />
           <i class="devicon-react-plain colored" style="margin-right: 10px;" />
@@ -70,13 +70,13 @@
           class="headingFour"
           style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
         >Chill Times</p>
-        <div class="row" style="font-size:16pt;">
-          <i class="fas fa-dumbbell" style="margin-right: 10px;"></i>
-          <i class="fas fa-baseball-ball" style="margin-right: 10px;"></i>
-          <i class="fas fa-code" style="margin-right: 10px;"></i>
-          <i class="fas fa-camera" style="margin-right: 10px;"></i>
-          <i class="fas fa-headphones-alt" style="margin-right: 10px;"></i>
-          <i class="fas fa-plane" style="margin-right: 10px;"></i>
+        <div class="row" style="font-size:16pt; align-items: center, justify-content: center;">
+          <i class="fas fa-dumbbell" style="margin-right: 15px;"></i>
+          <i class="fas fa-baseball-ball" style="margin-right: 15px;"></i>
+          <i class="fas fa-code" style="margin-right: 15px;"></i>
+          <i class="fas fa-camera" style="margin-right: 15px;"></i>
+          <i class="fas fa-headphones-alt" style="margin-right: 15px;"></i>
+          <i class="fas fa-plane" style="margin-right: 15px;"></i>
           <i class="fas fa-hands-helping"></i>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default {};
   margin: 3% 0% 4% 0%;
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .headingOne {

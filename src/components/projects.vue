@@ -100,21 +100,6 @@ export default {
 </script>
 
 <style scoped>
-.test {
-  height: 800px;
-  width: 400px;
-
-  background-size: 600% 600% !important;
-
-  background: linear-gradient(230deg, #ff5bf1, #fd6500, #fdcb00);
-  -webkit-animation: GradientAnimation 4s ease-in-out infinite;
-  -moz-animation: GradientAnimation 4s ease-in-out infinite;
-  animation: GradientAnimation 4s ease-in-out infinite;
-  mask-image: url("../assets/images/iPhone-6-wireframe.png");
-  mask-mode: alpha;
-  mask-repeat: no-repeat;
-  mask-size: 100%;
-}
 .background {
   min-width: 250px;
   display: flex;
