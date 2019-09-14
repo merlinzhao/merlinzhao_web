@@ -45,26 +45,34 @@
           class="headingFour"
           style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
         >What do I know?</p>
-        <div class="row" style="font-size:16pt; align-items: center, justify-content: center;">
-          <i class="devicon-swift-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-vuejs-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-react-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-html5-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-css3-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-bootstrap-plain colored" style="margin-right: 30px; color: #D959FF;" />
-
-          <i class="devicon-python-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-javascript-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-c-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-cplusplus-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-java-plain colored" style="margin-right: 30px;" />
-
-          <i class="devicon-mongodb-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-docker-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-git-plain colored" style="margin-right: 30px;" />
-
-          <i class="devicon-photoshop-plain colored" style="margin-right: 10px;" />
-          <i class="devicon-illustrator-plain colored" />
+        <div
+          class="devIcons"
+          style="margin-bottom: 20px; font-size:16pt; align-items: center; justify-content:center; display: flex; flex-direction: row; width: 100%; "
+        >
+          <div class="devCol">
+            <i class="devicon-swift-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-vuejs-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-react-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-html5-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-css3-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-bootstrap-plain colored" style=" color: #D959FF;" />
+          </div>
+          <div class="devCol">
+            <i class="devicon-python-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-javascript-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-c-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-cplusplus-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-java-plain colored" />
+          </div>
+          <div class="devCol">
+            <i class="devicon-mongodb-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-docker-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-git-plain colored" />
+          </div>
+          <div>
+            <i class="devicon-photoshop-plain colored" style="margin-right: 10px;" />
+            <i class="devicon-illustrator-plain colored" />
+          </div>
         </div>
         <p
           class="headingFour"
@@ -174,6 +182,10 @@ export default {};
   font-weight: 400;
 }
 
+.devCol {
+  margin-right: 30px;
+}
+
 /* ======================================================================== */
 /* ================ 555px 555px 555px 555px 555px 555px =================== */
 /* ======================================================================== */
@@ -197,6 +209,13 @@ export default {};
   .portrait {
     height: 180px;
     width: 180px;
+  }
+  .devIcons {
+    flex-direction: column !important;
+  }
+
+  .devCol {
+    margin-right: 0px;
   }
 }
 

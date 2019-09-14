@@ -2,7 +2,8 @@
   <div class="background">
     <div class="projectRowOut">
       <div class="projectRow" style="color:white">
-        <p class="headingThree projectThree projectCenter">MADE BY MERLIN.</p>
+        <p class="headingTwo projectThree projectCenter">MADE BY MERLIN.</p>
+        <p class="subHeading">const subHeading = "Explore my Projects."</p>
       </div>
     </div>
     <div class="projectContainer">
@@ -31,7 +32,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'merlinzhao.me'"
-            :bodyText="'Bae joohyun has slayed with her visuals.'"
+            :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
             :icons="['F','A','D','H','G']"
             :imgURL="'MerlinWebPic.png'"
             :gitLink="'hey'"
@@ -100,6 +101,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Cousine&display=swap");
 .background {
   min-width: 250px;
   display: flex;
@@ -135,10 +137,11 @@ export default {
   width: 100%;
   background: #111;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   -webkit-box-orient: vertical;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding-top: calc(5% + 25px);
   transition: background 0.5s ease-out;
 }
 .projectRowOut {
@@ -188,7 +191,6 @@ export default {
   opacity: 1;
 } */
 .projectCenter {
-  position: absolute;
   padding: 0px 8px 0px 8px;
   text-align: center;
   vertical-align: middle;
@@ -196,6 +198,11 @@ export default {
 }
 .projectThree {
   font-weight: 700 !important;
+}
+
+.subHeading {
+  font-family: "Cousine", monospace;
+  font-size: 16pt;
 }
 
 .cardPadding {
