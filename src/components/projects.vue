@@ -11,7 +11,7 @@
           <projectCard
             :projectTitle="'NavText'"
             :subHeading="'Second Place Overall at Hack Western 5 '"
-            :bodyText="'NavText is a SMS based navigation application. It sends directions, store and landmark information through SMS. This can help those without mobile data plans or traveling abroad get around.'"
+            :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
             :icons="['E','C','D']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
@@ -21,9 +21,9 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
           <project-card-large
             :projectTitle="'Menlolab Inc.'"
-            :bodyText="'Wendy is from Richmond Hill, Canada. Shine on me! uwu'"
+            :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
             :subHeading="'Front End Developer'"
-            :icons="['A','B','C','D']"
+            :icons="['F','D','A','H','G','E']"
             :imgURL="'MenloPic.png'"
             :externalLink="'hey'"
           />
@@ -35,15 +35,14 @@
             :icons="['F','A','D','H','G']"
             :imgURL="'MerlinWebPic.png'"
             :gitLink="'hey'"
-            :backgroundColor="'#555'"
-            :sizeBackground="'cover'"
+            :backgroundColor="'#222'"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'Welcome Week'"
-            :bodyText="'I did not forget about Park Sooyoung!'"
-            :icons="['A','E','D']"
+            :bodyText="'A mobile application that helps students quickly find campus events based on their preferences.'"
+            :icons="['E','C','D']"
             :imgURL="'WelcomePic.png'"
             :backgroundColor="'#774545'"
             :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
@@ -53,11 +52,23 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'Nutryent'"
-            :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API. The data is used to keep track of the users daily nutritional intake.'"
+            :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API.'"
             :icons="['I','J','C','D']"
             :imgURL="'NutryentPic.png'"
             :backgroundColor="'#ffa42e'"
             :subHeading="'Made at ArchHacks 2017'"
+            :gitLink="'hey'"
+          />
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+          <projectCard
+            :projectTitle="'Space Escape'"
+            :bodyText="'A multiplier python game inspired by the classic arcade game Galaga.'"
+            :icons="['B']"
+            :imgURL="'SpacePic.png'"
+            :backgroundColor="'#222'"
+            :subHeading="'Multiplayer python game'"
             :gitLink="'hey'"
           />
         </div>

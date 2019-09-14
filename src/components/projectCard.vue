@@ -128,6 +128,7 @@ export default {
   padding: 25px;
   filter: brightness(0.7);
   transition: filter 0.3s ease-out;
+  overflow-y: scroll;
 }
 
 .projectCard:hover .textRow {
@@ -162,7 +163,7 @@ export default {
   line-height: 12pt;
   font-size: 11pt;
   color: #aaa;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .leftCol {

@@ -15,6 +15,15 @@
       <div class="iconRow">
         <div class="col-9 leftCol">
           <div v-for="number in icons" :key="number">
+            <!-- A - bootstrap
+            B - python
+            C - swift
+            D - js
+            E - node
+            F - vue
+            G - css
+            H - html
+            I - android-->
             <i
               v-if="number === 'A'"
               class="devicon-bootstrap-plain colored"
@@ -137,6 +146,7 @@ export default {
   align-items: center;
   margin: auto;
   height: 100%;
+  padding: 0px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -148,6 +158,7 @@ export default {
   padding: 25px;
   filter: brightness(0.7);
   transition: filter 0.3s ease-out;
+  overflow-y: scroll;
 }
 .projectCard:hover .textRow {
   filter: brightness(1);
@@ -180,7 +191,7 @@ export default {
   line-height: 12pt;
   font-size: 11pt;
   color: #aaa;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .leftCardItems {
   padding: 0px;
