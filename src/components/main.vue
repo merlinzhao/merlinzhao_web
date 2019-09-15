@@ -3,14 +3,13 @@
     <span class="openNavButton" @click="openNav()">
       <i class="fas fa-bars"></i>
     </span>
-    <div id="mySidenav" class="sidenav headingThree">
+    <div id="mySidenav" class="sidenav headingThree navBG">
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
         <i class="fas fa-times-circle"></i>
       </a>
-      <a href="#">Experience</a>
-      <a href="#">About</a>
-      <a href="#">Github</a>
-      <a href="#">LinkedIn</a>
+      <a href="#" @click="nav('projects')">Experience</a>
+      <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
+      <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
       <a href="#">Resume</a>
     </div>
     <div class="intro" @click="closeNav()">
@@ -18,7 +17,7 @@
         <p class="MERLIN">MERLIN</p>
       </div>
       <div class="hello">
-        <p>Hello 👋 Thanks for visiting my personal website!</p>
+        <p>Hello 👋 Thanks for dropping by!</p>
       </div>
     </div>
     <div @click="closeNav()">
@@ -57,9 +56,11 @@ export default {
       }
       console.log("hello", width.offsetWidth);
     },
-
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
+    },
+    nav(event) {
+      this.$router.push({ path: event });
     }
   }
 };
@@ -249,38 +250,6 @@ export default {
     opacity: 1;
   }
 }
-/* ======================================================================== */
-/* ================ MENU MENU MENU MENU MENU MENU MENU =================== */
-/* ======================================================================== */
-
-.mainMenuBar {
-  height: 50px;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  z-index: 8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mainMenuCenter {
-  height: 100%;
-  width: 100%;
-  max-width: 1150px;
-}
-.menuCol {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14pt;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.3s ease-out;
-  font-weight: 400;
-}
-.menuCol:hover {
-  color: white;
-}
 
 /* ======================================================================== */
 /* ================ 555px 555px 555px 555px 555px 555px =================== */
@@ -295,6 +264,7 @@ export default {
     text-align: center;
   }
   .headingThree {
+    font-size: 16pt;
   }
 }
 @media only screen and (max-width: 833px) {
@@ -308,7 +278,23 @@ export default {
   }
 }
 
-/* 123456789876543234567876543234567898765432345678987654321234567898765432123456789876543234567876543 */
+/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
+/* V NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
+/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
+
+@supports (backdrop-filter: none) {
+  .navBG {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+@supports not (backdrop-filter: none) {
+  .navBG {
+    background: rgba(17, 17, 17, 0.85);
+  }
+}
+
 .sidenav {
   height: 100%;
   width: 0;
@@ -316,8 +302,6 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(34, 34, 34, 0.7);
-  backdrop-filter: blur(10px);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -345,12 +329,14 @@ export default {
 }
 
 .openNavButton {
-  font-size: 25pt;
+  font-size: 20pt;
   cursor: pointer;
   position: fixed;
   color: rgba(255, 255, 255, 0.7);
   z-index: 10;
   margin-left: 10px;
+  top: 5px;
+  left: 5px;
 }
 .openNavButton:hover {
   color: white;
