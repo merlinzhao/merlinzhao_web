@@ -1,6 +1,19 @@
 <template>
   <div>
-    <div class="intro">
+    <span class="openNavButton" @click="openNav()">
+      <i class="fas fa-bars"></i>
+    </span>
+    <div id="mySidenav" class="sidenav headingThree">
+      <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
+        <i class="fas fa-times-circle"></i>
+      </a>
+      <a href="#">Experience</a>
+      <a href="#">About</a>
+      <a href="#">Github</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Resume</a>
+    </div>
+    <div class="intro" @click="closeNav()">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
       </div>
@@ -8,10 +21,11 @@
         <p>Hello 👋 Thanks for visiting my personal website!</p>
       </div>
     </div>
-
-    <about-me />
-    <welcome />
-    <myFooter />
+    <div @click="closeNav()">
+      <about-me @click="closeNav()" />
+      <welcome />
+      <myFooter />
+    </div>
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
@@ -32,7 +46,22 @@ export default {
     aboutMe,
     myFooter
   },
-  mounted() {}
+  mounted() {},
+  methods: {
+    openNav() {
+      const width = this.$el.querySelector(".intro");
+      if (width.offsetWidth > 350) {
+        document.getElementById("mySidenav").style.width = "350px";
+      } else {
+        document.getElementById("mySidenav").style.width = "80%";
+      }
+      console.log("hello", width.offsetWidth);
+    },
+
+    closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  }
 };
 </script>
 
@@ -220,6 +249,38 @@ export default {
     opacity: 1;
   }
 }
+/* ======================================================================== */
+/* ================ MENU MENU MENU MENU MENU MENU MENU =================== */
+/* ======================================================================== */
+
+.mainMenuBar {
+  height: 50px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainMenuCenter {
+  height: 100%;
+  width: 100%;
+  max-width: 1150px;
+}
+.menuCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14pt;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease-out;
+  font-weight: 400;
+}
+.menuCol:hover {
+  color: white;
+}
 
 /* ======================================================================== */
 /* ================ 555px 555px 555px 555px 555px 555px =================== */
@@ -233,6 +294,8 @@ export default {
     font-size: 14pt !important;
     text-align: center;
   }
+  .headingThree {
+  }
 }
 @media only screen and (max-width: 833px) {
   .center {
@@ -242,6 +305,62 @@ export default {
   .hello {
     font-size: 19pt;
     text-align: center;
+  }
+}
+
+/* 123456789876543234567876543234567898765432345678987654321234567898765432123456789876543234567876543 */
+.sidenav {
+  height: 100%;
+  width: 0;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(10px);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 10;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 20pt;
+  margin-left: 50px;
+}
+
+.openNavButton {
+  font-size: 25pt;
+  cursor: pointer;
+  position: fixed;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  margin-left: 10px;
+}
+.openNavButton:hover {
+  color: white;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
   }
 }
 </style>

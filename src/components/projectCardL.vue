@@ -169,7 +169,8 @@ export default {
   padding: 25px;
   filter: brightness(0.7);
   transition: filter 0.3s ease-out;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .projectCard:hover .textRow {
   filter: brightness(1);
