@@ -7,23 +7,24 @@
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
         <i class="fas fa-times-circle"></i>
       </a>
-      <a href="#" @click="nav('projects')">Experience</a>
+      <a @click="nav('projects')">Experience</a>
       <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
       <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
-      <a href="#">Resume</a>
+      <!-- <a href="#">Resume</a> -->
     </div>
-    <div class="intro" @click="closeNav()">
+    <div class="intro" ref="top" @click="closeNav()">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
       </div>
       <div class="hello">
         <p>Hello 👋 Thanks for dropping by!</p>
       </div>
+      <!-- <div class="explore"></div> -->
     </div>
     <div @click="closeNav()">
       <about-me @click="closeNav()" />
       <welcome />
-      <myFooter />
+      <myFooter @scrollTo="scrollTo" />
     </div>
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
@@ -32,16 +33,14 @@
 
 <script>
 import welcome from "./welcome.vue";
-import projects from "./projects.vue";
 import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
-import { setTimeout } from "timers";
 
 export default {
   name: "mainView",
   components: {
     welcome,
-    projects,
+
     aboutMe,
     myFooter
   },
@@ -54,13 +53,18 @@ export default {
       } else {
         document.getElementById("mySidenav").style.width = "80%";
       }
-      console.log("hello", width.offsetWidth);
     },
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     },
     nav(event) {
       this.$router.push({ path: event });
+    },
+
+    scrollTo() {
+      var element = this.$refs["top"];
+      var top = element.offsetTop;
+      window.scrollTo(0, top);
     }
   }
 };
@@ -161,6 +165,17 @@ export default {
   -webkit-animation: introGradientTwo 3s ease-in-out;
   -moz-animation: introGradientTwo 3s ease-in-out;
   animation: shiftTitle 3s ease-in-out;
+}
+
+.explore {
+  height: 80px;
+  width: 120px;
+  position: absolute;
+  bottom: 2%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.6;
 }
 
 @-webkit-keyframes shiftTitle {
@@ -285,8 +300,8 @@ export default {
 @supports (backdrop-filter: none) {
   .navBG {
     background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 }
 @supports not (backdrop-filter: none) {

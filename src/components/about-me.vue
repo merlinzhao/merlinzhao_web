@@ -19,6 +19,10 @@
         class="portrait"
         :style="{ backgroundImage: 'url('+require('../assets/images/merlin.jpg')+')'}"
       />
+      <div
+        class="thatsme"
+        :style="{ backgroundImage: 'url('+require('../assets/images/thatsme.png')+')'}"
+      />
       <div class="row summaryRow">
         <div class="col">
           <p class="headingFour Mac" style="margin: 3% 0% 2% 0%; width: 100%; text-align: left;">
@@ -76,7 +80,7 @@
         </div>
         <p
           class="headingFour"
-          style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
+          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
         >Chill Times</p>
         <div class="row" style="font-size:16pt; align-items: center, justify-content: center;">
           <i class="fas fa-dumbbell" style="margin-right: 15px;"></i>
@@ -87,6 +91,12 @@
           <i class="fas fa-plane" style="margin-right: 15px;"></i>
           <i class="fas fa-hands-helping"></i>
         </div>
+      </div>
+      <div style="display: flex; flex-direction: column;" class="summaryRow">
+        <p
+          class="headingFour"
+          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
+        >Get in touch - zhaom21@mcmaster.ca</p>
       </div>
     </div>
   </div>
@@ -150,10 +160,22 @@ export default {};
   height: 250px;
   width: 250px;
   border-radius: 125px;
-  margin: 3% 0% 4% 0%;
+  margin: 3% 0% 0% 0%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+.thatsme {
+  height: 70px;
+  width: 120px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  left: 170px;
+  bottom: 280px;
+  z-index: 20;
 }
 
 .headingOne {

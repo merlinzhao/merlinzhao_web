@@ -10,9 +10,9 @@
       <a href="#" @click="$router.go(-1)">Home</a>
       <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
       <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
-      <a href="#">Resume</a>
+      <!-- <a href="#">Resume</a> -->
     </div>
-    <div class="projectRowOut">
+    <div class="projectRowOut" ref="top">
       <div class="projectRow" style="color:white">
         <p class="headingTwo projectThree projectCenter">MADE BY MERLIN.</p>
         <p class="subHeading">const subHeading = "Explore my Projects."</p>
@@ -25,7 +25,7 @@
             :projectTitle="'NavText'"
             :subHeading="'Second Place Overall at Hack Western 5 '"
             :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
-            :icons="['E','D']"
+            :icons="['E','D','A']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
             :gitLink="'hey'"
@@ -87,7 +87,7 @@
         </div>
       </div>
     </div>
-    <myFooter />
+    <myFooter @scrollTo="scrollTo" />
   </div>
 </template>
 
@@ -109,6 +109,9 @@ export default {
     projectCardLarge,
     myFooter
   },
+  mounted() {
+    this.scrollTo();
+  },
   methods: {
     openNav() {
       const width = this.$el.querySelector(".projectRowOut");
@@ -123,6 +126,11 @@ export default {
     },
     nav(event) {
       this.$router.push({ path: event });
+    },
+    scrollTo() {
+      var element = this.$refs["top"];
+      var top = element.offsetTop;
+      window.scrollTo(0, top);
     }
   }
 };

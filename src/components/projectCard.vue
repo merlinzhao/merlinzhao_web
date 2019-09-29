@@ -16,10 +16,24 @@
         <div v-for="number in icons" :key="number">
           <i
             v-if="number === 'A'"
-            class="devicon-bootstrap-plain colored"
+            class="devicon-bootstrap-plain colored icon"
             style="margin-right: 5px; color: #8848b5;"
-          />
-          <i v-if="number === 'B'" class="devicon-python-plain colored" style="margin-right: 5px;" />
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Bootstrap</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'B'"
+            class="devicon-python-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Python</p>
+              <i></i>
+            </div>
+          </i>
           <i v-if="number === 'C'" class="devicon-nodejs-plain colored" style="margin-right: 5px;" />
           <i
             v-if="number === 'D'"
@@ -194,6 +208,52 @@ export default {
 }
 .projectCard:hover .githubLogo {
   color: white;
+}
+
+.icon .tool {
+  min-width: 100px;
+  top: -20px;
+  transform: translate(calc(-50% + 10px), -62%);
+  color: #ffffff;
+  background-color: #777;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-family: initial;
+  padding: 5px;
+  text-align: center;
+}
+
+.icon:hover .tool {
+  visibility: visible;
+  opacity: 1;
+}
+
+.icon .tool i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.icon .tool i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #777;
+  box-shadow: 0 1px 8px transparent;
 }
 @media only screen and (max-width: 768px) {
   .leftCol {

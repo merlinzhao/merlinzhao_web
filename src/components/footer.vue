@@ -12,7 +12,7 @@
         <i class="fas fa-code" />
       </button>
       <button class="footerButton">
-        <i class="fas fa-arrow-alt-circle-up" />
+        <i class="fas fa-arrow-alt-circle-up" @click="toTop" />
       </button>
 
       <button class="footerButton" onclick="window.open('http://www.github.com/merlinzhao')">
@@ -27,7 +27,12 @@
 </template>
 <script>
 export default {
-  name: "myFooter"
+  name: "myFooter",
+  methods: {
+    toTop() {
+      this.$emit("scrollTo");
+    }
+  }
 };
 </script>
 <style scoped>
