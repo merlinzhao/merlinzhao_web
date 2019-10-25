@@ -96,7 +96,22 @@
         <p
           class="headingFour"
           style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
-        >Get in touch - zhaom21@mcmaster.ca</p>
+        >Get in touch</p>
+        <a
+          href="mailto:zhaom21@mcmaster.ca"
+          class="regText"
+          style=" width: 100%; text-align: center; color: #737780;"
+        >
+          <i class="fas fa-envelope" style="margin-right: 8px;"></i>zhaom21@mcmaster.ca
+        </a>
+
+        <a
+          href="tel:647-993-6121"
+          class="regText"
+          style=" width: 100%; text-align: center; color: #737780;"
+        >
+          <i class="fas fa-phone" style="margin-right: 8px;"></i>(647) 993 6121
+        </a>
       </div>
     </div>
   </div>
@@ -206,6 +221,57 @@ export default {};
 
 .devCol {
   margin-right: 30px;
+}
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
+
+.icon .tool {
+  min-width: 100px;
+  top: -20px;
+  transform: translate(calc(-50% + 10px), -62%);
+  color: #ffffff;
+  background-color: #555;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-family: initial;
+  padding: 5px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon:hover .tool {
+  position: absolute;
+  visibility: visible;
+  opacity: 0.95;
+}
+
+.icon .tool i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.icon .tool i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #555;
+  box-shadow: 0 1px 8px transparent;
 }
 
 /* ======================================================================== */

@@ -34,22 +34,86 @@
               <i></i>
             </div>
           </i>
-          <i v-if="number === 'C'" class="devicon-nodejs-plain colored" style="margin-right: 5px;" />
+          <i
+            v-if="number === 'C'"
+            class="devicon-nodejs-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">NodeJS</p>
+              <i></i>
+            </div>
+          </i>
           <i
             v-if="number === 'D'"
-            class="devicon-javascript-plain colored"
+            class="devicon-javascript-plain colored icon"
             style="margin-right: 5px;"
-          />
-          <i v-if="number === 'E'" class="devicon-swift-plain colored" style="margin-right: 5px;" />
-          <i v-if="number === 'F'" class="devicon-vuejs-plain colored" style="margin-right: 5px;" />
-          <i v-if="number === 'G'" class="devicon-css3-plain colored" style="margin-right: 5px;" />
-          <i v-if="number === 'H'" class="devicon-html5-plain colored" style="margin-right: 5px;" />
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Javascript</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'E'"
+            class="devicon-swift-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Swift</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'F'"
+            class="devicon-vuejs-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">VueJS</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'G'"
+            class="devicon-css3-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">CSS3</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'H'"
+            class="devicon-html5-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">HTML5</p>
+              <i></i>
+            </div>
+          </i>
           <i
             v-if="number === 'I'"
-            class="devicon-android-plain colored"
+            class="devicon-android-plain colored icon"
             style="margin-right: 5px;"
-          />
-          <i v-if="number === 'J'" class="devicon-java-plain colored" style="margin-right: 5px;" />
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Android Dev</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'J'"
+            class="devicon-java-plain colored icon"
+            style="margin-right: 5px;"
+          >
+            <div class="tool regText">
+              <p style="margin: 0px;">Java</p>
+              <i></i>
+            </div>
+          </i>
         </div>
       </div>
       <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
@@ -228,11 +292,13 @@ export default {
   font-family: initial;
   padding: 5px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .icon:hover .tool {
+  position: absolute;
   visibility: visible;
-  opacity: 1;
+  opacity: 0.95;
 }
 
 .icon .tool i {

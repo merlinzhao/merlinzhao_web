@@ -26,56 +26,104 @@
             I - android-->
             <i
               v-if="number === 'A'"
-              class="devicon-bootstrap-plain colored"
-              style="margin-right: 5px; color: #D959FF;"
-            />
+              class="devicon-bootstrap-plain colored icon"
+              style="margin-right: 5px; color: #8848b5;"
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Bootstrap</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'B'"
-              class="devicon-python-plain colored"
+              class="devicon-python-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Python</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'C'"
-              class="devicon-swift-plain colored"
+              class="devicon-nodejs-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">NodeJS</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'D'"
-              class="devicon-javascript-plain colored"
+              class="devicon-javascript-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Javascript</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'E'"
-              class="devicon-nodejs-plain colored"
+              class="devicon-swift-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Swift</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'F'"
-              class="devicon-vuejs-plain colored"
+              class="devicon-vuejs-plain colored icon"
               style="margin-right: 5px;"
-            />
-            <i v-if="number === 'G'" class="devicon-css3-plain colored" style="margin-right: 5px;" />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">VueJS</p>
+                <i></i>
+              </div>
+            </i>
+            <i
+              v-if="number === 'G'"
+              class="devicon-css3-plain colored icon"
+              style="margin-right: 5px;"
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">CSS3</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'H'"
-              class="devicon-html5-plain colored"
+              class="devicon-html5-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">HTML5</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'I'"
-              class="devicon-android-plain colored"
+              class="devicon-android-plain colored icon"
               style="margin-right: 5px;"
-            />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Android Dev</p>
+                <i></i>
+              </div>
+            </i>
             <i
               v-if="number === 'J'"
-              class="devicon-mongodb-plain colored"
+              class="devicon-java-plain colored icon"
               style="margin-right: 5px;"
-            />
-            <i
-              v-if="number === 'K'"
-              class="devicon-docker-plain colored"
-              style="margin-right: 5px;"
-            />
-            <i v-if="number === 'L'" class="devicon-d3js-plain colored" style="margin-right: 5px;" />
+            >
+              <div class="tool regText modalText">
+                <p style="margin: 0px;">Java</p>
+                <i></i>
+              </div>
+            </i>
           </div>
         </div>
         <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
@@ -236,6 +284,57 @@ export default {
 }
 .projectCard:hover .githubLogo {
   color: white;
+}
+.modalText {
+  margin: 0px;
+}
+
+.icon .tool {
+  min-width: 100px;
+  top: -20px;
+  transform: translate(calc(-50% + 10px), -62%);
+  color: #ffffff;
+  background-color: #555;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-family: initial;
+  padding: 5px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.icon:hover .tool {
+  position: absolute;
+  visibility: visible;
+  opacity: 0.95;
+}
+
+.icon .tool i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.icon .tool i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #555;
+  box-shadow: 0 1px 8px transparent;
 }
 
 @media only screen and (max-width: 991px) {
