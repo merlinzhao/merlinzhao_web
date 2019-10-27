@@ -3,7 +3,7 @@
     <!-- <div class="absolute" /> -->
     <div class="aboutCenter">
       <p class="headingTwo headlineText">
-        Front end developer
+        Software Developer
         <br />Graphic designer
         <br />Chipotle lover
       </p>
@@ -95,7 +95,7 @@
       <div style="display: flex; flex-direction: column;" class="summaryRow">
         <p
           class="headingFour"
-          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
+          style="margin: 3% 0% 1% 0%; width: 100%; text-align: center;"
         >Get in touch</p>
         <a
           href="mailto:zhaom21@mcmaster.ca"

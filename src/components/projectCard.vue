@@ -19,8 +19,8 @@
             class="devicon-bootstrap-plain colored icon"
             style="margin-right: 5px; color: #8848b5;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Bootstrap</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Bootstrap</p>
               <i></i>
             </div>
           </i>
@@ -29,8 +29,8 @@
             class="devicon-python-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Python</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Python</p>
               <i></i>
             </div>
           </i>
@@ -39,8 +39,8 @@
             class="devicon-nodejs-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">NodeJS</p>
+            <div class="tool regText modalR">
+              <p class="modalText">NodeJS</p>
               <i></i>
             </div>
           </i>
@@ -49,8 +49,8 @@
             class="devicon-javascript-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Javascript</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Javascript</p>
               <i></i>
             </div>
           </i>
@@ -59,8 +59,8 @@
             class="devicon-swift-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Swift</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Swift</p>
               <i></i>
             </div>
           </i>
@@ -69,8 +69,8 @@
             class="devicon-vuejs-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">VueJS</p>
+            <div class="tool regText modalR">
+              <p class="modalText">VueJS</p>
               <i></i>
             </div>
           </i>
@@ -79,8 +79,8 @@
             class="devicon-css3-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">CSS3</p>
+            <div class="tool regText modalR">
+              <p class="modalText">CSS3</p>
               <i></i>
             </div>
           </i>
@@ -89,8 +89,8 @@
             class="devicon-html5-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">HTML5</p>
+            <div class="tool regText modalR">
+              <p class="modalText">HTML5</p>
               <i></i>
             </div>
           </i>
@@ -99,8 +99,8 @@
             class="devicon-android-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Android Dev</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Android Dev</p>
               <i></i>
             </div>
           </i>
@@ -109,8 +109,8 @@
             class="devicon-java-plain colored icon"
             style="margin-right: 5px;"
           >
-            <div class="tool regText">
-              <p style="margin: 0px;">Java</p>
+            <div class="tool regText modalR">
+              <p class="modalText">Java</p>
               <i></i>
             </div>
           </i>
@@ -295,31 +295,43 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.icon:hover .tool {
-  position: absolute;
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
+.modalR {
   visibility: visible;
-  opacity: 0.95;
 }
 
-.icon .tool i {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -12px;
-  width: 24px;
-  height: 12px;
-  overflow: hidden;
+.modalText {
+  margin: 0px;
 }
 
-.icon .tool i::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background-color: #777;
-  box-shadow: 0 1px 8px transparent;
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover .tool {
+    position: absolute;
+    visibility: visible;
+    opacity: 0.95;
+  }
+
+  .icon .tool i {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+  }
+
+  .icon .tool i::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #777;
+    box-shadow: 0 1px 8px transparent;
+  }
 }
 @media only screen and (max-width: 768px) {
   .leftCol {
