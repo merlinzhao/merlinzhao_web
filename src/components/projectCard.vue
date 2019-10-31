@@ -117,7 +117,22 @@
         </div>
       </div>
       <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
-        <i v-if="gitLink!='none'" class="fab fa-github githubLogo" />
+        <i
+          @click="openLink();"
+          v-if="externalLink[1]"
+          class="fas fa-external-link-square-alt githubLogo icon"
+        >
+          <div class="tool regText modalR">
+            <p class="modalText">{{externalLink[1]}}</p>
+            <i></i>
+          </div>
+        </i>
+        <i @click="openLink();" v-if="gitLink!='none'" class="fab fa-github githubLogo icon">
+          <div class="tool regText modalR">
+            <p class="modalText">View on GitHub</p>
+            <i></i>
+          </div>
+        </i>
       </div>
     </div>
   </div>
@@ -162,6 +177,10 @@ export default {
       type: String,
       default: "none"
     },
+    externalLink: {
+      type: Array,
+      default: () => []
+    },
     sizeBackground: {
       type: String,
       default: "contain"
@@ -175,6 +194,12 @@ export default {
         background.style.opacity = "0";
       }
     });
+  },
+  methods: {
+    openLink() {
+      if (this.externalLink[1]) window.open(this.externalLink[0]);
+      else if (this.gitLink != "none") window.open(this.gitLink);
+    }
   }
 };
 </script>
@@ -269,6 +294,7 @@ export default {
 .githubLogo {
   transition: color 0.3s ease-out;
   color: #aaa;
+  margin-left: 10px;
 }
 .projectCard:hover .githubLogo {
   color: white;
@@ -303,6 +329,8 @@ export default {
 
 .modalText {
   margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media (hover: hover) and (pointer: fine) {

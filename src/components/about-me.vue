@@ -54,28 +54,58 @@
           style="margin-bottom: 20px; font-size:16pt; align-items: center; justify-content:center; display: flex; flex-direction: row; width: 100%; "
         >
           <div class="devCol">
-            <i class="devicon-swift-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-vuejs-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-react-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-html5-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-css3-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-bootstrap-plain colored" style=" color: #D959FF;" />
+            <i class="devicon-swift-plain colored icon" style="margin-right: 10px;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">Swift</p>
+                <i></i>
+              </div>
+            </i>
+            <i class="devicon-vuejs-plain colored icon" style="margin-right: 10px;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">Vue.js</p>
+                <i></i>
+              </div>
+            </i>
+            <i class="devicon-react-plain colored icon" style="margin-right: 10px;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">React.js</p>
+                <i></i>
+              </div>
+            </i>
+            <i class="devicon-html5-plain colored icon" style="margin-right: 10px;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">HTML5</p>
+                <i></i>
+              </div>
+            </i>
+            <i class="devicon-css3-plain colored icon" style="margin-right: 10px;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">CSS3</p>
+                <i></i>
+              </div>
+            </i>
+            <i class="devicon-bootstrap-plain colored icon" style=" color: #D959FF;">
+              <div class="tool regTextModal modalR">
+                <p class="modalText">Bootstrap</p>
+                <i></i>
+              </div>
+            </i>
           </div>
           <div class="devCol">
-            <i class="devicon-python-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-javascript-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-c-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-cplusplus-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-java-plain colored" />
+            <i class="devicon-python-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-javascript-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-c-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-cplusplus-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-java-plain colored icon" />
           </div>
           <div class="devCol">
-            <i class="devicon-mongodb-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-docker-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-git-plain colored" />
+            <i class="devicon-mongodb-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-docker-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-git-plain colored icon" />
           </div>
           <div>
-            <i class="devicon-photoshop-plain colored" style="margin-right: 10px;" />
-            <i class="devicon-illustrator-plain colored" />
+            <i class="devicon-photoshop-plain colored icon" style="margin-right: 10px;" />
+            <i class="devicon-illustrator-plain colored icon" />
           </div>
         </div>
         <p
@@ -219,19 +249,35 @@ export default {};
   font-weight: 400;
 }
 
+.regTextModal {
+  line-height: 18pt;
+  font-size: 12pt;
+  color: white;
+  font-weight: 200;
+}
+
 .devCol {
   margin-right: 30px;
 }
 /* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
 /* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
 /* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
+.modalR {
+  visibility: visible;
+}
+
+.modalText {
+  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 .icon .tool {
   min-width: 100px;
   top: -20px;
   transform: translate(calc(-50% + 10px), -62%);
   color: #ffffff;
-  background-color: #555;
+  background-color: #777;
   font-weight: 400;
   font-size: 11pt;
   border-radius: 5px;
@@ -247,31 +293,33 @@ export default {};
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.icon:hover .tool {
-  position: absolute;
-  visibility: visible;
-  opacity: 0.95;
-}
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover .tool {
+    position: absolute;
+    visibility: visible;
+    opacity: 0.95;
+  }
 
-.icon .tool i {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -12px;
-  width: 24px;
-  height: 12px;
-  overflow: hidden;
-}
+  .icon .tool i {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+  }
 
-.icon .tool i::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background-color: #555;
-  box-shadow: 0 1px 8px transparent;
+  .icon .tool i::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #777;
+    box-shadow: 0 1px 8px transparent;
+  }
 }
 
 /* ======================================================================== */

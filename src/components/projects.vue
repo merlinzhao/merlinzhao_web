@@ -28,7 +28,8 @@
             :icons="['E','D','A']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
-            :gitLink="'hey'"
+            :gitLink="'https://github.com/merlinzhao/NavText'"
+            :externalLink="['https://devpost.com/software/navtext-15tgmj', 'View on Devpost']"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
@@ -38,7 +39,7 @@
             :subHeading="'Front End Developer'"
             :icons="['F','D','A','H','G','L','E','J','K']"
             :imgURL="'MenloPic.png'"
-            :externalLink="'hey'"
+            :externalLink="['https://menlolab.com','View on web']"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
@@ -47,7 +48,7 @@
             :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
             :icons="['F','A','D','H','G']"
             :imgURL="'MerlinWebPic.png'"
-            :gitLink="'hey'"
+            :externalLink="['http://www.merlinzhao.me','View on web']"
             :backgroundColor="'#222'"
           />
         </div>
@@ -59,7 +60,7 @@
             :imgURL="'WelcomePic.png'"
             :backgroundColor="'#774545'"
             :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
-            :gitLink="'hey'"
+            :gitLink="'https://github.com/merlinzhao/WelcomeWeek'"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
@@ -70,7 +71,7 @@
             :imgURL="'NutryentPic.png'"
             :backgroundColor="'#ffa42e'"
             :subHeading="'Made at ArchHacks 2017'"
-            :gitLink="'hey'"
+            :externalLink="['https://devpost.com/software/nutryent','View on Devpost']"
           />
         </div>
 
@@ -82,7 +83,7 @@
             :imgURL="'SpacePic.png'"
             :backgroundColor="'#222'"
             :subHeading="'Multiplayer python game'"
-            :gitLink="'hey'"
+            :gitLink="'https://github.com/merlinzhao/space-esc'"
           />
         </div>
       </div>

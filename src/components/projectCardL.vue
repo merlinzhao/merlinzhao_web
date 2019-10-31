@@ -127,8 +127,22 @@
           </div>
         </div>
         <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
-          <i v-if="gitLink!='none'" class="fab fa-github githubLogo" />
-          <i v-if="externalLink!='none'" class="fas fa-external-link-square-alt githubLogo"></i>
+          <i @click="openLink();" v-if="gitLink!='none'" class="fab fa-github githubLogo icon">
+            <div class="tool regText modalR">
+              <p class="modalText">View on GitHub</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            @click="openLink();"
+            v-if="externalLink[1]"
+            class="fas fa-external-link-square-alt githubLogo icon"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">{{externalLink[1]}}</p>
+              <i></i>
+            </div>
+          </i>
         </div>
       </div>
     </div>
@@ -175,8 +189,8 @@ export default {
       default: "none"
     },
     externalLink: {
-      type: String,
-      default: "none"
+      type: Array,
+      default: () => []
     }
   },
   mounted() {
@@ -187,6 +201,12 @@ export default {
         background.style.opacity = "0";
       }
     });
+  },
+  methods: {
+    openLink() {
+      if (this.externalLink[1]) window.open(this.externalLink[0]);
+      else if (this.gitLink != "none") window.open(this.gitLink);
+    }
   }
 };
 </script>

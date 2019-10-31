@@ -58,6 +58,7 @@ export default {
       document.getElementById("mySidenav").style.width = "0";
     },
     nav(event) {
+      if (event != "projects") return;
       this.$router.push({ path: event });
     },
 
