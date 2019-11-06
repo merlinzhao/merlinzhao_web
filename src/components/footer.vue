@@ -6,10 +6,13 @@
       style="width: 100%; align-items: center; justify-content: center; max-width: 1250px;"
     >
       <button class="footerButton">
-        <i class="fas fa-file-alt" />
+        <i class="fas fa-file-alt" style="opacity:0;" />
       </button>
-      <button class="footerButton" @click="nav('projects')">
+      <button v-if="page === 'home'" class="footerButton" @click="nav('projects')">
         <i class="fas fa-code" />
+      </button>
+      <button v-if="page === 'project'" class="footerButton" @click="$router.go(-1)">
+        <i class="fas fa-home" />
       </button>
       <button class="footerButton">
         <i class="fas fa-arrow-alt-circle-up" @click="toTop" />
@@ -28,9 +31,19 @@
 <script>
 export default {
   name: "myFooter",
+  props: {
+    page: {
+      type: String,
+      default: "home"
+    }
+  },
   methods: {
     toTop() {
       this.$emit("scrollTo");
+    },
+    nav(event) {
+      if (event != "projects") return;
+      this.$router.push({ path: event });
     }
   }
 };

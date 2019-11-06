@@ -36,7 +36,7 @@
           <project-card-large
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
-            :subHeading="'Front End Developer'"
+            :subHeading="'Front End Developer Intern'"
             :icons="['F','D','A','H','G','L','E','J','K']"
             :imgURL="'MenloPic.png'"
             :externalLink="['https://menlolab.com','View on web']"
@@ -88,7 +88,7 @@
         </div>
       </div>
     </div>
-    <myFooter @scrollTo="scrollTo" />
+    <myFooter @scrollTo="scrollTo" :page="'project'" />
   </div>
 </template>
 
