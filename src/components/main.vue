@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- <div
+      style="height: 50px; width: 100%; position: fixed; background: rgb(255,0,0,0.5); z-index: 500 ; backdrop-filter: blur(20px);"
+    ></div>-->
     <span class="openNavButton" @click="openNav()">
       <i class="fas fa-bars"></i>
     </span>
@@ -7,7 +10,7 @@
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
         <i class="fas fa-times-circle"></i>
       </a>
-      <a @click="nav('projects')">Experience</a>
+      <a href="#" @click="nav('projects')">Experience</a>
       <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
       <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
       <!-- <a href="#">Resume</a> -->
@@ -21,6 +24,7 @@
       </div>
       <!-- <div class="explore"></div> -->
     </div>
+
     <div @click="closeNav()">
       <about-me @click="closeNav()" />
       <welcome />
@@ -40,7 +44,6 @@ export default {
   name: "mainView",
   components: {
     welcome,
-
     aboutMe,
     myFooter
   },
@@ -291,78 +294,6 @@ export default {
   .hello {
     font-size: 19pt;
     text-align: center;
-  }
-}
-
-/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
-/* V NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
-/* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
-
-@supports (backdrop-filter: none) {
-  .navBG {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-}
-@supports not (backdrop-filter: none) {
-  .navBG {
-    background: rgba(17, 17, 17, 0.85);
-  }
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  max-width: 300px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  z-index: 10;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: white;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 20pt;
-  margin-left: 50px;
-}
-
-.openNavButton {
-  font-size: 20pt;
-  cursor: pointer;
-  position: fixed;
-  color: rgba(255, 255, 255, 0.7);
-  z-index: 10;
-  margin-left: 10px;
-  top: 5px;
-  left: 5px;
-}
-.openNavButton:hover {
-  color: white;
-}
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 18px;
   }
 }
 </style>
