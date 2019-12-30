@@ -26,6 +26,7 @@
     </div>
 
     <div @click="closeNav()">
+      <highlights />
       <about-me @click="closeNav()" />
       <welcome />
       <myFooter @scrollTo="scrollTo" />
@@ -39,13 +40,15 @@
 import welcome from "./welcome.vue";
 import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
+import highlights from "./highlights.vue";
 
 export default {
   name: "mainView",
   components: {
     welcome,
     aboutMe,
-    myFooter
+    myFooter,
+    highlights
   },
   mounted() {},
   methods: {
