@@ -158,7 +158,7 @@ export default {
 }
 
 .projectContainer {
-  padding: 25px 0px 100px 0px;
+  padding: 25px 0px 25px 0px;
   width: 100%;
   display: flex;
   flex-direction: column;

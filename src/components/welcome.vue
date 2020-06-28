@@ -178,7 +178,7 @@ export default {
 /* ======================================================================== */
 .projectRow {
   height: 500px;
-  width: 100vw;
+  width: 100%;
   background: rgb(255, 145, 0);
   display: flex;
   flex-direction: row;
@@ -268,7 +268,7 @@ export default {
 /* ======================================================================== */
 .gitRow {
   height: 300px;
-  width: 100vw;
+  width: 100%;
   background: #fafafa;
   display: flex;
   flex-direction: row;
