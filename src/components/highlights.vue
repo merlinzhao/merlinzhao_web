@@ -4,9 +4,9 @@
       <div class="highlightsCenter centerAll">
         <p class="headingTwo hText">Highlights</p>
         <div class="row hRow">
-          <div class="col leftCol"></div>
-          <div class="col midCol"></div>
-          <div class="col rightCol"></div>
+          <div class="col leftCol">AMD</div>
+          <div class="col midCol">MENLO</div>
+          <div class="col rightCol">NAVTEXT</div>
         </div>
       </div>
     </div>

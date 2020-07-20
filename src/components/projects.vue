@@ -20,6 +20,16 @@
     </div>
     <div class="projectContainer">
       <div class="center row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
+          <project-card-large
+            :projectTitle="'Advance Micro Devices'"
+            :bodyText="'Job desciption coming soon'"
+            :subHeading="'PCIE Design and Validation Intern'"
+            :icons="['F','D','A','H','G','L','E','J','K']"
+            :imgURL="'amd-wp.png'"
+            :externalLink="['https://amd.com','View on web']"
+          />
+        </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'NavText'"
@@ -32,16 +42,6 @@
             :externalLink="['https://devpost.com/software/navtext-15tgmj', 'View on Devpost']"
           />
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
-          <project-card-large
-            :projectTitle="'Menlolab Inc.'"
-            :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
-            :subHeading="'Front End Developer Intern'"
-            :icons="['F','D','A','H','G','L','E','J','K']"
-            :imgURL="'MenloPic.png'"
-            :externalLink="['https://menlolab.com','View on web']"
-          />
-        </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'merlinzhao.me'"
@@ -52,6 +52,17 @@
             :backgroundColor="'#222'"
           />
         </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
+          <project-card-large
+            :projectTitle="'Menlolab Inc.'"
+            :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
+            :subHeading="'Front End Developer Intern'"
+            :icons="['F','D','A','H','G','L','E','J','K']"
+            :imgURL="'MenloPic.png'"
+            :externalLink="['https://menlolab.com','View on web']"
+          />
+        </div>
+
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'Welcome Week'"
@@ -143,7 +154,7 @@ export default {
   min-width: 250px;
   display: flex;
   flex-direction: column;
-  background: #181818;
+  background: #eee;
   width: 100%;
   align-items: center;
   font-family: "Lato", sans-serif;
@@ -172,7 +183,7 @@ export default {
   height: calc(80vh);
   min-height: 200px;
   width: 100%;
-  background: #111;
+  background: #e4e4e4;
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
@@ -252,5 +263,16 @@ export default {
 .cardPaddingL {
   padding: 10px 5px 0px 5px;
 }
+
+@media (prefers-color-scheme: dark) {
+  .background {
+    background: #181818;
+  }
+  .projectRow {
+    background: #111;
+  }
+}
 </style>
+
+
  
