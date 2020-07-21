@@ -215,7 +215,7 @@ export default {
 .projectCard {
   width: 100%;
   height: 560px;
-  background: #333;
+  background: #fff;
   display: flex;
 }
 
@@ -235,13 +235,14 @@ export default {
   height: 280px;
   width: 100%;
   padding: 25px;
-  filter: brightness(0.7);
-  transition: filter 0.3s ease-out;
+  filter: brightness(1);
+  opacity: 0.6;
+  transition: opacity 0.3s ease-out, filter 0.3s ease-out;
   overflow-y: auto;
   overflow-x: hidden;
 }
 .projectCard:hover .textRow {
-  filter: brightness(1);
+  opacity: 1;
 }
 .iconRow {
   position: absolute;
@@ -257,20 +258,20 @@ export default {
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-  color: white;
+  color: black;
   font-weight: 400;
   margin-bottom: 5px;
 }
 .regText {
   line-height: 18pt;
   font-size: 12pt;
-  color: white;
+  color: black;
   font-weight: 400;
 }
 .subHeading {
   line-height: 12pt;
   font-size: 11pt;
-  color: #aaa;
+  color: #555;
   margin-bottom: 10px;
 }
 .leftCardItems {
@@ -300,10 +301,10 @@ export default {
 
 .githubLogo {
   transition: color 0.3s ease-out;
-  color: #aaa;
+  color: #616161;
 }
 .projectCard:hover .githubLogo {
-  color: white;
+  color: black;
 }
 .modalText {
   margin: 0px;
@@ -374,6 +375,35 @@ export default {
 @media only screen and (max-width: 768px) {
   .leftCol {
     filter: saturate(1) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .projectCard {
+    background: #333;
+  }
+  .headingThree {
+    color: white;
+  }
+  .regText {
+    color: white;
+  }
+  .textRow {
+    opacity: 1;
+    filter: brightness(0.7);
+  }
+  .projectCard:hover .textRow {
+    filter: brightness(1);
+  }
+  .subHeading {
+    color: #aaa;
+  }
+  .githubLogo {
+    transition: color 0.3s ease-out;
+    color: #aaa;
+  }
+  .projectCard:hover .githubLogo {
+    color: white;
   }
 }
 </style>

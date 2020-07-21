@@ -360,22 +360,6 @@ export default {
 
 /* ======================================================================== */
 
-.headingOne {
-  line-height: 65pt;
-  font-size: 65pt;
-  font-weight: bolder;
-}
-.headingTwo {
-  line-height: 50pt;
-  font-size: 45pt;
-  font-weight: 400;
-}
-.headingThree {
-  line-height: 25pt;
-  font-size: 25pt;
-  font-weight: 600;
-}
-
 .wiz {
   color: rgba(191, 112, 255, 0.829);
 }

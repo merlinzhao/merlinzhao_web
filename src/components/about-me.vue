@@ -10,7 +10,8 @@
       <p
         class="headingThree"
         style="color: white; margin: 3% 0% 2% 0%; text-align: center;"
-      >Merlin (noun) - Mer·​lin | \ ˈmər-lən \</p>
+      >Merlin (noun) - Mer•lin | \ ˈmər-lən \</p>
+      <!--eslint-disable-next-line/> -->
       <p
         class="regText"
         style="color:#6e737d; text-align: center;"
