@@ -26,7 +26,7 @@
     </div>
 
     <div @click="closeNav()">
-      <highlights />
+      <!--<highlights />-->
       <about-me @click="closeNav()" />
       <welcome />
       <myFooter @scrollTo="scrollTo" />
