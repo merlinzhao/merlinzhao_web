@@ -126,6 +126,7 @@ export default {
   },
   methods: {
     openNav() {
+      // open navigation stuffs
       const width = this.$el.querySelector(".projectRowOut");
       if (width.offsetWidth > 350) {
         document.getElementById("mySidenav").style.width = "350px";
