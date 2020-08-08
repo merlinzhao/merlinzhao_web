@@ -144,6 +144,11 @@ export default {
       var element = this.$refs["top"];
       var top = element.offsetTop;
       window.scrollTo(0, top);
+
+      if (localStorage.setTheme) {
+        this.setTheme = localStorage.setTheme;
+        console.log(this.setTheme);
+      }
     }
   }
 };

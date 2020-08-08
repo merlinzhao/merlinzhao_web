@@ -63,7 +63,7 @@ export default {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(196, 196, 196);
   display: block;
   transition: 0.3s;
 }
