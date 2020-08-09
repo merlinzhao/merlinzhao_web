@@ -1,8 +1,7 @@
 <template>
   <div class="background">
-    <span class="openNavButton" @click="openNav()">
-      <i class="fas fa-bars"></i>
-    </span>
+    <sideMenu />
+
     <div id="mySidenav" class="sidenav headingThree navBG">
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
         <i class="fas fa-times-circle"></i>
@@ -109,6 +108,7 @@
 import projectCard from "./projectCard.vue";
 import projectCardLarge from "./projectCardL.vue";
 import myFooter from "./footer.vue";
+import sideMenu from "./side-menu.vue";
 export default {
   name: "projects",
   date() {
@@ -119,7 +119,8 @@ export default {
   components: {
     projectCard,
     projectCardLarge,
-    myFooter
+    myFooter,
+    sideMenu
   },
   mounted() {
     this.scrollTo();
@@ -160,7 +161,7 @@ export default {
   min-width: 250px;
   display: flex;
   flex-direction: column;
-  background: #eee;
+  background: var(--bg-eee);
   width: 100%;
   align-items: center;
   font-family: "Lato", sans-serif;
@@ -189,7 +190,7 @@ export default {
   height: calc(80vh);
   min-height: 200px;
   width: 100%;
-  background: #e4e4e4;
+  background: var(--bg-e4e4e4);
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;

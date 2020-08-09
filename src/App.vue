@@ -23,6 +23,15 @@ export default {
 </script>
 
 <style>
+:root {
+  --bg-eee: #eee;
+  --bg-e4e4e4: #e4e4e4;
+}
+[data-theme="dark"] {
+  --bg-eee: #181818;
+  --bg-e4e4e4: #111;
+}
+
 #app {
   height: 100%;
   width: 100%;
