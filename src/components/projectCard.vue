@@ -367,34 +367,5 @@ export default {
     filter: saturate(1) !important;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  .projectCard {
-    background: #333;
-  }
-  .headingThree {
-    color: white;
-  }
-  .regText {
-    color: white;
-  }
-  .textRow {
-    opacity: 1;
-    filter: brightness(0.7);
-  }
-  .projectCard:hover .textRow {
-    filter: brightness(1);
-  }
-  .subHeading {
-    color: #aaa;
-  }
-  .githubLogo {
-    transition: color 0.3s ease-out;
-    color: #aaa;
-  }
-  .projectCard:hover .githubLogo {
-    color: white;
-  }
-}
 </style>
  

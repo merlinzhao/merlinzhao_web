@@ -4,8 +4,8 @@
     <div class="aboutCenter">
       <p class="headingTwo headlineText">
         Software Developer
-        <br />Graphic designer
-        <br />Chipotle lover
+        <br />Graphic Designer
+        <br />Chipotle Lover
       </p>
       <p
         class="headingThree"

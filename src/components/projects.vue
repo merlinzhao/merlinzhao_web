@@ -114,6 +114,7 @@ export default {
   date() {
     return {
       col: "col-2",
+      setTheme: "undefined",
     };
   },
   components: {
@@ -124,7 +125,6 @@ export default {
   },
   mounted() {
     this.scrollTo();
-    console.log(this.setTheme);
   },
   methods: {
     openNav() {
@@ -147,8 +147,8 @@ export default {
       var top = element.offsetTop;
       window.scrollTo(0, top);
 
-      if (localStorage.setTheme) {
-        this.setTheme = localStorage.setTheme;
+      if (localStorage.getItem("dark-mode")) {
+        this.setTheme = localStorage.getItem("dark-mode");
       }
     },
   },
@@ -270,15 +270,6 @@ export default {
 
 .cardPaddingL {
   padding: 10px 5px 0px 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .background {
-    background: #181818;
-  }
-  .projectRow {
-    background: #111;
-  }
 }
 </style>
 
