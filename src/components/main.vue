@@ -58,9 +58,7 @@ export default {
     return {};
   },
 
-  mounted() {
-    console.log(this.setTheme);
-  },
+  mounted() {},
   methods: {
     openNav() {
       const width = this.$el.querySelector(".intro");

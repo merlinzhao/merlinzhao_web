@@ -25,7 +25,7 @@
 export default {
   data() {
     return {
-      setTheme: true,
+      setTheme: "undefined",
     };
   },
   props: {
@@ -37,21 +37,34 @@ export default {
 
   mounted() {
     if (window.matchMedia("prefers-color-scheme: dark").matches) {
-      this.setTheme = true;
+      this.setTheme = "dark";
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
-      this.setTheme = false;
+      if (localStorage.getItem("dark-mode")) {
+        this.setTheme = localStorage.getItem("dark-mode");
+        console.log("theme from storage", this.setTheme);
+      } else {
+        this.setTheme = "light";
+      }
     }
     var element = document.getElementById("toggleLabel");
     var elementBlob = document.getElementById("blob");
 
-    if (!this.setTheme) {
+    console.log("before set", this.setTheme);
+    if (this.setTheme == "dark") {
+      console.log("set dayertyuiuytyu");
+      element.classList.remove("day");
+      elementBlob.classList.remove("day-blob");
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      console.log("sSET NIGHT", this.setTheme);
+
       element.classList.add("day");
       elementBlob.classList.add("day-blob");
       document.documentElement.setAttribute("data-theme", "light");
     }
 
-    localStorage.setTheme = this.setTheme;
+    localStorage.setItem("dark-mode", this.setTheme);
   },
   methods: {
     nav(event) {
@@ -59,13 +72,18 @@ export default {
       this.$router.push({ path: event });
     },
     changeTheme() {
+      console.log("CHANGE THEME", this.setTheme);
       var element = document.getElementById("toggleLabel");
       var elementBlob = document.getElementById("blob");
 
-      this.setTheme = !this.setTheme;
-      localStorage.setTheme = this.setTheme;
+      if (this.setTheme == "dark") {
+        this.setTheme = "light";
+      } else {
+        this.setTheme = "dark";
+      }
+      localStorage.setItem("dark-mode", this.setTheme);
 
-      if (this.setTheme) {
+      if (this.setTheme == "dark") {
         element.classList.remove("day");
         elementBlob.classList.remove("day-blob");
         document.documentElement.setAttribute("data-theme", "dark");
@@ -74,7 +92,6 @@ export default {
         elementBlob.classList.add("day-blob");
         document.documentElement.setAttribute("data-theme", "light");
       }
-      console.log(this.setTheme);
     },
   },
 };
