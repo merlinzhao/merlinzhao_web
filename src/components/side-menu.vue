@@ -42,7 +42,6 @@ export default {
     } else {
       if (localStorage.getItem("dark-mode")) {
         this.setTheme = localStorage.getItem("dark-mode");
-        console.log("theme from storage", this.setTheme);
       } else {
         this.setTheme = "light";
       }
@@ -50,15 +49,11 @@ export default {
     var element = document.getElementById("toggleLabel");
     var elementBlob = document.getElementById("blob");
 
-    console.log("before set", this.setTheme);
     if (this.setTheme == "dark") {
-      console.log("set dayertyuiuytyu");
       element.classList.remove("day");
       elementBlob.classList.remove("day-blob");
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
-      console.log("sSET NIGHT", this.setTheme);
-
       element.classList.add("day");
       elementBlob.classList.add("day-blob");
       document.documentElement.setAttribute("data-theme", "light");
@@ -72,7 +67,6 @@ export default {
       this.$router.push({ path: event });
     },
     changeTheme() {
-      console.log("CHANGE THEME", this.setTheme);
       var element = document.getElementById("toggleLabel");
       var elementBlob = document.getElementById("blob");
 
