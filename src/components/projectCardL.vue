@@ -158,40 +158,40 @@ export default {
   props: {
     isEmpty: {
       type: Boolean,
-      default: false
+      default: false,
     },
     imgURL: {
       type: String,
-      default: "kang.jpg"
+      default: "kang.jpg",
     },
     backgroundColor: {
       type: String,
-      default: "transparent"
+      default: "transparent",
     },
     icons: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     projectTitle: {
       type: String,
-      default: "Title Unavailable"
+      default: "Title Unavailable",
     },
     subHeading: {
       type: String,
-      default: "none"
+      default: "none",
     },
     bodyText: {
       type: String,
-      default: "Description Unavailable"
+      default: "Description Unavailable",
     },
     gitLink: {
       type: String,
-      default: "none"
+      default: "none",
     },
     externalLink: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -206,8 +206,8 @@ export default {
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
       else if (this.gitLink != "none") window.open(this.gitLink);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -215,8 +215,9 @@ export default {
 .projectCard {
   width: 100%;
   height: 560px;
-  background: #fff;
+  background: var(--bg-projectCard);
   display: flex;
+  transition: background 0.5s ease-out;
 }
 
 .imageCol {
@@ -258,20 +259,20 @@ export default {
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-  color: black;
+  color: var(--black);
   font-weight: 400;
   margin-bottom: 5px;
 }
 .regText {
   line-height: 18pt;
   font-size: 12pt;
-  color: black;
+  color: var(--black);
   font-weight: 400;
 }
 .subHeading {
   line-height: 12pt;
   font-size: 11pt;
-  color: #555;
+  color: var(--PC-subhead);
   margin-bottom: 10px;
 }
 .leftCardItems {
@@ -301,10 +302,10 @@ export default {
 
 .githubLogo {
   transition: color 0.3s ease-out;
-  color: #616161;
+  color: var(--gitHub-logo);
 }
 .projectCard:hover .githubLogo {
-  color: black;
+  color: var(--black);
 }
 .modalText {
   margin: 0px;

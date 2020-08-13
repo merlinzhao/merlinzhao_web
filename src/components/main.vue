@@ -3,7 +3,8 @@
     <!-- <div
       style="height: 50px; width: 100%; position: fixed; background: rgb(255,0,0,0.5); z-index: 500 ; backdrop-filter: blur(20px);"
     ></div>-->
-    <span class="openNavButton" @click="openNav()">
+    <sideMenu style="position: fixed; z-index: 100;" :menuType="'desktop'" />
+    <!--<span class="openNavButton" @click="openNav()">
       <i class="fas fa-bars"></i>
     </span>
     <div id="mySidenav" class="sidenav headingThree navBG">
@@ -13,8 +14,8 @@
       <a href="#" @click="nav('projects')">Experience</a>
       <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
       <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
-      <!-- <a href="#">Resume</a> -->
-    </div>
+     
+    </div>-->
     <div class="intro" ref="top" @click="closeNav()">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
@@ -25,9 +26,9 @@
       <!-- <div class="explore"></div> -->
     </div>
 
-    <div @click="closeNav()">
+    <div>
       <!--<highlights />-->
-      <about-me @click="closeNav()" />
+      <about-me />
       <welcome />
       <myFooter @scrollTo="scrollTo" />
     </div>
@@ -41,6 +42,7 @@ import welcome from "./welcome.vue";
 import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
 import highlights from "./highlights.vue";
+import sideMenu from "./side-menu.vue";
 
 export default {
   name: "mainView",
@@ -48,9 +50,17 @@ export default {
     welcome,
     aboutMe,
     myFooter,
-    highlights
+    highlights,
+    sideMenu,
   },
-  mounted() {},
+
+  data() {
+    return {};
+  },
+
+  mounted() {
+    console.log(this.setTheme);
+  },
   methods: {
     openNav() {
       const width = this.$el.querySelector(".intro");
@@ -72,8 +82,13 @@ export default {
       var element = this.$refs["top"];
       var top = element.offsetTop;
       window.scrollTo(0, top);
-    }
-  }
+
+      if (localStorage.setTheme) {
+        this.setTheme = localStorage.setTheme;
+        console.log(this.setTheme);
+      }
+    },
+  },
 };
 </script>
 
@@ -82,8 +97,8 @@ export default {
   height: 100vh;
   min-height: 500px;
   width: 100%;
-  background: #111;
-
+  background: var(--bg-e4e4e4);
+  transition: background 0.5s ease-out;
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
@@ -230,13 +245,15 @@ export default {
 /* =============================================================================================== */
 .hello {
   font-size: 27pt;
-  color: #fff;
+  color: var(--hello);
   transform: translateY(-35px);
   display: flex;
   flex-direction: row;
   -webkit-animation: helloAnimation 5s ease-out;
   -moz-animation: helloAnimation 5s ease-out;
   animation: helloAnimation 5s ease-out;
+
+  transition: color 0.5s ease-out;
 }
 
 @-webkit-keyframes helloAnimation {

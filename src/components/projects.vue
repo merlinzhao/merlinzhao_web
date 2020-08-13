@@ -1,8 +1,7 @@
 <template>
   <div class="background">
-    <span class="openNavButton" @click="openNav()">
-      <i class="fas fa-bars"></i>
-    </span>
+    <sideMenu />
+
     <div id="mySidenav" class="sidenav headingThree navBG">
       <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
         <i class="fas fa-times-circle"></i>
@@ -109,20 +108,23 @@
 import projectCard from "./projectCard.vue";
 import projectCardLarge from "./projectCardL.vue";
 import myFooter from "./footer.vue";
+import sideMenu from "./side-menu.vue";
 export default {
   name: "projects",
   date() {
     return {
-      col: "col-2"
+      col: "col-2",
     };
   },
   components: {
     projectCard,
     projectCardLarge,
-    myFooter
+    myFooter,
+    sideMenu,
   },
   mounted() {
     this.scrollTo();
+    console.log(this.setTheme);
   },
   methods: {
     openNav() {
@@ -144,8 +146,12 @@ export default {
       var element = this.$refs["top"];
       var top = element.offsetTop;
       window.scrollTo(0, top);
-    }
-  }
+
+      if (localStorage.setTheme) {
+        this.setTheme = localStorage.setTheme;
+      }
+    },
+  },
 };
 </script>
 
@@ -155,10 +161,11 @@ export default {
   min-width: 250px;
   display: flex;
   flex-direction: column;
-  background: #eee;
+  background: var(--bg-eee);
   width: 100%;
   align-items: center;
   font-family: "Lato", sans-serif;
+  transition: background 0.5s ease-out;
 }
 .center {
   width: 100%;
@@ -184,7 +191,7 @@ export default {
   height: calc(80vh);
   min-height: 200px;
   width: 100%;
-  background: #e4e4e4;
+  background: var(--bg-e4e4e4);
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
