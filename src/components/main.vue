@@ -51,14 +51,16 @@ export default {
     aboutMe,
     myFooter,
     highlights,
-    sideMenu
+    sideMenu,
   },
 
   data() {
     return {};
   },
 
-  mounted() {},
+  mounted() {
+    console.log(this.setTheme);
+  },
   methods: {
     openNav() {
       const width = this.$el.querySelector(".intro");
@@ -85,8 +87,8 @@ export default {
         this.setTheme = localStorage.setTheme;
         console.log(this.setTheme);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -95,8 +97,8 @@ export default {
   height: 100vh;
   min-height: 500px;
   width: 100%;
-  background: #111;
-
+  background: var(--bg-e4e4e4);
+  transition: background 0.5s ease-out;
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
@@ -243,13 +245,15 @@ export default {
 /* =============================================================================================== */
 .hello {
   font-size: 27pt;
-  color: #fff;
+  color: var(--hello);
   transform: translateY(-35px);
   display: flex;
   flex-direction: row;
   -webkit-animation: helloAnimation 5s ease-out;
   -moz-animation: helloAnimation 5s ease-out;
   animation: helloAnimation 5s ease-out;
+
+  transition: color 0.5s ease-out;
 }
 
 @-webkit-keyframes helloAnimation {

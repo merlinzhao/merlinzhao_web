@@ -9,7 +9,7 @@
       </p>
       <p
         class="headingThree"
-        style="color: white; margin: 3% 0% 2% 0%; text-align: center;"
+        style="color: var(--mer-lin); margin: 3% 0% 2% 0%; text-align: center;"
       >Merlin (noun) - Mer•lin | \ ˈmər-lən \</p>
       <!--eslint-disable-next-line/> -->
       <p
@@ -37,7 +37,7 @@
         </div>
         <div class="col">
           <p class="headingFour Year" style=" margin: 3% 0% 2% 0%; width: 100%; text-align: right;">
-            <i class="fas fa-hourglass-half"></i> Junior (Level 3)
+            <i class="fas fa-hourglass-half"></i> 4th year undergrad
           </p>
         </div>
       </div>
@@ -157,12 +157,13 @@ export default {};
   height: auto;
   min-height: 500px;
   width: 100%;
-  background: #181818;
+  background: var(--bg-eee);
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
+  transition: background 0.5s ease-out;
 }
 
 .headlineText {
@@ -185,7 +186,7 @@ export default {};
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
-  color: #bbb;
+  color: var(--summary-row);
 }
 .aboutCenter {
   width: 95%;
@@ -222,6 +223,7 @@ export default {};
   left: 170px;
   bottom: 280px;
   z-index: 20;
+  filter: invert(var(--thatsme));
 }
 
 .headingOne {
@@ -246,13 +248,13 @@ export default {};
 }
 .regText {
   line-height: 18pt;
-  font-size: 12pt;
+  font-size: 13pt;
   font-weight: 400;
 }
 
 .regTextModal {
   line-height: 18pt;
-  font-size: 12pt;
+  font-size: 13pt;
   color: white;
   font-weight: 200;
 }

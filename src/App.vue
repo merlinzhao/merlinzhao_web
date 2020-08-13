@@ -18,7 +18,7 @@
 <script>
 export default {
   name: "app",
-  components: {}
+  components: {},
 };
 </script>
 
@@ -26,11 +26,59 @@ export default {
 :root {
   --bg-eee: #eee;
   --bg-e4e4e4: #e4e4e4;
+
+  /* main.vue colors */
+  --hello: #666;
+  --summary-row: #444;
+
+  /* about me colors */
+  --mer-lin: #444;
+  --thatsme: 80%;
+
+  /* project Card colors */
+  --bg-projectCard: white;
+  --PC-subhead: #333;
+  --gitHub-logo: #16166;
+
+  /* menu box colors */
+  --open-nav: #444;
+  --side-nav: #666;
+  --side-nav-hover: #444;
+
+  /* GENERIC */
+  --white: white;
+  --black: black;
 }
+
+/* ==================================== */
+/* ==================================== */
 [data-theme="dark"] {
   --bg-eee: #181818;
   --bg-e4e4e4: #111;
+
+  /* main.vue colors */
+  --hello: white;
+  --summary-row: #bbb;
+  /* about me colors */
+  --mer-lin: white;
+  --thatsme: 0%;
+
+  /* project Card colors */
+  --bg-projectCard: #333;
+  --PC-subhead: #aaa;
+  --gitHub-logo: #aaa;
+
+  /* menu box colors */
+  --open-nav: white;
+  --side-nav: rgb(196, 196, 196);
+  --side-nav-hover: white;
+
+  /* GENERIC */
+  --white: black;
+  --black: white;
 }
+
+/* ==================================== */
 
 #app {
   height: 100%;
@@ -64,21 +112,19 @@ export default {
   top: 0;
   left: 0;
   overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
   z-index: 10;
 }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  color: rgb(196, 196, 196);
+  color: var(--side-nav);
   display: block;
-  transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: white;
+  text-decoration: none;
+  color: var(--side-nav-hover);
 }
 
 .sidenav .closebtn {

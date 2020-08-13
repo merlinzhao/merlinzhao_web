@@ -1,24 +1,23 @@
 <template>
-  <div>
-    <div class="menu-box headingThree sidenav">
-      <span class="openNavButton" @click="openNav()">
-        <i class="fas fa-bars"></i>
-      </span>
-      <div class="night-mode-button">
-        <label @click="changeTheme()" for="night-mode" class="label" id="toggleLabel">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <div class="blob" id="blob"></div>
-        </label>
-      </div>
-      <a href="#" class="exp-box" @click="nav('projects')">Experience</a>
-      <a href="#" class="git-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
-      <a
-        href="#"
-        class="link-box"
-        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-      >LinkedIn</a>
+  <div class="menu-box headingThree sidenav">
+    <div class="glass-box" />
+    <span class="openNavButton" @click="openNav()">
+      <i class="fas fa-bars"></i>
+    </span>
+    <div class="night-mode-button">
+      <label @click="changeTheme()" for="night-mode" class="label" id="toggleLabel">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <div class="blob" id="blob"></div>
+      </label>
     </div>
+    <a href="#" class="exp-box" @click="nav('projects')">Experience</a>
+    <a href="#" class="git-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
+    <a
+      href="#"
+      class="link-box"
+      onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
+    >LinkedIn</a>
   </div>
 </template>
 
@@ -26,14 +25,14 @@
 export default {
   data() {
     return {
-      setTheme: true
+      setTheme: true,
     };
   },
   props: {
     menuType: {
       type: String,
-      default: "desktop"
-    }
+      default: "desktop",
+    },
   },
 
   mounted() {
@@ -76,15 +75,28 @@ export default {
         document.documentElement.setAttribute("data-theme", "light");
       }
       console.log(this.setTheme);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .menu-box {
-  height: 450px;
-  width: 270px;
+  height: 300px;
+  width: 250px;
+}
+
+.menu-box:hover .glass-box {
+  opacity: 1;
+}
+.glass-box {
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  transition: opacity 0.5s ease-out;
 }
 
 .themeIcon {
@@ -136,7 +148,7 @@ export default {
   font-size: 20pt;
   cursor: pointer;
   position: fixed;
-  color: white;
+  color: var(--open-nav);
   z-index: 10;
   margin-left: 10px;
   top: 10px;
@@ -149,6 +161,9 @@ export default {
 }
 
 /* =============================================================================================== */
+.night-mode-button {
+  margin-top: 50px;
+}
 .label {
   font-size: 22px;
   margin-left: 32px;

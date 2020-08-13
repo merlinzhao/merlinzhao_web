@@ -113,17 +113,18 @@ export default {
   name: "projects",
   date() {
     return {
-      col: "col-2"
+      col: "col-2",
     };
   },
   components: {
     projectCard,
     projectCardLarge,
     myFooter,
-    sideMenu
+    sideMenu,
   },
   mounted() {
     this.scrollTo();
+    console.log(this.setTheme);
   },
   methods: {
     openNav() {
@@ -148,10 +149,9 @@ export default {
 
       if (localStorage.setTheme) {
         this.setTheme = localStorage.setTheme;
-        console.log(this.setTheme);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -165,6 +165,7 @@ export default {
   width: 100%;
   align-items: center;
   font-family: "Lato", sans-serif;
+  transition: background 0.5s ease-out;
 }
 .center {
   width: 100%;
