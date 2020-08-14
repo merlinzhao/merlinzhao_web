@@ -356,6 +356,9 @@ export default {};
   .devCol {
     margin-right: 0px;
   }
+  .thatsme {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 833px) {

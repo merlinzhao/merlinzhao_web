@@ -3,7 +3,8 @@
     <!-- <div
       style="height: 50px; width: 100%; position: fixed; background: rgb(255,0,0,0.5); z-index: 500 ; backdrop-filter: blur(20px);"
     ></div>-->
-    <sideMenu style="position: fixed; z-index: 100;" :menuType="'desktop'" />
+    <sideMenu class="side-menu" style="position: fixed; z-index: 100;" :menuType="'desktop'" />
+    <mobile-menu class="mobile-menu" />
     <!--<span class="openNavButton" @click="openNav()">
       <i class="fas fa-bars"></i>
     </span>
@@ -43,6 +44,7 @@ import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
 import highlights from "./highlights.vue";
 import sideMenu from "./side-menu.vue";
+import mobileMenu from "./mobile-menu.vue";
 
 export default {
   name: "mainView",
@@ -52,6 +54,7 @@ export default {
     myFooter,
     highlights,
     sideMenu,
+    mobileMenu,
   },
 
   data() {
@@ -198,6 +201,12 @@ export default {
   opacity: 0.6;
 }
 
+.mobile-menu {
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+}
+
 @-webkit-keyframes shiftTitle {
   0% {
     /* font-size: 5em; */
@@ -312,6 +321,12 @@ export default {
   .hello {
     font-size: 19pt;
     text-align: center;
+  }
+  .side-menu {
+    visibility: hidden;
+  }
+  .mobile-menu {
+    visibility: visible;
   }
 }
 </style>
