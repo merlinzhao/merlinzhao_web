@@ -1,16 +1,8 @@
 <template>
   <div class="background">
-    <sideMenu />
+    <sideMenu class="side-menu" />
+    <mobile-menu class="mobile-menu" />
 
-    <div id="mySidenav" class="sidenav headingThree navBG">
-      <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
-        <i class="fas fa-times-circle"></i>
-      </a>
-      <a href="#" @click="$router.go(-1)">Home</a>
-      <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
-      <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
-      <!-- <a href="#">Resume</a> -->
-    </div>
     <div class="projectRowOut" ref="top">
       <div class="projectRow" style="color:white">
         <p class="headingTwo projectThree projectCenter">MADE BY MERLIN.</p>
@@ -109,6 +101,7 @@ import projectCard from "./projectCard.vue";
 import projectCardLarge from "./projectCardL.vue";
 import myFooter from "./footer.vue";
 import sideMenu from "./side-menu.vue";
+import mobileMenu from "./mobile-menu.vue";
 export default {
   name: "projects",
   date() {
@@ -122,6 +115,7 @@ export default {
     projectCardLarge,
     myFooter,
     sideMenu,
+    mobileMenu,
   },
   mounted() {
     this.scrollTo();
@@ -204,6 +198,11 @@ export default {
   width: 100%;
   margin-bottom: 25px;
 }
+.mobile-menu {
+  visibility: hidden;
+  position: fixed;
+  z-index: 100;
+}
 
 @-webkit-keyframes GradientAnimation {
   0% {
@@ -270,6 +269,17 @@ export default {
 
 .cardPaddingL {
   padding: 10px 5px 0px 5px;
+}
+
+@media only screen and (max-width: 555px) {
+}
+@media only screen and (max-width: 833px) {
+  .side-menu {
+    visibility: hidden;
+  }
+  .mobile-menu {
+    visibility: visible;
+  }
 }
 </style>
 

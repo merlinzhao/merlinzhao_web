@@ -27,28 +27,38 @@ export default {
   data() {
     return {
       isOpen: false,
+      menu: null,
+      arrow: null,
+      sidebav: null,
     };
   },
   methods: {
     arrowClick() {
-      //var outside = document.getElementById("outside-box");
-      var menu = document.getElementById("menu-box");
-      var arrow = document.getElementById("arrow-box");
-      var sidenav = document.getElementById("sidenav");
-
       if (this.isOpen) {
-        menu.classList.remove("menu-box-open");
-        //outside.classList.remove("outside-box-open");
-        arrow.classList.remove("arrow-box-open");
-        sidenav.classList.remove("sidenav-open");
-        this.isOpen = false;
+        this.closeMenu();
       } else {
-        menu.classList.add("menu-box-open");
-        //outside.classList.add("outside-box-open");
-        arrow.classList.add("arrow-box-open");
-        sidenav.classList.add("sidenav-open");
-        this.isOpen = true;
+        this.openMenu();
+
+        setTimeout(() => {
+          if (this.isOpen) {
+            this.closeMenu();
+          }
+        }, 8000);
       }
+    },
+    openMenu() {
+      this.menu.classList.add("menu-box-open");
+      //outside.classList.add("outside-box-open");
+      this.arrow.classList.add("arrow-box-open");
+      this.sidenav.classList.add("sidenav-open");
+      this.isOpen = true;
+    },
+    closeMenu() {
+      this.menu.classList.remove("menu-box-open");
+      //outside.classList.remove("outside-box-open");
+      this.arrow.classList.remove("arrow-box-open");
+      this.sidenav.classList.remove("sidenav-open");
+      this.isOpen = false;
     },
     changeTheme() {
       var element = document.getElementById("mobileToggle");
@@ -77,6 +87,10 @@ export default {
     },
   },
   mounted() {
+    this.menu = document.getElementById("menu-box");
+    this.arrow = document.getElementById("arrow-box");
+    this.sidenav = document.getElementById("sidenav");
+
     if (window.matchMedia("prefers-color-scheme: dark").matches) {
       this.setTheme = "dark";
       document.documentElement.setAttribute("data-theme", "dark");
