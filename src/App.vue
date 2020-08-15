@@ -105,9 +105,6 @@ export default {
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
 
 .sidenav {
-  height: 100%;
-  width: 0;
-
   position: fixed;
   top: 0;
   left: 0;

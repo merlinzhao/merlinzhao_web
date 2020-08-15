@@ -30,16 +30,18 @@ export default {
       menu: null,
       arrow: null,
       sidebav: null,
+      timeout: null,
     };
   },
   methods: {
     arrowClick() {
       if (this.isOpen) {
+        clearTimeout(this.timeout);
         this.closeMenu();
       } else {
         this.openMenu();
 
-        setTimeout(() => {
+        this.timeout = setTimeout(() => {
           if (this.isOpen) {
             this.closeMenu();
           }
@@ -130,7 +132,8 @@ export default {
   height: 50px;
   position: fixed;
   backdrop-filter: blur(10px);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-out;
+  transform: translateY(0px);
 }
 .arrow {
   position: fixed;
@@ -142,9 +145,12 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-out;
 
   margin: 0 0 0 0;
+}
+.arrow-box {
+  transform: translateY(0px);
 }
 
 .menu-box-open {
@@ -152,11 +158,8 @@ export default {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.outside-box-open {
-}
-
 .sidenav {
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-out;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -164,6 +167,7 @@ export default {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  height: 0px;
   transform: translateY(-250px);
 }
 

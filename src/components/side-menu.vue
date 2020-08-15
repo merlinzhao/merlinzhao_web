@@ -42,14 +42,11 @@ export default {
     ) {
       this.setTheme = "dark";
       document.documentElement.setAttribute("data-theme", "dark");
-      console.log("auto set dark");
     } else {
       if (localStorage.getItem("dark-mode")) {
         this.setTheme = localStorage.getItem("dark-mode");
-        console.log("2 set dark");
       } else {
         this.setTheme = "light";
-        console.log("2 set light");
       }
     }
     var element = document.getElementById("toggleLabel");
