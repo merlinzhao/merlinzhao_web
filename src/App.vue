@@ -45,11 +45,12 @@ export default {
   --side-nav: #666;
   --side-nav-hover: #444;
 
+  --bg-mobile-menu: rgba(220, 220, 220, 0.7);
+  --open-nav: rgba(50, 50, 50, 0.7);
+
   /* GENERIC */
   --white: white;
   --black: black;
-
-  background: grey;
 }
 
 /* ==================================== */
@@ -75,18 +76,14 @@ export default {
   --side-nav: rgb(196, 196, 196);
   --side-nav-hover: white;
 
+  --bg-mobile-menu: rgba(0, 0, 0, 0.7);
+  --open-nav: rgba(255, 255, 255, 0.7);
   /* GENERIC */
   --white: black;
   --black: white;
-
-  background: black;
 }
 
 /* ==================================== */
-
-.body {
-  background-color: black !important;
-}
 
 #app {
   height: 100%;
@@ -144,14 +141,14 @@ export default {
   font-size: 20pt;
   cursor: pointer;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--open-nav);
   z-index: 10;
   margin-left: 10px;
   top: 5px;
   left: 5px;
 }
 .openNavButton:hover {
-  color: white;
+  color: var(--black);
 }
 @media screen and (max-height: 450px) {
   .sidenav {

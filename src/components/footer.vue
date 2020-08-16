@@ -25,7 +25,10 @@
         <i class="fab fa-linkedin" />
       </button>
     </div>
-    <p class="footerText">© merlin zhao</p>
+    <p class="footerText">
+      Made from scratch with ❤️ and a lot Googling
+      <br />© 2020 merlin zhao
+    </p>
   </div>
 </template>
 <script>
@@ -34,8 +37,8 @@ export default {
   props: {
     page: {
       type: String,
-      default: "home"
-    }
+      default: "home",
+    },
   },
   methods: {
     toTop() {
@@ -44,8 +47,8 @@ export default {
     nav(event) {
       if (event != "projects") return;
       this.$router.push({ path: event });
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -77,6 +80,7 @@ export default {
   margin: 0px;
   color: #999;
   font-size: 12pt;
+  text-align: center;
 }
 @media only screen and (max-width: 768px) {
   .footerButton {

@@ -1,22 +1,8 @@
 <template>
   <div>
-    <!-- <div
-      style="height: 50px; width: 100%; position: fixed; background: rgb(255,0,0,0.5); z-index: 500 ; backdrop-filter: blur(20px);"
-    ></div>-->
     <sideMenu class="side-menu" style="position: fixed; z-index: 100;" :menuType="'desktop'" />
     <mobile-menu class="mobile-menu" />
-    <!--<span class="openNavButton" @click="openNav()">
-      <i class="fas fa-bars"></i>
-    </span>
-    <div id="mySidenav" class="sidenav headingThree navBG">
-      <a href="javascript:void(0)" class="closebtn" @click="closeNav()">
-        <i class="fas fa-times-circle"></i>
-      </a>
-      <a href="#" @click="nav('projects')">Experience</a>
-      <a href="#" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
-      <a href="#" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">LinkedIn</a>
-     
-    </div>-->
+
     <div class="intro" ref="top" @click="closeNav()">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
@@ -86,7 +72,6 @@ export default {
 
       if (localStorage.setTheme) {
         this.setTheme = localStorage.setTheme;
-        console.log(this.setTheme);
       }
     },
   },

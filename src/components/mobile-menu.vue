@@ -153,7 +153,7 @@ export default {
 .menu-box-open {
   height: 300px;
   transform: translateY(-0px);
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--bg-mobile-menu);
 }
 
 .sidenav {

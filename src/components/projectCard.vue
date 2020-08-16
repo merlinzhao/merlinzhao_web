@@ -240,11 +240,11 @@ export default {
   opacity: 1;
 }
 .iconRow {
-  position: absolute;
+  position: relative;
   justify-content: center;
   align-items: center;
   bottom: 0px;
-  width: calc(100% - 10px);
+  width: 100%;
   display: flex;
   flex-direction: row;
   padding: 0px 25px 15px 25px;

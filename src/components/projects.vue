@@ -167,6 +167,7 @@ export default {
   display: flex;
   flex-direction: row;
   padding: 0px 5px 0px 5px;
+  margin: 0px;
   align-items: center;
 }
 

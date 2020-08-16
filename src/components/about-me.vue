@@ -358,6 +358,7 @@ export default {};
   }
   .thatsme {
     visibility: hidden;
+    position: fixed;
   }
 }
 
