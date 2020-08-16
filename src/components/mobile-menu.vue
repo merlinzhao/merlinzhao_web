@@ -10,11 +10,11 @@
         </label>
       </div>
 
-      <a href="#" class="exp-box" @click="nav('projects')">Experience</a>
-      <a href="#" class="git-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
+      <a href="#" class="item-box" @click="nav('projects')">Experience</a>
+      <a href="#" class="item-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
       <a
         href="#"
-        class="link-box"
+        class="item-box"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
       >LinkedIn</a>
     </div>
@@ -178,14 +178,15 @@ export default {
 .arrow-box-open {
   transform: rotate(180deg);
 }
-
+.item-box {
+  padding-left: 8px;
+}
 /* =============================================================================================== */
 .night-mode-button {
   margin-top: 50px;
 }
 .label {
   font-size: 22px;
-  margin-left: 22px;
   background-color: rgb(19, 26, 48);
   display: flex;
   height: 35px;
