@@ -48,6 +48,8 @@ export default {
   /* GENERIC */
   --white: white;
   --black: black;
+
+  background: grey;
 }
 
 /* ==================================== */
@@ -76,9 +78,15 @@ export default {
   /* GENERIC */
   --white: black;
   --black: white;
+
+  background: black;
 }
 
 /* ==================================== */
+
+.body {
+  background-color: black !important;
+}
 
 #app {
   height: 100%;
@@ -135,7 +143,7 @@ export default {
 .openNavButton {
   font-size: 20pt;
   cursor: pointer;
-  position: fixed;
+
   color: rgba(255, 255, 255, 0.7);
   z-index: 10;
   margin-left: 10px;

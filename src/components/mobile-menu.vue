@@ -18,6 +18,7 @@
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
       >LinkedIn</a>
     </div>
+
     <i class="fas fa-angle-down openNavButton arrow" id="arrow-box" @click="arrowClick()"></i>
   </div>
 </template>
@@ -130,13 +131,14 @@ export default {
 .menu-box {
   width: 100vw;
   height: 50px;
-  position: fixed;
   backdrop-filter: blur(10px);
   transition: all 0.7s ease-out;
   transform: translateY(0px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .arrow {
-  position: fixed;
   font-size: 35px;
   height: 50px;
   width: 100vw;
@@ -146,19 +148,16 @@ export default {
   justify-content: center;
   align-items: center;
   transition: all 0.7s ease-out;
-
   margin: 0 0 0 0;
 }
-.arrow-box {
-  transform: translateY(0px);
-}
-
 .menu-box-open {
   height: 300px;
+  transform: translateY(-0px);
   background: rgba(0, 0, 0, 0.7);
 }
 
 .sidenav {
+  position: relative;
   transition: all 0.7s ease-out;
   width: 100vw;
   display: flex;
@@ -168,19 +167,16 @@ export default {
   align-items: center;
   opacity: 0;
   height: 0px;
-  transform: translateY(-250px);
 }
 
 .sidenav-open {
   height: 250px;
   width: 100vw;
-
   opacity: 1;
-  transform: translateY(0px);
 }
 
 .arrow-box-open {
-  transform: translateY(250px) rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* =============================================================================================== */
