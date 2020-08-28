@@ -137,6 +137,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  background: var(--bg-mobile-menu-neutral);
 }
 .arrow {
   font-size: 35px;

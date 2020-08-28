@@ -45,6 +45,7 @@ export default {
   --side-nav: #666;
   --side-nav-hover: #444;
 
+  --bg-mobile-menu-neutral: rgba(155, 155, 155, 0.3);
   --bg-mobile-menu: rgba(220, 220, 220, 0.7);
   --open-nav: rgba(50, 50, 50, 0.7);
 
@@ -76,6 +77,7 @@ export default {
   --side-nav: rgb(196, 196, 196);
   --side-nav-hover: white;
 
+  --bg-mobile-menu-neutral: rgba(0, 0, 0, 0.3);
   --bg-mobile-menu: rgba(0, 0, 0, 0.7);
   --open-nav: rgba(255, 255, 255, 0.7);
   /* GENERIC */

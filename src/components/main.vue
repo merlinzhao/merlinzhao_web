@@ -3,6 +3,8 @@
     <sideMenu class="side-menu" style="position: fixed; z-index: 100;" :menuType="'desktop'" />
     <mobile-menu class="mobile-menu" />
 
+    <dots style="position: fixed; height: 100vh; width: 100vw;" />
+
     <div class="intro" ref="top" @click="closeNav()">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
@@ -31,6 +33,7 @@ import myFooter from "./footer.vue";
 import highlights from "./highlights.vue";
 import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
+import dots from "./dots.vue";
 
 export default {
   name: "mainView",
@@ -41,6 +44,7 @@ export default {
     highlights,
     sideMenu,
     mobileMenu,
+    dots,
   },
 
   data() {
