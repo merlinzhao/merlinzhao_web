@@ -1,151 +1,128 @@
 <template>
-  <div id="dots" style="height: 100%; width:100%" />
+  <canvas id="dots" style="height: 100%; width:100%" />
 </template>
 <script>
 import * as THREE from "three";
-import * as Stats from "stats";
+import Noise from "noise-library";
 
 export default {
   data() {
     return {
-      SEPARATION: 100,
-      AMOUNTX: 50,
-      AMOUNTY: 50,
-      container: null,
-      stats: null,
-      camera: null,
-      scene: null,
+      canvas: null,
+      width: 1920,
+      height: 1080,
       renderer: null,
-      particles: 0,
-      count: 0,
-      particle: 0,
-      mouseX: 0,
-      mouseY: 0,
-      windowHalfX: 0,
-      windowHalfY: 0,
-      PI2: 0,
-      geometry: 0,
-      material: 0,
+      scene: null,
+      camera: null,
+      light: null,
+      light2: null,
+      geometry: null,
+      vector: null,
+      material: null,
+      shape: null,
       i: 0,
+      perlin: null,
+      ratio: 0.5,
+      mouse: null,
+      mousemoveX: 1,
     };
   },
   mounted() {
-    // GO HERE => https://github.com/mrdoob/three.js/blob/master/examples/canvas_particles_waves.html
+    this.canvas = document.querySelector("#dots");
+    this.width = this.canvas.offsetWidth;
+    this.height = this.canvas.offsetHeight;
 
-    this.windowHalfX = window.innerWidth / 2;
-    this.windowHalfY = window.innerHeight / 2;
-    this.container = document.getElementById("dots");
+    this.renderer = new THREE.WebGLRenderer({
+      canvas: this.canvas,
+      antialias: true,
+      alpha: true,
+    });
+    this.renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
+    this.renderer.setSize(this.width, this.height);
+
+    this.renderer.setClearColor(0x000000, 0);
+
+    this.scene = new THREE.Scene();
+
     this.camera = new THREE.PerspectiveCamera(
-      50,
-      1920 / 1080, //window.innerWidth / window.innerHeight,
-      1,
+      100,
+      this.width / this.height,
+      0.1,
       10000
     );
+    this.camera.position.set(120, 0, 300);
 
-    this.camera.position.z = 1000; // Good var to change
-    this.scene = new THREE.Scene();
-    this.particles = new Array();
-    this.PI2 = Math.PI * 2;
-    this.geometry = new THREE.Geometry();
-    this.material = new THREE.SpriteMaterial({
-      color: 0xffffff,
-    });
+    this.light = new THREE.HemisphereLight(0xff00ff, 0x0000ff, 0.6);
+    this.scene.add(this.light);
 
-    this.i = 0;
-    for (var ix = 0; ix < this.AMOUNTX; ix++) {
-      for (var iy = 0; iy < this.AMOUNTY; iy++) {
-        this.particle = this.particles[this.i++] = new THREE.Sprite(
-          this.material
-        );
-        this.particle.position.x =
-          ix * this.SEPARATION - (this.AMOUNTX * this.SEPARATION) / 2;
-        this.particle.position.z =
-          iy * this.SEPARATION - (this.AMOUNTY * this.SEPARATION) / 2;
-        this.scene.add(this.particle);
+    this.light = new THREE.DirectionalLight(0xff0000, 0.2);
+    this.light.position.set(200, 300, 900);
+    this.scene.add(this.light);
+    this.light2 = this.light.clone();
+    this.light2.position.set(-200, 300, 400);
+    this.scene.add(this.light2);
 
-        if (this.i > 0) {
-          this.geometry.vertices.push(this.particle.position);
-        }
-      }
+    this.geometry = new THREE.IcosahedronGeometry(120, 4);
+    for (this.i = 0; this.i < this.geometry.vertices.length; this.i++) {
+      this.vector = this.geometry.vertices[this.i];
+      this.vector._o = this.vector.clone();
     }
+    this.material = new THREE.MeshPhongMaterial({
+      emissive: 0x0aefff,
+      emissiveIntensity: 0.3,
+      shininess: 0,
+    });
+    this.shape = new THREE.Mesh(this.geometry, this.material);
+    this.scene.add(this.shape);
 
-    // var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({
-    //   color: 0xffffff,
-    //   opacity: 0.5,
-    //   linewidth: 4
-    // }));
-    // scene.add( line );
+    this.mouse = new THREE.Vector2(0.8, 0.5);
 
-    this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.container.appendChild(this.renderer.domElement);
-    //this.stats = new Stats();
-    //this.container.appendChild(this.stats.dom);
-    document.addEventListener("mousemove", this.onDocumentMouseMove, false);
-    document.addEventListener("touchstart", this.onDocumentTouchStart, false);
-    document.addEventListener("touchmove", this.onDocumentTouchMove, false);
-    //
-    window.addEventListener("resize", this.onWindowResize, false);
-
-    this.animate();
+    requestAnimationFrame(this.render);
+    window.addEventListener("mousemove", this.onMouseMove);
+    var resizeTm;
+    window.addEventListener("resize", function () {
+      resizeTm = clearTimeout(resizeTm);
+      resizeTm = setTimeout(this.onResize, 200);
+    });
   },
 
   methods: {
-    onWindowResize() {
-      this.windowHalfX = window.innerWidth / 2;
-      this.windowHalfY = window.innerHeight / 2;
-      this.camera.aspect = window.innerWidth / window.innerHeight;
+    onResize() {
+      this.canvas.style.width = "";
+      this.canvas.style.height = "";
+      this.width = this.canvas.offsetWidth;
+      this.height = this.canvas.offsetHeight;
+      this.camera.aspect = this.width / this.height;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(this.width, this.height);
     },
-
-    onDocumentMouseMove(event) {
-      this.mouseX = event.clientX - this.windowHalfX;
-      this.mouseY = event.clientY - this.windowHalfY;
+    onMouseMove(e) {
+      //this.mousemoveX = (this.mousemoveX + e.offsetX) * 0.00001;
+      // TweenMax.to(mouse, 0.8, {
+      //   y: e.clientY / this.height,
+      //   x: e.clientX / this.width,
+      //   ease: Power1.easeOut,
+      // });
     },
-
-    onDocumentTouchStart(event) {
-      if (event.touches.length === 1) {
-        event.preventDefault();
-        this.mouseX = event.touches[0].pageX - this.windowHalfX;
-        this.mouseY = event.touches[0].pageY - this.windowHalfY;
+    updateVertices(a) {
+      for (var i = 0; i < this.geometry.vertices.length; i++) {
+        this.vector = this.geometry.vertices[i];
+        this.vector.copy(this.vector._o);
+        this.perlin = Noise.perlin3(
+          this.vector.x * 0.009 + a * 0.0001,
+          this.vector.y * 0.006 + a * 0.0002,
+          this.vector.z * 0.015
+        );
+        this.ratio = this.perlin * 0.4 * (this.mouse.y + 0.1) + 0.8;
+        this.vector.multiplyScalar(this.ratio);
       }
+      this.geometry.verticesNeedUpdate = true;
     },
 
-    onDocumentTouchMove(event) {
-      if (event.touches.length === 1) {
-        event.preventDefault();
-        this.mouseX = event.touches[0].pageX - this.windowHalfX;
-        this.mouseY = event.touches[0].pageY - this.windowHalfY;
-      }
-    },
-
-    animate() {
-      requestAnimationFrame(this.animate);
-      this.render();
-      //this.stats.update();
-    },
-
-    render() {
-      this.renderer.setClearColor(0x07074e, 1);
-      this.camera.position.x += (this.mouseX - this.camera.position.x) * 0.008;
-      this.camera.position.y += (-this.mouseY - this.camera.position.y) * 0.008;
-      this.camera.lookAt(this.scene.position);
-      var i = 0;
-      for (var ix = 0; ix < this.AMOUNTX; ix++) {
-        for (var iy = 0; iy < this.AMOUNTY; iy++) {
-          this.particle = this.particles[i++];
-          this.particle.position.y =
-            Math.sin((ix + this.count) * 0.3) * 50 +
-            Math.sin((iy + this.count) * 0.5) * 50;
-          this.particle.scale.x = this.particle.scale.y =
-            (Math.sin((ix + this.count) * 0.3) + 1) * 4 +
-            (Math.sin((iy + this.count) * 0.5) + 1) * 4;
-        }
-      }
+    render(a) {
+      requestAnimationFrame(this.render);
+      this.updateVertices(a);
       this.renderer.render(this.scene, this.camera);
-      this.count += 0.01;
     },
   },
 };

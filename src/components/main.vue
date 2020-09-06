@@ -3,11 +3,11 @@
     <sideMenu class="side-menu" style="position: fixed; z-index: 100;" :menuType="'desktop'" />
     <mobile-menu class="mobile-menu" />
 
-    <dots style="position: fixed; height: 100vh; width: 100vw;" />
-
     <div class="intro" ref="top" @click="closeNav()">
+      <dots style="position: absolute; height: 100vh; width: 100vw;" />
       <div class="center">
-        <p class="MERLIN">MERLIN</p>
+        <!-- <p class="MERLIN">MERLIN</p> -->
+        <p class="merlin">merlinzhao.me</p>
       </div>
       <div class="hello">
         <p>Hello 👋 Thanks for dropping by!</p>
@@ -149,7 +149,7 @@ export default {
   margin: 0px;
 
   position: absolute;
-  background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff);
+  background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff, #ff7b00);
   background-size: 600% 600%;
 
   background-clip: text;
@@ -161,6 +161,10 @@ export default {
   -webkit-animation: introGradientTwo 5s ease-in-out infinite;
   -moz-animation: introGradientTwo 5s ease-in-out infinite;
   animation: introGradientTwo 5s ease-in-out infinite;
+}
+
+.merlin {
+  color: white;
 }
 
 .center {
