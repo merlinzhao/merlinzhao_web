@@ -13,6 +13,20 @@
       <div class="hello">
         <p id="intro_text">{{intro_list[0]}}</p>
       </div>
+      <div
+        class="center row"
+        style="position:absolute; bottom: 0; background:grey; max-width: 1140px; width: calc(100%-40px); margin: 0 20px 0 20px;"
+      >
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+          <div class="highLightCard"></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+          <div class="highLightCard"></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+          <div class="highLightCard"></div>
+        </div>
+      </div>
       <!-- <div class="explore"></div> -->
     </div>
 
@@ -116,10 +130,13 @@ export default {
         const first = this.intro_list.shift();
         this.intro_list = this.intro_list.concat(first);
         i++;
-        if (i == 7) {
+        console.log(i);
+        if (i >= 7) {
+          console.log("DONE!");
           clearInterval(this.intro_rando_interval);
         }
       }, 60);
+      i = 0;
 
       const first = this.intro_list.shift();
       this.intro_list = this.intro_list.concat(first);
@@ -371,6 +388,20 @@ export default {
   100% {
     opacity: 1;
   }
+}
+
+/* ___________________________________________________ */
+
+.cardPadding {
+  padding: 10px 15px 0px 15px;
+  /* width: 33% !important; */
+  /* min-width: 250px !important; */
+  /* max-width: 33%; */
+}
+
+.highLightCard {
+  height: 500px;
+  background: red;
 }
 
 /* ======================================================================== */
