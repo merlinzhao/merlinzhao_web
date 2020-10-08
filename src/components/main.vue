@@ -4,13 +4,14 @@
     <mobile-menu class="mobile-menu" />
 
     <div class="intro" ref="top" @click="closeNav()">
-      <dots style="position: absolute; height: 100vh; width: 100vw;" />
+      <p class="love">Made from scratch with ❤️ and a lot of googling</p>
+      <!-- <dots style="position: absolute; height: 100vh; width: 100vw;" /> -->
       <div class="center">
-        <!-- <p class="MERLIN">MERLIN</p> -->
-        <p class="merlin">merlinzhao.me</p>
+        <p class="MERLIN">MERLIN</p>
+        <!-- <p class="merlin">merlinzhao.me</p> -->
       </div>
       <div class="hello">
-        <p>Hello 👋 Thanks for dropping by!</p>
+        <p id="intro_text">{{intro_list[0]}}</p>
       </div>
       <!-- <div class="explore"></div> -->
     </div>
@@ -48,11 +49,82 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      intro_list: [
+        "EST. 1998",
+        "Apr*l",
+        "Rea@#$is",
+        "00010100",
+        "C^ip0tle",
+        "SEULGI",
+        "%L1ke2 Sl*&p",
+        "rani294@#$@#$@3",
+
+        "NEW YORK, NY",
+        "Qu$#ns",
+        "K*rE# !own",
+        ")kea",
+        "H@mi!ton",
+        "I$k Wh$#2 put",
+        "AN$wsr t#xt",
+        "TWICEEEE@!#!#!5n4",
+
+        "THE 6IX",
+        "87234t2gh",
+        "1312312",
+        "IRENE",
+        "chpfwef",
+        "198fh33 1123$#(",
+        "pssss$$t",
+        "FL1(*@HING !&@*",
+
+        "VOTE 2020",
+        "WENDY",
+        "1312312",
+        "uayfeq",
+        "YERI",
+        "!mtra#ped",
+        "boo!,",
+        "neeed to fill this lol",
+
+        "안녕하세요",
+        "YERI",
+        "0010 0011",
+        "uayfeq",
+        "chpfwef",
+        "RED VELVET!",
+        "!#()@#",
+        "i am typing hehe",
+      ],
+      intro_random: ["87234t2gh", "1312312", "uayfeq", "chpfwef"],
+      intro_text: null,
+      intro_count: 0,
+      intro_rando_interval: "undefined",
+    };
   },
 
-  mounted() {},
+  mounted() {
+    window.setInterval(() => {
+      this.changeIntro();
+    }, 2200);
+  },
   methods: {
+    changeIntro() {
+      let i = 0;
+      this.intro_rando_interval = window.setInterval(() => {
+        //this.changeRandom();
+        const first = this.intro_list.shift();
+        this.intro_list = this.intro_list.concat(first);
+        i++;
+        if (i == 7) {
+          clearInterval(this.intro_rando_interval);
+        }
+      }, 60);
+
+      const first = this.intro_list.shift();
+      this.intro_list = this.intro_list.concat(first);
+    },
+    changeRandom() {},
     openNav() {
       const width = this.$el.querySelector(".intro");
       if (width.offsetWidth > 350) {
@@ -149,7 +221,7 @@ export default {
   margin: 0px;
 
   position: absolute;
-  background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff, #ff7b00);
+  background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff);
   background-size: 600% 600%;
 
   background-clip: text;
@@ -158,13 +230,15 @@ export default {
   color: transparent;
   -webkit-text-fill-color: rgba(255, 0, 0, 0);
 
-  -webkit-animation: introGradientTwo 5s ease-in-out infinite;
-  -moz-animation: introGradientTwo 5s ease-in-out infinite;
-  animation: introGradientTwo 5s ease-in-out infinite;
+  -webkit-animation: introGradientTwo 6s ease-in-out infinite;
+  -moz-animation: introGradientTwo 6s ease-in-out infinite;
+  animation: introGradientTwo 6s ease-in-out infinite;
 }
 
 .merlin {
   color: white;
+  font-family: "Varela Round", sans-serif;
+  font-size: 150px;
 }
 
 .center {
@@ -177,10 +251,10 @@ export default {
   align-items: center;
 
   transform: translateY(-40px);
-
+  /* 
   -webkit-animation: introGradientTwo 3s ease-in-out;
   -moz-animation: introGradientTwo 3s ease-in-out;
-  animation: shiftTitle 3s ease-in-out;
+  animation: shiftTitle 3s ease-in-out; */
 }
 
 .explore {
@@ -198,6 +272,12 @@ export default {
   visibility: hidden;
   position: fixed;
   z-index: 100;
+}
+
+.love {
+  position: absolute;
+  top: 10px;
+  color: var(--hello);
 }
 
 @-webkit-keyframes shiftTitle {
@@ -244,16 +324,19 @@ export default {
 /* ========================= HELLO HELLO HELLO HELLO HELLO HELLO HELLO =========================== */
 /* =============================================================================================== */
 .hello {
-  font-size: 27pt;
+  width: 680px;
+  font-size: 40pt;
+  font-weight: 400;
   color: var(--hello);
-  transform: translateY(-35px);
+  transform: translateY(-65px);
   display: flex;
   flex-direction: row;
-  -webkit-animation: helloAnimation 5s ease-out;
+  /* -webkit-animation: helloAnimation 5s ease-out;
   -moz-animation: helloAnimation 5s ease-out;
-  animation: helloAnimation 5s ease-out;
+  animation: helloAnimation 5s ease-out; */
 
   transition: color 0.5s ease-out;
+  text-align: left;
 }
 
 @-webkit-keyframes helloAnimation {
@@ -301,6 +384,8 @@ export default {
   .hello {
     font-size: 14pt !important;
     text-align: center;
+    width: 225px !important;
+    transform: translateY(-50px) !important;
   }
   .headingThree {
     font-size: 16pt;
@@ -312,8 +397,10 @@ export default {
   }
 
   .hello {
-    font-size: 19pt;
+    font-size: 26pt;
     text-align: center;
+    width: 450px;
+    transform: translateY(-55px);
   }
   .side-menu {
     visibility: hidden;

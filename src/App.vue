@@ -2,6 +2,18 @@
   <div id="app" class="app">
     <router-view />
     <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
     />
@@ -28,7 +40,7 @@ export default {
   --bg-e4e4e4: #e4e4e4;
 
   /* main.vue colors */
-  --hello: #666;
+  --hello: #999;
   --summary-row: #444;
 
   /* about me colors */
@@ -61,7 +73,7 @@ export default {
   --bg-e4e4e4: #111;
 
   /* main.vue colors */
-  --hello: white;
+  --hello: #ddd;
   --summary-row: #bbb;
   /* about me colors */
   --mer-lin: white;
@@ -90,6 +102,7 @@ export default {
 #app {
   height: 100%;
   width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 .headingOne {
   line-height: 65pt;
