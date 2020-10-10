@@ -1,32 +1,34 @@
 <template>
   <div class="background">
-    <div class="projectRowOut">
-      <div class="projectRow" style="cursor:pointer; color:white" @click="nav('projects')">
-        <p class="headingThree projectThree projectCenter2">VIEW MY</p>
-        <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
+    <div class="welcomeContainer">
+      <div class="projectRowOut">
+        <div class="projectRow" style="cursor:pointer; color:white" @click="nav('projects')">
+          <p class="headingThree projectThree projectCenter2">VIEW MY</p>
+          <p class="headingThree projectThree projectCenter">PROJECTS & EXPERIENCE</p>
+        </div>
       </div>
-    </div>
-    <div class="gitRow">
-      <div
-        class="col gitRowLeft"
-        style="cursor:pointer; color: white;"
-        onclick="window.open('http://www.github.com/merlinzhao')"
-      >
-        <p class="regText regGitText gitCenter2">www.github.com/merlinzhao</p>
-        <p class="headingThree projectThree gitCenter1">
-          <i class="fab fa-github" /> GITHUB
-        </p>
-      </div>
-      <div
-        class="col gitRowRight"
-        style="cursor:pointer; color: white;"
-        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-      >
-        <div class="linked2">
-          <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
-          <p class="headingThree projectThree linkedCenter1">
-            <i class="fab fa-linkedin" /> LINKEDIN
+      <div class="gitRow">
+        <div
+          class="col gitRowLeft"
+          style="cursor:pointer; color: white;"
+          onclick="window.open('http://www.github.com/merlinzhao')"
+        >
+          <p class="regText regGitText gitCenter2">www.github.com/merlinzhao</p>
+          <p class="headingThree projectThree gitCenter1">
+            <i class="fab fa-github" /> GITHUB
           </p>
+        </div>
+        <div
+          class="col gitRowRight"
+          style="cursor:pointer; color: white;"
+          onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
+        >
+          <div class="linked2">
+            <p class="regText regGitText linkedCenter2">www.linkedin.com/in/merlinzhao</p>
+            <p class="headingThree projectThree linkedCenter1">
+              <i class="fab fa-linkedin" /> LINKEDIN
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -41,31 +43,34 @@ export default {
   methods: {
     nav(event) {
       this.$router.push({ path: event });
-    }
-  }
+    },
+  },
 };
 </script>
 
 
 <style scoped>
+.background {
+  height: 730px;
+  min-height: 500px;
+  width: 100%;
+  background: var(--bg-eee);
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+  align-items: flex-start;
+}
 /* ======================================================================== */
 /* NAME ROW ITEMS ========= NAME NAME NAME NAME =========== NAME ROW ITEMS  */
 /* ======================================================================== */
-.nameRow {
-  background: #fafafa;
-  height: 85vh;
-  min-height: 600px;
-  max-height: 1200px;
-  width: 100vw;
-  margin: auto;
+
+.welcomeContainer {
+  height: 100%;
+  max-width: 1240px;
+  width: 100%;
 }
-.nameRowCenter {
-  height: 85vh;
-  min-height: 600px;
-  max-height: 1200px;
-  width: 80%;
-  margin: auto;
-}
+
 .nameBG {
   background: linear-gradient(271deg, #c342ff, #2694ff, #455dbd);
   background-size: 800% 800%;
@@ -177,9 +182,9 @@ export default {
 /* PROJECT ROW ITEMS ====== PROJECT PROJECT PROJECT ===== PROJECT ROW ITEMS */
 /* ======================================================================== */
 .projectRow {
-  height: 500px;
+  height: 400px;
   width: 100%;
-  background: rgb(255, 145, 0);
+  background: #fe875d;
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
@@ -188,12 +193,12 @@ export default {
   transition: background 0.5s ease-out;
 }
 .projectRowOut {
-  background: linear-gradient(230deg, #ff5bf1, #fd6500, #fdcb00);
   background-size: 600% 600%;
+  padding: 0px 0 5px 0;
 
-  -webkit-animation: GradientAnimation 7s ease-in-out infinite;
+  /* -webkit-animation: GradientAnimation 7s ease-in-out infinite;
   -moz-animation: GradientAnimation 7s ease-in-out infinite;
-  animation: GradientAnimation 7s ease-in-out infinite;
+  animation: GradientAnimation 7s ease-in-out infinite; */
 }
 
 @-webkit-keyframes GradientAnimation {
@@ -230,7 +235,7 @@ export default {
   }
 }
 .projectRow:hover {
-  background: transparent;
+  background: #c94242;
 }
 
 @media only screen and (min-width: 700px) {
@@ -269,23 +274,24 @@ export default {
 .gitRow {
   height: 300px;
   width: 100%;
-  background: #fafafa;
+
   display: flex;
   flex-direction: row;
 }
 
 .gitRowLeft {
   height: 100%;
-  background: rgb(29, 29, 85);
+  background: #356288;
   display: flex;
   transition: background 0.5s ease-out;
   flex-direction: row;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+  margin: 5px 5px 0px 0px;
 }
 .gitRowLeft:hover {
-  background: rgb(40, 40, 110);
+  background: #487da8;
 }
 .gitRowLeft:hover > .gitCenter2 {
   transform: translateY(20px);
@@ -318,14 +324,16 @@ export default {
 
 .gitRowRight {
   height: 100%;
-  background: blue;
+
   padding: 0px;
+  margin: 5px 0px 0px 5px;
 }
 
 .linked2 {
   height: 100%;
   background-size: 100% 100% !important;
-  background: linear-gradient(135deg, #6600f3 0%, #ff8989 100%);
+  background: #356288;
+  /* linear-gradient(135deg, #c94242 0%, #fe875d 100%); */
   opacity: 1;
   transition: all 0.5s ease-out, background-size 1s ease-in-out;
   display: flex;
@@ -335,7 +343,7 @@ export default {
   align-items: center;
 }
 .linked2:hover {
-  background-size: 100% 250% !important;
+  background: #487da8;
 }
 
 .linked2:hover > .linkedCenter1 {
@@ -360,10 +368,7 @@ export default {
 
 /* ======================================================================== */
 
-.wiz {
-  color: rgba(191, 112, 255, 0.829);
-}
-
+/* 
 .btn {
   height: 95px;
   width: 80px;
@@ -395,7 +400,7 @@ export default {
 .projectBtn:hover {
   border: 3px rgba(255, 255, 255, 0.6) solid;
   color: rgba(255, 255, 255, 0.6);
-}
+} */
 .fas {
   transition: color 0.3s ease-out;
   color: rgb(255, 255, 255, 0.9);

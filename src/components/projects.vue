@@ -17,7 +17,8 @@
             :bodyText="'Job desciption coming soon'"
             :subHeading="'PCIE Design and Validation Intern'"
             :icons="['F','D','A','H','G','L','E','J','K']"
-            :imgURL="'amd-wp.png'"
+            :imgURL="'amd-white.png'"
+            :backgroundColor="'rgb(201, 66, 66)'"
             :externalLink="['https://amd.com','View on web']"
           />
         </div>

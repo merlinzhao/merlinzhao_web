@@ -2,32 +2,87 @@
   <div class="background">
     <div class="highCenter row">
       <div class="halfTop" />
-
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-        <div class="highLightCard highCard1"></div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-        <div class="highLightCard highCard2">
-          <div class="highLightTitle" style="color: white;">
-            <p class="headingThree highHeading">Highlights</p>
-            <p class="regText subHeading">Cool things from me 😊</p>
+        <div class="highLightCard highCard2" id="card2">
+          <div class="photoBox2" />
+          <div class="infoBox">
+            <p class="headingThree">MenloLab Inc.</p>
+            <p class="regText" style="color: #737780">Front End Developer Intern</p>
+            <p class="regText" style="color: #737780">Hover to read more</p>
           </div>
-          <div class="projectBox">
-            <div class="projectExpand"></div>
-          </div>
-          <div class="gitBox"></div>
         </div>
       </div>
+
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-        <div class="highLightCard highCard3"></div>
+        <div class="highLightCard highCard1" id="card1">
+          <div class="photoBox1" />
+          <div class="infoBox">
+            <p class="headingThree">Advance Micro Devices</p>
+            <p class="regText" style="color: #737780">PCIE Design and Validation Intern</p>
+            <p class="regText" style="color: #737780">Hover to read more</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+        <div class="highLightCard highCard3" id="card3">
+          <div class="photoBox3" />
+          <div class="infoBox">
+            <p class="headingThree">NavText</p>
+            <p class="regText" style="color: #737780">Second place overall at Hack Western 5</p>
+            <p class="regText" style="color: #737780">Hover to read more</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      scrollPosition: 0,
+      screenHeight: 0,
+      card1: null,
+      card2: null,
+      card3: null,
+    };
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.getScroll);
+    this.card1 = document.getElementById("card1");
+    this.card2 = document.getElementById("card2");
+    this.card3 = document.getElementById("card3");
+
+    this.screenHeight = window.innerHeight;
+  },
+  methods: {
+    getScroll(event) {
+      this.scrollPosition = window.top.scrollY;
+      this.screenHeight = window.innerHeight;
+
+      if (this.scrollPosition > this.screenHeight * 0.6) {
+        let move1 = (this.scrollPosition - this.screenHeight * 0.6) * -0.1;
+        let move2 = (this.scrollPosition - this.screenHeight * 0.6) * -0.3;
+        let move3 = (this.scrollPosition - this.screenHeight * 0.6) * -0.7;
+        console.log(String(move1));
+        this.card1.style.transform = "translateY(" + String(move1) + "px)";
+        this.card2.style.transform = "translateY(" + String(move2) + "px)";
+        this.card3.style.transform = "translateY(" + String(move3) + "px)";
+      } else {
+        this.card1.style.transform = "translateY(0px)";
+        this.card2.style.transform = "translateY(0px)";
+        this.card3.style.transform = "translateY(0px)";
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 .background {
-  height: auto;
+  height: 550px;
   min-height: 500px;
   width: 100%;
   margin: 0;
@@ -47,7 +102,7 @@
 .halfTop {
   position: absolute;
   margin: 0;
-  height: 30%;
+  height: 20%;
   width: 100vw;
   background: var(--bg-e4e4e4);
   transition: background 0.5s ease-out;
@@ -55,7 +110,7 @@
 
 .highCenter {
   width: 100vw;
-  height: 800px;
+  height: 100%;
   max-width: 1240px;
   font-size: 12em;
   margin: 0;
@@ -68,10 +123,23 @@
 }
 
 .cardPadding {
-  padding: 10px 15px 0px 15px;
+  padding: 10px 5px 0px 5px;
   /* width: 33% !important; */
   /* min-width: 250px !important; */
   /* max-width: 33%; */
+}
+
+.FOCUS {
+  font-size: 80px;
+  line-height: 60px;
+  font-family: "Roboto";
+  font-weight: 700;
+  width: 90%;
+  padding: 15px 0 0 10px;
+}
+.FOCUStext {
+  font-size: 40%;
+  line-height: 50%;
 }
 
 .highHeading {
@@ -87,73 +155,60 @@
 
 .highLightCard {
   z-index: 999;
-  height: 500px;
+  height: 560px;
   background: var(--bg-projectCard);
   box-shadow: 8px 12px 12px #0000002d;
 }
-.highLightTitle {
-  height: 120px;
-  width: calc(100% - 100px);
-  background: rgb(52, 96, 107);
-  left: 0px;
-  position: absolute;
-  top: -3px;
+
+/*_________________________________________________________________________*/
+/*_________________________DESCRIPTION BOX_________________________________*/
+
+/* =========================================================*/
+/* ====================HIGH CARD 2 =========================*/
+/* =========================================================*/
+.highCard2 {
+  animation: shiftCard2 1s ease-out;
+  color: var(--black);
+}
+
+.photoBox2 {
+  height: 100%;
+  width: 100%;
+  background: #fe875d;
+  background-color: rgb(201, 66, 66);
+  background-image: url("../assets/images/MenloPic.png");
+  background-size: cover;
   display: flex;
-  flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
-  box-shadow: 8px 12px 12px #0000002d;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 0.4s ease-out;
 }
 
-/* _____________________________________________ */
-/* |_________________PROEJCT BOX_______________| */
-.projectBox {
-  height: 240px;
-  width: calc(100% - 24px);
-
-  position: absolute;
-  top: 140px;
-  margin: 0 12px 0 12px;
+.highCard2:hover .photoBox2 {
+  height: 40%;
 }
-.projectExpand {
-  position: absolute;
-  right: 0;
+.highCard2:hover .infoBox {
+  opacity: 1;
+}
+
+.highCard2:hover .descriptionBox {
+  visibility: initial;
   height: 100%;
-  width: 180px;
-  background: #ccc;
-  transition: all 0.6s ease-in-out;
-  box-shadow: 8px 12px 12px #0000002d;
-}
-.projectExpand:hover {
-  width: 100%;
 }
 
-/* _____________________________________________ */
-/* |______________________GIT BOX_______________| */
-.gitBox {
-  height: 120px;
-  width: 200px;
-  background: #aaa;
-  position: absolute;
-  margin: 6px 10px 0 10px;
-  top: 400px;
-  transition: all 0.6s ease-in-out;
-}
-
-.gitBox:hover {
-  width: calc(100% - 30px);
-  margin: 0;
-  height: 200px;
-}
-
-.highCard2 {
-  animation: shiftCard2 2s ease-in-out;
-}
 @-webkit-keyframes shiftCard2 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(45%);
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
@@ -165,7 +220,13 @@
 @-moz-keyframes shiftCard2 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(45%);
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
@@ -177,7 +238,13 @@
 @keyframes shiftCard2 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(45%);
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
@@ -192,52 +259,96 @@
 /* =========================================================*/
 
 .highCard1 {
-  transform: translateY(30%);
-  animation: shiftCard1 3s ease-out;
+  animation: shiftCard1 1.4s ease-out;
+
+  color: var(--black);
+}
+
+.photoBox1 {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(201, 66, 66);
+  background-image: url("../assets/images/amd-white.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transition: all 0.4s ease-out;
+}
+.infoBox {
+  position: absolute;
+  top: 40%;
+  width: calc(100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.2s ease-out;
+  opacity: 0;
+}
+
+.highCard1:hover .photoBox1 {
+  height: 40%;
+}
+.highCard1:hover .infoBox {
+  opacity: 1;
 }
 
 @-webkit-keyframes shiftCard1 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(80%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(30%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 @-moz-keyframes shiftCard1 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(80%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(30%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 @keyframes shiftCard1 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(80%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(30%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -245,52 +356,84 @@
 /* ====================HIGH CARD 3=======================*/
 /* =========================================================*/
 .highCard3 {
-  transform: translateY(45%);
-  animation: shiftCard3 3s ease-out;
+  animation: shiftCard3 1.9s ease-out;
+
+  color: var(--black);
+}
+
+.photoBox3 {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/images/NavTextPic.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-color: #9ab8c3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  transition: all 0.4s ease-out;
+}
+
+.highCard3:hover .photoBox3 {
+  height: 40%;
+}
+.highCard3:hover .infoBox {
+  opacity: 1;
 }
 
 @-webkit-keyframes shiftCard3 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(95%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(45%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 @-moz-keyframes shiftCard3 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(95%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(45%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
 @keyframes shiftCard3 {
   0% {
     /* font-size: 5em; */
-    transform: translateY(95%);
+    transform: translateY(40%);
     opacity: 0;
   }
-  30% {
+
+  20% {
+    /* font-size: 5em; */
+    transform: translateY(40%);
     opacity: 0;
   }
 
   100% {
-    transform: translateY(45%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }

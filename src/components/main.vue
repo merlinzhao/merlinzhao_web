@@ -130,9 +130,8 @@ export default {
         const first = this.intro_list.shift();
         this.intro_list = this.intro_list.concat(first);
         i++;
-        console.log(i);
+
         if (i >= 7) {
-          console.log("DONE!");
           clearInterval(this.intro_rando_interval);
         }
       }, 60);
@@ -173,7 +172,7 @@ export default {
 
 <style scoped>
 .intro {
-  height: 75vh;
+  height: 85vh;
   min-height: 500px;
   width: 100%;
   background: var(--bg-e4e4e4);
@@ -193,38 +192,38 @@ export default {
 @-webkit-keyframes introGradientTwo {
   0% {
     /* font-size: 3em; */
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 94% 100%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
 }
 @-moz-keyframes introGradientTwo {
   0% {
     /* font-size: 3em; */
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
 
   50% {
-    background-position: 94% 100%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
 }
 @keyframes introGradientTwo {
   0% {
     /* font-size: 5em; */
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 94% 100%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 7% 0%;
+    background-position: 0% 0%;
   }
 }
 
@@ -236,10 +235,11 @@ export default {
   font-weight: 700;
   text-align: center;
   margin: 0px;
+  font-family: "Roboto";
 
   position: absolute;
-  background: linear-gradient(314deg, #ffa600, #c401ff, #0aefff);
-  background-size: 600% 600%;
+  background: linear-gradient(314deg, #c94242, #fe875d);
+  background-size: 1200% 600%;
 
   background-clip: text;
   -webkit-background-clip: text;
@@ -247,9 +247,9 @@ export default {
   color: transparent;
   -webkit-text-fill-color: rgba(255, 0, 0, 0);
 
-  -webkit-animation: introGradientTwo 6s ease-in-out infinite;
-  -moz-animation: introGradientTwo 6s ease-in-out infinite;
-  animation: introGradientTwo 6s ease-in-out infinite;
+  -webkit-animation: introGradientTwo 5s ease-in-out infinite;
+  -moz-animation: introGradientTwo 5s ease-in-out infinite;
+  animation: introGradientTwo 5s ease-in-out infinite;
 }
 
 .merlin {

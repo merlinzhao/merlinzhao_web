@@ -169,13 +169,14 @@ export default {};
 .headlineText {
   background: -webkit-linear-gradient(
     -45deg,
-    #b032ff 0%,
-    #d97aff 29%,
-    #54c8ff 64%,
-    #00ffd8 100%
+    var(--sub-one) 0%,
+    var(--sub-two) 60%,
+    var(--sub-one) 120%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-out;
+
   text-align: center;
 }
 
@@ -192,7 +193,7 @@ export default {};
   width: 95%;
   max-width: 1250px;
   height: 100%;
-  padding: 10% 0% 10% 0%;
+  padding: 7% 0% 10% 0%;
   background: transparent;
   display: flex;
   flex-direction: column;
