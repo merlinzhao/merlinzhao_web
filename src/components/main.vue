@@ -13,29 +13,29 @@
       <div class="hello">
         <p id="intro_text">{{intro_list[0]}}</p>
       </div>
-      <div
+      <!-- <div
         class="center row"
-        style="position:absolute; bottom: 0; background:grey; max-width: 1140px; width: calc(100%-40px); margin: 0 20px 0 20px;"
+        style="position:absolute; bottom: 0; background:grey; max-width: 1240px; width: calc(100%-40px); margin: 0 20px 0 20px;"
       >
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard"></div>
+          <div class="highLightCard highCard1"></div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard"></div>
+          <div class="highLightCard highCard2"></div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard"></div>
+          <div class="highLightCard highCard3"></div>
         </div>
-      </div>
+      </div>-->
+
       <!-- <div class="explore"></div> -->
     </div>
 
-    <div>
-      <!--<highlights />-->
-      <about-me />
-      <welcome />
-      <myFooter @scrollTo="scrollTo" />
-    </div>
+    <highlights />
+    <!--<highlights />-->
+    <about-me />
+    <welcome />
+    <myFooter @scrollTo="scrollTo" />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
@@ -173,7 +173,7 @@ export default {
 
 <style scoped>
 .intro {
-  height: 100vh;
+  height: 75vh;
   min-height: 500px;
   width: 100%;
   background: var(--bg-e4e4e4);
@@ -267,7 +267,6 @@ export default {
   justify-content: center;
   align-items: center;
 
-  transform: translateY(-40px);
   /* 
   -webkit-animation: introGradientTwo 3s ease-in-out;
   -moz-animation: introGradientTwo 3s ease-in-out;
@@ -345,7 +344,7 @@ export default {
   font-size: 40pt;
   font-weight: 400;
   color: var(--hello);
-  transform: translateY(-65px);
+  transform: translateY(-30px);
   display: flex;
   flex-direction: row;
   /* -webkit-animation: helloAnimation 5s ease-out;
@@ -388,20 +387,6 @@ export default {
   100% {
     opacity: 1;
   }
-}
-
-/* ___________________________________________________ */
-
-.cardPadding {
-  padding: 10px 15px 0px 15px;
-  /* width: 33% !important; */
-  /* min-width: 250px !important; */
-  /* max-width: 33%; */
-}
-
-.highLightCard {
-  height: 500px;
-  background: red;
 }
 
 /* ======================================================================== */

@@ -246,11 +246,6 @@ export default {};
   font-size: 16pt;
   font-weight: 400;
 }
-.regText {
-  line-height: 18pt;
-  font-size: 13pt;
-  font-weight: 400;
-}
 
 .regTextModal {
   line-height: 18pt;

@@ -117,7 +117,7 @@ export default {
 .headingThree {
   line-height: 25pt;
   font-size: 25pt;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */
@@ -161,6 +161,12 @@ export default {
   margin-left: 10px;
   top: 5px;
   left: 5px;
+}
+
+.regText {
+  line-height: 18pt;
+  font-size: 13pt;
+  font-weight: 400;
 }
 .openNavButton:hover {
   color: var(--black);
