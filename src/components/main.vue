@@ -36,6 +36,7 @@
     <about-me />
     <welcome />
     <myFooter @scrollTo="scrollTo" />
+    <experience />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
@@ -48,7 +49,8 @@ import myFooter from "./footer.vue";
 import highlights from "./highlights.vue";
 import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
-import dots from "./dots.vue";
+
+import experience from "./experience.vue";
 
 export default {
   name: "mainView",
@@ -59,7 +61,8 @@ export default {
     highlights,
     sideMenu,
     mobileMenu,
-    dots,
+
+    experience,
   },
 
   data() {

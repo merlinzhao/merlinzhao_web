@@ -184,7 +184,7 @@ export default {
 /* PROJECT ROW ITEMS ====== PROJECT PROJECT PROJECT ===== PROJECT ROW ITEMS */
 /* ======================================================================== */
 .projectRow {
-  height: calc(80vh);
+  height: calc(40vh);
   min-height: 200px;
   width: 100%;
   background: var(--bg-e4e4e4);

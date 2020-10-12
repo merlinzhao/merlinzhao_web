@@ -54,12 +54,14 @@ export default {
   height: 730px;
   min-height: 500px;
   width: 100%;
-  background: var(--bg-eee);
+  background: var(--bg-e4e4e4);
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
+  transition: background 0.5s ease-out;
+  padding: 10px 0 25px 0;
 }
 /* ======================================================================== */
 /* NAME ROW ITEMS ========= NAME NAME NAME NAME =========== NAME ROW ITEMS  */
@@ -184,7 +186,7 @@ export default {
 .projectRow {
   height: 400px;
   width: 100%;
-  background: #fe875d;
+  background: #356288;
   display: flex;
   flex-direction: row;
   -webkit-box-orient: vertical;

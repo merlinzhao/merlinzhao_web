@@ -62,11 +62,11 @@ export default {
       this.scrollPosition = window.top.scrollY;
       this.screenHeight = window.innerHeight;
 
-      if (this.scrollPosition > this.screenHeight * 0.6) {
-        let move1 = (this.scrollPosition - this.screenHeight * 0.6) * -0.1;
+      if (this.scrollPosition > this.screenHeight * 0.65) {
+        let move1 = (this.scrollPosition - this.screenHeight * 0.6) * -0.05;
         let move2 = (this.scrollPosition - this.screenHeight * 0.6) * -0.3;
         let move3 = (this.scrollPosition - this.screenHeight * 0.6) * -0.7;
-        console.log(String(move1));
+
         this.card1.style.transform = "translateY(" + String(move1) + "px)";
         this.card2.style.transform = "translateY(" + String(move2) + "px)";
         this.card3.style.transform = "translateY(" + String(move3) + "px)";
@@ -103,7 +103,7 @@ export default {
   position: absolute;
   margin: 0;
   height: 20%;
-  width: 100vw;
+  width: 100%;
   background: var(--bg-e4e4e4);
   transition: background 0.5s ease-out;
 }
@@ -185,6 +185,8 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 0.4s ease-out;
+  z-index: 800;
+  position: absolute;
 }
 
 .highCard2:hover .photoBox2 {
@@ -277,6 +279,8 @@ export default {
   align-items: center;
   margin: auto;
   transition: all 0.4s ease-out;
+  z-index: 800;
+  position: absolute;
 }
 .infoBox {
   position: absolute;
@@ -287,7 +291,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  transition: all 0.2s ease-out;
+  transition: all 0.5s ease-out;
   opacity: 0;
 }
 
@@ -374,6 +378,8 @@ export default {
   align-items: center;
   margin: auto;
   transition: all 0.4s ease-out;
+  z-index: 800;
+  position: absolute;
 }
 
 .highCard3:hover .photoBox3 {
