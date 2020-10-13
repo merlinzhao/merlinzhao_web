@@ -27,7 +27,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
   </div>
 </template>
 
@@ -69,6 +72,9 @@ export default {
   --sub-one: #fe875d;
   --sub-two: #c94242;
 
+  --sub-three: #356288;
+  --sub-four: #aacfdd;
+
   /* GENERIC */
   --white: white;
   --black: black;
@@ -105,6 +111,9 @@ export default {
   --sub-one: #356288;
   --sub-two: #aacfdd;
 
+  --sub-three: #fe875d;
+  --sub-four: #c94242;
+
   /* GENERIC */
   --white: black;
   --black: white;
@@ -122,15 +131,26 @@ export default {
   font-size: 65pt;
   font-weight: bolder;
 }
+
+.headingOneHalf {
+  line-height: 60pt;
+  font-size: 60pt;
+  font-weight: 500;
+}
 .headingTwo {
   line-height: 50pt;
   font-size: 45pt;
-  font-weight: 400;
+  font-weight: 500;
 }
 .headingThree {
-  line-height: 25pt;
+  line-height: 30pt;
   font-size: 25pt;
-  font-weight: 500;
+  font-weight: 400;
+}
+.headingFour {
+  line-height: 23pt;
+  font-size: 16pt;
+  font-weight: 400;
 }
 
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV NAV  */

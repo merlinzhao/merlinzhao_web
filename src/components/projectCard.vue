@@ -2,14 +2,19 @@
   <div class="projectCard" :ref="projectTitle">
     <div
       class="imageRow"
-      :style="{  backgroundSize: sizeBackground, backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+      :style="{
+        backgroundSize: sizeBackground,
+        backgroundColor: backgroundColor,
+        backgroundImage:
+          'url(' + require('../assets/images/' + imgURL + '') + ')',
+      }"
     >
       <!-- <i class="fas fa-laptop" /> -->
     </div>
     <div class="textRow">
-      <p class="headingThree">{{projectTitle}}</p>
-      <p v-if="subHeading!='none'" class="subHeading">{{subHeading}}</p>
-      <p class="regText">{{bodyText}}</p>
+      <p class="headingThree">{{ projectTitle }}</p>
+      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
+      <p class="regText">{{ bodyText }}</p>
     </div>
     <div class="iconRow">
       <div class="col-9 leftCol">
@@ -17,7 +22,7 @@
           <i
             v-if="number === 'A'"
             class="devicon-bootstrap-plain colored icon"
-            style="margin-right: 5px; color: #8848b5;"
+            style="margin-right: 5px; color: #8848b5"
           >
             <div class="tool regText modalR">
               <p class="modalText">Bootstrap</p>
@@ -27,7 +32,7 @@
           <i
             v-if="number === 'B'"
             class="devicon-python-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">Python</p>
@@ -37,7 +42,7 @@
           <i
             v-if="number === 'C'"
             class="devicon-nodejs-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">NodeJS</p>
@@ -47,7 +52,7 @@
           <i
             v-if="number === 'D'"
             class="devicon-javascript-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">Javascript</p>
@@ -57,7 +62,7 @@
           <i
             v-if="number === 'E'"
             class="devicon-swift-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">Swift</p>
@@ -67,7 +72,7 @@
           <i
             v-if="number === 'F'"
             class="devicon-vuejs-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">VueJS</p>
@@ -77,7 +82,7 @@
           <i
             v-if="number === 'G'"
             class="devicon-css3-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">CSS3</p>
@@ -87,7 +92,7 @@
           <i
             v-if="number === 'H'"
             class="devicon-html5-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">HTML5</p>
@@ -97,7 +102,7 @@
           <i
             v-if="number === 'I'"
             class="devicon-android-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">Android Dev</p>
@@ -107,7 +112,7 @@
           <i
             v-if="number === 'J'"
             class="devicon-java-plain colored icon"
-            style="margin-right: 5px;"
+            style="margin-right: 5px"
           >
             <div class="tool regText modalR">
               <p class="modalText">Java</p>
@@ -116,18 +121,22 @@
           </i>
         </div>
       </div>
-      <div class="col-3 rightCol" style="font-size: 2em; cursor:pointer; ">
+      <div class="col-3 rightCol" style="font-size: 2em; cursor: pointer">
         <i
-          @click="openLink();"
+          @click="openLink()"
           v-if="externalLink[1]"
           class="fas fa-external-link-square-alt githubLogo icon"
         >
           <div class="tool regText modalR">
-            <p class="modalText">{{externalLink[1]}}</p>
+            <p class="modalText">{{ externalLink[1] }}</p>
             <i></i>
           </div>
         </i>
-        <i @click="openLink();" v-if="gitLink!='none'" class="fab fa-github githubLogo icon">
+        <i
+          @click="openLink()"
+          v-if="gitLink != 'none'"
+          class="fab fa-github githubLogo icon"
+        >
           <div class="tool regText modalR">
             <p class="modalText">View on GitHub</p>
             <i></i>

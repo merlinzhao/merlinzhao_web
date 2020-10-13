@@ -1,18 +1,97 @@
 <template>
   <div class="experienceBg">
     <div class="deviceOut">
-      <p class="headingTwo experienceHead">Experience - IN DEV</p>
+      <p class="headingOneHalf experienceHead">Experiences & Projects</p>
+      <p class="headingThree experienceSub">
+        Explore my works throughout the years.
+      </p>
       <div class="deskTopDevice" />
     </div>
 
     <div class="experienceCenter">
-      <expCard />
-      <expCard :photoLeft="true" />
-      <expCard />
-      <expCard :photoLeft="true" />
-      <expCard />
-      <expCard :photoLeft="true" />
-      <expCard />
+      <expCard
+        :imgURL="'amd-white.png'"
+        :backgroundColor="'rgb(201, 66, 66)'"
+        :projectTitle="'Advance Micro Devices'"
+        :subHeading="'PCIE Design and Validation Intern'"
+        :thisId="'AMDid'"
+        :className="'textCardL'"
+        :icons="['K', 'L', 'N', 'B', 'H', 'G']"
+      />
+      <expCard
+        :photoLeft="true"
+        :projectTitle="'Menlolab Inc.'"
+        :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
+        :subHeading="'Front End Developer Intern'"
+        :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
+        :imgURL="'MenloPic.png'"
+        :externalLink="['https://menlolab.com', 'View on web']"
+        :backgroundColor="'orange'"
+        :thisId="'Menloid'"
+        :className="'textCardR'"
+      />
+      <expCard :backgroundColor="'#999 '" />
+      <expCard
+        :photoLeft="true"
+        :imgURL="'NavTextPic.png'"
+        :projectTitle="'NavText'"
+        :subHeading="'Second Place Overall at Hack Western 5 '"
+        :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
+        :icons="['E', 'D', 'A']"
+        :backgroundColor="'#9ab8c3'"
+        :gitLink="'https://github.com/merlinzhao/NavText'"
+        :externalLink="[
+          'https://devpost.com/software/navtext-15tgmj',
+          'View on Devpost',
+        ]"
+        :thisId="'Navid'"
+        :linkName="'Devpost'"
+      />
+      <expCard
+        :imgURL="'MerlinWebPic.png'"
+        :projectTitle="'merlinzhao.me'"
+        :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
+        :icons="['F', 'A', 'D', 'H', 'G']"
+        :externalLink="['http://www.merlinzhao.me', 'View on web']"
+        :backgroundColor="'#222'"
+        :thisId="'Webid'"
+      />
+      <expCard
+        :photoLeft="true"
+        :projectTitle="'Welcome Week'"
+        :bodyText="'A mobile application that helps students quickly find campus events based on their preferences.'"
+        :icons="['E', 'C', 'D']"
+        :imgURL="'WelcomePic.png'"
+        :backgroundColor="'#774545'"
+        :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
+        :gitLink="'https://github.com/merlinzhao/WelcomeWeek'"
+        :thisId="'Welcomeid'"
+      />
+      <expCard
+        :projectTitle="'Nutryent'"
+        :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API.'"
+        :icons="['I', 'J', 'C', 'D']"
+        :imgURL="'NutryentPic.png'"
+        :backgroundColor="'#ffa42e'"
+        :subHeading="'Made at ArchHacks 2017'"
+        :externalLink="[
+          'https://devpost.com/software/nutryent',
+          'View on Devpost',
+        ]"
+        :thisId="'Nutid'"
+        :linkName="'Devpost'"
+      />
+      <expCard
+        :photoLeft="true"
+        :projectTitle="'Space Escape'"
+        :bodyText="'A multiplier python game inspired by the classic arcade game Galaga.'"
+        :icons="['B']"
+        :imgURL="'SpacePic.png'"
+        :backgroundColor="'#222'"
+        :subHeading="'Multiplayer python game'"
+        :gitLink="'https://github.com/merlinzhao/space-esc'"
+        :thisId="'Spaceid'"
+      />
     </div>
   </div>
 </template>
@@ -43,12 +122,15 @@ export default {
     getScroll(event) {
       this.scrollPosition = window.top.scrollY;
       this.screenHeight = window.innerHeight;
-      this.desktopPositon = this.screenHeight * 0.85 + 550 + 1300 + 1050;
+      this.desktopPositon = this.screenHeight * 0.85 + 550 + 1540;
       this.desktopOffset = this.scrollPosition - this.desktopPositon;
 
       let scale = this.desktopOffset * 0.008;
+      let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      if (this.desktopOffset > 0 && scale > 1 && scale < 10) {
+      console.log(deviceInPosition, this.screenHeight * 0.3);
+
+      if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 10) {
         // this.desktopDevice.style.width =
         //   String(800 + this.desktopOffset * 2) + "px";
         // this.desktopDevice.style.height =
@@ -61,19 +143,19 @@ export default {
       } else {
         this.desktopDevice.style.transform = "scale(1)";
       }
-      console.log(scale);
+
       if (scale >= 5) {
         this.desktopDevice.style.opacity = 0;
         if (scale >= 9) {
           this.desktopDevice.style.visibility = "hidden";
         }
         this.expBg.style.transition = "background 0s";
-        this.expBg.style.background = "#0d182e";
+        this.expBg.style.background = "#111";
       } else {
         this.desktopDevice.style.visibility = "initial";
         this.desktopDevice.style.opacity = 1;
         this.expBg.style.transition = "background 0.3s ease-out";
-        this.expBg.style.background = "var(--bg-e4e4e4)";
+        this.expBg.style.background = "var(--bg-eee)";
       }
     },
   },
@@ -81,7 +163,7 @@ export default {
 </script>
 <style scoped>
 .experienceBg {
-  height: 7900px;
+  height: 7700px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -91,12 +173,13 @@ export default {
   align-items: flex-start;
   transition: background 0.5s ease-out;
 
-  position: absolute;
+  position: relative;
 }
 .experienceCenter {
   width: 95%;
   max-width: 940px;
-  height: 100%;
+  top: 1200px;
+
   position: absolute;
 
   display: flex;
@@ -104,11 +187,28 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+
+  transition: 1s all;
 }
 .experienceHead {
   position: absolute;
-  top: 200px;
+  top: 100px;
   color: var(--black);
+  background: -webkit-linear-gradient(
+    45deg,
+    var(--sub-three) 0%,
+    var(--sub-four) 60%,
+    var(--sub-three) 120%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.experienceSub {
+  position: absolute;
+  top: 190px;
+  color: var(--mer-lin);
 }
 
 .deviceOut {
@@ -122,8 +222,8 @@ export default {
 }
 .deskTopDevice {
   position: sticky !important;
-  height: 500px;
-  width: 700px;
+  height: 600px;
+  width: 800px;
 
   transition: width 0.2s, height 0.2s, opacity 0.5s ease-out;
   background-image: url("../assets/images/iPad-bg.png");
@@ -131,7 +231,7 @@ export default {
   background-position: center center;
   background-size: contain;
 
-  top: 35vh;
+  top: 330px;
 }
 
 .exp1 {

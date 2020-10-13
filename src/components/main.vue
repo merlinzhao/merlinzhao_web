@@ -34,9 +34,9 @@
     <highlights />
     <!--<highlights />-->
     <about-me />
+    <experience />
     <welcome />
     <myFooter @scrollTo="scrollTo" />
-    <experience />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>

@@ -4,88 +4,146 @@
     <div class="aboutCenter">
       <p class="headingTwo headlineText">
         Software Developer
-        <br />Graphic Designer
-        <br />Chipotle Lover
+        <br />Graphic Designer <br />Chipotle Lover
       </p>
       <p
         class="headingThree"
-        style="color: var(--mer-lin); margin: 3% 0% 2% 0%; text-align: center;"
-      >Merlin (noun) - Mer•lin | \ ˈmər-lən \</p>
+        style="color: var(--mer-lin); margin: 3% 0% 2% 0%; text-align: center"
+      >
+        Merlin (noun) - Mer•lin | \ ˈmər-lən \
+      </p>
       <!--eslint-disable-next-line/> -->
-      <p
-        class="regText"
-        style="color:#6e737d; text-align: center;"
-      >Unfortunately, I do not have magical powers and I am unable to cast spells. Sorry for the inconvenience.</p>
+      <p class="regText" style="color: #6e737d; text-align: center">
+        Unfortunately, I do not have magical powers and I am unable to cast
+        spells. Sorry for the inconvenience.
+      </p>
       <div
         class="portrait"
-        :style="{ backgroundImage: 'url('+require('../assets/images/merlin.jpg')+')'}"
+        :style="{
+          backgroundImage:
+            'url(' + require('../assets/images/merlin.jpg') + ')',
+        }"
       />
       <div
         class="thatsme"
-        :style="{ backgroundImage: 'url('+require('../assets/images/thatsme.png')+')'}"
+        :style="{
+          backgroundImage:
+            'url(' + require('../assets/images/thatsme.png') + ')',
+        }"
       />
       <div class="row summaryRow">
         <div class="col">
-          <p class="headingFour Mac" style="margin: 3% 0% 2% 0%; width: 100%; text-align: left;">
+          <p
+            class="headingFour Mac"
+            style="margin: 3% 0% 2% 0%; width: 100%; text-align: left"
+          >
             <i class="fas fa-graduation-cap" /> McMaster University
           </p>
         </div>
         <div class="col">
-          <p class="headingFour" style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;">
+          <p
+            class="headingFour"
+            style="margin: 3% 0% 2% 0%; width: 100%; text-align: center"
+          >
             <i class="fas fa-code"></i> Computer Engineering
           </p>
         </div>
         <div class="col">
-          <p class="headingFour Year" style=" margin: 3% 0% 2% 0%; width: 100%; text-align: right;">
+          <p
+            class="headingFour Year"
+            style="margin: 3% 0% 2% 0%; width: 100%; text-align: right"
+          >
             <i class="fas fa-hourglass-half"></i> 4th year undergrad
           </p>
         </div>
       </div>
-      <p
-        class="regText"
-        style="color: #737780 ;  max-width: 850px;"
-      >Hey there! My name is Merlin Zhao. I am currently a third year Computer Engineering student at McMaster University. Im originally from New York, New York but (for now), I am happily settled in Canada. Ive had a long passion for technology, especially how it can be utilized to enhance the everyday lives of people. I cant wait to be a part of the technological advances of the future. I also hope you are enjoying the site!</p>
+      <p class="regText" style="color: #737780; max-width: 850px">
+        Hey there! My name is Merlin Zhao. I am currently a third year Computer
+        Engineering student at McMaster University. Im originally from New York,
+        New York but (for now), I am happily settled in Canada. Ive had a long
+        passion for technology, especially how it can be utilized to enhance the
+        everyday lives of people. I cant wait to be a part of the technological
+        advances of the future. I also hope you are enjoying the site!
+      </p>
       <div class="row summaryRow">
         <p
           class="headingFour"
-          style=" margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
-        >What do I know?</p>
+          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center"
+        >
+          What do I know?
+        </p>
         <div
           class="devIcons"
-          style="margin-bottom: 20px; font-size:16pt; align-items: center; justify-content:center; display: flex; flex-direction: row; width: 100%; "
+          style="
+            margin-bottom: 20px;
+            font-size: 16pt;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+          "
         >
           <div class="devCol">
-            <i class="devicon-swift-plain colored icon" style="margin-right: 10px;">
+            <i
+              class="devicon-swift-plain colored icon"
+              style="margin-right: 10px"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">Swift</p>
                 <i></i>
               </div>
             </i>
-            <i class="devicon-vuejs-plain colored icon" style="margin-right: 10px;">
+            <i
+              class="devicon-vuejs-plain colored icon"
+              style="margin-right: 10px"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">Vue.js</p>
                 <i></i>
               </div>
             </i>
-            <i class="devicon-react-plain colored icon" style="margin-right: 10px;">
+            <i
+              class="devicon-react-plain colored icon"
+              style="margin-right: 10px"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">React.js</p>
                 <i></i>
               </div>
             </i>
-            <i class="devicon-html5-plain colored icon" style="margin-right: 10px;">
+            <i
+              class="devicon-rails-plain colored icon"
+              style="margin-right: 10px"
+            >
+              <div class="tool regTextModal modalR">
+                <p class="modalText">Rails</p>
+                <i></i>
+              </div>
+            </i>
+
+            <i
+              class="devicon-html5-plain colored icon"
+              style="margin-right: 10px"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">HTML5</p>
                 <i></i>
               </div>
             </i>
-            <i class="devicon-css3-plain colored icon" style="margin-right: 10px;">
+            <i
+              class="devicon-css3-plain colored icon"
+              style="margin-right: 10px"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">CSS3</p>
                 <i></i>
               </div>
             </i>
-            <i class="devicon-bootstrap-plain colored icon" style=" color: #D959FF;">
+            <i
+              class="devicon-bootstrap-plain colored icon"
+              style="color: #d959ff"
+            >
               <div class="tool regTextModal modalR">
                 <p class="modalText">Bootstrap</p>
                 <i></i>
@@ -93,55 +151,92 @@
             </i>
           </div>
           <div class="devCol">
-            <i class="devicon-python-plain colored icon" style="margin-right: 10px;" />
-            <i class="devicon-javascript-plain colored icon" style="margin-right: 10px;" />
-            <i class="devicon-c-plain colored icon" style="margin-right: 10px;" />
-            <i class="devicon-cplusplus-plain colored icon" style="margin-right: 10px;" />
+            <i
+              class="devicon-python-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-javascript-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-ruby-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-c-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-cplusplus-plain colored icon"
+              style="margin-right: 10px"
+            />
             <i class="devicon-java-plain colored icon" />
           </div>
           <div class="devCol">
-            <i class="devicon-mongodb-plain colored icon" style="margin-right: 10px;" />
-            <i class="devicon-docker-plain colored icon" style="margin-right: 10px;" />
+            <i
+              class="devicon-mysql-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-mongodb-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-docker-plain colored icon"
+              style="margin-right: 10px"
+            />
             <i class="devicon-git-plain colored icon" />
           </div>
           <div>
-            <i class="devicon-photoshop-plain colored icon" style="margin-right: 10px;" />
+            <i
+              class="devicon-photoshop-plain colored icon"
+              style="margin-right: 10px"
+            />
             <i class="devicon-illustrator-plain colored icon" />
           </div>
         </div>
         <p
           class="headingFour"
-          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center;"
-        >Chill Times</p>
-        <div class="row" style="font-size:16pt; align-items: center, justify-content: center;">
-          <i class="fas fa-dumbbell" style="margin-right: 15px;"></i>
-          <i class="fas fa-baseball-ball" style="margin-right: 15px;"></i>
-          <i class="fas fa-code" style="margin-right: 15px;"></i>
-          <i class="fas fa-camera" style="margin-right: 15px;"></i>
-          <i class="fas fa-headphones-alt" style="margin-right: 15px;"></i>
-          <i class="fas fa-plane" style="margin-right: 15px;"></i>
+          style="margin: 3% 0% 2% 0%; width: 100%; text-align: center"
+        >
+          Chill Times
+        </p>
+        <div
+          class="row"
+          style="font-size:16pt; align-items: center, justify-content: center;"
+        >
+          <i class="fas fa-dumbbell" style="margin-right: 15px"></i>
+          <i class="fas fa-baseball-ball" style="margin-right: 15px"></i>
+          <i class="fas fa-code" style="margin-right: 15px"></i>
+          <i class="fas fa-camera" style="margin-right: 15px"></i>
+          <i class="fas fa-headphones-alt" style="margin-right: 15px"></i>
+          <i class="fas fa-plane" style="margin-right: 15px"></i>
           <i class="fas fa-hands-helping"></i>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column;" class="summaryRow">
+      <div style="display: flex; flex-direction: column" class="summaryRow">
         <p
           class="headingFour"
-          style="margin: 3% 0% 1% 0%; width: 100%; text-align: center;"
-        >Get in touch</p>
+          style="margin: 3% 0% 1% 0%; width: 100%; text-align: center"
+        >
+          Get in touch
+        </p>
         <a
           href="mailto:zhaom21@mcmaster.ca"
           class="regText"
-          style=" width: 100%; text-align: center; color: #737780;"
+          style="width: 100%; text-align: center; color: #737780"
         >
-          <i class="fas fa-envelope" style="margin-right: 8px;"></i>zhaom21@mcmaster.ca
+          <i class="fas fa-envelope" style="margin-right: 8px"></i
+          >zhaom21@mcmaster.ca
         </a>
 
         <a
           href="tel:647-993-6121"
           class="regText"
-          style=" width: 100%; text-align: center; color: #737780;"
+          style="width: 100%; text-align: center; color: #737780"
         >
-          <i class="fas fa-phone" style="margin-right: 8px;"></i>(647) 993 6121
+          <i class="fas fa-phone" style="margin-right: 8px"></i>(647) 993 6121
         </a>
       </div>
     </div>
@@ -193,7 +288,7 @@ export default {};
   width: 95%;
   max-width: 1250px;
   height: 100%;
-  padding: 7% 0% 10% 0%;
+  padding: 7% 0% 7% 0%;
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -225,27 +320,6 @@ export default {};
   bottom: 280px;
   z-index: 20;
   filter: invert(var(--thatsme));
-}
-
-.headingOne {
-  line-height: 65pt;
-  font-size: 65pt;
-  font-weight: bolder;
-}
-.headingTwo {
-  line-height: 55pt;
-  font-size: 45pt;
-  font-weight: 500;
-}
-.headingThree {
-  line-height: 30pt;
-  font-size: 25pt;
-  font-weight: 400;
-}
-.headingFour {
-  line-height: 23pt;
-  font-size: 16pt;
-  font-weight: 400;
 }
 
 .regTextModal {

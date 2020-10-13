@@ -123,7 +123,7 @@ export default {
 }
 
 .cardPadding {
-  padding: 10px 5px 0px 5px;
+  padding: 10px 15px 0px 15px;
   /* width: 33% !important; */
   /* min-width: 250px !important; */
   /* max-width: 33%; */

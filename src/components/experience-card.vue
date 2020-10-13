@@ -1,24 +1,333 @@
 <template>
-  <div class="expCBg">
+  <div class="expCBg" :id="`${thisId}`">
     <div
       v-if="photoLeft"
       class="col-6 photoCard"
-      :style="{  backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+      :style="{
+        backgroundColor: backgroundColor,
+        backgroundImage:
+          'url(' + require('../assets/images/' + imgURL + '') + ')',
+      }"
     ></div>
     <div v-if="photoLeft" class="col-6 textCardR">
-      <p class="headingThree">{{projectTitle}}</p>
-      <p v-if="subHeading!='none'" class="subHeading">{{subHeading}}</p>
-      <p class="regText">{{bodyText}}</p>
+      <p class="headingTwo">{{ projectTitle }}</p>
+      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
+      <p class="regText">{{ bodyText }}</p>
+      <div class="iconRow">
+        <div v-for="number in icons" :key="number">
+          <i
+            v-if="number === 'A'"
+            class="devicon-bootstrap-plain colored icon"
+            style="margin-right: 5px; color: #8848b5"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Bootstrap</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'B'"
+            class="devicon-python-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Python</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'C'"
+            class="devicon-nodejs-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">NodeJS</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'D'"
+            class="devicon-javascript-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Javascript</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'E'"
+            class="devicon-swift-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Swift</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'F'"
+            class="devicon-vuejs-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">VueJS</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'G'"
+            class="devicon-css3-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">CSS3</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'H'"
+            class="devicon-html5-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">HTML5</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'I'"
+            class="devicon-android-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Android Dev</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'J'"
+            class="devicon-java-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Java</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'K'"
+            class="devicon-ruby-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Ruby</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'L'"
+            class="devicon-rails-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Rails</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'M'"
+            class="devicon-mysql-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">MySQL</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'N'"
+            class="devicon-c-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">C</p>
+              <i></i>
+            </div>
+          </i>
+        </div>
+      </div>
+      <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
+        <i class="fab fa-github githubLogo" /> View on GitHub
+      </p>
+      <p @click="openLink()" v-if="externalLink[1]" class="linkText">
+        <i class="fa fa-desktop" aria-hidden="true" /> View on {{ linkName }}
+      </p>
     </div>
     <div v-if="!photoLeft" class="col-6 textCardL">
-      <p class="headingThree">{{projectTitle}}</p>
-      <p v-if="subHeading!='none'" class="subHeading">{{subHeading}}</p>
-      <p class="regText">{{bodyText}}</p>
+      <p class="headingTwo">{{ projectTitle }}</p>
+      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
+      <p class="regText">{{ bodyText }}</p>
+      <div class="iconRow">
+        <div v-for="number in icons" :key="number">
+          <i
+            v-if="number === 'A'"
+            class="devicon-bootstrap-plain colored icon"
+            style="margin-right: 5px; color: #8848b5"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Bootstrap</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'B'"
+            class="devicon-python-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Python</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'C'"
+            class="devicon-nodejs-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">NodeJS</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'D'"
+            class="devicon-javascript-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Javascript</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'E'"
+            class="devicon-swift-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Swift</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'F'"
+            class="devicon-vuejs-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">VueJS</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'G'"
+            class="devicon-css3-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">CSS3</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'H'"
+            class="devicon-html5-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">HTML5</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'I'"
+            class="devicon-android-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Android Dev</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'J'"
+            class="devicon-java-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Java</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'K'"
+            class="devicon-ruby-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Ruby</p>
+              <i></i>
+            </div>
+          </i>
+
+          <i
+            v-if="number === 'L'"
+            class="devicon-rails-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Rails</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'M'"
+            class="devicon-mysql-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">MySQL</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'N'"
+            class="devicon-c-plain colored icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">C</p>
+              <i></i>
+            </div>
+          </i>
+        </div>
+      </div>
+      <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
+        <i class="fab fa-github githubLogo" /> View on GitHub
+      </p>
+      <p @click="openLink()" v-if="externalLink[1]" class="linkText">
+        <i class="fa fa-desktop" aria-hidden="true" /> View on {{ linkName }}
+      </p>
     </div>
     <div
       v-if="!photoLeft"
       class="col-6 photoCard"
-      :style="{backgroundColor: backgroundColor, backgroundImage: 'url(' + require('../assets/images/'+imgURL+'') + ')' }"
+      :style="{
+        backgroundColor: backgroundColor,
+        backgroundImage:
+          'url(' + require('../assets/images/' + imgURL + '') + ')',
+      }"
     ></div>
   </div>
 </template>
@@ -58,9 +367,30 @@ export default {
       type: String,
       default: "transparent",
     },
+    thisId: {
+      type: String,
+      default: "NA",
+    },
+    icons: {
+      type: Array,
+      default: () => [],
+    },
+    linkName: {
+      type: String,
+      default: "Web",
+    },
   },
-  mounted() {},
+  data() {
+    return { bg: null, card: null };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.getScroll);
+    this.bg = document.getElementById(this.thisId);
+  },
   methods: {
+    getScroll() {
+      console.log(this.projectTitle, this.bg.getBoundingClientRect().y);
+    },
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
       else if (this.gitLink != "none") window.open(this.gitLink);
@@ -70,6 +400,23 @@ export default {
 </script>
 
 <style scoped>
+.headingTwo {
+  line-height: 45pt;
+}
+
+.linkText {
+  color: rgb(31, 110, 255);
+  line-height: 16pt;
+  font-size: 13pt;
+  font-weight: 400;
+  width: 200px;
+  transition: all 0.3s;
+}
+.linkText:hover {
+  cursor: pointer;
+  font-size: 16pt;
+  color: rgb(0, 132, 255);
+}
 .expCBg {
   position: relative;
   width: 100%;
@@ -86,7 +433,7 @@ export default {
   height: 600px;
   display: flex;
   flex-direction: column;
-  filter: saturate(0);
+
   transition: filter 0.3s ease-out;
   justify-content: center;
   padding-right: 25px;
@@ -98,7 +445,7 @@ export default {
   height: 600px;
   display: flex;
   flex-direction: column;
-  filter: saturate(0);
+
   transition: filter 0.3s ease-out;
   padding-left: 50px;
   justify-content: center;
@@ -111,6 +458,76 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   align-items: center;
-  background-size: cover;
+  background-size: contain;
+}
+
+.iconRow {
+  height: 100px;
+  position: relative;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 17pt;
+}
+
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
+/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
+.modalR {
+  visibility: visible;
+}
+
+.modalText {
+  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.icon .tool {
+  min-width: 100px;
+  top: 10px;
+  transform: translate(calc(-50% + 10px), -62%);
+  color: #ffffff;
+  background-color: #777;
+  font-weight: 400;
+  font-size: 11pt;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 99;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  padding: 5px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover .tool {
+    position: absolute;
+    visibility: visible;
+    opacity: 0.95;
+  }
+
+  .icon .tool i {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 12px;
+    overflow: hidden;
+  }
+
+  .icon .tool i::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #777;
+    box-shadow: 0 1px 8px transparent;
+  }
 }
 </style>
