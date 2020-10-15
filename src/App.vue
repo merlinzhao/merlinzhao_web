@@ -73,7 +73,7 @@ export default {
   --sub-two: #c94242;
 
   --sub-three: #356288;
-  --sub-four: #aacfdd;
+  --sub-four: #76bed8;
 
   /* GENERIC */
   --white: white;
@@ -90,7 +90,7 @@ export default {
   --hello: #ddd;
   --summary-row: #bbb;
   /* about me colors */
-  --mer-lin: white;
+  --mer-lin: #ddd;
   --thatsme: 0%;
 
   /* project Card colors */
@@ -133,7 +133,7 @@ export default {
 }
 
 .headingOneHalf {
-  line-height: 60pt;
+  line-height: 67pt;
   font-size: 60pt;
   font-weight: 500;
 }

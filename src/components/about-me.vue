@@ -222,22 +222,6 @@
         >
           Get in touch
         </p>
-        <a
-          href="mailto:zhaom21@mcmaster.ca"
-          class="regText"
-          style="width: 100%; text-align: center; color: #737780"
-        >
-          <i class="fas fa-envelope" style="margin-right: 8px"></i
-          >zhaom21@mcmaster.ca
-        </a>
-
-        <a
-          href="tel:647-993-6121"
-          class="regText"
-          style="width: 100%; text-align: center; color: #737780"
-        >
-          <i class="fas fa-phone" style="margin-right: 8px"></i>(647) 993 6121
-        </a>
       </div>
     </div>
   </div>
@@ -258,7 +242,7 @@ export default {};
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
-  transition: background 0.5s ease-out;
+  transition: background 0.3s ease-out;
 }
 
 .headlineText {
@@ -270,7 +254,7 @@ export default {};
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
 
   text-align: center;
 }

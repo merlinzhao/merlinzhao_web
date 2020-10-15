@@ -30,7 +30,11 @@
         :thisId="'Menloid'"
         :className="'textCardR'"
       />
-      <expCard :backgroundColor="'#999 '" />
+      <expCard
+        :projectTitle="'DeltaHacks'"
+        :subHeading="'Design Executive and Organizer'"
+        :backgroundColor="'#999 '"
+      />
       <expCard
         :photoLeft="true"
         :imgURL="'NavTextPic.png'"
@@ -92,6 +96,14 @@
         :gitLink="'https://github.com/merlinzhao/space-esc'"
         :thisId="'Spaceid'"
       />
+      <div class="gitBox" onclick="window.open('http://www.github.com/merlinzhao')">
+        <p class="headingThree proof1">The proof is in the...</p>
+        <p class="headingTwo proof2"><i class="fab fa-github"></i> GitHub</p>
+        <p class="regText proof3">
+          /merlinzhao</br>
+          View the projects above along with more over on my Github.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -122,15 +134,16 @@ export default {
     getScroll(event) {
       this.scrollPosition = window.top.scrollY;
       this.screenHeight = window.innerHeight;
-      this.desktopPositon = this.screenHeight * 0.85 + 550 + 1540;
+      this.desktopPositon =
+        this.screenHeight * 0.85 + 550 + 1540 - this.screenHeight * 0.35;
       this.desktopOffset = this.scrollPosition - this.desktopPositon;
 
-      let scale = this.desktopOffset * 0.008;
+      let scale = this.desktopOffset * 0.008 * 0.5;
       let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      console.log(deviceInPosition, this.screenHeight * 0.3);
+      //console.log(deviceInPosition, this.screenHeight * 0.3);
 
-      if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 10) {
+      if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
         // this.desktopDevice.style.width =
         //   String(800 + this.desktopOffset * 2) + "px";
         // this.desktopDevice.style.height =
@@ -144,9 +157,9 @@ export default {
         this.desktopDevice.style.transform = "scale(1)";
       }
 
-      if (scale >= 5) {
+      if (scale >= 6) {
         this.desktopDevice.style.opacity = 0;
-        if (scale >= 9) {
+        if (scale >= 8.5) {
           this.desktopDevice.style.visibility = "hidden";
         }
         this.expBg.style.transition = "background 0s";
@@ -163,7 +176,7 @@ export default {
 </script>
 <style scoped>
 .experienceBg {
-  height: 7700px;
+  height: 8600px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -171,14 +184,14 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
-  transition: background 0.5s ease-out;
+  transition: background 0.3s ease-out;
 
   position: relative;
 }
 .experienceCenter {
   width: 95%;
   max-width: 940px;
-  top: 1200px;
+  top: 1400px;
 
   position: absolute;
 
@@ -188,7 +201,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  transition: 1s all;
+  transition: 0.3s all ease-out;
 }
 .experienceHead {
   position: absolute;
@@ -239,5 +252,31 @@ export default {
   height: 600px;
   background: #555;
   margin: 100px 0 100px 0;
+}
+
+.gitBox {
+  width: 100%;
+  height: 400px;
+  background: #356288;
+  margin-top: 100px;
+  padding: 30px;
+  transition: background 0.3s ease-out;
+}
+
+.gitBox:hover {
+  background: #437caa;
+  cursor: pointer;
+}
+.proof1 {
+  color: white;
+  margin: 0;
+}
+.proof2 {
+  color: white;
+}
+.proof3 {
+  color: white;
+  position: absolute;
+  bottom: 30px;
 }
 </style>

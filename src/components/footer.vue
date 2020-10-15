@@ -3,25 +3,44 @@
     <div style="height: 10px; width: 100%" />
     <div
       class="row"
-      style="width: 100%; align-items: center; justify-content: center; max-width: 1250px;"
+      style="
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        max-width: 1250px;
+      "
     >
       <button class="footerButton">
-        <i class="fas fa-file-alt" style="opacity:0;" />
+        <i class="fas fa-file-alt" style="opacity: 0" />
       </button>
-      <button v-if="page === 'home'" class="footerButton" @click="nav('projects')">
+      <button
+        v-if="page === 'home'"
+        class="footerButton"
+        @click="nav('projects')"
+      >
         <i class="fas fa-code" />
       </button>
-      <button v-if="page === 'project'" class="footerButton" @click="$router.go(-1)">
+      <button
+        v-if="page === 'project'"
+        class="footerButton"
+        @click="$router.go(-1)"
+      >
         <i class="fas fa-home" />
       </button>
       <button class="footerButton">
         <i class="fas fa-arrow-alt-circle-up" @click="toTop" />
       </button>
 
-      <button class="footerButton" onclick="window.open('http://www.github.com/merlinzhao')">
+      <button
+        class="footerButton"
+        onclick="window.open('http://www.github.com/merlinzhao')"
+      >
         <i class="fab fa-github" />
       </button>
-      <button class="footerButton" onclick="window.open('https://www.linkedin.com/in/merlinzhao/')">
+      <button
+        class="footerButton"
+        onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
+      >
         <i class="fab fa-linkedin" />
       </button>
     </div>
@@ -53,9 +72,9 @@ export default {
 </script>
 <style scoped>
 .footerBackground {
-  height: 100px;
+  height: 200px;
   width: 100%;
-  background: #111;
+  background: var(--bg-e4e4e4);
   display: flex;
   flex-direction: column;
   justify-content: center;

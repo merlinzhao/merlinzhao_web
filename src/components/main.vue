@@ -1,6 +1,10 @@
 <template>
   <div>
-    <sideMenu class="side-menu" style="position: fixed; z-index: 100;" :menuType="'desktop'" />
+    <sideMenu
+      class="side-menu"
+      style="position: fixed; z-index: 100"
+      :menuType="'desktop'"
+    />
     <mobile-menu class="mobile-menu" />
 
     <div class="intro" ref="top" @click="closeNav()">
@@ -10,32 +14,17 @@
         <p class="MERLIN">MERLIN</p>
         <!-- <p class="merlin">merlinzhao.me</p> -->
       </div>
-      <div class="hello">
-        <p id="intro_text">{{intro_list[0]}}</p>
+      <div class="hello intro_text" style="height: 50px">
+        <!-- <p id="intro_text">{{ intro_list[0] }}</p> -->
       </div>
-      <!-- <div
-        class="center row"
-        style="position:absolute; bottom: 0; background:grey; max-width: 1240px; width: calc(100%-40px); margin: 0 20px 0 20px;"
-      >
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard highCard1"></div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard highCard2"></div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
-          <div class="highLightCard highCard3"></div>
-        </div>
-      </div>-->
-
-      <!-- <div class="explore"></div> -->
     </div>
 
     <highlights />
     <!--<highlights />-->
     <about-me />
     <experience />
-    <welcome />
+    <!-- <welcome /> -->
+    <contact />
     <myFooter @scrollTo="scrollTo" />
 
     <!-- <projects style="width: 100vw; height:100%;" /> -->
@@ -51,6 +40,7 @@ import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
 
 import experience from "./experience.vue";
+import contact from "./contact.vue";
 
 export default {
   name: "mainView",
@@ -63,87 +53,103 @@ export default {
     mobileMenu,
 
     experience,
+    contact,
   },
 
   data() {
-    return {
-      intro_list: [
-        "EST. 1998",
-        "Apr*l",
-        "Rea@#$is",
-        "00010100",
-        "C^ip0tle",
-        "SEULGI",
-        "%L1ke2 Sl*&p",
-        "rani294@#$@#$@3",
-
-        "NEW YORK, NY",
-        "Qu$#ns",
-        "K*rE# !own",
-        ")kea",
-        "H@mi!ton",
-        "I$k Wh$#2 put",
-        "AN$wsr t#xt",
-        "TWICEEEE@!#!#!5n4",
-
-        "THE 6IX",
-        "87234t2gh",
-        "1312312",
-        "IRENE",
-        "chpfwef",
-        "198fh33 1123$#(",
-        "pssss$$t",
-        "FL1(*@HING !&@*",
-
-        "VOTE 2020",
-        "WENDY",
-        "1312312",
-        "uayfeq",
-        "YERI",
-        "!mtra#ped",
-        "boo!,",
-        "neeed to fill this lol",
-
-        "안녕하세요",
-        "YERI",
-        "0010 0011",
-        "uayfeq",
-        "chpfwef",
-        "RED VELVET!",
-        "!#()@#",
-        "i am typing hehe",
-      ],
-      intro_random: ["87234t2gh", "1312312", "uayfeq", "chpfwef"],
-      intro_text: null,
-      intro_count: 0,
-      intro_rando_interval: "undefined",
-    };
+    return {};
   },
 
   mounted() {
-    window.setInterval(() => {
-      this.changeIntro();
-    }, 2200);
+    // window.setInterval(() => {
+    //   this.changeIntro();
+    // }, 2200);
+
+    // ——————————————————————————————————————————————————
+    // TextScramble
+    // ——————————————————————————————————————————————————
+
+    class TextScramble {
+      constructor(el) {
+        this.el = el;
+        this.chars = "!<>-_\\/[]{}—=+*^?#________";
+        this.update = this.update.bind(this);
+      }
+      setText(newText) {
+        const oldText = this.el.innerText;
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise((resolve) => (this.resolve = resolve));
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const from = oldText[i] || "";
+          const to = newText[i] || "";
+          const start = Math.floor(Math.random() * 40);
+          const end = start + Math.floor(Math.random() * 40);
+          this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+      }
+      update() {
+        let output = "";
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+          let { from, to, start, end, char } = this.queue[i];
+          if (this.frame >= end) {
+            complete++;
+            output += to;
+          } else if (this.frame >= start) {
+            if (!char || Math.random() < 0.28) {
+              char = this.randomChar();
+              this.queue[i].char = char;
+            }
+            output += `<span class="dud">${char}</span>`;
+          } else {
+            output += from;
+          }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+          this.resolve();
+        } else {
+          this.frameRequest = requestAnimationFrame(this.update);
+          this.frame++;
+        }
+      }
+      randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)];
+      }
+    }
+
+    // ——————————————————————————————————————————————————
+    // Example
+    // ——————————————————————————————————————————————————
+
+    const phrases = [
+      "est. 1998",
+      "New York, NY",
+      "Toronto, ON",
+      "The 6ix",
+      "Welcome",
+      "안녕하세요",
+    ];
+
+    const el = document.querySelector(".intro_text");
+    const fx = new TextScramble(el);
+
+    let counter = 0;
+    const next = () => {
+      fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 1200);
+      });
+      counter = (counter + 1) % phrases.length;
+    };
+
+    next();
   },
   methods: {
-    changeIntro() {
-      let i = 0;
-      this.intro_rando_interval = window.setInterval(() => {
-        //this.changeRandom();
-        const first = this.intro_list.shift();
-        this.intro_list = this.intro_list.concat(first);
-        i++;
-
-        if (i >= 7) {
-          clearInterval(this.intro_rando_interval);
-        }
-      }, 60);
-      i = 0;
-
-      const first = this.intro_list.shift();
-      this.intro_list = this.intro_list.concat(first);
-    },
-    changeRandom() {},
     openNav() {
       const width = this.$el.querySelector(".intro");
       if (width.offsetWidth > 350) {

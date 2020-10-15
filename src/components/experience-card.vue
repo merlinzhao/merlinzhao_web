@@ -11,7 +11,7 @@
     ></div>
     <div v-if="photoLeft" class="col-6 textCardR">
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
+      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</br>&nbsp</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
         <div v-for="number in icons" :key="number">
@@ -349,7 +349,7 @@ export default {
     },
     subHeading: {
       type: String,
-      default: "This is a test subheading",
+      default: "none",
     },
     bodyText: {
       type: String,
@@ -389,7 +389,7 @@ export default {
   },
   methods: {
     getScroll() {
-      console.log(this.projectTitle, this.bg.getBoundingClientRect().y);
+      //console.log(this.projectTitle, this.bg.getBoundingClientRect().y);
     },
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
@@ -403,14 +403,23 @@ export default {
 .headingTwo {
   line-height: 45pt;
 }
+.regText {
+  color: #ddd;
+}
+
+.subHeading {
+  color: #aaa;
+}
 
 .linkText {
   color: rgb(31, 110, 255);
-  line-height: 16pt;
+  line-height: 14pt;
   font-size: 13pt;
   font-weight: 400;
   width: 200px;
   transition: all 0.3s;
+  height: 25px;
+  margin: 0;
 }
 .linkText:hover {
   cursor: pointer;

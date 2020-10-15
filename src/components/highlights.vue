@@ -7,7 +7,9 @@
           <div class="photoBox2" />
           <div class="infoBox">
             <p class="headingThree">MenloLab Inc.</p>
-            <p class="regText" style="color: #737780">Front End Developer Intern</p>
+            <p class="regText" style="color: #737780">
+              Front End Developer Intern
+            </p>
             <p class="regText" style="color: #737780">Hover to read more</p>
           </div>
         </div>
@@ -18,7 +20,9 @@
           <div class="photoBox1" />
           <div class="infoBox">
             <p class="headingThree">Advance Micro Devices</p>
-            <p class="regText" style="color: #737780">PCIE Design and Validation Intern</p>
+            <p class="regText" style="color: #737780">
+              PCIE Design and Validation Intern
+            </p>
             <p class="regText" style="color: #737780">Hover to read more</p>
           </div>
         </div>
@@ -29,7 +33,9 @@
           <div class="photoBox3" />
           <div class="infoBox">
             <p class="headingThree">NavText</p>
-            <p class="regText" style="color: #737780">Second place overall at Hack Western 5</p>
+            <p class="regText" style="color: #737780">
+              Second place overall at Hack Western 5
+            </p>
             <p class="regText" style="color: #737780">Hover to read more</p>
           </div>
         </div>
@@ -92,7 +98,7 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
-  transition: background 0.5s ease-out;
+  transition: background 0.3s ease-out;
 
   /* 
   -webkit-animation: introGradientTwo 3s ease-in-out;
