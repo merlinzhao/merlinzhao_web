@@ -3,10 +3,10 @@
     <div class="needMe" id="needMe">
       <p class="headingOneHalf contactHead">{{ needMeText }}</p>
     </div>
-    <p class="headingOneHalf foundHead" id="foundMe">Found Me</p>
+    <p class="headingOneHalf foundHead" id="foundMe">You Know How</p>
     <div class="contactCenter" id="contactCenter">
       <div class="cardRow row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
           <div
             class="highLightCard"
             id="card2"
@@ -19,7 +19,7 @@
             <p class="regText">&nbsp</p>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
           <div class="highLightCard" id="card2">
             <div class="photoBox2" />
             <p class="headingThree">Phone & Email</p>
@@ -43,7 +43,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
           <div
             class="highLightCard"
             id="card2"
@@ -72,18 +72,18 @@ export default {
       contactCenter: null,
       needMeText: "Look•••••••••••",
       needMeTextArr: [
-        "Look•••••••••••",
-        "Looki••••••••••",
-        "Lookin•••••••••",
-        "Looking••••••••",
-        "Looking •••••••",
-        "Looking f••••••",
-        "Looking fo•••••",
-        "Looking for••••",
-        "Looking for••••",
-        "Looking for M••",
-        "Looking for Me•",
-        "Looking for Me?",
+        "G•••••••••••",
+        "Ge••••••••••",
+        "Get•••••••••",
+        "Get ••••••••",
+        "Get i•••••••",
+        "Get in••••••",
+        "Get in •••••",
+        "Get in T••••",
+        "Get in To•••",
+        "Get in Tou••",
+        "Get in Touc•",
+        "Get in Touch",
       ],
       needMecount: 0,
     };
@@ -151,7 +151,6 @@ export default {
   transition: opacity 1s ease-out;
 }
 .contactBg {
-  height: 1800px;
   width: 100%;
   background: var(--bg-eee);
   transition: 0.3s all ease-out;
@@ -173,6 +172,7 @@ export default {
   text-align: center;
   color: var(--black);
   width: 100%;
+  margin: 0;
   /* background: -webkit-linear-gradient(
     45deg,
     var(--sub-three) 0%,
@@ -191,8 +191,8 @@ export default {
 
 .cardRow {
   width: 100%;
-  height: 600px;
-  margin: 80px 0 40px 0;
+
+  margin: 80px 0 120px 0;
 }
 
 .highLightCard {
@@ -209,9 +209,7 @@ export default {
 .highLightCard:hover {
   cursor: pointer;
 }
-.headingOneHalf {
-  font-variant-numeric: tabular-nums;
-}
+
 .headingThree {
   color: var(--sub-two);
 }
@@ -223,5 +221,27 @@ export default {
   font-size: 90pt;
   color: var(--black);
   margin: 20px 0 50px 0;
+}
+.cardPadding {
+  padding: 0 15px 0 15px;
+}
+@media only screen and (max-width: 555px) {
+}
+@media only screen and (max-width: 833px) {
+  .contactCenter {
+    flex-direction: row;
+  }
+  .cardPadding {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .cardRow {
+    width: 100%;
+
+    margin: 60px 0 100px 0;
+  }
+  .highLightCard {
+    height: 380px;
+  }
 }
 </style>

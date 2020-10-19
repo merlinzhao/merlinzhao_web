@@ -207,6 +207,7 @@ export default {
   position: absolute;
   top: 100px;
   color: var(--black);
+  text-align: center;
   background: -webkit-linear-gradient(
     45deg,
     var(--sub-three) 0%,
@@ -220,6 +221,7 @@ export default {
 
 .experienceSub {
   position: absolute;
+  text-align: center;
   top: 190px;
   color: var(--mer-lin);
 }
@@ -278,5 +280,22 @@ export default {
   color: white;
   position: absolute;
   bottom: 30px;
+}
+
+@media only screen and (max-width: 555px) {
+  .experienceBg {
+    height: 7500px;
+  }
+}
+
+@media only screen and (max-width: 650px) and (min-width: 556px) {
+  .headingOneHalf {
+    line-height: 40pt !important;
+    font-size: 35pt !important;
+    margin: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 883px) and (min-width: 651px) {
 }
 </style>

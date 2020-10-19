@@ -219,6 +219,38 @@ export default {
     backdrop-filter: blur(10px);
   }
 }
+
+@media only screen and (max-width: 555px) {
+  .headingOneHalf {
+    line-height: 40pt !important;
+    font-size: 35pt !important;
+  }
+  .headingThree {
+    line-height: 18pt;
+    font-size: 16pt;
+  }
+  .headingTwo {
+    line-height: 30pt;
+    font-size: 26pt;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 556px) and (max-width: 833px) {
+  .headingOneHalf {
+    line-height: 52pt;
+    font-size: 45pt;
+  }
+  .headingThree {
+    line-height: 24pt;
+    font-size: 20pt;
+  }
+  .headingTwo {
+    line-height: 40pt;
+    font-size: 36pt;
+    font-weight: 500;
+  }
+}
 @supports not (backdrop-filter: none) {
   .navBG {
     background: rgba(17, 17, 17, 0.85);

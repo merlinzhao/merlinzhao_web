@@ -2,14 +2,14 @@
   <div class="expCBg" :id="`${thisId}`">
     <div
       v-if="photoLeft"
-      class="col-6 photoCard"
+      class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
           'url(' + require('../assets/images/' + imgURL + '') + ')',
       }"
     ></div>
-    <div v-if="photoLeft" class="col-6 textCardR">
+    <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
       <p class="headingTwo">{{ projectTitle }}</p>
       <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</br>&nbsp</p>
       <p class="regText">{{ bodyText }}</p>
@@ -164,7 +164,7 @@
         <i class="fa fa-desktop" aria-hidden="true" /> View on {{ linkName }}
       </p>
     </div>
-    <div v-if="!photoLeft" class="col-6 textCardL">
+    <div v-if="!photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardL">
       <p class="headingTwo">{{ projectTitle }}</p>
       <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
       <p class="regText">{{ bodyText }}</p>
@@ -322,7 +322,7 @@
     </div>
     <div
       v-if="!photoLeft"
-      class="col-6 photoCard"
+      class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
@@ -538,5 +538,29 @@ export default {
     background-color: #777;
     box-shadow: 0 1px 8px transparent;
   }
+}
+
+@media only screen and (max-width: 555px) {
+  .expCBg {
+    flex-direction: column;
+    margin: 10px;
+    height: auto;
+  }
+  .photoCard {
+    height: 250px !important;
+  }
+  .textCardL {
+    padding: 20px 20px 20px 20px;
+    background: #333;
+    height: 400px;
+  }
+  .textCardR {
+    padding: 20px 20px 20px 20px;
+    background: #333;
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 556px) and (max-width: 833px) {
 }
 </style>
