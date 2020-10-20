@@ -220,7 +220,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 576px) {
   .headingOneHalf {
     line-height: 40pt !important;
     font-size: 35pt !important;
@@ -236,7 +236,7 @@ export default {
     margin: 0;
   }
 }
-@media only screen and (min-width: 556px) and (max-width: 833px) {
+@media only screen and (min-width: 575px) and (max-width: 833px) {
   .headingOneHalf {
     line-height: 52pt;
     font-size: 45pt;

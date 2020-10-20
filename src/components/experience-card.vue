@@ -386,6 +386,9 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.getScroll);
     this.bg = document.getElementById(this.thisId);
+    if (!this.photoLeft) {
+      this.bg.classList.add("expCBg2");
+    }
   },
   methods: {
     getScroll() {
@@ -439,7 +442,7 @@ export default {
 .textCardL {
   color: var(--white);
   width: 100%;
-  height: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -451,7 +454,7 @@ export default {
 .textCardR {
   color: var(--white);
   width: 100%;
-  height: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -461,7 +464,7 @@ export default {
 }
 .photoCard {
   width: 100%;
-  height: 600px;
+  height: 100%;
   background: red;
   padding: 0;
   background-repeat: no-repeat;
@@ -540,11 +543,15 @@ export default {
   }
 }
 
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 575px) {
   .expCBg {
     flex-direction: column;
     margin: 10px;
     height: auto;
+  }
+
+  .expCBg2 {
+    flex-direction: column-reverse !important;
   }
   .photoCard {
     height: 250px !important;
@@ -561,6 +568,18 @@ export default {
   }
 }
 
-@media only screen and (min-width: 556px) and (max-width: 833px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .headingTwo {
+    line-height: 32pt !important;
+    font-size: 30pt !important;
+    margin-bottom: 5px;
+  }
+  .subHeading {
+    margin-bottom: 0px;
+  }
+  .expCBg {
+    height: 500px;
+    margin: 100px 0 100px 0;
+  }
 }
 </style>
