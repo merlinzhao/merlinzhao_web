@@ -46,7 +46,8 @@
     </div>
     <p class="footerText">
       Made from scratch with ❤️ and a lot Googling
-      <br />© 2020 merlin zhao
+      <br />Special thanks: <br />My MacBook
+      <br />stackoverflow.com<br />Starbucks<br />© 2020 merlin zhao
     </p>
   </div>
 </template>

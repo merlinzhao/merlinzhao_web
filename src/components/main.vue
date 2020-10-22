@@ -7,9 +7,7 @@
     />
     <mobile-menu class="mobile-menu" />
 
-    <div class="intro" ref="top" @click="closeNav()">
-      <p class="love">Made from scratch with ❤️ and a lot of googling</p>
-      <!-- <dots style="position: absolute; height: 100vh; width: 100vw;" /> -->
+    <div class="intro" ref="top">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
         <!-- <p class="merlin">merlinzhao.me</p> -->
@@ -19,10 +17,10 @@
       </div>
     </div>
 
-    <highlights />
+    <highlights class="highlights" />
     <!--<highlights />-->
     <about-me />
-    <experience />
+    <experience id="scroll_exp" />
     <!-- <welcome /> -->
     <contact />
     <myFooter @scrollTo="scrollTo" />
@@ -131,7 +129,7 @@ export default {
       "est. 1998",
       "New York, NY",
       "Toronto, ON",
-      "The 6ix",
+      "hello world!",
       "Welcome",
       "안녕하세요",
     ];
@@ -150,17 +148,6 @@ export default {
     next();
   },
   methods: {
-    openNav() {
-      const width = this.$el.querySelector(".intro");
-      if (width.offsetWidth > 350) {
-        document.getElementById("mySidenav").style.width = "350px";
-      } else {
-        document.getElementById("mySidenav").style.width = "80%";
-      }
-    },
-    closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    },
     nav(event) {
       if (event != "projects") return;
       this.$router.push({ path: event });
@@ -246,7 +233,6 @@ export default {
   margin: 0px;
   font-family: "Roboto";
 
-  position: absolute;
   background: linear-gradient(314deg, #c94242, #fe875d);
   background-size: 1200% 600%;
 
@@ -268,6 +254,7 @@ export default {
 }
 
 .center {
+  position: relative;
   width: 100%;
   height: 1em;
   font-size: 12em;
@@ -402,21 +389,25 @@ export default {
 /* ================ 555px 555px 555px 555px 555px 555px =================== */
 /* ======================================================================== */
 
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 576px) {
   .center {
     font-size: 4em !important;
   }
   .hello {
-    font-size: 14pt !important;
+    font-size: 18pt !important;
     text-align: center;
     width: 225px !important;
-    transform: translateY(-50px) !important;
+    transform: translateY(-10px) !important;
   }
   .headingThree {
     font-size: 16pt;
   }
+  .highlights {
+    visibility: hidden;
+    display: none;
+  }
 }
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 767px) {
   .center {
     font-size: 8em;
   }
@@ -425,13 +416,16 @@ export default {
     font-size: 26pt;
     text-align: center;
     width: 450px;
-    transform: translateY(-55px);
+    transform: translateY(-25px);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .mobile-menu {
+    visibility: visible;
   }
   .side-menu {
     visibility: hidden;
-  }
-  .mobile-menu {
-    visibility: visible;
   }
 }
 </style>

@@ -5,19 +5,32 @@
       <i class="fas fa-bars"></i>
     </span>
     <div class="night-mode-button">
-      <label @click="changeTheme()" for="night-mode" class="label" id="toggleLabel">
+      <label
+        @click="changeTheme()"
+        for="night-mode"
+        class="label"
+        id="toggleLabel"
+      >
         <i class="fas fa-moon"></i>
         <i class="fas fa-sun"></i>
         <div class="blob" id="blob"></div>
       </label>
     </div>
-    <a href="#" class="exp-box" @click="nav('projects')">Experience</a>
-    <a href="#" class="git-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
+    <a class="exp-box" @click="scrollTo('scroll_exp')">Experience</a>
+    <a class="exp-box" @click="scrollTo('scroll_about')">About Me</a>
+    <a class="exp-box" @click="scrollTo('scroll_contact')">Contact</a>
+    <a
+      href="#"
+      class="git-box"
+      onclick="window.open('http://www.github.com/merlinzhao')"
+      >Github</a
+    >
     <a
       href="#"
       class="link-box"
       onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-    >LinkedIn</a>
+      >LinkedIn</a
+    >
   </div>
 </template>
 
@@ -65,10 +78,14 @@ export default {
     localStorage.setItem("dark-mode", this.setTheme);
   },
   methods: {
-    nav(event) {
-      if (event != "projects") return;
-      this.$router.push({ path: event });
+    scrollTo(event_id) {
+      document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
+      console.log(document.getElementById(event_id));
     },
+    // nav(event) {
+    //   if (event != "projects") return;
+    //   this.$router.push({ path: event });
+    // },
     changeTheme() {
       var element = document.getElementById("toggleLabel");
       var elementBlob = document.getElementById("blob");
@@ -96,7 +113,7 @@ export default {
 
 <style scoped>
 .menu-box {
-  height: 300px;
+  height: 380px;
   width: 250px;
 }
 
@@ -126,6 +143,10 @@ export default {
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transition-delay: 0.1s;
   opacity: 0;
+}
+
+.exp-box:hover {
+  cursor: pointer;
 }
 .git-box {
   transform: translateX(-120px);

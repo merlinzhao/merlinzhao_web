@@ -56,6 +56,7 @@ export default {
 
   /* project Card colors */
   --bg-projectCard: white;
+  --bg-projectCard-hover: rgb(245, 245, 245);
   --PC-subhead: #333;
   --gitHub-logo: #16166;
 
@@ -74,6 +75,10 @@ export default {
 
   --sub-three: #356288;
   --sub-four: #76bed8;
+
+  /* blurs */
+  --blur-one: rgba(180, 180, 180, 0);
+  --blur-one-hover: rgba(180, 180, 180, 0.3);
 
   /* GENERIC */
   --white: white;
@@ -95,6 +100,7 @@ export default {
 
   /* project Card colors */
   --bg-projectCard: #333;
+  --bg-projectCard-hover: #444;
   --PC-subhead: #aaa;
   --gitHub-logo: #aaa;
 
@@ -113,6 +119,10 @@ export default {
 
   --sub-three: #fe875d;
   --sub-four: #c94242;
+
+  /* blurs */
+  --blur-one: rgba(0, 0, 0, 0.4);
+  --blur-one-hover: rgba(0, 0, 0, 0.7);
 
   /* GENERIC */
   --white: black;
@@ -168,13 +178,14 @@ export default {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  color: var(--side-nav);
+  color: var(--side-nav) !important;
   display: block;
 }
 
 .sidenav a:hover {
   text-decoration: none;
-  color: var(--side-nav-hover);
+  color: var(--side-nav-hover) !important;
+  cursor: !important;
 }
 
 .sidenav .closebtn {

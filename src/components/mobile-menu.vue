@@ -3,23 +3,40 @@
   <div class="menu-box" id="menu-box">
     <div class="sidenav headingThree" id="sidenav">
       <div class="night-mode-button">
-        <label @click="changeTheme()" for="night-mode" class="label" id="mobileToggle">
+        <label
+          @click="changeTheme()"
+          for="night-mode"
+          class="label"
+          id="mobileToggle"
+        >
           <i class="fas fa-moon"></i>
           <i class="fas fa-sun"></i>
           <div class="blob" id="mobileBlob"></div>
         </label>
       </div>
 
-      <a href="#" class="item-box" @click="nav('projects')">Experience</a>
-      <a href="#" class="item-box" onclick="window.open('http://www.github.com/merlinzhao')">Github</a>
+      <a class="item-box" @click="scrollTo('scroll_exp')">Experience</a>
+      <a class="item-box" @click="scrollTo('scroll_about')">About Me</a>
+      <a class="item-box" @click="scrollTo('scroll_contact')">Contact</a>
+      <a
+        href="#"
+        class="item-box"
+        onclick="window.open('http://www.github.com/merlinzhao')"
+        >Github</a
+      >
       <a
         href="#"
         class="item-box"
         onclick="window.open('https://www.linkedin.com/in/merlinzhao/')"
-      >LinkedIn</a>
+        >LinkedIn</a
+      >
     </div>
 
-    <i class="fas fa-angle-down openNavButton arrow" id="arrow-box" @click="arrowClick()"></i>
+    <i
+      class="fas fa-angle-down openNavButton arrow"
+      id="arrow-box"
+      @click="arrowClick()"
+    ></i>
   </div>
 </template>
 
@@ -48,6 +65,9 @@ export default {
           }
         }, 8000);
       }
+    },
+    scrollTo(event_id) {
+      document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
     },
     openMenu() {
       this.menu.classList.add("menu-box-open");
@@ -152,7 +172,7 @@ export default {
   margin: 0 0 0 0;
 }
 .menu-box-open {
-  height: 300px;
+  height: 370px;
   transform: translateY(-0px);
   background: var(--bg-mobile-menu);
 }
@@ -171,7 +191,7 @@ export default {
 }
 
 .sidenav-open {
-  height: 250px;
+  height: 320px;
   width: 100vw;
   opacity: 1;
 }

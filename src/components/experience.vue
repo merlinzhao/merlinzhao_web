@@ -1,6 +1,6 @@
 <template>
-  <div class="experienceBg">
-    <div class="deviceOut">
+  <div class="experienceBg" >
+    <div class="deviceOut" >
       <p class="headingOneHalf experienceHead">Experiences & Projects</p>
       <p class="headingThree experienceSub">
         Explore my works throughout the years.
@@ -12,7 +12,7 @@
       <expCard
         :imgURL="'amd-white.png'"
         :backgroundColor="'rgb(201, 66, 66)'"
-        :projectTitle="'Advance Micro Devices'"
+        :projectTitle="'Advanced Micro Devices'"
         :subHeading="'PCIE Design and Validation Intern'"
         :thisId="'AMDid'"
         :className="'textCardL'"
@@ -23,7 +23,7 @@
         :projectTitle="'Menlolab Inc.'"
         :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
         :subHeading="'Front End Developer Intern'"
-        :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
+        :icons="['F', 'D', 'A', 'H', 'G', 'J']"
         :imgURL="'MenloPic.png'"
         :externalLink="['https://menlolab.com', 'View on web']"
         :backgroundColor="'orange'"
@@ -134,14 +134,29 @@ export default {
     getScroll(event) {
       this.scrollPosition = window.top.scrollY;
       this.screenHeight = window.innerHeight;
-      this.desktopPositon =
-        this.screenHeight * 0.85 + 550 + 1540 - this.screenHeight * 0.35;
+      let screenWidth = window.innerWidth;
+      if (screenWidth < 576) {
+        this.desktopPositon =
+          this.screenHeight * 0.85 + 1540 - this.screenHeight * 0.35;
+      } else if (screenWidth < 767) {
+        this.desktopPositon =
+          this.screenHeight * 0.85 + 400 + 1540 - this.screenHeight * 0.35;
+      } else {
+        this.desktopPositon =
+          this.screenHeight * 0.85 + 480 + 1540 - this.screenHeight * 0.35;
+      }
       this.desktopOffset = this.scrollPosition - this.desktopPositon;
-
-      let scale = this.desktopOffset * 0.008 * 0.5;
+      let scale = 1;
+      if (screenWidth < 576) {
+        scale = this.desktopOffset * 0.008;
+      } else if (screenWidth < 767) {
+        scale = this.desktopOffset * 0.008 * 0.8;
+      } else {
+        scale = this.desktopOffset * 0.008 * 0.55;
+      }
       let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      //console.log(deviceInPosition, this.screenHeight * 0.3);
+      //'console'.log(deviceInPosition, this.screenHeight * 0.3);
 
       if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
         // this.desktopDevice.style.width =
@@ -160,12 +175,12 @@ export default {
       if (scale >= 6) {
         this.desktopDevice.style.opacity = 0;
         if (scale >= 8.5) {
-          this.desktopDevice.style.visibility = "hidden";
+          this.desktopDevice.style.display = "none";
         }
         this.expBg.style.transition = "background 0s";
         this.expBg.style.background = "#111";
       } else {
-        this.desktopDevice.style.visibility = "initial";
+        this.desktopDevice.style.display = "initial";
         this.desktopDevice.style.opacity = 1;
         this.expBg.style.transition = "background 0.3s ease-out";
         this.expBg.style.background = "var(--bg-eee)";
@@ -282,20 +297,38 @@ export default {
   bottom: 30px;
 }
 
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 576px) {
   .experienceBg {
-    height: 7500px;
+    height: 7300px;
+  }
+  .headingOneHalf {
+    line-height: 30pt !important;
+    font-size: 26pt !important;
+    margin: 0px !important;
+    width: 80%;
+  }
+  .experienceSub {
+    top: 190px;
+  }
+  .gitBox {
+    margin-top: 10px;
   }
 }
 
-@media only screen and (max-width: 650px) and (min-width: 556px) {
+@media only screen and (max-width: 650px) and (min-width: 576px) {
   .headingOneHalf {
     line-height: 40pt !important;
     font-size: 35pt !important;
     margin: 0px !important;
   }
+  .experienceBg {
+    height: 7750px;
+  }
 }
 
-@media only screen and (max-width: 883px) and (min-width: 651px) {
+@media only screen and (max-width: 767px) and (min-width: 651px) {
+  .experienceBg {
+    height: 7750px;
+  }
 }
 </style>

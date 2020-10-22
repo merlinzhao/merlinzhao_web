@@ -5,8 +5,8 @@
     </div>
     <p class="headingOneHalf foundHead" id="foundMe">You Know How</p>
     <div class="contactCenter" id="contactCenter">
-      <div class="cardRow row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
+      <div class="cardRow row" id="scroll_contact">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
           <div
             class="highLightCard"
             id="card2"
@@ -19,7 +19,7 @@
             <p class="regText">&nbsp</p>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
           <div class="highLightCard" id="card2">
             <div class="photoBox2" />
             <p class="headingThree">Phone & Email</p>
@@ -43,7 +43,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
           <div
             class="highLightCard"
             id="card2"
@@ -99,7 +99,7 @@ export default {
       let screenHeight = window.innerHeight;
       let p = this.sectionTop.getBoundingClientRect().y;
       let f = this.foundMe.getBoundingClientRect().y;
-      console.log(this.foundMe.getBoundingClientRect().y, screenHeight);
+      //console.log(this.foundMe.getBoundingClientRect().y, screenHeight);
       if (p > screenHeight * 0.9) {
         this.needMeText = this.needMeTextArr[0];
       } else if (p > screenHeight * 0.85) {
@@ -148,6 +148,7 @@ export default {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  padding-bottom: 150px;
   transition: opacity 1s ease-out;
 }
 .contactBg {
@@ -205,9 +206,11 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease-out;
 }
 .highLightCard:hover {
   cursor: pointer;
+  background: var(--bg-projectCard-hover);
 }
 
 .headingThree {
@@ -225,9 +228,12 @@ export default {
 .cardPadding {
   padding: 0 15px 0 15px;
 }
-@media only screen and (max-width: 555px) {
+@media only screen and (max-width: 575px) {
+  .contactCenter {
+    padding: 0;
+  }
 }
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 767px) {
   .contactCenter {
     flex-direction: row;
   }
@@ -242,6 +248,17 @@ export default {
   }
   .highLightCard {
     height: 380px;
+  }
+  .contactCenter {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .cardPadding {
+    padding: 10px 5px 0px 5px;
+    /* width: 33% !important; */
+    /* min-width: 250px !important; */
+    /* max-width: 33%; */
   }
 }
 </style>

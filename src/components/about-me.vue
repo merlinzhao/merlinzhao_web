@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <!-- <div class="absolute" /> -->
-    <div class="aboutCenter">
+    <div class="aboutCenter" id="scroll_about">
       <p class="headingTwo headlineText">
         Software Developer
         <br />Graphic Designer <br />Chipotle Lover
@@ -215,14 +215,6 @@
           <i class="fas fa-hands-helping"></i>
         </div>
       </div>
-      <div style="display: flex; flex-direction: column" class="summaryRow">
-        <p
-          class="headingFour"
-          style="margin: 3% 0% 1% 0%; width: 100%; text-align: center"
-        >
-          Get in touch
-        </p>
-      </div>
     </div>
   </div>
 </template>
@@ -252,6 +244,7 @@ export default {};
     var(--sub-two) 60%,
     var(--sub-one) 120%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.5s ease-out;
@@ -422,6 +415,13 @@ export default {};
   }
   .Year {
     text-align: center !important;
+  }
+  .devIcons {
+    flex-direction: column !important;
+  }
+
+  .devCol {
+    margin-right: 0px;
   }
 }
 </style>
