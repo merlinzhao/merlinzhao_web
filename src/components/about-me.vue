@@ -63,7 +63,7 @@
         projects that will drive innovation and improve the lives of the end
         user. As a programmer, I enjoy application design, software development,
         and optimizing code wherever I can. I am currently an intern at AMD, a
-        leading semiconductor company.<br /><br />I hope you enjoy my webiste!
+        leading semiconductor company.<br /><br />I hope you enjoy my website!
         Did I mention its coded from scratch? 😊
       </p>
       <div class="row summaryRow">
