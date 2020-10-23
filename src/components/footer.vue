@@ -10,9 +10,9 @@
         max-width: 1250px;
       "
     >
-      <button class="footerButton">
-        <i class="fas fa-file-alt" style="opacity: 0" />
-      </button>
+      <a class="footerButton" href="../assets/MZ_resume.pdf" download>
+        <i class="fas fa-file-alt" />
+      </a>
       <button
         v-if="page === 'home'"
         class="footerButton"
@@ -47,7 +47,8 @@
     <p class="footerText">
       Made from scratch with ❤️ and a lot Googling
       <br />Special thanks: <br />My MacBook
-      <br />stackoverflow.com<br />Starbucks<br />© 2020 merlin zhao
+      <br />stackoverflow.com<br />Starbucks<br /><br />merlinzhao.me V2.0<br />©
+      2020 merlin zhao
     </p>
   </div>
 </template>
@@ -73,7 +74,7 @@ export default {
 </script>
 <style scoped>
 .footerBackground {
-  height: 200px;
+  height: 270px;
   width: 100%;
   background: var(--bg-e4e4e4);
   display: flex;
@@ -99,7 +100,7 @@ export default {
 .footerText {
   margin: 0px;
   color: #999;
-  font-size: 12pt;
+  font-size: 11pt;
   text-align: center;
 }
 @media only screen and (max-width: 768px) {
