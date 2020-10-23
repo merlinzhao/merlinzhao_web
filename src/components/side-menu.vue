@@ -16,8 +16,8 @@
         <div class="blob" id="blob"></div>
       </label>
     </div>
-    <a class="exp-box" @click="scrollTo('scroll_exp')">Experience</a>
     <a class="exp-box" @click="scrollTo('scroll_about')">About Me</a>
+    <a class="exp-box" @click="scrollTo('scroll_exp')">Experience</a>
     <a class="exp-box" @click="scrollTo('scroll_contact')">Contact</a>
     <a
       href="#"

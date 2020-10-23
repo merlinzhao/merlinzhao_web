@@ -3,6 +3,7 @@
     <div
       v-if="photoLeft"
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
+      :id="`photoLeft${thisId}`"
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
@@ -11,7 +12,7 @@
     ></div>
     <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</br>&nbsp</p>
+      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</br>&nbsp</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
         <div v-for="number in icons" :key="number">
@@ -161,12 +162,12 @@
         <i class="fab fa-github githubLogo" /> View on GitHub
       </p>
       <p @click="openLink()" v-if="externalLink[1]" class="linkText">
-        <i class="fa fa-desktop" aria-hidden="true" /> View on {{ linkName }}
+        <i class="fa fa-desktop" aria-hidden="true" /> {{ linkName }}
       </p>
     </div>
     <div v-if="!photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardL">
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading">{{ subHeading }}</p>
+      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
         <div v-for="number in icons" :key="number">
@@ -317,12 +318,13 @@
         <i class="fab fa-github githubLogo" /> View on GitHub
       </p>
       <p @click="openLink()" v-if="externalLink[1]" class="linkText">
-        <i class="fa fa-desktop" aria-hidden="true" /> View on {{ linkName }}
+        <i class="fa fa-desktop" aria-hidden="true" /> {{ linkName }}
       </p>
     </div>
     <div
       v-if="!photoLeft"
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
+      :id="`photoRight${thisId}`"
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
@@ -379,6 +381,10 @@ export default {
       type: String,
       default: "Web",
     },
+    photoCover: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return { bg: null, card: null };
@@ -388,6 +394,13 @@ export default {
     this.bg = document.getElementById(this.thisId);
     if (!this.photoLeft) {
       this.bg.classList.add("expCBg2");
+    }
+    if (this.photoCover && this.photoLeft) {
+      let full_id = "photoLeft" + this.thisId;
+      document.getElementById(full_id).classList.add("photoCard-cover");
+    } else if (this.photoCover && !this.photoLeft) {
+      let full_id = "photoRight" + this.thisId;
+      document.getElementById(full_id).classList.add("photoCard-cover");
     }
   },
   methods: {
@@ -416,7 +429,7 @@ export default {
 
 .linkText {
   color: rgb(31, 110, 255);
-  line-height: 14pt;
+  line-height: 15pt;
   font-size: 13pt;
   font-weight: 400;
   width: 200px;
@@ -471,6 +484,10 @@ export default {
   background-position: center center;
   align-items: center;
   background-size: contain;
+}
+
+.photoCard-cover {
+  background-size: cover !important;
 }
 
 .iconRow {
@@ -565,6 +582,14 @@ export default {
     padding: 20px 20px 20px 20px;
     background: #333;
     height: 400px;
+  }
+  .subHeading {
+    margin-bottom: 0px;
+  }
+
+  .linkText {
+    line-height: 15pt;
+    font-size: 11pt;
   }
 }
 

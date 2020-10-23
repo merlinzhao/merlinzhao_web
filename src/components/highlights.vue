@@ -13,7 +13,7 @@
             <p class="headingFour">Highlight Experience</p>
             <p class="headingThree">Advanced Micro Devices</p>
             <p class="regText">PCIE Design and Validation Intern</p>
-            <p class="regText">Hover to read more</p>
+            <p class="regText">Click to learn more</p>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
             <p class="headingFour">Highlight Experience</p>
             <p class="headingThree">Menlolab Inc.</p>
             <p class="regText">Front End Developer Intern</p>
-            <p class="regText">Hover to read more</p>
+            <p class="regText">Click to learn more</p>
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
             <p class="headingFour">Highlight Project</p>
             <p class="headingThree">NavText</p>
             <p class="regText">Second place overall at Hack Western 5</p>
-            <p class="regText">Hover to read more</p>
+            <p class="regText">Click to learn more</p>
           </div>
         </div>
       </div>

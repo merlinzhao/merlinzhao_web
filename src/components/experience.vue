@@ -14,8 +14,11 @@
         :backgroundColor="'rgb(201, 66, 66)'"
         :projectTitle="'Advanced Micro Devices'"
         :subHeading="'PCIE Design and Validation Intern'"
+        :bodyText="'I manage an automated regression testing system. This includes the front end Ruby on Rails website, MySQL database, and Perl scripts. I also focus on optimizing existing scripts to improve performance, and frequently communicate with RTL designers to create tools that assists in regression debugging.'"
         :thisId="'AMDid'"
         :className="'textCardL'"
+        :externalLink="['https://www.amd.com','AMD']"
+        :linkName="'amd.com'"
         :icons="['K', 'L', 'N', 'B', 'H', 'G']"
       />
       <expCard
@@ -26,21 +29,27 @@
         :icons="['F', 'D', 'A', 'H', 'G', 'J']"
         :imgURL="'MenloPic.png'"
         :externalLink="['https://menlolab.com', 'View on web']"
+        :linkName="'menlolab.com'"
         :backgroundColor="'orange'"
         :thisId="'Menloid'"
         :className="'textCardR'"
+        :photoCover="true"
       />
       <expCard
         :projectTitle="'DeltaHacks'"
         :subHeading="'Design Executive and Organizer'"
-        :backgroundColor="'#999 '"
+        :bodyText="'After competing in multiple hackathons, I wanted to help organize one. As a DeltaHacks executive, I assisted in the creation of deltahacks.com, swag, and promotonal materials such as bags, stickers, and Snapchat filters. I also ensured that the event went smoothly and answered technical questions from hackers in regards to C, Python, Java, Swift and Web development.'"
+        :backgroundColor="'#092238 '"
+        :externalLink="['https://www.deltahacks.com','DeltaHacks.com']"
+        :linkName="'DeltaHacks.com'"
+        :imgURL="'dh.png'"
       />
       <expCard
         :photoLeft="true"
         :imgURL="'NavTextPic.png'"
         :projectTitle="'NavText'"
         :subHeading="'Second Place Overall at Hack Western 5 '"
-        :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
+        :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages. This project was aimed to help people without overpriced data plans get directions. Fact: Canada has one of the most expensive mobile data plans among developed countries.'"
         :icons="['E', 'D', 'A']"
         :backgroundColor="'#9ab8c3'"
         :gitLink="'https://github.com/merlinzhao/NavText'"
@@ -49,21 +58,23 @@
           'View on Devpost',
         ]"
         :thisId="'Navid'"
-        :linkName="'Devpost'"
+        :linkName="'View on Devpost'"
       />
       <expCard
         :imgURL="'MerlinWebPic.png'"
         :projectTitle="'merlinzhao.me'"
-        :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
+        :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!'"
         :icons="['F', 'A', 'D', 'H', 'G']"
+        :gitLink="'https://github.com/merlinzhao/merlinzhao_web'"
         :externalLink="['http://www.merlinzhao.me', 'View on web']"
+        :linkName="'merlinzhao.me'"
         :backgroundColor="'#222'"
         :thisId="'Webid'"
       />
       <expCard
         :photoLeft="true"
         :projectTitle="'Welcome Week'"
-        :bodyText="'A mobile application that helps students quickly find campus events based on their preferences.'"
+        :bodyText="'A mobile application that helps students quickly find campus events based on their preferences. This project was aimed to enhance the welcome week experience.'"
         :icons="['E', 'C', 'D']"
         :imgURL="'WelcomePic.png'"
         :backgroundColor="'#774545'"
@@ -73,7 +84,7 @@
       />
       <expCard
         :projectTitle="'Nutryent'"
-        :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API.'"
+        :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API. This project was part of my first Hackathon experience, in which I was able to apply what I have learned about the software development life cycle for the first time.'"
         :icons="['I', 'J', 'C', 'D']"
         :imgURL="'NutryentPic.png'"
         :backgroundColor="'#ffa42e'"
@@ -82,13 +93,15 @@
           'https://devpost.com/software/nutryent',
           'View on Devpost',
         ]"
+        :gitLink="'https://github.com/Jseto97/Archhacks2017'"
         :thisId="'Nutid'"
-        :linkName="'Devpost'"
+        :linkName="'View on Devpost'"
+        :photoCover="true"
       />
       <expCard
         :photoLeft="true"
         :projectTitle="'Space Escape'"
-        :bodyText="'A multiplier python game inspired by the classic arcade game Galaga.'"
+        :bodyText="'A multiplier python game inspired by the classic arcade game Galaga. Built heavily upon my knowledge of object-oriented programming.'"
         :icons="['B']"
         :imgURL="'SpacePic.png'"
         :backgroundColor="'#222'"
@@ -101,7 +114,7 @@
         <p class="headingTwo proof2"><i class="fab fa-github"></i> GitHub</p>
         <p class="regText proof3">
           /merlinzhao</br>
-          View the projects above along with more over on my Github.
+          View the projects above along with more, over on my Github.
         </p>
       </div>
     </div>
@@ -191,6 +204,7 @@ export default {
 </script>
 <style scoped>
 .experienceBg {
+  min-width: 300px;
   height: 8600px;
   width: 100%;
   background: var(--bg-eee);

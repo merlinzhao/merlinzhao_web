@@ -135,6 +135,7 @@ export default {
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
+  min-width: 300px;
 }
 .headingOne {
   line-height: 65pt;
@@ -246,8 +247,13 @@ export default {
     font-weight: 500;
     margin: 0;
   }
+  .regText {
+    line-height: 15pt;
+    font-size: 11pt;
+    font-weight: 400;
+  }
 }
-@media only screen and (min-width: 575px) and (max-width: 833px) {
+@media only screen and (min-width: 575px) and (max-width: 870px) {
   .headingOneHalf {
     line-height: 52pt;
     font-size: 45pt;

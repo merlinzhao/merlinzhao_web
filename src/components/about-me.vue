@@ -58,12 +58,13 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        Hey there! My name is Merlin Zhao. I am currently a third year Computer
-        Engineering student at McMaster University. Im originally from New York,
-        New York but (for now), I am happily settled in Canada. Ive had a long
-        passion for technology, especially how it can be utilized to enhance the
-        everyday lives of people. I cant wait to be a part of the technological
-        advances of the future. I also hope you are enjoying the site!
+        I'm currently looking for internship oppertunities as a Software
+        Developer. I am especially interesred in roles that allow me to work on
+        projects that will drive innovation and improve the lives of the end
+        user. As a programmer, I enjoy application design, software development,
+        and optimizing code wherever I can. I am currently an intern at AMD, a
+        leading semiconductor company.<br /><br />I hope you enjoy my webiste!
+        Did I mention its coded from scratch? 😊
       </p>
       <div class="row summaryRow">
         <p

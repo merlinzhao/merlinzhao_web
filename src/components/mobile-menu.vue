@@ -1,5 +1,4 @@
 <template>
-  <!--<div class="outside-box" id="outside-box">-->
   <div class="menu-box" id="menu-box">
     <div class="sidenav headingThree" id="sidenav">
       <div class="night-mode-button">
@@ -14,9 +13,8 @@
           <div class="blob" id="mobileBlob"></div>
         </label>
       </div>
-
-      <a class="item-box" @click="scrollTo('scroll_exp')">Experience</a>
       <a class="item-box" @click="scrollTo('scroll_about')">About Me</a>
+      <a class="item-box" @click="scrollTo('scroll_exp')">Experience</a>
       <a class="item-box" @click="scrollTo('scroll_contact')">Contact</a>
       <a
         href="#"
@@ -143,16 +141,11 @@ export default {
 </script>
 
 <style scoped>
-.outside-box {
-  height: 100vh;
-  width: 100vw;
-  transition: all 0.7s ease-out;
-}
 .menu-box {
   width: 100vw;
   height: 50px;
   backdrop-filter: blur(10px);
-  transition: all 0.7s ease-out;
+  transition: transform 0.7s ease-out, height 0.7s ease-out;
   transform: translateY(0px);
   display: flex;
   flex-direction: column;
@@ -168,7 +161,7 @@ export default {
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
-  transition: all 0.7s ease-out;
+  transition: transform 0.7s ease-out;
   margin: 0 0 0 0;
 }
 .menu-box-open {
@@ -179,14 +172,14 @@ export default {
 
 .sidenav {
   position: relative;
-  transition: all 0.7s ease-out;
+  transition: height 0.7s ease-out;
   width: 100vw;
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   height: 0px;
 }
 
@@ -252,5 +245,11 @@ label .fa-sun {
 }
 .day {
   background-color: rgb(241, 177, 0);
+}
+@media only screen and (max-width: 1100px) {
+  .headingThree {
+    line-height: 24pt;
+    font-size: 20pt;
+  }
 }
 </style>

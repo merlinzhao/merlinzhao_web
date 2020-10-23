@@ -4,9 +4,12 @@
     <mobile-menu class="mobile-menu" />
 
     <div class="projectRowOut" ref="top">
-      <div class="projectRow" style="color:white">
+      <div class="projectRow" style="color: white">
         <p class="headingTwo projectThree projectCenter">MADE BY MERLIN.</p>
-        <p class="subHeading">const subHeading = "Explore my Projects."</p>
+        <p class="subHeading">
+          const subHeading = "Explore my Projects."<br />You have discovered my
+          old projects page! :)<br />This page is out of date.
+        </p>
       </div>
     </div>
     <div class="projectContainer">
@@ -16,10 +19,10 @@
             :projectTitle="'Advance Micro Devices'"
             :bodyText="'Job desciption coming soon'"
             :subHeading="'PCIE Design and Validation Intern'"
-            :icons="['F','D','A','H','G','L','E','J','K']"
+            :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
             :imgURL="'amd-white.png'"
             :backgroundColor="'rgb(201, 66, 66)'"
-            :externalLink="['https://amd.com','View on web']"
+            :externalLink="['https://amd.com', 'View on web']"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
@@ -27,20 +30,23 @@
             :projectTitle="'NavText'"
             :subHeading="'Second Place Overall at Hack Western 5 '"
             :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
-            :icons="['E','D','A']"
+            :icons="['E', 'D', 'A']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
             :gitLink="'https://github.com/merlinzhao/NavText'"
-            :externalLink="['https://devpost.com/software/navtext-15tgmj', 'View on Devpost']"
+            :externalLink="[
+              'https://devpost.com/software/navtext-15tgmj',
+              'View on Devpost',
+            ]"
           />
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'merlinzhao.me'"
             :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
-            :icons="['F','A','D','H','G']"
+            :icons="['F', 'A', 'D', 'H', 'G']"
             :imgURL="'MerlinWebPic.png'"
-            :externalLink="['http://www.merlinzhao.me','View on web']"
+            :externalLink="['http://www.merlinzhao.me', 'View on web']"
             :backgroundColor="'#222'"
           />
         </div>
@@ -49,9 +55,9 @@
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
             :subHeading="'Front End Developer Intern'"
-            :icons="['F','D','A','H','G','L','E','J','K']"
+            :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
             :imgURL="'MenloPic.png'"
-            :externalLink="['https://menlolab.com','View on web']"
+            :externalLink="['https://menlolab.com', 'View on web']"
           />
         </div>
 
@@ -59,7 +65,7 @@
           <projectCard
             :projectTitle="'Welcome Week'"
             :bodyText="'A mobile application that helps students quickly find campus events based on their preferences.'"
-            :icons="['E','C','D']"
+            :icons="['E', 'C', 'D']"
             :imgURL="'WelcomePic.png'"
             :backgroundColor="'#774545'"
             :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
@@ -70,11 +76,14 @@
           <projectCard
             :projectTitle="'Nutryent'"
             :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API.'"
-            :icons="['I','J','C','D']"
+            :icons="['I', 'J', 'C', 'D']"
             :imgURL="'NutryentPic.png'"
             :backgroundColor="'#ffa42e'"
             :subHeading="'Made at ArchHacks 2017'"
-            :externalLink="['https://devpost.com/software/nutryent','View on Devpost']"
+            :externalLink="[
+              'https://devpost.com/software/nutryent',
+              'View on Devpost',
+            ]"
           />
         </div>
 
