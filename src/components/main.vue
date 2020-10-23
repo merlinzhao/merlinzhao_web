@@ -127,6 +127,7 @@ export default {
 
     const phrases = [
       "est. 1998",
+      "switch to dark mode!",
       "New York, NY",
       "Toronto, ON",
       "hello world!",

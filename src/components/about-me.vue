@@ -58,8 +58,8 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        I'm currently looking for internship oppertunities as a Software
-        Developer. I am especially interesred in roles that allow me to work on
+        I'm currently looking for internship opportunities as a Software
+        Developer. I am especially interested in roles that allow me to work on
         projects that will drive innovation and improve the lives of the end
         user. As a programmer, I enjoy application design, software development,
         and optimizing code wherever I can. I am currently an intern at AMD, a
