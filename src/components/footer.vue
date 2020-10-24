@@ -45,7 +45,7 @@
       </button>
     </div>
     <p class="footerText">
-      Made from scratch with ❤️ and a lot Googling
+      Made from scratch with ❤️ and a lot of Googling
       <br />Special thanks: <br />My MacBook
       <br />stackoverflow.com<br />Starbucks<br /><br />merlinzhao.me V2.0<br />©
       2020 merlin zhao

@@ -63,7 +63,7 @@
       <expCard
         :imgURL="'MerlinWebPic.png'"
         :projectTitle="'merlinzhao.me'"
-        :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!'"
+        :bodyText="'My portfolio website coded and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!'"
         :icons="['F', 'A', 'D', 'H', 'G']"
         :gitLink="'https://github.com/merlinzhao/merlinzhao_web'"
         :externalLink="['http://www.merlinzhao.me', 'View on web']"
