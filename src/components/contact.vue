@@ -22,7 +22,7 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
           <div class="highLightCard" id="card2">
             <div class="photoBox2" />
-            <p class="headingThree">Phone & Email</p>
+            <p class="headingThree">Email</p>
             <i class="far fa-address-card contactIcon"></i>
             <a
               href="mailto:zhaom21@mcmaster.ca"
