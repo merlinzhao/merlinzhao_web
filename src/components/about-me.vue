@@ -58,12 +58,12 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        I'm currently looking for internship opportunities as a Software
+        I'm currently looking for post-graduate opportunities as a Software
         Developer. I am especially interested in roles that allow me to work on
         projects that will drive innovation and improve the lives of the end
         user. As a programmer, I enjoy application design, software development,
-        and optimizing code wherever I can. I am currently an intern at AMD, a
-        leading semiconductor company.<br /><br />I hope you enjoy my website!
+        and optimizing code wherever I can.<br /><br />I hope you enjoy my
+        website!
       </p>
       <div class="row summaryRow">
         <p
