@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <highlights class="highlights" />
+    <!-- <highlights class="highlights" /> -->
     <!--<highlights />-->
     <about-me />
     <experience id="scroll_exp" />

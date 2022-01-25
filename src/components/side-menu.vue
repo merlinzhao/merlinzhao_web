@@ -80,7 +80,6 @@ export default {
   methods: {
     scrollTo(event_id) {
       document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
-      console.log(document.getElementById(event_id));
     },
     // nav(event) {
     //   if (event != "projects") return;

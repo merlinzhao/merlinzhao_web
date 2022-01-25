@@ -9,6 +9,19 @@
     </div>
 
     <div class="experienceCenter">
+       <expCard
+        :photoLeft="true"
+        :imgURL="'ibm.png'"
+        :backgroundColor="'rgb(0,0,0)'"
+        :projectTitle="'IBM'"
+        :subHeading="'Front End Developer Intern'"
+        :bodyText="'Coming soon.'"
+        :thisId="'IBMid'"
+        :className="'textCardL'"
+        :externalLink="['https://www.ibm.com/products/cognos-analytics','IBM']"
+        :linkName="'IBM Cognos Analytics'"
+        :icons="['O']"
+      />
       <expCard
         :imgURL="'amd-white.png'"
         :backgroundColor="'rgb(201, 66, 66)'"
@@ -205,7 +218,7 @@ export default {
 <style scoped>
 .experienceBg {
   min-width: 300px;
-  height: 8600px;
+  height: 9300px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
