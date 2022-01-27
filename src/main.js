@@ -4,10 +4,16 @@ import './assets/css/bootstrap.css'
 import vueRouter from 'vue-router';
 import home from './components/main.vue';
 import projects from './components/projects.vue';
+import VueGtag from "vue-gtag";
 
 Vue.use(vueRouter);
 
 Vue.config.productionTip = false
+
+// Vue gtag for google analytics
+Vue.use(VueGtag, {
+  config: { id: "UA-59149788-1" }
+});
 
 const routes = [{ path: '/', component: home }, { path: '/projects', name: 'Projects', component: projects }];
 

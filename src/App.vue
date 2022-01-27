@@ -38,6 +38,15 @@
 export default {
   name: "app",
   components: {},
+  mounted() {
+    this.track();
+  },
+
+  methods: {
+    track() {
+      this.$gtag.pageview(this.$route);
+    },
+  },
 };
 </script>
 
