@@ -45,6 +45,11 @@ export default {
   methods: {
     track() {
       this.$gtag.pageview(this.$route);
+      this.$gtag.event("pageView", {
+        event_category: "view",
+        event_label: "website loaded",
+        value: 1,
+      });
     },
   },
 };

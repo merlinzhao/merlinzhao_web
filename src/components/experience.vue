@@ -326,7 +326,7 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .experienceBg {
-    height: 7300px;
+    height: 7900px;
   }
   .headingOneHalf {
     line-height: 30pt !important;
@@ -355,7 +355,7 @@ export default {
 
 @media only screen and (max-width: 767px) and (min-width: 651px) {
   .experienceBg {
-    height: 7750px;
+    height: 8250px;
   }
 }
 </style>
