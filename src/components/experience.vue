@@ -15,19 +15,19 @@
         :backgroundColor="'rgb(0,0,0)'"
         :projectTitle="'IBM'"
         :subHeading="'Front End Developer Intern'"
-        :bodyText="'Coming soon.'"
+        :bodyText="'I improved upon a React Native application, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes.'"
         :thisId="'IBMid'"
         :className="'textCardL'"
         :externalLink="['https://www.ibm.com/products/cognos-analytics','IBM']"
         :linkName="'IBM Cognos Analytics'"
-        :icons="['O']"
+        :icons="['O','D','G','Jenkins']"
       />
       <expCard
         :imgURL="'amd-white.png'"
         :backgroundColor="'rgb(201, 66, 66)'"
         :projectTitle="'Advanced Micro Devices'"
         :subHeading="'PCIE Design and Validation Intern'"
-        :bodyText="'I manage an automated regression testing system. This includes the front end Ruby on Rails website, MySQL database, and Perl scripts. I also focus on optimizing existing scripts to improve performance, and frequently communicate with RTL designers to create tools that assists in regression debugging.'"
+        :bodyText="'At AMD, I was responsible for administrating and optimizing a SQL database. This ties into a larger regression testing system used by many RTL designers that allowed them to efficiently view critical simulation errors. I also improved upon the team’s Ruby on Rails website which visualized regression results.'"
         :thisId="'AMDid'"
         :className="'textCardL'"
         :externalLink="['https://www.amd.com','AMD']"
@@ -166,10 +166,10 @@ export default {
           this.screenHeight * 0.85 + 1540 - this.screenHeight * 0.35;
       } else if (screenWidth < 767) {
         this.desktopPositon =
-          this.screenHeight * 0.85 + 400 + 1540 - this.screenHeight * 0.35;
+          this.screenHeight * 0.85 + 400 + 1340 - this.screenHeight * 0.35;
       } else {
         this.desktopPositon =
-          this.screenHeight * 0.85 + 480 + 1540 - this.screenHeight * 0.35;
+          this.screenHeight * 0.85 + 480 + 1340 - this.screenHeight * 0.35;
       }
       this.desktopOffset = this.scrollPosition - this.desktopPositon;
       let scale = 1;
@@ -178,11 +178,11 @@ export default {
       } else if (screenWidth < 767) {
         scale = this.desktopOffset * 0.008 * 0.8;
       } else {
-        scale = this.desktopOffset * 0.008 * 0.55;
+        scale = this.desktopOffset * 0.008 * 0.9;
       }
       let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      //'console'.log(deviceInPosition, this.screenHeight * 0.3);
+      console.log(scale, deviceInPosition, this.screenHeight * 0.3);
 
       if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
         // this.desktopDevice.style.width =
@@ -190,8 +190,9 @@ export default {
         // this.desktopDevice.style.height =
         //   String(400 + this.desktopOffset * 1.5) + "px";
         this.desktopDevice.style.transform = "scale(" + scale + ")";
-        // this.desktopDevice.style.top =
-        //   "calc(30vh - " + this.desktopOffset + "px)";
+        if (this.desktopOffset > 300) {
+          this.desktopDevice.style.top = "calc(" + this.desktopOffset + "px)";
+        }
         // this.desktopDevice.style.transform =
         //   "translateY(" + String(this.desktopOffset * 0.3) + "px)";
       } else {
@@ -233,7 +234,7 @@ export default {
 .experienceCenter {
   width: 95%;
   max-width: 940px;
-  top: 1400px;
+  top: 1800px;
 
   position: absolute;
 

@@ -162,7 +162,17 @@
             style="margin-right: 5px"
           >
             <div class="tool regText modalR">
-              <p class="modalText">C</p>
+              <p class="modalText">React</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'Jenkins'"
+            class="devicon-jenkins-plain icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Jenkins</p>
               <i></i>
             </div>
           </i>
@@ -322,6 +332,7 @@
               <i></i>
             </div>
           </i>
+          
         </div>
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
