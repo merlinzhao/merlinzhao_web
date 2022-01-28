@@ -460,8 +460,7 @@ export default {
 }
 .linkText:hover {
   cursor: pointer;
-  font-size: 16pt;
-  color: rgb(0, 132, 255);
+  color: rgb(7, 164, 255);
 }
 .expCBg {
   position: relative;
