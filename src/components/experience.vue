@@ -51,7 +51,7 @@
       <expCard
         :projectTitle="'DeltaHacks'"
         :subHeading="'Design Executive and Organizer'"
-        :bodyText="'After competing in multiple hackathons, I wanted to help organize one. As a DeltaHacks executive, I assisted in the creation of deltahacks.com, swag, and promotonal materials such as bags, stickers, and Snapchat filters. I also ensured that the event went smoothly and answered technical questions from hackers in regards to C, Python, Java, Swift and Web development.'"
+        :bodyText="'After competing in multiple hackathons, I wanted to help organize one. As a DeltaHacks executive, I assisted in the creation of deltahacks.com, swag, and promotional materials such as bags, stickers, and Snapchat filters. I also ensured that the event went smoothly and answered technical questions from hackers in regards to C, Python, Java, Swift and Web development.'"
         :backgroundColor="'#092238 '"
         :externalLink="['https://www.deltahacks.com','DeltaHacks.com']"
         :linkName="'DeltaHacks.com'"
@@ -219,7 +219,7 @@ export default {
 <style scoped>
 .experienceBg {
   min-width: 300px;
-  height: 9300px;
+  height: 9700px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -327,7 +327,7 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .experienceBg {
-    height: 7900px;
+    height: 8300px;
   }
   .headingOneHalf {
     line-height: 30pt !important;
@@ -350,13 +350,13 @@ export default {
     margin: 0px !important;
   }
   .experienceBg {
-    height: 7750px;
+    height: 8750px;
   }
 }
 
 @media only screen and (max-width: 767px) and (min-width: 651px) {
   .experienceBg {
-    height: 8250px;
+    height: 8650px;
   }
 }
 </style>
