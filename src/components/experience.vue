@@ -14,7 +14,7 @@
         :imgURL="'ibm.png'"
         :backgroundColor="'rgb(0,0,0)'"
         :projectTitle="'IBM'"
-        :subHeading="'Front End Developer'"
+        :subHeading="'Software Developer'"
         :bodyText="'I worked on a React Native application for Cognos Analytics, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes. Ex Software Developer Intern.'"
         :thisId="'IBMid'"
         :className="'textCardL'"
