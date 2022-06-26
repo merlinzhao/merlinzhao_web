@@ -23,7 +23,7 @@
     "three": "^0.136.0",
     "vue": "^2.6.14",
     "vue-gtag": "^1.16.1",
-    "vue-router": "^3.5.3"
+    "vue-router": "^3.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.12.1",
