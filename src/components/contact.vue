@@ -25,12 +25,12 @@
             <p class="headingThree">Email</p>
             <i class="far fa-address-card contactIcon"></i>
             <a
-              href="mailto:zhaom21@mcmaster.ca"
+              href="mailto:merlinzhao@gmail.com"
               class="regText"
               style="width: 100%; text-align: center"
             >
               <i class="fas fa-envelope" style="margin-right: 8px"></i
-              >zhaom21@mcmaster.ca
+              >merlinzhao@gmail.com
             </a>
 
             <!-- <a

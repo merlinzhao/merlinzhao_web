@@ -126,12 +126,11 @@ export default {
     // ——————————————————————————————————————————————————
 
     const phrases = [
+      "Software Engineer",
       "est. 1998",
       "switch to dark mode!",
       "New York, NY",
-      "Toronto, ON",
       "hello world!",
-      "Welcome",
       "안녕하세요",
     ];
 
