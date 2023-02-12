@@ -231,7 +231,7 @@ export default {
 <style scoped>
 .experienceBg {
   min-width: 300px;
-  height: 9700px;
+  height: 10400px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -339,7 +339,7 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .experienceBg {
-    height: 8300px;
+    height: 9000px;
   }
   .headingOneHalf {
     line-height: 30pt !important;
