@@ -14,7 +14,7 @@
         :backgroundColor="'rgb(45, 140, 255)'"
         :projectTitle="'Zoom'"
         :subHeading="'Software Engineer'"
-        :bodyText="'tbd'"
+        :bodyText="'tbd :)'"
         :thisId="'Zoomid'"
         :className="'textCardL'"
         :externalLink="['https://zoom.us/','Zoom']"
