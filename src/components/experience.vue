@@ -9,6 +9,18 @@
     </div>
 
     <div class="experienceCenter">
+      <expCard
+        :imgURL="'ibm.png'"
+        :backgroundColor="'rgb(45, 140, 255)'"
+        :projectTitle="'Zoom'"
+        :subHeading="'Software Engineer'"
+        :bodyText="'tbd'"
+        :thisId="'Zoomid'"
+        :className="'textCardL'"
+        :externalLink="['https://zoom.us/','Zoom']"
+        :linkName="'zoom.us'"
+        :icons="['G']"
+      />
        <expCard
         :photoLeft="true"
         :imgURL="'ibm.png'"
@@ -182,7 +194,7 @@ export default {
       }
       let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      console.log(scale, deviceInPosition, this.screenHeight * 0.3);
+      // console.log(scale, deviceInPosition, this.screenHeight * 0.3);
 
       if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
         // this.desktopDevice.style.width =
