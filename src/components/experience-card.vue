@@ -176,6 +176,16 @@
               <i></i>
             </div>
           </i>
+          <i
+            v-if="number === 'cpp'"
+            class="devicon-cplusplus icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">C++</p>
+              <i></i>
+            </div>
+          </i>
         </div>
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
@@ -329,6 +339,26 @@
           >
             <div class="tool regText modalR">
               <p class="modalText">C</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'Jenkins'"
+            class="devicon-jenkins-plain icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">Jenkins</p>
+              <i></i>
+            </div>
+          </i>
+          <i
+            v-if="number === 'cpp'"
+            class="devicon-cplusplus-plain icon"
+            style="margin-right: 5px"
+          >
+            <div class="tool regText modalR">
+              <p class="modalText">C++</p>
               <i></i>
             </div>
           </i>

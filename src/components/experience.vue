@@ -10,16 +10,16 @@
 
     <div class="experienceCenter">
       <expCard
-        :imgURL="'ibm.png'"
-        :backgroundColor="'rgb(45, 140, 255)'"
+        :imgURL="'zoom.png'"
+        :backgroundColor="'rgb(32, 92, 243)'"
         :projectTitle="'Zoom'"
         :subHeading="'Software Engineer'"
-        :bodyText="'tbd :)'"
+        :bodyText="'Focused on client-side developent for Zoom Phone. Utilized Objective-C to built new features, improve stability, and create a better user experience.'"
         :thisId="'Zoomid'"
         :className="'textCardL'"
         :externalLink="['https://zoom.us/','Zoom']"
         :linkName="'zoom.us'"
-        :icons="['G']"
+        :icons="['N','cpp', 'Jenkins']"
       />
        <expCard
         :photoLeft="true"
@@ -27,7 +27,7 @@
         :backgroundColor="'rgb(0,0,0)'"
         :projectTitle="'IBM'"
         :subHeading="'Software Developer'"
-        :bodyText="'I worked on a React Native application for Cognos Analytics, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes. Ex Software Developer Intern.'"
+        :bodyText="'I worked on a React Native application for Cognos Analytics, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes. Ex-Software Developer Intern.'"
         :thisId="'IBMid'"
         :className="'textCardL'"
         :externalLink="['https://www.ibm.com/products/cognos-analytics','IBM']"
