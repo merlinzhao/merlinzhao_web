@@ -58,8 +58,8 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        I'm currently looking for new grad opportunities as a Software
-        Developer. I am always eager to learn and constantly expanding on my
+        I'm currently looking for opportunities as a Software
+        Engineer. I am always eager to learn and constantly expanding on my
         technical and interpersonal abilities.
         <br /><br />I hope you enjoy my website!
       </p>
