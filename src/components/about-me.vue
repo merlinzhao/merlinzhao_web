@@ -3,7 +3,7 @@
     <!-- <div class="absolute" /> -->
     <div class="aboutCenter" id="scroll_about">
       <p class="headingTwo headlineText">
-        Software Developer
+        Software Engineer
         <br />Graphic Designer <br />Chipotle Lover
       </p>
       <p
