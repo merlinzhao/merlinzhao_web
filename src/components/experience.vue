@@ -194,19 +194,11 @@ export default {
       }
       let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
 
-      // console.log(scale, deviceInPosition, this.screenHeight * 0.3);
-
       if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
-        // this.desktopDevice.style.width =
-        //   String(800 + this.desktopOffset * 2) + "px";
-        // this.desktopDevice.style.height =
-        //   String(400 + this.desktopOffset * 1.5) + "px";
         this.desktopDevice.style.transform = "scale(" + scale + ")";
         if (this.desktopOffset > 300) {
           this.desktopDevice.style.top = "calc(" + this.desktopOffset + "px)";
         }
-        // this.desktopDevice.style.transform =
-        //   "translateY(" + String(this.desktopOffset * 0.3) + "px)";
       } else {
         this.desktopDevice.style.transform = "scale(1)";
       }

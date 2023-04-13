@@ -32,15 +32,6 @@
               <i class="fas fa-envelope" style="margin-right: 8px"></i
               >merlinzhao@gmail.com
             </a>
-
-            <!-- <a
-              href="tel:647-993-6121"
-              class="regText"
-              style="width: 100%; text-align: center"
-            >
-              <i class="fas fa-phone" style="margin-right: 8px"></i>(647) 993
-              6121
-            </a> -->
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">

@@ -4,7 +4,7 @@
     <div class="aboutCenter" id="scroll_about">
       <p class="headingTwo headlineText">
         Software Engineer
-        <br />Graphic Designer <br />Chipotle Lover
+        <br />Chipotle Lover
       </p>
       <p
         class="headingThree"
@@ -58,9 +58,9 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        I'm currently looking for opportunities as a Software
-        Engineer. I am always eager to learn and constantly expanding on my
-        technical and interpersonal abilities.
+        I'm currently looking for opportunities as a Software Engineer. I am
+        always eager to learn and constantly expanding on my technical and
+        interpersonal abilities.
         <br /><br />I hope you enjoy my website!
       </p>
       <div class="row summaryRow">

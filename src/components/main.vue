@@ -10,22 +10,14 @@
     <div class="intro" ref="top">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
-        <!-- <p class="merlin">merlinzhao.me</p> -->
       </div>
-      <div class="hello intro_text" style="height: 50px">
-        <!-- <p id="intro_text">{{ intro_list[0] }}</p> -->
-      </div>
+      <div class="hello intro_text" style="height: 50px"></div>
     </div>
 
-    <!-- <highlights class="highlights" /> -->
-    <!--<highlights />-->
     <about-me />
     <experience id="scroll_exp" />
-    <!-- <welcome /> -->
     <contact />
     <myFooter @scrollTo="scrollTo" />
-
-    <!-- <projects style="width: 100vw; height:100%;" /> -->
   </div>
 </template>
 
@@ -59,14 +51,9 @@ export default {
   },
 
   mounted() {
-    // window.setInterval(() => {
-    //   this.changeIntro();
-    // }, 2200);
-
     // ——————————————————————————————————————————————————
     // TextScramble
     // ——————————————————————————————————————————————————
-
     class TextScramble {
       constructor(el) {
         this.el = el;
