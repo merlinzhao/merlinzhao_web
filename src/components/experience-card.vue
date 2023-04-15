@@ -15,7 +15,14 @@
       <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</br>&nbsp</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
-        <div v-for="number in icons" :key="number">
+        <i v-for="icon in iconss" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
+        <div class="tool regText modalR">
+          <p class="modalText">{{ icon.name }}</p>
+          <i></i>
+        </div>
+        </i>
+        <!-- <div v-for="number in icons" :key="number">
+
           <i
             v-if="number === 'A'"
             class="devicon-bootstrap-plain colored icon"
@@ -186,7 +193,7 @@
               <i></i>
             </div>
           </i>
-        </div>
+        </div> -->
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
         <i class="fab fa-github githubLogo" /> View on GitHub
@@ -438,7 +445,108 @@ export default {
     },
   },
   data() {
-    return { bg: null, card: null };
+    return {
+      bg: null,
+      card: null,
+      iconss: [
+        {
+          id: 1,
+          name: "Bootstrap",
+          class: "devicon-bootstrap-plain colored icon",
+          value: "A",
+        },
+        {
+          id: 2,
+          name: "Python",
+          class: "devicon-python-plain colored icon",
+          value: "B",
+        },
+        {
+          id: 3,
+          name: "NodeJS",
+          class: "devicon-nodejs-plain colored icon",
+          value: "C",
+        },
+        {
+          id: 4,
+          name: "Javascript",
+          class: "devicon-javascript-plain colored icon",
+          value: "D",
+        },
+        {
+          id: 5,
+          name: "Swift",
+          class: "devicon-swift-plain colored icon",
+          value: "E",
+        },
+        {
+          id: 6,
+          name: "VueJS",
+          class: "devicon-vuejs-plain colored icon",
+          value: "F",
+        },
+        {
+          id: 7,
+          name: "CSS3",
+          class: "devicon-css3-plain colored icon",
+          value: "G",
+        },
+        {
+          id: 8,
+          name: "HTML5",
+          class: "devicon-html5-plain colored icon",
+          value: "H",
+        },
+        {
+          id: 9,
+          name: "Android Dev",
+          class: "devicon-android-plain colored icon",
+          value: "I",
+        },
+        {
+          id: 10,
+          name: "Java",
+          class: "devicon-java-plain colored icon",
+          value: "J",
+        },
+        {
+          id: 11,
+          name: "Ruby",
+          class: "devicon-ruby-plain colored icon",
+          value: "K",
+        },
+        {
+          id: 12,
+          name: "Rails",
+          class: "devicon-rails-plain colored icon",
+          value: "L",
+        },
+        {
+          id: 13,
+          name: "MySQL",
+          class: "devicon-mysql-plain colored icon",
+          value: "M",
+        },
+        {
+          id: 14,
+          name: "C",
+          class: "devicon-c-plain colored icon",
+          value: "N",
+        },
+        {
+          id: 15,
+          name: "React",
+          class: "devicon-react-plain colored icon",
+          value: "O",
+        },
+        {
+          id: 16,
+          name: "Jenkins",
+          class: "devicon-jenkins-plain icon",
+          value: "Jenkins",
+        },
+      ],
+    };
   },
   mounted() {
     window.addEventListener("scroll", this.getScroll);
