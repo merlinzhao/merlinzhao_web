@@ -15,185 +15,12 @@
       <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</br>&nbsp</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
-        <i v-for="icon in iconss" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
+        <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
         <div class="tool regText modalR">
           <p class="modalText">{{ icon.name }}</p>
           <i></i>
         </div>
         </i>
-        <!-- <div v-for="number in icons" :key="number">
-
-          <i
-            v-if="number === 'A'"
-            class="devicon-bootstrap-plain colored icon"
-            style="margin-right: 5px; color: #8848b5"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Bootstrap</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'B'"
-            class="devicon-python-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Python</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'C'"
-            class="devicon-nodejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">NodeJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'D'"
-            class="devicon-javascript-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Javascript</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'E'"
-            class="devicon-swift-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Swift</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'F'"
-            class="devicon-vuejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">VueJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'G'"
-            class="devicon-css3-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">CSS3</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'H'"
-            class="devicon-html5-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">HTML5</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'I'"
-            class="devicon-android-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Android Dev</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'J'"
-            class="devicon-java-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Java</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'K'"
-            class="devicon-ruby-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Ruby</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'L'"
-            class="devicon-rails-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Rails</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'M'"
-            class="devicon-mysql-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">MySQL</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'N'"
-            class="devicon-c-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">C</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'O'"
-            class="devicon-react-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">React</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'Jenkins'"
-            class="devicon-jenkins-plain icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Jenkins</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'cpp'"
-            class="devicon-cplusplus icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">C++</p>
-              <i></i>
-            </div>
-          </i>
-        </div> -->
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
         <i class="fab fa-github githubLogo" /> View on GitHub
@@ -207,170 +34,12 @@
       <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
-        <div v-for="number in icons" :key="number">
-          <i
-            v-if="number === 'A'"
-            class="devicon-bootstrap-plain colored icon"
-            style="margin-right: 5px; color: #8848b5"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Bootstrap</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'B'"
-            class="devicon-python-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Python</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'C'"
-            class="devicon-nodejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">NodeJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'D'"
-            class="devicon-javascript-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Javascript</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'E'"
-            class="devicon-swift-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Swift</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'F'"
-            class="devicon-vuejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">VueJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'G'"
-            class="devicon-css3-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">CSS3</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'H'"
-            class="devicon-html5-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">HTML5</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'I'"
-            class="devicon-android-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Android Dev</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'J'"
-            class="devicon-java-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Java</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'K'"
-            class="devicon-ruby-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Ruby</p>
-              <i></i>
-            </div>
-          </i>
-
-          <i
-            v-if="number === 'L'"
-            class="devicon-rails-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Rails</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'M'"
-            class="devicon-mysql-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">MySQL</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'N'"
-            class="devicon-c-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">C</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'Jenkins'"
-            class="devicon-jenkins-plain icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Jenkins</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'cpp'"
-            class="devicon-cplusplus-plain icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">C++</p>
-              <i></i>
-            </div>
-          </i>
-          
+        <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
+        <div class="tool regText modalR">
+          <p class="modalText">{{ icon.name }}</p>
+          <i></i>
         </div>
+        </i>
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
         <i class="fab fa-github githubLogo" /> View on GitHub
@@ -542,8 +211,44 @@ export default {
         {
           id: 16,
           name: "Jenkins",
-          class: "devicon-jenkins-plain icon",
-          value: "Jenkins",
+          class: "devicon-jenkins-plain colored icon",
+          value: "P",
+        },
+        {
+          id: 17,
+          name: "AWS",
+          class: "devicon-amazonwebservices-original colored icon",
+          value: "Q",
+        },
+        {
+          id: 18,
+          name: "GCP",
+          class: "devicon-googlecloud-plain colored icon",
+          value: "R",
+        },
+        {
+          id: 19,
+          name: "Docker",
+          class: "devicon-docker-plain colored icon",
+          value: "S",
+        },
+        {
+          id: 20 ,
+          name: "Kubernetes",
+          class: "devicon-kubernetes-plain colored icon",
+          value: "T",
+        },
+        {
+          id: 21 ,
+          name: "Typescript",
+          class: "devicon-typescript-plain colored icon",
+          value: "U",
+        },
+         {
+          id: 22 ,
+          name: "Redis",
+          class: "devicon-redis-plain colored icon",
+          value: "V",
         },
       ],
     };
@@ -561,6 +266,16 @@ export default {
       let full_id = "photoRight" + this.thisId;
       document.getElementById(full_id).classList.add("photoCard-cover");
     }
+  },
+  computed: {
+    filteredIconData() {
+      if (this.icons.length === 0) {
+        return [];
+      } else {
+        return this.iconss.filter(icon => this.icons.includes(icon.name));
+      }
+    }
+    
   },
   methods: {
     getScroll() {

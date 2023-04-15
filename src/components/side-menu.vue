@@ -16,9 +16,9 @@
         <div class="blob" id="blob"></div>
       </label>
     </div>
-    <a class="exp-box" @click="scrollTo('scroll_about')">About Me</a>
+    <a class="about-box" @click="scrollTo('scroll_about')">About Me</a>
     <a class="exp-box" @click="scrollTo('scroll_exp')">Experience</a>
-    <a class="exp-box" @click="scrollTo('scroll_contact')">Contact</a>
+    <a class="contact-box" @click="scrollTo('scroll_contact')">Contact</a>
     <a
       href="#"
       class="git-box"
@@ -81,10 +81,7 @@ export default {
     scrollTo(event_id) {
       document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
     },
-    // nav(event) {
-    //   if (event != "projects") return;
-    //   this.$router.push({ path: event });
-    // },
+
     changeTheme() {
       var element = document.getElementById("toggleLabel");
       var elementBlob = document.getElementById("blob");
@@ -137,6 +134,17 @@ export default {
   color: white;
   margin-left: 32px;
 }
+
+.about-box {
+  transform: translateX(-120px);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition-delay: 0.0s;
+  opacity: 0;
+}
+
+.about-box:hover {
+  cursor: pointer;
+}
 .exp-box {
   transform: translateX(-120px);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
@@ -147,16 +155,27 @@ export default {
 .exp-box:hover {
   cursor: pointer;
 }
-.git-box {
+
+.contact-box {
   transform: translateX(-120px);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transition-delay: 0.2s;
   opacity: 0;
 }
-.link-box {
+
+.contact-box:hover {
+  cursor: pointer;
+}
+.git-box {
   transform: translateX(-120px);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   transition-delay: 0.3s;
+  opacity: 0;
+}
+.link-box {
+  transform: translateX(-120px);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition-delay: 0.4s;
   opacity: 0;
 }
 
@@ -169,8 +188,15 @@ export default {
   transform: translateX(0px);
   opacity: 1;
 }
-
+.menu-box:hover .about-box {
+  transform: translateX(0px);
+  opacity: 1;
+}
 .menu-box:hover .exp-box {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.menu-box:hover .contact-box {
   transform: translateX(0px);
   opacity: 1;
 }

@@ -10,64 +10,21 @@
 
     <div class="experienceCenter">
       <expCard
-        :imgURL="'zoom.png'"
-        :backgroundColor="'rgb(32, 92, 243)'"
-        :projectTitle="'Zoom'"
-        :subHeading="'Software Engineer'"
-        :bodyText="'Focused on client-side developent for Zoom Phone. Utilized Objective-C to built new features, improve stability, and create a better user experience.'"
-        :thisId="'Zoomid'"
-        :className="'textCardL'"
-        :externalLink="['https://zoom.us/','Zoom']"
-        :linkName="'zoom.us'"
-        :icons="['N','cpp', 'Jenkins']"
-      />
-       <expCard
-        :photoLeft="true"
-        :imgURL="'ibm.png'"
-        :backgroundColor="'rgb(0,0,0)'"
-        :projectTitle="'IBM'"
-        :subHeading="'Software Developer'"
-        :bodyText="'I worked on a React Native application for Cognos Analytics, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes. Ex-Software Developer Intern.'"
-        :thisId="'IBMid'"
-        :className="'textCardL'"
-        :externalLink="['https://www.ibm.com/products/cognos-analytics','IBM']"
-        :linkName="'IBM Cognos Analytics'"
-        :icons="['O','D','G','Jenkins']"
-      />
-      <expCard
-        :imgURL="'amd-white.png'"
-        :backgroundColor="'rgb(201, 66, 66)'"
-        :projectTitle="'Advanced Micro Devices'"
-        :subHeading="'PCIE Design and Validation Intern'"
-        :bodyText="'At AMD, I was responsible for administrating and optimizing a SQL database. This ties into a larger regression testing system used by many RTL designers that allowed them to efficiently view critical simulation errors. I also improved upon the team’s Ruby on Rails website which visualized regression results.'"
-        :thisId="'AMDid'"
-        :className="'textCardL'"
-        :externalLink="['https://www.amd.com','AMD']"
-        :linkName="'amd.com'"
-        :icons="['K', 'L', 'N', 'B', 'H', 'G']"
-      />
-      <expCard
-        :photoLeft="true"
-        :projectTitle="'Menlolab Inc.'"
-        :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
-        :subHeading="'Front End Developer Intern'"
-        :icons="['F', 'D', 'A', 'H', 'G', 'J']"
-        :imgURL="'MenloPic.png'"
-        :externalLink="['https://menlolab.com', 'View on web']"
-        :linkName="'menlolab.com'"
-        :backgroundColor="'orange'"
-        :thisId="'Menloid'"
-        :className="'textCardR'"
-        :photoCover="true"
-      />
-      <expCard
-        :projectTitle="'DeltaHacks'"
-        :subHeading="'Design Executive and Organizer'"
-        :bodyText="'After competing in multiple hackathons, I wanted to help organize one. As a DeltaHacks executive, I assisted in the creation of deltahacks.com, swag, and promotional materials such as bags, stickers, and Snapchat filters. I also ensured that the event went smoothly and answered technical questions from hackers in regards to C, Python, Java, Swift and Web development.'"
-        :backgroundColor="'#092238 '"
-        :externalLink="['https://www.deltahacks.com','DeltaHacks.com']"
-        :linkName="'DeltaHacks.com'"
-        :imgURL="'dh.png'"
+        v-for="(card, index) in cards"
+        :key="index"
+        :imgURL="card.imgURL"
+        :backgroundColor="card.backgroundColor"
+        :projectTitle="card.projectTitle"
+        :subHeading="card.subHeading"
+        :bodyText="card.bodyText"
+        :thisId="`expCard${index}`"
+        :className="card.className"
+        :externalLink="card.externalLink"
+        :linkName="card.linkName"
+        :icons="card.icons"
+        :photoLeft="card.photoLeft"
+        :photoCover="card.photoCover"
+        :gitLink="card.gitLink"
       />
       <expCard
         :photoLeft="true"
@@ -84,55 +41,6 @@
         ]"
         :thisId="'Navid'"
         :linkName="'View on Devpost'"
-      />
-      <expCard
-        :imgURL="'MerlinWebPic.png'"
-        :projectTitle="'merlinzhao.me'"
-        :bodyText="'My portfolio website coded and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!'"
-        :icons="['F', 'A', 'D', 'H', 'G']"
-        :gitLink="'https://github.com/merlinzhao/merlinzhao_web'"
-        :externalLink="['http://www.merlinzhao.me', 'View on web']"
-        :linkName="'merlinzhao.me'"
-        :backgroundColor="'#222'"
-        :thisId="'Webid'"
-      />
-      <expCard
-        :photoLeft="true"
-        :projectTitle="'Welcome Week'"
-        :bodyText="'A mobile application that helps students quickly find campus events based on their preferences. This project was aimed to enhance the welcome week experience.'"
-        :icons="['E', 'C', 'D']"
-        :imgURL="'WelcomePic.png'"
-        :backgroundColor="'#774545'"
-        :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
-        :gitLink="'https://github.com/merlinzhao/WelcomeWeek'"
-        :thisId="'Welcomeid'"
-      />
-      <expCard
-        :projectTitle="'Nutryent'"
-        :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API. This project was part of my first Hackathon experience, in which I was able to apply what I have learned about the software development life cycle for the first time.'"
-        :icons="['I', 'J', 'C', 'D']"
-        :imgURL="'NutryentPic.png'"
-        :backgroundColor="'#ffa42e'"
-        :subHeading="'Made at ArchHacks 2017'"
-        :externalLink="[
-          'https://devpost.com/software/nutryent',
-          'View on Devpost',
-        ]"
-        :gitLink="'https://github.com/Jseto97/Archhacks2017'"
-        :thisId="'Nutid'"
-        :linkName="'View on Devpost'"
-        :photoCover="true"
-      />
-      <expCard
-        :photoLeft="true"
-        :projectTitle="'Space Escape'"
-        :bodyText="'A multiplier python game inspired by the classic arcade game Galaga. Built heavily upon my knowledge of object-oriented programming.'"
-        :icons="['B']"
-        :imgURL="'SpacePic.png'"
-        :backgroundColor="'#222'"
-        :subHeading="'Multiplayer python game'"
-        :gitLink="'https://github.com/merlinzhao/space-esc'"
-        :thisId="'Spaceid'"
       />
       <div class="gitBox" onclick="window.open('http://www.github.com/merlinzhao')">
         <p class="headingThree proof1">The proof is in the...</p>
@@ -161,6 +69,74 @@ export default {
       desktopDevice: null,
       expBg: null,
       desktopOffset: 0,
+      cards: [
+        {
+          id: 1,
+          imgURL: 'zoom.png',
+          backgroundColor: 'rgb(32, 92, 243)',
+          projectTitle: 'Zoom',
+          subHeading: 'Software Engineer',
+          bodyText: 'Focused on client-side developent for Zoom Phone. Utilized Objective-C to built new features, improve stability, and create a better user experience.',
+          thisId: 'Zoomid',
+          className: 'textCardL',
+          externalLink: ['https://zoom.us/','Zoom'],
+          linkName: 'zoom.us',
+          icons: ['Python','NodeJS','Typescript', 'Jenkins','AWS']
+        },
+        {
+          id: 2,
+          photoLeft: true,
+          imgURL: 'ibm.png',
+          backgroundColor: 'rgb(0,0,0)',
+          projectTitle: 'IBM',
+          subHeading: 'Software Developer',
+          bodyText: 'I worked on a React Native application for Cognos Analytics, fixing UI bugs and refactoring code in order to improve efficiency. I also implemented new pipelines for end-to-end testing through Jenkins, improving reliability and reducing runtimes. Ex-Software Developer Intern.',
+          thisId: 'IBMid',
+          className: 'textCardL',
+          externalLink: ['https://www.ibm.com/products/cognos-analytics','IBM'],
+          linkName: 'IBM Cognos Analytics',
+          icons: ['React','Typescript','Javascript','CSS3','Jenkins','Docker','Kubernetes']
+        },
+        {
+          id: 3,
+          imgURL: 'amd-white.png',
+          backgroundColor: 'rgb(201, 66, 66)',
+          projectTitle: 'Advanced Micro Devices',
+          subHeading: 'PCIE Design and Validation Intern',
+          bodyText: 'At AMD, I was responsible for administrating and optimizing a SQL database. This ties into a larger regression testing system used by many RTL designers that allowed them to efficiently view critical simulation errors. I also improved upon the team’s Ruby on Rails website which visualized regression results.',
+          thisId: 'AMDid',
+          className: 'textCardL',
+          externalLink: ['https://www.amd.com','AMD'],
+          linkName: 'amd.com',
+          icons: ['React', 'Javascript', 'NodeJS', 'MySQL', 'GCP', 'Perl']
+        },
+        {
+          id: 4,
+          photoLeft: true,
+          projectTitle: 'Menlolab Inc.',
+          bodyText: 'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. ',
+          subHeading: 'Front End Developer Intern',
+          icons: ['VueJS', 'Javascript', 'HTML5', 'CSS3', 'Java'],
+          imgURL: 'MenloPic.png',
+          externalLink: ['https://menlolab.com', 'View on web'],
+          linkName: 'menlolab.com',
+          backgroundColor: 'orange',
+          thisId: 'Menloid',
+          className: 'textCardR',
+          photoCover: true
+        }, {
+          id: 5,
+          imgURL:'MerlinWebPic.png',
+          projectTitle:'merlinzhao.me',
+          bodyText:'My portfolio website coded and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!',
+          icons:['VueJS','Javascript', 'GCP','CSS3','HTML5'],
+          gitLink:'https://github.com/merlinzhao/merlinzhao_web',
+          externalLink:['http://www.merlinzhao.me', 'View on web'],
+          linkName:'merlinzhao.me',
+          backgroundColor:'#222',
+          thisId:'Webid',
+        },
+      ],
     };
   },
   mounted() {
@@ -169,7 +145,7 @@ export default {
     this.expBg = document.querySelector(".experienceBg");
   },
   methods: {
-    getScroll(event) {
+    getScroll() {
       this.scrollPosition = window.top.scrollY;
       this.screenHeight = window.innerHeight;
       let screenWidth = window.innerWidth;
@@ -223,7 +199,7 @@ export default {
 <style scoped>
 .experienceBg {
   min-width: 300px;
-  height: 10400px;
+  height: 7000px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -238,7 +214,7 @@ export default {
 .experienceCenter {
   width: 95%;
   max-width: 940px;
-  top: 1800px;
+  top: 1600px;
 
   position: absolute;
 
@@ -331,7 +307,7 @@ export default {
 
 @media only screen and (max-width: 576px) {
   .experienceBg {
-    height: 9000px;
+    height: 6100px;
   }
   .headingOneHalf {
     line-height: 30pt !important;
@@ -354,13 +330,13 @@ export default {
     margin: 0px !important;
   }
   .experienceBg {
-    height: 8750px;
+    height: 6400px;
   }
 }
 
 @media only screen and (max-width: 767px) and (min-width: 651px) {
   .experienceBg {
-    height: 8650px;
+    height: 6400px;
   }
 }
 </style>
