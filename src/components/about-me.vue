@@ -45,15 +45,7 @@
             class="headingFour"
             style="margin: 3% 0% 2% 0%; width: 100%; text-align: center"
           >
-            <i class="fas fa-code"></i> Computer Engineering
-          </p>
-        </div>
-        <div class="col">
-          <p
-            class="headingFour Year"
-            style="margin: 3% 0% 2% 0%; width: 100%; text-align: right"
-          >
-            <i class="fas fa-hourglass-half"></i> 4th year undergrad
+            <i class="fas fa-code"></i> Bachelors of Computer Engineering
           </p>
         </div>
       </div>
