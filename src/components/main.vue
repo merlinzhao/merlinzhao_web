@@ -22,10 +22,8 @@
 </template>
 
 <script>
-import welcome from "./welcome.vue";
 import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
-import highlights from "./highlights.vue";
 import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
 
@@ -35,13 +33,10 @@ import contact from "./contact.vue";
 export default {
   name: "mainView",
   components: {
-    welcome,
     aboutMe,
     myFooter,
-    highlights,
     sideMenu,
     mobileMenu,
-
     experience,
     contact,
   },
@@ -114,8 +109,6 @@ export default {
 
     const phrases = [
       "Software Engineer",
-      "est. 1998",
-      "switch to dark mode!",
       "New York, NY",
       "hello world!",
       "안녕하세요",

@@ -76,15 +76,6 @@
         >
           <div class="devCol">
             <i
-              class="devicon-swift-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">Swift</p>
-                <i></i>
-              </div>
-            </i>
-            <i
               class="devicon-vuejs-plain colored icon"
               style="margin-right: 10px"
             >
@@ -99,6 +90,15 @@
             >
               <div class="tool regTextModal modalR">
                 <p class="modalText">React.js</p>
+                <i></i>
+              </div>
+            </i>
+            <i
+              class="devicon-nodejs-plain colored icon"
+              style="margin-right: 10px"
+            >
+              <div class="tool regTextModal modalR">
+                <p class="modalText">Node.js</p>
                 <i></i>
               </div>
             </i>
@@ -130,15 +130,6 @@
                 <i></i>
               </div>
             </i>
-            <i
-              class="devicon-bootstrap-plain colored icon"
-              style="color: #d959ff"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">Bootstrap</p>
-                <i></i>
-              </div>
-            </i>
           </div>
           <div class="devCol">
             <i
@@ -147,6 +138,10 @@
             />
             <i
               class="devicon-javascript-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-typescript-plain colored icon"
               style="margin-right: 10px"
             />
             <i
@@ -169,11 +164,15 @@
               style="margin-right: 10px"
             />
             <i
-              class="devicon-mongodb-plain colored icon"
+              class="devicon-postgresql-plain colored icon"
               style="margin-right: 10px"
             />
             <i
               class="devicon-docker-plain colored icon"
+              style="margin-right: 10px"
+            />
+            <i
+              class="devicon-kubernetes-plain colored icon"
               style="margin-right: 10px"
             />
             <i class="devicon-git-plain colored icon" />

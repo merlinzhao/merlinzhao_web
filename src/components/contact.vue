@@ -6,7 +6,7 @@
     <p class="headingOneHalf foundHead" id="foundMe">You Know How</p>
     <div class="contactCenter" id="contactCenter">
       <div class="cardRow row" id="scroll_contact">
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cardPadding">
           <div
             class="highLightCard"
             id="card2"
@@ -19,7 +19,7 @@
             <p class="regText">&nbsp</p>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cardPadding">
           <div class="highLightCard" id="card2">
             <div class="photoBox2" />
             <p class="headingThree">Email</p>
@@ -34,22 +34,7 @@
             </a>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cardPadding">
-          <div
-            class="highLightCard"
-            id="card2"
-            onclick="window.open('https://www.instagram.com/merlin.zhao/')"
-          >
-            <div class="photoBox3" />
-
-            <p class="headingThree">Instagram</p>
-
-            <i class="fab fa-instagram contactIcon" aria-hidden="true"></i>
-
-            <p class="regText">@merlin.zhao</p>
-            <p class="regText">&nbsp</p>
-          </div>
-        </div>
+       
       </div>
     </div>
   </div>
