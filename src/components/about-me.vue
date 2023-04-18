@@ -1,6 +1,5 @@
 <template>
   <div class="background">
-    <!-- <div class="absolute" /> -->
     <div class="aboutCenter" id="scroll_about">
       <p class="headingTwo headlineText">
         Software Engineer
@@ -12,7 +11,6 @@
       >
         Merlin (noun) - Mer•lin | \ ˈmər-lən \
       </p>
-      <!--eslint-disable-next-line/> -->
       <p class="regText" style="color: #6e737d; text-align: center">
         Unfortunately, I do not have magical powers and I am unable to cast
         spells. Sorry for the inconvenience.
@@ -163,7 +161,7 @@
               class="devicon-mysql-plain colored icon"
               style="margin-right: 10px"
             />
-            <i
+            <
               class="devicon-postgresql-plain colored icon"
               style="margin-right: 10px"
             />

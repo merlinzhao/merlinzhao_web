@@ -242,11 +242,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* 
-  -webkit-animation: introGradientTwo 3s ease-in-out;
-  -moz-animation: introGradientTwo 3s ease-in-out;
-  animation: shiftTitle 3s ease-in-out; */
 }
 
 .explore {
