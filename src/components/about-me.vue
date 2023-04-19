@@ -161,7 +161,7 @@
               class="devicon-mysql-plain colored icon"
               style="margin-right: 10px"
             />
-            <
+            <i
               class="devicon-postgresql-plain colored icon"
               style="margin-right: 10px"
             />

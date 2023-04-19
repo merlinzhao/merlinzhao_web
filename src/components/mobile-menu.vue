@@ -69,14 +69,12 @@ export default {
     },
     openMenu() {
       this.menu.classList.add("menu-box-open");
-      //outside.classList.add("outside-box-open");
       this.arrow.classList.add("arrow-box-open");
       this.sidenav.classList.add("sidenav-open");
       this.isOpen = true;
     },
     closeMenu() {
       this.menu.classList.remove("menu-box-open");
-      //outside.classList.remove("outside-box-open");
       this.arrow.classList.remove("arrow-box-open");
       this.sidenav.classList.remove("sidenav-open");
       this.isOpen = false;
