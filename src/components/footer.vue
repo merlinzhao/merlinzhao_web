@@ -10,7 +10,7 @@
         max-width: 1250px;
       "
     >
-      <a class="footerButton" href="../assets/MZ_resume.pdf" download>
+      <a class="footerButton" href="https://github.com/merlinzhao/merlinzhao_web/raw/master/src/assets/Merlin_Zhao_Resume.pdf" download>
         <i class="fas fa-file-alt" />
       </a>
       <button
