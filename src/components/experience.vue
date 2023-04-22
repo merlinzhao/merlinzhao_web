@@ -102,7 +102,7 @@ export default {
           imgURL: 'amd-white.png',
           backgroundColor: 'rgb(201, 66, 66)',
           projectTitle: 'Advanced Micro Devices',
-          subHeading: 'PCIE Design and Validation Intern',
+          subHeading: 'Software Engineer',
           bodyText: 'Build, managed, and administered internal scalable tooling systems, greatly assisting RTL designers in the silicon designing process.',
           thisId: 'AMDid',
           className: 'textCardL',
