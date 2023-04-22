@@ -77,7 +77,7 @@
               class="devicon-vuejs-plain colored icon"
               style="margin-right: 10px"
             >
-              <div class="tool regTextModal modalR">
+              <div class="tool regText modalR">
                 <p class="modalText">Vue.js</p>
                 <i></i>
               </div>
@@ -293,6 +293,10 @@ export default {};
   font-weight: 200;
 }
 
+.regText {
+  color: white;
+}
+
 .devCol {
   margin-right: 30px;
 }
@@ -311,7 +315,7 @@ export default {};
 
 .icon .tool {
   min-width: 100px;
-  top: -20px;
+  top: 10px;
   transform: translate(calc(-50% + 10px), -62%);
   color: #ffffff;
   background-color: #777;
@@ -324,10 +328,9 @@ export default {};
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s;
-  font-family: initial;
   padding: 5px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto";
 }
 
 @media (hover: hover) and (pointer: fine) {
