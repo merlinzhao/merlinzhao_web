@@ -52,7 +52,7 @@ export default {
     class TextScramble {
       constructor(el) {
         this.el = el;
-        this.chars = "!<>-_\\/[]{}—=+*^?#________";
+        this.chars = "!<>-_\\/[]{}—=+*^?#________ancdefghijklmnopqrstuvwxyz";
         this.update = this.update.bind(this);
       }
       setText(newText) {
@@ -111,7 +111,7 @@ export default {
       "Software Engineer",
       "New York, NY",
       "hello world!",
-      "안녕하세요",
+      "Zoom | IBM | AMD"
     ];
 
     const el = document.querySelector(".intro_text");
