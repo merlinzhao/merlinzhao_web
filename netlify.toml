@@ -1,0 +1,14 @@
+# Netlify build settings (these override the values in the Netlify UI)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "26"
+
+# Vue Router uses history mode, so send every route (e.g. /projects)
+# to the app shell instead of a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
