@@ -15,9 +15,9 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
+### Deploy to GitHub Pages
 ```
-npm run test
+npm run deploy
 ```
 
 ### Lints and fixes files
