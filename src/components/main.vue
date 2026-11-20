@@ -103,9 +103,7 @@ export default {
       }
     }
 
-    // ——————————————————————————————————————————————————
-    // Example
-    // ——————————————————————————————————————————————————
+    // Cycle subtitle phrases
 
     const phrases = [
       "Software Engineer",
@@ -376,10 +374,6 @@ export default {
   }
   .headingThree {
     font-size: 16pt;
-  }
-  .highlights {
-    visibility: hidden;
-    display: none;
   }
 }
 @media only screen and (max-width: 767px) {

@@ -75,7 +75,7 @@ export default {
       let screenHeight = window.innerHeight;
       let p = this.sectionTop.getBoundingClientRect().y;
       let f = this.foundMe.getBoundingClientRect().y;
-      //console.log(this.foundMe.getBoundingClientRect().y, screenHeight);
+
       if (p > screenHeight * 0.9) {
         this.needMeText = this.needMeTextArr[0];
       } else if (p > screenHeight * 0.85) {

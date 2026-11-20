@@ -254,7 +254,6 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.getScroll);
     this.bg = document.getElementById(this.thisId);
     if (!this.photoLeft) {
       this.bg.classList.add("expCBg2");
@@ -275,12 +274,8 @@ export default {
         return this.iconss.filter(icon => this.icons.includes(icon.name));
       }
     }
-    
   },
   methods: {
-    getScroll() {
-      //console.log(this.projectTitle, this.bg.getBoundingClientRect().y);
-    },
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
       else if (this.gitLink != "none") window.open(this.gitLink);

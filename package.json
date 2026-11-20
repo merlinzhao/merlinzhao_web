@@ -7,20 +7,11 @@
     "deploy": "gh-pages -d dist",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "@fortawesome/fontawesome-free-regular": "^5.0.13",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-regular-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/vue-fontawesome": "^0.1.10",
     "core-js": "^3.8.3",
-    "http2": "^3.3.7",
-    "noise-library": "^1.0.1",
-    "stats": "^1.0.0",
-    "three": "^0.136.0",
     "vue": "^2.7.16",
     "vue-gtag": "^1.16.1",
     "vue-router": "^3.5.4"
