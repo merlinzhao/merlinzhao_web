@@ -12,7 +12,7 @@
     ></div>
     <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</br>&nbsp</p>
+      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}<br />&nbsp;</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
         <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">

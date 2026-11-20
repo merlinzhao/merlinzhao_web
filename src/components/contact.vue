@@ -16,7 +16,7 @@
             <i class="fab fa-linkedin contactIcon" aria-hidden="true"></i>
 
             <p class="regText">/in/merlinzhao/</p>
-            <p class="regText">&nbsp</p>
+            <p class="regText">&nbsp;</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cardPadding">
