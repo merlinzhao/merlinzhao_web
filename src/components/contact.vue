@@ -16,7 +16,7 @@
             <i class="fab fa-linkedin contactIcon" aria-hidden="true"></i>
 
             <p class="regText">/in/merlinzhao/</p>
-            <p class="regText">&nbsp</p>
+            <p class="regText">&nbsp;</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cardPadding">
@@ -75,7 +75,7 @@ export default {
       let screenHeight = window.innerHeight;
       let p = this.sectionTop.getBoundingClientRect().y;
       let f = this.foundMe.getBoundingClientRect().y;
-      //console.log(this.foundMe.getBoundingClientRect().y, screenHeight);
+
       if (p > screenHeight * 0.9) {
         this.needMeText = this.needMeTextArr[0];
       } else if (p > screenHeight * 0.85) {

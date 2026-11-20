@@ -12,7 +12,7 @@
     ></div>
     <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</br>&nbsp</p>
+      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}<br />&nbsp;</p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
         <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
@@ -254,7 +254,6 @@ export default {
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.getScroll);
     this.bg = document.getElementById(this.thisId);
     if (!this.photoLeft) {
       this.bg.classList.add("expCBg2");
@@ -275,12 +274,8 @@ export default {
         return this.iconss.filter(icon => this.icons.includes(icon.name));
       }
     }
-    
   },
   methods: {
-    getScroll() {
-      //console.log(this.projectTitle, this.bg.getBoundingClientRect().y);
-    },
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
       else if (this.gitLink != "none") window.open(this.gitLink);

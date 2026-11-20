@@ -200,7 +200,7 @@ export default {
 .sidenav a:hover {
   text-decoration: none;
   color: var(--side-nav-hover) !important;
-  cursor: !important;
+  cursor: pointer;
 }
 
 .sidenav .closebtn {

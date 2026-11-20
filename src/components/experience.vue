@@ -46,7 +46,7 @@
         <p class="headingThree proof1">The proof is in the...</p>
         <p class="headingTwo proof2"><i class="fab fa-github"></i> GitHub</p>
         <p class="regText proof3">
-          /merlinzhao</br>
+          /merlinzhao<br />
           View the projects above along with more, over on my Github.
         </p>
       </div>
