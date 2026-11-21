@@ -7,7 +7,8 @@
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
-          'url(' + require('../assets/images/' + imgURL + '') + ')',
+          'url(' + require('../assets/images/' + imgURL + '') + ')' +
+          (backgroundGradient ? ', ' + backgroundGradient : ''),
       }"
     ></div>
     <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
@@ -55,7 +56,8 @@
       :style="{
         backgroundColor: backgroundColor,
         backgroundImage:
-          'url(' + require('../assets/images/' + imgURL + '') + ')',
+          'url(' + require('../assets/images/' + imgURL + '') + ')' +
+          (backgroundGradient ? ', ' + backgroundGradient : ''),
       }"
     ></div>
   </div>
@@ -91,6 +93,11 @@ export default {
     externalLink: {
       type: Array,
       default: () => [],
+    },
+    // Optional CSS gradient drawn behind the photo (on top of backgroundColor)
+    backgroundGradient: {
+      type: String,
+      default: "",
     },
     backgroundColor: {
       type: String,
@@ -217,7 +224,7 @@ export default {
         {
           id: 17,
           name: "AWS",
-          class: "devicon-amazonwebservices-original colored icon",
+          class: "devicon-amazonwebservices-plain-wordmark colored icon",
           value: "Q",
         },
         {
@@ -249,6 +256,18 @@ export default {
           name: "Redis",
           class: "devicon-redis-plain colored icon",
           value: "V",
+        },
+        {
+          id: 23,
+          name: "Rust",
+          class: "devicon-rust-plain colored icon",
+          value: "W",
+        },
+        {
+          id: 24,
+          name: "PostgreSQL",
+          class: "devicon-postgresql-plain colored icon",
+          value: "X",
         },
       ],
     };

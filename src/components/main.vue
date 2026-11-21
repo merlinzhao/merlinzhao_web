@@ -109,7 +109,7 @@ export default {
       "Software Engineer",
       "New York, NY",
       "hello world!",
-      "Zoom | IBM | AMD"
+      "Bubble | Zoom | IBM | AMD"
     ];
 
     const el = document.querySelector(".intro_text");
