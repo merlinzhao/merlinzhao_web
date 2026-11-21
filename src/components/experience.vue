@@ -14,6 +14,7 @@
         :key="index"
         :imgURL="card.imgURL"
         :backgroundColor="card.backgroundColor"
+        :backgroundGradient="card.backgroundGradient"
         :projectTitle="card.projectTitle"
         :subHeading="card.subHeading"
         :bodyText="card.bodyText"
@@ -70,6 +71,25 @@ export default {
       expBg: null,
       desktopOffset: 0,
       cards: [
+        {
+          id: 0,
+          photoLeft: true,
+          imgURL: 'bubble.png',
+          // Soft peach-to-lavender wash, inspired by bubble.io's homepage
+          backgroundColor: '#fcf4ea',
+          backgroundGradient:
+            'radial-gradient(ellipse 70% 90% at 100% 35%, rgba(212, 168, 222, 0.95), rgba(212, 168, 222, 0) 70%), ' +
+            'radial-gradient(ellipse 60% 45% at 55% 105%, rgba(196, 186, 236, 0.75), rgba(196, 186, 236, 0) 70%), ' +
+            'radial-gradient(ellipse 75% 100% at 0% 50%, rgba(246, 209, 162, 1), rgba(246, 209, 162, 0) 70%)',
+          projectTitle: 'Bubble',
+          subHeading: 'Senior Software Engineer',
+          bodyText: 'Led the design and rollout of GEMS, a globally exclusive metadata service built in Rust on DynamoDB across 20 AWS regions and serving up to 100,000 requests per second. Also strengthened the platform with tenant-isolated plugin sandboxing, AI-driven abuse detection, and enterprise app migrations that went from an hour to 15 minutes.',
+          thisId: 'Bubbleid',
+          className: 'textCardL',
+          externalLink: ['https://bubble.io/','Bubble'],
+          linkName: 'bubble.io',
+          icons: ['Rust','Typescript','NodeJS','AWS','Redis','PostgreSQL']
+        },
         {
           id: 1,
           imgURL: 'zoom.png',
@@ -199,7 +219,8 @@ export default {
 <style scoped>
 .experienceBg {
   min-width: 300px;
-  height: 7000px;
+  /* height grows with the number of cards; 100px gap below the last one */
+  padding-bottom: 100px;
   width: 100%;
   background: var(--bg-eee);
   display: flex;
@@ -214,9 +235,9 @@ export default {
 .experienceCenter {
   width: 95%;
   max-width: 940px;
-  top: 1600px;
+  margin-top: 1600px;
 
-  position: absolute;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -306,9 +327,6 @@ export default {
 }
 
 @media only screen and (max-width: 576px) {
-  .experienceBg {
-    height: 6100px;
-  }
   .headingOneHalf {
     line-height: 30pt !important;
     font-size: 26pt !important;
@@ -328,15 +346,6 @@ export default {
     line-height: 40pt !important;
     font-size: 35pt !important;
     margin: 0px !important;
-  }
-  .experienceBg {
-    height: 6400px;
-  }
-}
-
-@media only screen and (max-width: 767px) and (min-width: 651px) {
-  .experienceBg {
-    height: 6400px;
   }
 }
 </style>

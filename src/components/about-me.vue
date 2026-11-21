@@ -48,9 +48,11 @@
         </div>
       </div>
       <p class="regText" style="color: #737780; max-width: 850px">
-        I'm currently looking for opportunities as a Software Engineer. I am
-        always eager to learn and constantly expanding on my technical and
-        interpersonal abilities.
+        I turn complex problems into software that feels effortless. Fast,
+        reliable, and built to last, that's the standard I hold every project
+        to. Behind every system I build are real people counting on it to just
+        work, and that's what keeps me going. I'm always ready for the next big
+        challenge.
         <br /><br />I hope you enjoy my website!
       </p>
       <div class="row summaryRow">
@@ -72,115 +74,22 @@
             width: 100%;
           "
         >
-          <div class="devCol">
+          <div
+            v-for="(group, g) in skillGroups"
+            :key="g"
+            :class="{ devCol: g < skillGroups.length - 1 }"
+          >
             <i
-              class="devicon-vuejs-plain colored icon"
-              style="margin-right: 10px"
+              v-for="(skill, i) in group"
+              :key="skill.icon"
+              :class="`devicon-${skill.icon} colored icon`"
+              :style="{ marginRight: i < group.length - 1 ? '10px' : '0' }"
             >
               <div class="tool regText modalR">
-                <p class="modalText">Vue.js</p>
+                <p class="modalText">{{ skill.name }}</p>
                 <i></i>
               </div>
             </i>
-            <i
-              class="devicon-react-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">React.js</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              class="devicon-nodejs-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">Node.js</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              class="devicon-rails-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">Rails</p>
-                <i></i>
-              </div>
-            </i>
-
-            <i
-              class="devicon-html5-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">HTML5</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              class="devicon-css3-plain colored icon"
-              style="margin-right: 10px"
-            >
-              <div class="tool regTextModal modalR">
-                <p class="modalText">CSS3</p>
-                <i></i>
-              </div>
-            </i>
-          </div>
-          <div class="devCol">
-            <i
-              class="devicon-python-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-javascript-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-typescript-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-ruby-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-c-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-cplusplus-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i class="devicon-java-plain colored icon" />
-          </div>
-          <div class="devCol">
-            <i
-              class="devicon-mysql-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-postgresql-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-docker-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i
-              class="devicon-kubernetes-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i class="devicon-git-plain colored icon" />
-          </div>
-          <div>
-            <i
-              class="devicon-photoshop-plain colored icon"
-              style="margin-right: 10px"
-            />
-            <i class="devicon-illustrator-plain colored icon" />
           </div>
         </div>
         <p
@@ -207,7 +116,43 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      // Each inner array is one row of icons in "What do I know?"
+      skillGroups: [
+        [
+          { icon: "vuejs-plain", name: "Vue.js" },
+          { icon: "react-plain", name: "React" },
+          { icon: "nodejs-plain", name: "Node.js" },
+          { icon: "html5-plain", name: "HTML5" },
+          { icon: "css3-plain", name: "CSS3" },
+        ],
+        [
+          { icon: "python-plain", name: "Python" },
+          { icon: "javascript-plain", name: "JavaScript" },
+          { icon: "typescript-plain", name: "TypeScript" },
+          { icon: "rust-plain", name: "Rust" },
+          { icon: "c-plain", name: "C" },
+          { icon: "java-plain", name: "Java" },
+        ],
+        [
+          { icon: "mysql-plain", name: "MySQL" },
+          { icon: "postgresql-plain", name: "PostgreSQL" },
+          { icon: "dynamodb-plain", name: "DynamoDB" },
+          { icon: "redis-plain", name: "Redis" },
+          { icon: "amazonwebservices-plain-wordmark", name: "AWS" },
+          { icon: "terraform-plain", name: "Terraform" },
+          { icon: "docker-plain", name: "Docker" },
+          { icon: "kubernetes-plain", name: "Kubernetes" },
+          { icon: "githubactions-plain", name: "GitHub Actions" },
+          { icon: "jenkins-plain", name: "Jenkins" },
+          { icon: "git-plain", name: "Git" },
+        ],
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -313,10 +258,16 @@ export default {};
   white-space: nowrap;
 }
 
+/* Anchor each hover label to its own icon, centered just above it */
+.icon {
+  position: relative;
+}
+
 .icon .tool {
   min-width: 100px;
-  top: 10px;
-  transform: translate(calc(-50% + 10px), -62%);
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
   color: #ffffff;
   background-color: #777;
   font-weight: 400;
