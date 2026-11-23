@@ -2,14 +2,6 @@
   <div id="app" class="app">
     <router-view />
     <link
-      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
@@ -24,10 +16,6 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css?family=Lato&display=swap"
       rel="stylesheet"
     />
@@ -37,7 +25,6 @@
 <script>
 export default {
   name: "app",
-  components: {},
   mounted() {
     this.track();
   },
@@ -75,7 +62,6 @@ export default {
   --gitHub-logo: #16166;
 
   /* menu box colors */
-  --open-nav: #444;
   --side-nav: #666;
   --side-nav-hover: #444;
 
@@ -119,7 +105,6 @@ export default {
   --gitHub-logo: #aaa;
 
   /* menu box colors */
-  --open-nav: white;
   --side-nav: rgb(196, 196, 196);
   --side-nav-hover: white;
 

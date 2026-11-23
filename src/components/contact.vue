@@ -1,10 +1,10 @@
 <template>
   <div class="contactBg">
-    <div class="needMe" id="needMe">
+    <div class="needMe" ref="needMe">
       <p class="headingOneHalf contactHead">{{ needMeText }}</p>
     </div>
-    <p class="headingOneHalf foundHead" id="foundMe">You Know How</p>
-    <div class="contactCenter" id="contactCenter">
+    <p class="headingOneHalf foundHead" ref="foundMe">You Know How</p>
+    <div class="contactCenter" ref="contactCenter">
       <div class="cardRow row" id="scroll_contact">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 cardPadding">
           <div
@@ -40,75 +40,40 @@
   </div>
 </template>
 <script>
+const HEADLINE = "Get in Touch";
+
 export default {
   data() {
     return {
-      sectionTop: null,
-      foundMe: null,
-      contactCenter: null,
       needMeText: "Look•••••••••••",
-      needMeTextArr: [
-        "G•••••••••••",
-        "Ge••••••••••",
-        "Get•••••••••",
-        "Get ••••••••",
-        "Get i•••••••",
-        "Get in••••••",
-        "Get in •••••",
-        "Get in T••••",
-        "Get in To•••",
-        "Get in Tou••",
-        "Get in Touc•",
-        "Get in Touch",
-      ],
-      needMecount: 0,
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.getScroll);
-    this.sectionTop = document.getElementById("needMe");
-    this.foundMe = document.getElementById("foundMe");
-    this.contactCenter = document.getElementById("contactCenter");
+    window.addEventListener("scroll", this.getScroll, { passive: true });
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.getScroll);
   },
   methods: {
     getScroll() {
-      let screenHeight = window.innerHeight;
-      let p = this.sectionTop.getBoundingClientRect().y;
-      let f = this.foundMe.getBoundingClientRect().y;
+      const screenHeight = window.innerHeight;
+      const sectionTop = this.$refs.needMe.getBoundingClientRect().y;
 
-      if (p > screenHeight * 0.9) {
-        this.needMeText = this.needMeTextArr[0];
-      } else if (p > screenHeight * 0.85) {
-        this.needMeText = this.needMeTextArr[1];
-      } else if (p > screenHeight * 0.8) {
-        this.needMeText = this.needMeTextArr[2];
-      } else if (p > screenHeight * 0.75) {
-        this.needMeText = this.needMeTextArr[3];
-      } else if (p > screenHeight * 0.7) {
-        this.needMeText = this.needMeTextArr[4];
-      } else if (p > screenHeight * 0.65) {
-        this.needMeText = this.needMeTextArr[5];
-      } else if (p > screenHeight * 0.6) {
-        this.needMeText = this.needMeTextArr[6];
-      } else if (p > screenHeight * 0.55) {
-        this.needMeText = this.needMeTextArr[7];
-      } else if (p > screenHeight * 0.5) {
-        this.needMeText = this.needMeTextArr[8];
-      } else if (p > screenHeight * 0.45) {
-        this.needMeText = this.needMeTextArr[9];
-      } else if (p > screenHeight * 0.4) {
-        this.needMeText = this.needMeTextArr[10];
-      } else {
-        this.needMeText = this.needMeTextArr[11];
+      // Type out the headline one letter for every 5% of the viewport the
+      // section rises above 90% of the screen height, padding with dots.
+      let shown = 1;
+      while (
+        shown < HEADLINE.length &&
+        sectionTop * 20 <= screenHeight * (19 - shown)
+      ) {
+        shown++;
       }
+      this.needMeText = HEADLINE.slice(0, shown).padEnd(HEADLINE.length, "•");
 
-      if (f <= screenHeight * 0.8) {
-        this.foundMe.style.opacity = "1";
-        this.contactCenter.style.opacity = "1";
-      } else {
-        this.foundMe.style.opacity = "0";
-        this.contactCenter.style.opacity = "0";
-      }
+      const opacity =
+        this.$refs.foundMe.getBoundingClientRect().y <= screenHeight * 0.8 ? "1" : "0";
+      this.$refs.foundMe.style.opacity = opacity;
+      this.$refs.contactCenter.style.opacity = opacity;
     },
   },
 };

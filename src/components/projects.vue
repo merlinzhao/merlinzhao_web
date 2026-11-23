@@ -19,7 +19,7 @@
             :projectTitle="'Advance Micro Devices'"
             :bodyText="'Job desciption coming soon'"
             :subHeading="'PCIE Design and Validation Intern'"
-            :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
+            :icons="['VueJS', 'Javascript', 'Bootstrap', 'HTML5', 'CSS3', 'Swift', 'Java']"
             :imgURL="'amd-white.png'"
             :backgroundColor="'rgb(201, 66, 66)'"
             :externalLink="['https://amd.com', 'View on web']"
@@ -30,7 +30,7 @@
             :projectTitle="'NavText'"
             :subHeading="'Second Place Overall at Hack Western 5 '"
             :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages.'"
-            :icons="['E', 'D', 'A']"
+            :icons="['Swift', 'Javascript', 'Bootstrap']"
             :imgURL="'NavTextPic.png'"
             :backgroundColor="'#9ab8c3'"
             :gitLink="'https://github.com/merlinzhao/NavText'"
@@ -44,7 +44,7 @@
           <projectCard
             :projectTitle="'merlinzhao.me'"
             :bodyText="'My portfolio website coded from scratch (with love ❤️) and personally designed using Vue.js.'"
-            :icons="['F', 'A', 'D', 'H', 'G']"
+            :icons="['VueJS', 'Bootstrap', 'Javascript', 'HTML5', 'CSS3']"
             :imgURL="'MerlinWebPic.png'"
             :externalLink="['http://www.merlinzhao.me', 'View on web']"
             :backgroundColor="'#222'"
@@ -55,7 +55,7 @@
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
             :subHeading="'Front End Developer Intern'"
-            :icons="['F', 'D', 'A', 'H', 'G', 'L', 'E', 'J', 'K']"
+            :icons="['VueJS', 'Javascript', 'Bootstrap', 'HTML5', 'CSS3', 'Swift', 'Java']"
             :imgURL="'MenloPic.png'"
             :externalLink="['https://menlolab.com', 'View on web']"
           />
@@ -65,7 +65,7 @@
           <projectCard
             :projectTitle="'Welcome Week'"
             :bodyText="'A mobile application that helps students quickly find campus events based on their preferences.'"
-            :icons="['E', 'C', 'D']"
+            :icons="['Swift', 'NodeJS', 'Javascript']"
             :imgURL="'WelcomePic.png'"
             :backgroundColor="'#774545'"
             :subHeading="'First Place in Best Hack for Improving Welcome Week at Delta Hacks IV  '"
@@ -76,7 +76,7 @@
           <projectCard
             :projectTitle="'Nutryent'"
             :bodyText="'An Android app that uses an image of food to extract nutritional details through a visual recognition API.'"
-            :icons="['I', 'J', 'C', 'D']"
+            :icons="['Android Dev', 'Java', 'NodeJS', 'Javascript']"
             :imgURL="'NutryentPic.png'"
             :backgroundColor="'#ffa42e'"
             :subHeading="'Made at ArchHacks 2017'"
@@ -91,7 +91,7 @@
           <projectCard
             :projectTitle="'Space Escape'"
             :bodyText="'A multiplier python game inspired by the classic arcade game Galaga.'"
-            :icons="['B']"
+            :icons="['Python']"
             :imgURL="'SpacePic.png'"
             :backgroundColor="'#222'"
             :subHeading="'Multiplayer python game'"
@@ -112,14 +112,9 @@ import projectCardLarge from "./projectCardL.vue";
 import myFooter from "./footer.vue";
 import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
+
 export default {
   name: "projects",
-  date() {
-    return {
-      col: "col-2",
-      setTheme: "undefined",
-    };
-  },
   components: {
     projectCard,
     projectCardLarge,
@@ -131,29 +126,8 @@ export default {
     this.scrollTo();
   },
   methods: {
-    openNav() {
-      // open navigation stuffs
-      const width = this.$el.querySelector(".projectRowOut");
-      if (width.offsetWidth > 350) {
-        document.getElementById("mySidenav").style.width = "350px";
-      } else {
-        document.getElementById("mySidenav").style.width = "80%";
-      }
-    },
-    closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    },
-    nav(event) {
-      this.$router.push({ path: event });
-    },
     scrollTo() {
-      var element = this.$refs["top"];
-      var top = element.offsetTop;
-      window.scrollTo(0, top);
-
-      if (localStorage.getItem("dark-mode")) {
-        this.setTheme = localStorage.getItem("dark-mode");
-      }
+      window.scrollTo(0, this.$refs.top.offsetTop);
     },
   },
 };
@@ -215,47 +189,6 @@ export default {
   z-index: 100;
 }
 
-@-webkit-keyframes GradientAnimation {
-  0% {
-    background-position: 0% 48%;
-  }
-  50% {
-    background-position: 100% 53%;
-  }
-  100% {
-    background-position: 0% 48%;
-  }
-}
-@-moz-keyframes GradientAnimation {
-  0% {
-    background-position: 0% 48%;
-  }
-  50% {
-    background-position: 100% 53%;
-  }
-  100% {
-    background-position: 0% 48%;
-  }
-}
-@keyframes GradientAnimation {
-  0% {
-    background-position: 0% 48%;
-  }
-  50% {
-    background-position: 100% 53%;
-  }
-  100% {
-    background-position: 0% 48%;
-  }
-}
-
-/* .projectRow:hover > .projectCenter {
-  transform: translateX(110px);
-}
-.projectRow:hover > .projectCenter2 {
-  transform: translateX(-188px);
-  opacity: 1;
-} */
 .projectCenter {
   padding: 0px 8px 0px 8px;
   text-align: center;
@@ -273,17 +206,12 @@ export default {
 
 .cardPadding {
   padding: 10px 5px 0px 5px;
-  /* width: 33% !important; */
-  /* min-width: 250px !important; */
-  /* max-width: 33%; */
 }
 
 .cardPaddingL {
   padding: 10px 5px 0px 5px;
 }
 
-@media only screen and (max-width: 555px) {
-}
 @media only screen and (max-width: 833px) {
   .side-menu {
     visibility: hidden;

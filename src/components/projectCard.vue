@@ -18,104 +18,10 @@
     </div>
     <div class="iconRow">
       <div class="col-9 leftCol">
-        <div v-for="number in icons" :key="number">
-          <i
-            v-if="number === 'A'"
-            class="devicon-bootstrap-plain colored icon"
-            style="margin-right: 5px; color: #8848b5"
-          >
+        <div v-for="icon in iconData" :key="icon.name">
+          <i :class="icon.class" style="margin-right: 5px">
             <div class="tool regText modalR">
-              <p class="modalText">Bootstrap</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'B'"
-            class="devicon-python-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Python</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'C'"
-            class="devicon-nodejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">NodeJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'D'"
-            class="devicon-javascript-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Javascript</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'E'"
-            class="devicon-swift-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Swift</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'F'"
-            class="devicon-vuejs-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">VueJS</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'G'"
-            class="devicon-css3-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">CSS3</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'H'"
-            class="devicon-html5-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">HTML5</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'I'"
-            class="devicon-android-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Android Dev</p>
-              <i></i>
-            </div>
-          </i>
-          <i
-            v-if="number === 'J'"
-            class="devicon-java-plain colored icon"
-            style="margin-right: 5px"
-          >
-            <div class="tool regText modalR">
-              <p class="modalText">Java</p>
+              <p class="modalText">{{ icon.name }}</p>
               <i></i>
             </div>
           </i>
@@ -148,10 +54,9 @@
 </template>
 
 <script>
+import { skillIcons } from "../skills.js";
+
 export default {
-  data() {
-    return {};
-  },
 
   props: {
     isEmpty: {
@@ -193,6 +98,11 @@ export default {
     sizeBackground: {
       type: String,
       default: "contain",
+    },
+  },
+  computed: {
+    iconData() {
+      return skillIcons(this.icons);
     },
   },
   mounted() {

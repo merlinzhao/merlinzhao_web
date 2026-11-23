@@ -6,14 +6,14 @@
     </span>
     <div class="night-mode-button">
       <label
-        @click="changeTheme()"
+        @click="toggleTheme"
         for="night-mode"
         class="label"
-        id="toggleLabel"
+        :class="{ day: isLight }"
       >
         <i class="fas fa-moon"></i>
         <i class="fas fa-sun"></i>
-        <div class="blob" id="blob"></div>
+        <div class="blob" :class="{ 'day-blob': isLight }"></div>
       </label>
     </div>
     <a class="about-box" @click="scrollTo('scroll_about')">About Me</a>
@@ -35,73 +35,21 @@
 </template>
 
 <script>
+import { themeState, applyTheme, toggleTheme } from "../theme.js";
+
 export default {
-  data() {
-    return {
-      setTheme: "undefined",
-    };
-  },
-  props: {
-    menuType: {
-      type: String,
-      default: "desktop",
+  computed: {
+    isLight() {
+      return themeState.theme !== "dark";
     },
   },
-
   mounted() {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      this.setTheme = "dark";
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      if (localStorage.getItem("dark-mode")) {
-        this.setTheme = localStorage.getItem("dark-mode");
-      } else {
-        this.setTheme = "light";
-      }
-    }
-    var element = document.getElementById("toggleLabel");
-    var elementBlob = document.getElementById("blob");
-
-    if (this.setTheme == "dark") {
-      element.classList.remove("day");
-      elementBlob.classList.remove("day-blob");
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      element.classList.add("day");
-      elementBlob.classList.add("day-blob");
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-
-    localStorage.setItem("dark-mode", this.setTheme);
+    applyTheme();
   },
   methods: {
+    toggleTheme,
     scrollTo(event_id) {
       document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
-    },
-
-    changeTheme() {
-      var element = document.getElementById("toggleLabel");
-      var elementBlob = document.getElementById("blob");
-
-      if (this.setTheme == "dark") {
-        this.setTheme = "light";
-      } else {
-        this.setTheme = "dark";
-      }
-      localStorage.setItem("dark-mode", this.setTheme);
-
-      if (this.setTheme == "dark") {
-        element.classList.remove("day");
-        elementBlob.classList.remove("day-blob");
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        element.classList.add("day");
-        elementBlob.classList.add("day-blob");
-        document.documentElement.setAttribute("data-theme", "light");
-      }
     },
   },
 };
@@ -126,80 +74,37 @@ export default {
   transition: opacity 0.5s ease-out;
 }
 
-.themeIcon {
-  transform: translateX(-120px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0s;
-  opacity: 0;
-  color: white;
-  margin-left: 32px;
-}
-
-.about-box {
-  transform: translateX(-120px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0.0s;
-  opacity: 0;
-}
-
-.about-box:hover {
-  cursor: pointer;
-}
-.exp-box {
-  transform: translateX(-120px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0.1s;
-  opacity: 0;
-}
-
-.exp-box:hover {
-  cursor: pointer;
-}
-
-.contact-box {
-  transform: translateX(-120px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0.2s;
-  opacity: 0;
-}
-
-.contact-box:hover {
-  cursor: pointer;
-}
-.git-box {
-  transform: translateX(-120px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0.3s;
-  opacity: 0;
-}
+.about-box,
+.exp-box,
+.contact-box,
+.git-box,
 .link-box {
   transform: translateX(-120px);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  transition-delay: 0.4s;
   opacity: 0;
 }
-
-.menu-box:hover .themeIcon {
-  transform: translateX(0px);
-  opacity: 1;
+/* Stagger the links sliding in */
+.exp-box {
+  transition-delay: 0.1s;
 }
-
-.menu-box:hover .git-box {
-  transform: translateX(0px);
-  opacity: 1;
+.contact-box {
+  transition-delay: 0.2s;
 }
-.menu-box:hover .about-box {
-  transform: translateX(0px);
-  opacity: 1;
+.git-box {
+  transition-delay: 0.3s;
 }
-.menu-box:hover .exp-box {
-  transform: translateX(0px);
-  opacity: 1;
+.link-box {
+  transition-delay: 0.4s;
 }
-.menu-box:hover .contact-box {
-  transform: translateX(0px);
-  opacity: 1;
+.about-box:hover,
+.exp-box:hover,
+.contact-box:hover {
+  cursor: pointer;
 }
+.menu-box:hover .about-box,
+.menu-box:hover .exp-box,
+.menu-box:hover .contact-box,
+.menu-box:hover .git-box,
 .menu-box:hover .link-box {
   transform: translateX(0px);
   opacity: 1;
@@ -266,13 +171,6 @@ label .fa-sun {
   transition: 0.5s ease all;
 }
 
-.info {
-  display: block;
-  margin-top: 50px;
-}
-.info.night {
-  color: white;
-}
 .day-blob {
   left: 0;
 }

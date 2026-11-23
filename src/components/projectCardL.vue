@@ -18,113 +18,10 @@
       </div>
       <div class="iconRow">
         <div class="col-9 leftCol">
-          <div v-for="number in icons" :key="number">
-            <!-- A - bootstrap
-            B - python
-            C - swift
-            D - js
-            E - node
-            F - vue
-            G - css
-            H - html
-            I - android-->
-            <i
-              v-if="number === 'A'"
-              class="devicon-bootstrap-plain colored icon"
-              style="margin-right: 5px; color: #8848b5"
-            >
+          <div v-for="icon in iconData" :key="icon.name">
+            <i :class="icon.class" style="margin-right: 5px">
               <div class="tool regText modalText">
-                <p style="margin: 0px">Bootstrap</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'B'"
-              class="devicon-python-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">Python</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'C'"
-              class="devicon-nodejs-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">NodeJS</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'D'"
-              class="devicon-javascript-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">Javascript</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'E'"
-              class="devicon-swift-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">Swift</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'F'"
-              class="devicon-vuejs-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">VueJS</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'G'"
-              class="devicon-css3-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">CSS3</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'H'"
-              class="devicon-html5-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">HTML5</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'I'"
-              class="devicon-android-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">Android Dev</p>
-                <i></i>
-              </div>
-            </i>
-            <i
-              v-if="number === 'J'"
-              class="devicon-java-plain colored icon"
-              style="margin-right: 5px"
-            >
-              <div class="tool regText modalText">
-                <p style="margin: 0px">Java</p>
+                <p style="margin: 0px">{{ icon.name }}</p>
                 <i></i>
               </div>
             </i>
@@ -158,10 +55,9 @@
 </template>
 
 <script>
+import { skillIcons } from "../skills.js";
+
 export default {
-  data() {
-    return {};
-  },
 
   props: {
     isEmpty: {
@@ -199,6 +95,11 @@ export default {
     externalLink: {
       type: Array,
       default: () => [],
+    },
+  },
+  computed: {
+    iconData() {
+      return skillIcons(this.icons);
     },
   },
   mounted() {

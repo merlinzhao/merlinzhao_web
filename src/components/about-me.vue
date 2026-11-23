@@ -74,16 +74,11 @@
             width: 100%;
           "
         >
-          <div
-            v-for="(group, g) in skillGroups"
-            :key="g"
-            :class="{ devCol: g < skillGroups.length - 1 }"
-          >
+          <div v-for="(group, g) in skillGroups" :key="g" class="devCol">
             <i
-              v-for="(skill, i) in group"
+              v-for="skill in group"
               :key="skill.icon"
               :class="`devicon-${skill.icon} colored icon`"
-              :style="{ marginRight: i < group.length - 1 ? '10px' : '0' }"
             >
               <div class="tool regText modalR">
                 <p class="modalText">{{ skill.name }}</p>
@@ -116,41 +111,42 @@
 </template>
 
 <script>
+// Each inner array is one row of icons in "What do I know?"
+const SKILL_GROUPS = [
+  [
+    { icon: "vuejs-plain", name: "Vue.js" },
+    { icon: "react-plain", name: "React" },
+    { icon: "nodejs-plain", name: "Node.js" },
+    { icon: "html5-plain", name: "HTML5" },
+    { icon: "css3-plain", name: "CSS3" },
+  ],
+  [
+    { icon: "python-plain", name: "Python" },
+    { icon: "javascript-plain", name: "JavaScript" },
+    { icon: "typescript-plain", name: "TypeScript" },
+    { icon: "rust-plain", name: "Rust" },
+    { icon: "c-plain", name: "C" },
+    { icon: "java-plain", name: "Java" },
+  ],
+  [
+    { icon: "mysql-plain", name: "MySQL" },
+    { icon: "postgresql-plain", name: "PostgreSQL" },
+    { icon: "dynamodb-plain", name: "DynamoDB" },
+    { icon: "redis-plain", name: "Redis" },
+    { icon: "amazonwebservices-plain-wordmark", name: "AWS" },
+    { icon: "terraform-plain", name: "Terraform" },
+    { icon: "docker-plain", name: "Docker" },
+    { icon: "kubernetes-plain", name: "Kubernetes" },
+    { icon: "githubactions-plain", name: "GitHub Actions" },
+    { icon: "jenkins-plain", name: "Jenkins" },
+    { icon: "git-plain", name: "Git" },
+  ],
+];
+
 export default {
   data() {
-    return {
-      // Each inner array is one row of icons in "What do I know?"
-      skillGroups: [
-        [
-          { icon: "vuejs-plain", name: "Vue.js" },
-          { icon: "react-plain", name: "React" },
-          { icon: "nodejs-plain", name: "Node.js" },
-          { icon: "html5-plain", name: "HTML5" },
-          { icon: "css3-plain", name: "CSS3" },
-        ],
-        [
-          { icon: "python-plain", name: "Python" },
-          { icon: "javascript-plain", name: "JavaScript" },
-          { icon: "typescript-plain", name: "TypeScript" },
-          { icon: "rust-plain", name: "Rust" },
-          { icon: "c-plain", name: "C" },
-          { icon: "java-plain", name: "Java" },
-        ],
-        [
-          { icon: "mysql-plain", name: "MySQL" },
-          { icon: "postgresql-plain", name: "PostgreSQL" },
-          { icon: "dynamodb-plain", name: "DynamoDB" },
-          { icon: "redis-plain", name: "Redis" },
-          { icon: "amazonwebservices-plain-wordmark", name: "AWS" },
-          { icon: "terraform-plain", name: "Terraform" },
-          { icon: "docker-plain", name: "Docker" },
-          { icon: "kubernetes-plain", name: "Kubernetes" },
-          { icon: "githubactions-plain", name: "GitHub Actions" },
-          { icon: "jenkins-plain", name: "Jenkins" },
-          { icon: "git-plain", name: "Git" },
-        ],
-      ],
-    };
+    // Frozen: static list, so Vue skips making it reactive
+    return { skillGroups: Object.freeze(SKILL_GROUPS) };
   },
 };
 </script>
@@ -231,19 +227,16 @@ export default {
   filter: invert(var(--thatsme));
 }
 
-.regTextModal {
-  line-height: 18pt;
-  font-size: 13pt;
-  color: white;
-  font-weight: 200;
-}
-
 .regText {
   color: white;
 }
 
-.devCol {
+.devCol:not(:last-child) {
   margin-right: 30px;
+}
+
+.devCol .icon:not(:last-child) {
+  margin-right: 10px;
 }
 /* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
 /* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
@@ -341,7 +334,7 @@ export default {
     flex-direction: column !important;
   }
 
-  .devCol {
+  .devCol:not(:last-child) {
     margin-right: 0px;
   }
   .thatsme {
@@ -354,14 +347,11 @@ export default {
   .Mac {
     text-align: center !important;
   }
-  .Year {
-    text-align: center !important;
-  }
   .devIcons {
     flex-direction: column !important;
   }
 
-  .devCol {
+  .devCol:not(:last-child) {
     margin-right: 0px;
   }
 }
