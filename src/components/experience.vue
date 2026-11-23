@@ -1,11 +1,11 @@
 <template>
-  <div class="experienceBg" >
-    <div class="deviceOut" >
+  <div class="experienceBg" ref="bg">
+    <div class="deviceOut">
       <p class="headingOneHalf experienceHead">Experiences & Projects</p>
       <p class="headingThree experienceSub">
         Explore my works throughout the years.
       </p>
-      <div class="deskTopDevice" />
+      <div class="deskTopDevice" ref="device" />
     </div>
 
     <div class="experienceCenter">
@@ -19,7 +19,6 @@
         :subHeading="card.subHeading"
         :bodyText="card.bodyText"
         :thisId="`expCard${index}`"
-        :className="card.className"
         :externalLink="card.externalLink"
         :linkName="card.linkName"
         :icons="card.icons"
@@ -33,7 +32,7 @@
         :projectTitle="'NavText'"
         :subHeading="'Second Place Overall at Hack Western 5 '"
         :bodyText="'NavText is a SMS based navigation application that sends directions, store and landmark information through text messages. This project was aimed to help people without overpriced data plans get directions. Fact: Canada has one of the most expensive mobile data plans among developed countries.'"
-        :icons="['E', 'D', 'A']"
+        :icons="['Bootstrap', 'Javascript', 'Swift']"
         :backgroundColor="'#9ab8c3'"
         :gitLink="'https://github.com/merlinzhao/NavText'"
         :externalLink="[
@@ -64,15 +63,8 @@ export default {
   },
   data() {
     return {
-      topPosition: null,
-      scrollPosition: 0,
-      screenHeight: 0,
-      desktopDevice: null,
-      expBg: null,
-      desktopOffset: 0,
       cards: [
         {
-          id: 0,
           photoLeft: true,
           imgURL: 'bubble.png',
           // Soft peach-to-lavender wash, inspired by bubble.io's homepage
@@ -84,133 +76,113 @@ export default {
           projectTitle: 'Bubble',
           subHeading: 'Senior Software Engineer',
           bodyText: 'Led the design and rollout of GEMS, a globally exclusive metadata service built in Rust on DynamoDB across 20 AWS regions and serving up to 100,000 requests per second. Also strengthened the platform with tenant-isolated plugin sandboxing, AI-driven abuse detection, and enterprise app migrations that went from an hour to 15 minutes.',
-          thisId: 'Bubbleid',
-          className: 'textCardL',
           externalLink: ['https://bubble.io/','Bubble'],
           linkName: 'bubble.io',
-          icons: ['Rust','Typescript','NodeJS','AWS','Redis','PostgreSQL']
+          icons: ['NodeJS', 'AWS', 'Typescript', 'Redis', 'Rust', 'PostgreSQL']
         },
         {
-          id: 1,
           imgURL: 'zoom.png',
           backgroundColor: 'rgb(32, 92, 243)',
           projectTitle: 'Zoom',
           subHeading: 'Software Engineer',
           bodyText: 'Implmented new features for the Zoom Phone product line, bringing VoIP services deeper into the enterprise telecommunications market.',
-          thisId: 'Zoomid',
-          className: 'textCardL',
           externalLink: ['https://zoom.us/','Zoom'],
           linkName: 'zoom.us',
-          icons: ['Python','NodeJS','Typescript', 'Jenkins','AWS']
+          icons: ['Python', 'NodeJS', 'Jenkins', 'AWS', 'Typescript']
         },
         {
-          id: 2,
           photoLeft: true,
           imgURL: 'ibm.png',
           backgroundColor: 'rgb(0,0,0)',
           projectTitle: 'IBM',
           subHeading: 'Software Developer',
           bodyText: 'Played a critical role in overhauling and scaling CI/CD pipelines, guaranteeing code quality and stability. Implmented new elements in order to display Cognos analytical and financial data to customers when they need it the most.',
-          thisId: 'IBMid',
-          className: 'textCardL',
           externalLink: ['https://www.ibm.com/products/cognos-analytics','IBM'],
           linkName: 'IBM Cognos Analytics',
-          icons: ['React','Typescript','Javascript','CSS3','Jenkins','Docker','Kubernetes']
+          icons: ['Javascript', 'CSS3', 'React', 'Jenkins', 'Docker', 'Kubernetes', 'Typescript']
         },
         {
-          id: 3,
           imgURL: 'amd-white.png',
           backgroundColor: 'rgb(201, 66, 66)',
           projectTitle: 'Advanced Micro Devices',
           subHeading: 'Software Engineer',
           bodyText: 'Build, managed, and administered internal scalable tooling systems, greatly assisting RTL designers in the silicon designing process.',
-          thisId: 'AMDid',
-          className: 'textCardL',
           externalLink: ['https://www.amd.com','AMD'],
           linkName: 'amd.com',
-          icons: ['React', 'Javascript', 'NodeJS', 'MySQL', 'GCP', 'Perl']
+          icons: ['NodeJS', 'Javascript', 'MySQL', 'React', 'GCP']
         },
         {
-          id: 4,
           photoLeft: true,
           projectTitle: 'Menlolab Inc.',
           bodyText: 'Focused on interactive web elements in order to display large amounts of analytics and computing data in real time.',
           subHeading: 'Front End Developer Intern',
-          icons: ['VueJS', 'Javascript', 'HTML5', 'CSS3', 'Java'],
+          icons: ['Javascript', 'VueJS', 'CSS3', 'HTML5', 'Java'],
           imgURL: 'MenloPic.png',
           externalLink: ['https://menlolab.com', 'View on web'],
           linkName: 'menlolab.com',
           backgroundColor: 'orange',
-          thisId: 'Menloid',
-          className: 'textCardR',
-          photoCover: true
-        }, {
-          id: 5,
+          photoCover: true,
+        },
+        {
           imgURL:'MerlinWebPic.png',
           projectTitle:'merlinzhao.me',
           bodyText:'My portfolio website coded and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!',
-          icons:['VueJS','Javascript', 'GCP','CSS3','HTML5'],
+          icons: ['Javascript', 'VueJS', 'CSS3', 'HTML5', 'GCP'],
           gitLink:'https://github.com/merlinzhao/merlinzhao_web',
           externalLink:['http://www.merlinzhao.me', 'View on web'],
           linkName:'merlinzhao.me',
           backgroundColor:'#222',
-          thisId:'Webid',
         },
       ],
     };
   },
   mounted() {
-    window.addEventListener("scroll", this.getScroll);
-    this.desktopDevice = document.querySelector(".deskTopDevice");
-    this.expBg = document.querySelector(".experienceBg");
+    window.addEventListener("scroll", this.getScroll, { passive: true });
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.getScroll);
   },
   methods: {
+    // Zooms the device image as the user scrolls past it, then fades it out
+    // into a dark background.
     getScroll() {
-      this.scrollPosition = window.top.scrollY;
-      this.screenHeight = window.innerHeight;
-      let screenWidth = window.innerWidth;
-      if (screenWidth < 576) {
-        this.desktopPositon =
-          this.screenHeight * 0.85 + 1540 - this.screenHeight * 0.35;
-      } else if (screenWidth < 767) {
-        this.desktopPositon =
-          this.screenHeight * 0.85 + 400 + 1340 - this.screenHeight * 0.35;
-      } else {
-        this.desktopPositon =
-          this.screenHeight * 0.85 + 480 + 1340 - this.screenHeight * 0.35;
-      }
-      this.desktopOffset = this.scrollPosition - this.desktopPositon;
-      let scale = 1;
-      if (screenWidth < 576) {
-        scale = this.desktopOffset * 0.008;
-      } else if (screenWidth < 767) {
-        scale = this.desktopOffset * 0.008 * 0.8;
-      } else {
-        scale = this.desktopOffset * 0.008 * 0.9;
-      }
-      let deviceInPosition = this.desktopDevice.getBoundingClientRect().y;
+      const device = this.$refs.device;
+      const bg = this.$refs.bg;
+      const screenHeight = window.innerHeight;
+      const screenWidth = window.innerWidth;
 
-      if (deviceInPosition <= this.screenHeight && scale > 1 && scale < 8.5) {
-        this.desktopDevice.style.transform = "scale(" + scale + ")";
-        if (this.desktopOffset > 300) {
-          this.desktopDevice.style.top = "calc(" + this.desktopOffset + "px)";
-        }
+      let devicePosition = screenHeight * 0.5 + 1340;
+      let scaleFactor = 0.008 * 0.9;
+      if (screenWidth < 576) {
+        devicePosition = screenHeight * 0.5 + 1540;
+        scaleFactor = 0.008;
+      } else if (screenWidth < 767) {
+        devicePosition += 400;
+        scaleFactor = 0.008 * 0.8;
       } else {
-        this.desktopDevice.style.transform = "scale(1)";
+        devicePosition += 480;
+      }
+      const offset = window.scrollY - devicePosition;
+      const scale = offset * scaleFactor;
+      const deviceTop = device.getBoundingClientRect().y;
+
+      if (deviceTop <= screenHeight && scale > 1 && scale < 8.5) {
+        device.style.transform = `scale(${scale})`;
+        if (offset > 300) device.style.top = `${offset}px`;
+      } else {
+        device.style.transform = "scale(1)";
       }
 
       if (scale >= 6) {
-        this.desktopDevice.style.opacity = 0;
-        if (scale >= 8.5) {
-          this.desktopDevice.style.display = "none";
-        }
-        this.expBg.style.transition = "background 0s";
-        this.expBg.style.background = "#111";
+        device.style.opacity = 0;
+        if (scale >= 8.5) device.style.display = "none";
+        bg.style.transition = "background 0s";
+        bg.style.background = "#111";
       } else {
-        this.desktopDevice.style.display = "initial";
-        this.desktopDevice.style.opacity = 1;
-        this.expBg.style.transition = "background 0.3s ease-out";
-        this.expBg.style.background = "var(--bg-eee)";
+        device.style.display = "initial";
+        device.style.opacity = 1;
+        bg.style.transition = "background 0.3s ease-out";
+        bg.style.background = "var(--bg-eee)";
       }
     },
   },
@@ -291,13 +263,6 @@ export default {
   background-size: contain;
 
   top: 330px;
-}
-
-.exp1 {
-  width: 100%;
-  height: 600px;
-  background: #555;
-  margin: 100px 0 100px 0;
 }
 
 .gitBox {

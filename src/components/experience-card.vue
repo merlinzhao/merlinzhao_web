@@ -1,26 +1,31 @@
 <template>
-  <div class="expCBg" :id="`${thisId}`">
+  <!-- Photo comes first in the DOM; .photoRight flips it to the right on desktop -->
+  <div class="expCBg" :class="{ photoRight: !photoLeft }" :id="thisId">
     <div
-      v-if="photoLeft"
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
-      :id="`photoLeft${thisId}`"
-      :style="{
-        backgroundColor: backgroundColor,
-        backgroundImage:
-          'url(' + require('../assets/images/' + imgURL + '') + ')' +
-          (backgroundGradient ? ', ' + backgroundGradient : ''),
-      }"
+      :class="{ 'photoCard-cover': photoCover }"
+      :style="photoStyle"
     ></div>
-    <div v-if="photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardR">
+    <div
+      class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
+      :class="photoLeft ? 'textCardR' : 'textCardL'"
+    >
       <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}<br />&nbsp;</p>
+      <p v-if="subHeading != 'none'" class="subHeading regText">
+        {{ subHeading }}<template v-if="photoLeft"><br />&nbsp;</template>
+      </p>
       <p class="regText">{{ bodyText }}</p>
       <div class="iconRow">
-        <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
-        <div class="tool regText modalR">
-          <p class="modalText">{{ icon.name }}</p>
-          <i></i>
-        </div>
+        <i
+          v-for="icon in iconData"
+          :key="icon.name"
+          :class="icon.class"
+          style="margin-right: 5px"
+        >
+          <div class="tool regText modalR">
+            <p class="modalText">{{ icon.name }}</p>
+            <i></i>
+          </div>
         </i>
       </div>
       <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
@@ -30,40 +35,12 @@
         <i class="fa fa-desktop" aria-hidden="true" /> {{ linkName }}
       </p>
     </div>
-    <div v-if="!photoLeft" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 textCardL">
-      <p class="headingTwo">{{ projectTitle }}</p>
-      <p v-if="subHeading != 'none'" class="subHeading regText">{{ subHeading }}</p>
-      <p class="regText">{{ bodyText }}</p>
-      <div class="iconRow">
-        <i v-for="icon in filteredIconData" :key="icon.id" :class="icon.class" style="margin-right: 5px;">
-        <div class="tool regText modalR">
-          <p class="modalText">{{ icon.name }}</p>
-          <i></i>
-        </div>
-        </i>
-      </div>
-      <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
-        <i class="fab fa-github githubLogo" /> View on GitHub
-      </p>
-      <p @click="openLink()" v-if="externalLink[1]" class="linkText">
-        <i class="fa fa-desktop" aria-hidden="true" /> {{ linkName }}
-      </p>
-    </div>
-    <div
-      v-if="!photoLeft"
-      class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
-      :id="`photoRight${thisId}`"
-      :style="{
-        backgroundColor: backgroundColor,
-        backgroundImage:
-          'url(' + require('../assets/images/' + imgURL + '') + ')' +
-          (backgroundGradient ? ', ' + backgroundGradient : ''),
-      }"
-    ></div>
   </div>
 </template>
 
 <script>
+import { skillIcons } from "../skills.js";
+
 export default {
   props: {
     photoLeft: {
@@ -107,6 +84,7 @@ export default {
       type: String,
       default: "NA",
     },
+    // Skill names from skills.js, shown in this order
     icons: {
       type: Array,
       default: () => [],
@@ -120,179 +98,19 @@ export default {
       default: false,
     },
   },
-  data() {
-    return {
-      bg: null,
-      card: null,
-      iconss: [
-        {
-          id: 1,
-          name: "Bootstrap",
-          class: "devicon-bootstrap-plain colored icon",
-          value: "A",
-        },
-        {
-          id: 2,
-          name: "Python",
-          class: "devicon-python-plain colored icon",
-          value: "B",
-        },
-        {
-          id: 3,
-          name: "NodeJS",
-          class: "devicon-nodejs-plain colored icon",
-          value: "C",
-        },
-        {
-          id: 4,
-          name: "Javascript",
-          class: "devicon-javascript-plain colored icon",
-          value: "D",
-        },
-        {
-          id: 5,
-          name: "Swift",
-          class: "devicon-swift-plain colored icon",
-          value: "E",
-        },
-        {
-          id: 6,
-          name: "VueJS",
-          class: "devicon-vuejs-plain colored icon",
-          value: "F",
-        },
-        {
-          id: 7,
-          name: "CSS3",
-          class: "devicon-css3-plain colored icon",
-          value: "G",
-        },
-        {
-          id: 8,
-          name: "HTML5",
-          class: "devicon-html5-plain colored icon",
-          value: "H",
-        },
-        {
-          id: 9,
-          name: "Android Dev",
-          class: "devicon-android-plain colored icon",
-          value: "I",
-        },
-        {
-          id: 10,
-          name: "Java",
-          class: "devicon-java-plain colored icon",
-          value: "J",
-        },
-        {
-          id: 11,
-          name: "Ruby",
-          class: "devicon-ruby-plain colored icon",
-          value: "K",
-        },
-        {
-          id: 12,
-          name: "Rails",
-          class: "devicon-rails-plain colored icon",
-          value: "L",
-        },
-        {
-          id: 13,
-          name: "MySQL",
-          class: "devicon-mysql-plain colored icon",
-          value: "M",
-        },
-        {
-          id: 14,
-          name: "C",
-          class: "devicon-c-plain colored icon",
-          value: "N",
-        },
-        {
-          id: 15,
-          name: "React",
-          class: "devicon-react-plain colored icon",
-          value: "O",
-        },
-        {
-          id: 16,
-          name: "Jenkins",
-          class: "devicon-jenkins-plain colored icon",
-          value: "P",
-        },
-        {
-          id: 17,
-          name: "AWS",
-          class: "devicon-amazonwebservices-plain-wordmark colored icon",
-          value: "Q",
-        },
-        {
-          id: 18,
-          name: "GCP",
-          class: "devicon-googlecloud-plain colored icon",
-          value: "R",
-        },
-        {
-          id: 19,
-          name: "Docker",
-          class: "devicon-docker-plain colored icon",
-          value: "S",
-        },
-        {
-          id: 20 ,
-          name: "Kubernetes",
-          class: "devicon-kubernetes-plain colored icon",
-          value: "T",
-        },
-        {
-          id: 21 ,
-          name: "Typescript",
-          class: "devicon-typescript-plain colored icon",
-          value: "U",
-        },
-         {
-          id: 22 ,
-          name: "Redis",
-          class: "devicon-redis-plain colored icon",
-          value: "V",
-        },
-        {
-          id: 23,
-          name: "Rust",
-          class: "devicon-rust-plain colored icon",
-          value: "W",
-        },
-        {
-          id: 24,
-          name: "PostgreSQL",
-          class: "devicon-postgresql-plain colored icon",
-          value: "X",
-        },
-      ],
-    };
-  },
-  mounted() {
-    this.bg = document.getElementById(this.thisId);
-    if (!this.photoLeft) {
-      this.bg.classList.add("expCBg2");
-    }
-    if (this.photoCover && this.photoLeft) {
-      let full_id = "photoLeft" + this.thisId;
-      document.getElementById(full_id).classList.add("photoCard-cover");
-    } else if (this.photoCover && !this.photoLeft) {
-      let full_id = "photoRight" + this.thisId;
-      document.getElementById(full_id).classList.add("photoCard-cover");
-    }
-  },
   computed: {
-    filteredIconData() {
-      if (this.icons.length === 0) {
-        return [];
-      } else {
-        return this.iconss.filter(icon => this.icons.includes(icon.name));
-      }
-    }
+    iconData() {
+      return skillIcons(this.icons);
+    },
+    photoStyle() {
+      const photo = `url(${require("../assets/images/" + this.imgURL)})`;
+      return {
+        backgroundColor: this.backgroundColor,
+        backgroundImage: this.backgroundGradient
+          ? `${photo}, ${this.backgroundGradient}`
+          : photo,
+      };
+    },
   },
   methods: {
     openLink() {
@@ -337,6 +155,10 @@ export default {
   display: flex;
   padding: 0;
   transition: background 0.5s ease-out;
+}
+
+.expCBg.photoRight {
+  flex-direction: row-reverse;
 }
 
 .textCardL {
@@ -448,14 +270,11 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
-  .expCBg {
+  .expCBg,
+  .expCBg.photoRight {
     flex-direction: column;
     margin: 10px;
     height: auto;
-  }
-
-  .expCBg2 {
-    flex-direction: column-reverse !important;
   }
   .photoCard {
     height: 250px !important;

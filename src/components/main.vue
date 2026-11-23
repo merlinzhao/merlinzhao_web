@@ -1,17 +1,13 @@
 <template>
   <div>
-    <sideMenu
-      class="side-menu"
-      style="position: fixed; z-index: 100"
-      :menuType="'desktop'"
-    />
+    <sideMenu class="side-menu" style="position: fixed; z-index: 100" />
     <mobile-menu class="mobile-menu" />
 
     <div class="intro" ref="top">
       <div class="center">
         <p class="MERLIN">MERLIN</p>
       </div>
-      <div class="hello intro_text" style="height: 50px"></div>
+      <div class="hello" ref="scramble" style="height: 50px"></div>
     </div>
 
     <about-me />
@@ -26,9 +22,71 @@ import aboutMe from "./about-me.vue";
 import myFooter from "./footer.vue";
 import sideMenu from "./side-menu.vue";
 import mobileMenu from "./mobile-menu.vue";
-
 import experience from "./experience.vue";
 import contact from "./contact.vue";
+
+const SCRAMBLE_CHARS = "!<>-_\\/[]{}—=+*^?#________ancdefghijklmnopqrstuvwxyz";
+
+// Subtitle phrases cycled under the title
+const PHRASES = [
+  "Software Engineer",
+  "New York, NY",
+  "hello world!",
+  "Bubble | Zoom | IBM | AMD",
+];
+
+// Animates an element's text from its current value to a new one through
+// random "scrambled" characters.
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.update = this.update.bind(this);
+  }
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from: oldText[i] || "", to: newText[i] || "", start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let output = "";
+    let complete = 0;
+    for (const item of this.queue) {
+      if (this.frame >= item.end) {
+        complete++;
+        output += item.to;
+      } else if (this.frame >= item.start) {
+        if (!item.char || Math.random() < 0.28) item.char = randomChar();
+        output += `<span class="dud">${item.char}</span>`;
+      } else {
+        output += item.from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+  stop() {
+    cancelAnimationFrame(this.frameRequest);
+  }
+}
+
+function randomChar() {
+  return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+}
 
 export default {
   name: "mainView",
@@ -41,104 +99,27 @@ export default {
     contact,
   },
 
-  data() {
-    return {};
-  },
-
   mounted() {
-    // ——————————————————————————————————————————————————
-    // TextScramble
-    // ——————————————————————————————————————————————————
-    class TextScramble {
-      constructor(el) {
-        this.el = el;
-        this.chars = "!<>-_\\/[]{}—=+*^?#________ancdefghijklmnopqrstuvwxyz";
-        this.update = this.update.bind(this);
-      }
-      setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => (this.resolve = resolve));
-        this.queue = [];
-        for (let i = 0; i < length; i++) {
-          const from = oldText[i] || "";
-          const to = newText[i] || "";
-          const start = Math.floor(Math.random() * 40);
-          const end = start + Math.floor(Math.random() * 40);
-          this.queue.push({ from, to, start, end });
-        }
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-      }
-      update() {
-        let output = "";
-        let complete = 0;
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-          let { from, to, start, end, char } = this.queue[i];
-          if (this.frame >= end) {
-            complete++;
-            output += to;
-          } else if (this.frame >= start) {
-            if (!char || Math.random() < 0.28) {
-              char = this.randomChar();
-              this.queue[i].char = char;
-            }
-            output += `<span class="dud">${char}</span>`;
-          } else {
-            output += from;
-          }
-        }
-        this.el.innerHTML = output;
-        if (complete === this.queue.length) {
-          this.resolve();
-        } else {
-          this.frameRequest = requestAnimationFrame(this.update);
-          this.frame++;
-        }
-      }
-      randomChar() {
-        return this.chars[Math.floor(Math.random() * this.chars.length)];
-      }
-    }
-
-    // Cycle subtitle phrases
-
-    const phrases = [
-      "Software Engineer",
-      "New York, NY",
-      "hello world!",
-      "Bubble | Zoom | IBM | AMD"
-    ];
-
-    const el = document.querySelector(".intro_text");
-    const fx = new TextScramble(el);
-
+    const fx = new TextScramble(this.$refs.scramble);
     let counter = 0;
+    let timer = null;
     const next = () => {
-      fx.setText(phrases[counter]).then(() => {
-        setTimeout(next, 1200);
+      fx.setText(PHRASES[counter]).then(() => {
+        timer = setTimeout(next, 1200);
       });
-      counter = (counter + 1) % phrases.length;
+      counter = (counter + 1) % PHRASES.length;
     };
-
     next();
+
+    // Stop cycling once the page is torn down (e.g. navigating to /projects)
+    this.$once("hook:beforeDestroy", () => {
+      clearTimeout(timer);
+      fx.stop();
+    });
   },
   methods: {
-    nav(event) {
-      if (event != "projects") return;
-      this.$router.push({ path: event });
-    },
-
     scrollTo() {
-      var element = this.$refs["top"];
-      var top = element.offsetTop;
-      window.scrollTo(0, top);
-
-      if (localStorage.setTheme) {
-        this.setTheme = localStorage.setTheme;
-      }
+      window.scrollTo(0, this.$refs.top.offsetTop);
     },
   },
 };
@@ -163,34 +144,8 @@ export default {
 /* =============================================================================================== */
 /* =============================================================================================== */
 /* =============================================================================================== */
-@-webkit-keyframes introGradientTwo {
-  0% {
-    /* font-size: 3em; */
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@-moz-keyframes introGradientTwo {
-  0% {
-    /* font-size: 3em; */
-    background-position: 0% 0%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
 @keyframes introGradientTwo {
   0% {
-    /* font-size: 5em; */
     background-position: 0% 0%;
   }
   50% {
@@ -220,15 +175,7 @@ export default {
   color: transparent;
   -webkit-text-fill-color: rgba(255, 0, 0, 0);
 
-  -webkit-animation: introGradientTwo 5s ease-in-out infinite;
-  -moz-animation: introGradientTwo 5s ease-in-out infinite;
   animation: introGradientTwo 5s ease-in-out infinite;
-}
-
-.merlin {
-  color: white;
-  font-family: "Varela Round", sans-serif;
-  font-size: 150px;
 }
 
 .center {
@@ -242,67 +189,10 @@ export default {
   align-items: center;
 }
 
-.explore {
-  height: 80px;
-  width: 120px;
-  position: absolute;
-  bottom: 2%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.6;
-}
-
 .mobile-menu {
   visibility: hidden;
   position: fixed;
   z-index: 100;
-}
-
-.love {
-  position: absolute;
-  top: 10px;
-  color: var(--hello);
-}
-
-@-webkit-keyframes shiftTitle {
-  0% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  50% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-40px);
-  }
-}
-@-moz-keyframes shiftTitle {
-  0% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  50% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-40px);
-  }
-}
-@keyframes shiftTitle {
-  0% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  50% {
-    /* font-size: 5em; */
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-40px);
-  }
 }
 
 /* =============================================================================================== */
@@ -316,46 +206,9 @@ export default {
   transform: translateY(-30px);
   display: flex;
   flex-direction: row;
-  /* -webkit-animation: helloAnimation 5s ease-out;
-  -moz-animation: helloAnimation 5s ease-out;
-  animation: helloAnimation 5s ease-out; */
 
   transition: color 0.5s ease-out;
   text-align: left;
-}
-
-@-webkit-keyframes helloAnimation {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes helloAnimation {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes helloAnimation {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* ======================================================================== */

@@ -1,16 +1,16 @@
 <template>
-  <div class="menu-box" id="menu-box">
-    <div class="sidenav headingThree" id="sidenav">
+  <div class="menu-box" :class="{ 'menu-box-open': isOpen }">
+    <div class="sidenav headingThree" :class="{ 'sidenav-open': isOpen }">
       <div class="night-mode-button">
         <label
-          @click="changeTheme()"
+          @click="toggleTheme"
           for="night-mode"
           class="label"
-          id="mobileToggle"
+          :class="{ day: isLight }"
         >
           <i class="fas fa-moon"></i>
           <i class="fas fa-sun"></i>
-          <div class="blob" id="mobileBlob"></div>
+          <div class="blob" :class="{ 'day-blob': isLight }"></div>
         </label>
       </div>
       <a class="item-box" @click="scrollTo('scroll_about')">About Me</a>
@@ -32,108 +32,44 @@
 
     <i
       class="fas fa-angle-down openNavButton arrow"
-      id="arrow-box"
+      :class="{ 'arrow-box-open': isOpen }"
       @click="arrowClick()"
     ></i>
   </div>
 </template>
 
 <script>
+import { themeState, applyTheme, toggleTheme } from "../theme.js";
+
 export default {
   data() {
     return {
       isOpen: false,
-      menu: null,
-      arrow: null,
-      sidebav: null,
       timeout: null,
     };
   },
+  computed: {
+    isLight() {
+      return themeState.theme !== "dark";
+    },
+  },
+  mounted() {
+    applyTheme();
+  },
+  beforeDestroy() {
+    clearTimeout(this.timeout);
+  },
   methods: {
+    toggleTheme,
     arrowClick() {
-      if (this.isOpen) {
-        clearTimeout(this.timeout);
-        this.closeMenu();
-      } else {
-        this.openMenu();
-
-        this.timeout = setTimeout(() => {
-          if (this.isOpen) {
-            this.closeMenu();
-          }
-        }, 8000);
-      }
+      clearTimeout(this.timeout);
+      this.isOpen = !this.isOpen;
+      // Auto-close the menu after 8s
+      if (this.isOpen) this.timeout = setTimeout(() => (this.isOpen = false), 8000);
     },
     scrollTo(event_id) {
       document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
     },
-    openMenu() {
-      this.menu.classList.add("menu-box-open");
-      this.arrow.classList.add("arrow-box-open");
-      this.sidenav.classList.add("sidenav-open");
-      this.isOpen = true;
-    },
-    closeMenu() {
-      this.menu.classList.remove("menu-box-open");
-      this.arrow.classList.remove("arrow-box-open");
-      this.sidenav.classList.remove("sidenav-open");
-      this.isOpen = false;
-    },
-    changeTheme() {
-      var element = document.getElementById("mobileToggle");
-      var elementBlob = document.getElementById("mobileBlob");
-
-      if (this.setTheme == "dark") {
-        this.setTheme = "light";
-      } else {
-        this.setTheme = "dark";
-      }
-      localStorage.setItem("dark-mode", this.setTheme);
-
-      if (this.setTheme == "dark") {
-        element.classList.remove("day");
-        elementBlob.classList.remove("day-blob");
-        document.documentElement.setAttribute("data-theme", "dark");
-      } else {
-        element.classList.add("day");
-        elementBlob.classList.add("day-blob");
-        document.documentElement.setAttribute("data-theme", "light");
-      }
-    },
-    nav(event) {
-      if (event != "projects") return;
-      this.$router.push({ path: event });
-    },
-  },
-  mounted() {
-    this.menu = document.getElementById("menu-box");
-    this.arrow = document.getElementById("arrow-box");
-    this.sidenav = document.getElementById("sidenav");
-
-    if (window.matchMedia("prefers-color-scheme: dark").matches) {
-      this.setTheme = "dark";
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      if (localStorage.getItem("dark-mode")) {
-        this.setTheme = localStorage.getItem("dark-mode");
-      } else {
-        this.setTheme = "light";
-      }
-    }
-    var element = document.getElementById("mobileToggle");
-    var elementBlob = document.getElementById("mobileBlob");
-
-    if (this.setTheme == "dark") {
-      element.classList.remove("day");
-      elementBlob.classList.remove("day-blob");
-      document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-      element.classList.add("day");
-      elementBlob.classList.add("day-blob");
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-
-    localStorage.setItem("dark-mode", this.setTheme);
   },
 };
 </script>
@@ -231,13 +167,6 @@ label .fa-sun {
   transition: 0.5s ease all;
 }
 
-.info {
-  display: block;
-  margin-top: 50px;
-}
-.info.night {
-  color: white;
-}
 .day-blob {
   left: 0;
 }
