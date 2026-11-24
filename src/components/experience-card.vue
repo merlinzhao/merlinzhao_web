@@ -1,11 +1,18 @@
 <template>
   <!-- Photo comes first in the DOM; .photoRight flips it to the right on desktop -->
-  <div class="expCBg" :class="{ photoRight: !photoLeft }" :id="thisId">
+  <div
+    class="expCBg"
+    :class="{ photoRight: !photoLeft && !stacked, stacked }"
+    :id="thisId"
+  >
     <div
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
       :class="{ 'photoCard-cover': photoCover }"
       :style="photoStyle"
-    ></div>
+    >
+      <!-- optional live content (e.g. a playable game) in place of the photo -->
+      <slot name="photo" />
+    </div>
     <div
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6"
       :class="photoLeft ? 'textCardR' : 'textCardL'"
@@ -28,11 +35,11 @@
           </div>
         </i>
       </div>
-      <p @click="openLink()" v-if="gitLink != 'none'" class="linkText">
+      <p @click="openUrl(gitLink)" v-if="gitLink != 'none'" class="linkText">
         <i class="fab fa-github githubLogo" /> View on GitHub
       </p>
-      <p @click="openLink()" v-if="externalLink[1]" class="linkText">
-        <i class="fa fa-desktop" aria-hidden="true" /> {{ linkName }}
+      <p @click="openUrl(externalLink[0])" v-if="externalLink[1]" class="linkText">
+        <i :class="linkIcon" aria-hidden="true" /> {{ linkName }}
       </p>
     </div>
   </div>
@@ -97,12 +104,22 @@ export default {
       type: Boolean,
       default: false,
     },
+    // full width: text on top, photo (or slot content) underneath
+    stacked: {
+      type: Boolean,
+      default: false,
+    },
+    linkIcon: {
+      type: String,
+      default: "fa fa-desktop",
+    },
   },
   computed: {
     iconData() {
       return skillIcons(this.icons);
     },
     photoStyle() {
+      if (this.imgURL == "none") return { backgroundColor: this.backgroundColor };
       const photo = `url(${require("../assets/images/" + this.imgURL)})`;
       return {
         backgroundColor: this.backgroundColor,
@@ -113,6 +130,10 @@ export default {
     },
   },
   methods: {
+    openUrl(url) {
+      if (url.startsWith("/")) this.$router.push(url);
+      else window.open(url);
+    },
     openLink() {
       if (this.externalLink[1]) window.open(this.externalLink[0]);
       else if (this.gitLink != "none") window.open(this.gitLink);
@@ -269,6 +290,28 @@ export default {
   }
 }
 
+/* STACKED: full-width card, text on top, photo/game below */
+.expCBg.stacked {
+  flex-direction: column-reverse;
+  height: auto;
+}
+.expCBg.stacked > div {
+  flex: none;
+  width: 100%;
+  max-width: 100%;
+}
+.stacked .textCardL {
+  height: auto;
+  padding: 0 0 25px 0;
+}
+.stacked .iconRow {
+  height: 60px;
+}
+.stacked .photoCard {
+  height: min(780px, calc(100vh - 120px));
+  padding: 20px;
+}
+
 @media only screen and (max-width: 575px) {
   .expCBg,
   .expCBg.photoRight {
@@ -278,6 +321,13 @@ export default {
   }
   .photoCard {
     height: 250px !important;
+  }
+  .stacked .photoCard {
+    padding: 0;
+  }
+  .stacked .textCardL {
+    height: auto;
+    padding: 20px;
   }
   .textCardL {
     padding: 20px 20px 20px 20px;

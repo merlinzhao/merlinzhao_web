@@ -9,23 +9,45 @@
     </div>
 
     <div class="experienceCenter">
-      <expCard
-        v-for="(card, index) in cards"
-        :key="index"
-        :imgURL="card.imgURL"
-        :backgroundColor="card.backgroundColor"
-        :backgroundGradient="card.backgroundGradient"
-        :projectTitle="card.projectTitle"
-        :subHeading="card.subHeading"
-        :bodyText="card.bodyText"
-        :thisId="`expCard${index}`"
-        :externalLink="card.externalLink"
-        :linkName="card.linkName"
-        :icons="card.icons"
-        :photoLeft="card.photoLeft"
-        :photoCover="card.photoCover"
-        :gitLink="card.gitLink"
-      />
+      <template v-for="(card, index) in cards">
+        <expCard
+          :key="index"
+          :imgURL="card.imgURL"
+          :backgroundColor="card.backgroundColor"
+          :backgroundGradient="card.backgroundGradient"
+          :projectTitle="card.projectTitle"
+          :subHeading="card.subHeading"
+          :bodyText="card.bodyText"
+          :thisId="`expCard${index}`"
+          :externalLink="card.externalLink"
+          :linkName="card.linkName"
+          :icons="card.icons"
+          :photoLeft="card.photoLeft"
+          :photoCover="card.photoCover"
+          :gitLink="card.gitLink"
+        />
+        <!-- playable Space Escape card, right after the Menlolab card -->
+        <expCard
+          v-if="card.projectTitle === 'Menlolab Inc.'"
+          :key="'game' + index"
+          :imgURL="'none'"
+          :backgroundColor="'#222'"
+          :projectTitle="'Space Escape'"
+          :subHeading="'Playable in your browser on desktop'"
+          :bodyText="'My Galaga-inspired Python game, compiled to run on the web. Arrow keys or WASD to move, Space to shoot. Reach 1000 points to escape!'"
+          :icons="['Python']"
+          :gitLink="'https://github.com/merlinzhao/space-esc'"
+          :externalLink="['/play', 'Play full page']"
+          :linkName="'Play full page'"
+          :linkIcon="'fas fa-expand'"
+          :thisId="'expCardGame'"
+          stacked
+        >
+          <template #photo>
+            <game-player />
+          </template>
+        </expCard>
+      </template>
       <expCard
         :photoLeft="true"
         :imgURL="'NavTextPic.png'"
@@ -56,10 +78,12 @@
 
 <script>
 import expCard from "./experience-card.vue";
+import gamePlayer from "./game-player.vue";
 
 export default {
   components: {
     expCard,
+    gamePlayer,
   },
   data() {
     return {
