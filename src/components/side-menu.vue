@@ -7,7 +7,6 @@
     <div class="night-mode-button">
       <label
         @click="toggleTheme"
-        for="night-mode"
         class="label"
         :class="{ day: isLight }"
       >
@@ -48,8 +47,12 @@ export default {
   },
   methods: {
     toggleTheme,
-    scrollTo(event_id) {
-      document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
+    // Sections live on the home page; from other pages, go there first
+    // and let the router scroll to the section.
+    scrollTo(id) {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+      else this.$router.push({ path: "/", hash: `#${id}` });
     },
   },
 };

@@ -16,8 +16,8 @@
       <div class="center row">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
           <project-card-large
-            :projectTitle="'Advance Micro Devices'"
-            :bodyText="'Job desciption coming soon'"
+            :projectTitle="'Advanced Micro Devices'"
+            :bodyText="'Job description coming soon'"
             :subHeading="'PCIE Design and Validation Intern'"
             :icons="['VueJS', 'Javascript', 'Bootstrap', 'HTML5', 'CSS3', 'Swift', 'Java']"
             :imgURL="'amd-white.png'"
@@ -90,7 +90,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 cardPadding">
           <projectCard
             :projectTitle="'Space Escape'"
-            :bodyText="'A multiplier python game inspired by the classic arcade game Galaga.'"
+            :bodyText="'A multiplayer Python game inspired by the classic arcade game Galaga.'"
             :icons="['Python']"
             :imgURL="'SpacePic.png'"
             :backgroundColor="'#222'"

@@ -18,7 +18,14 @@ Vue.use(VueGtag, {
 
 const routes = [{ path: '/', component: home }, { path: '/projects', name: 'Projects', component: projects }, { path: '/play', name: 'Play', component: play }];
 
-const router = new vueRouter({ routes, mode: 'history' });
+const router = new vueRouter({
+  routes,
+  mode: 'history',
+  // Menu links from other pages land on /#section; scroll to it once rendered
+  scrollBehavior(to) {
+    if (to.hash) return { selector: to.hash, behavior: 'smooth' };
+  },
+});
 
 new Vue({
   el: '#app',

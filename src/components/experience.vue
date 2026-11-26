@@ -109,7 +109,7 @@ export default {
           backgroundColor: 'rgb(32, 92, 243)',
           projectTitle: 'Zoom',
           subHeading: 'Software Engineer',
-          bodyText: 'Implmented new features for the Zoom Phone product line, bringing VoIP services deeper into the enterprise telecommunications market.',
+          bodyText: 'Implemented new features for the Zoom Phone product line, bringing VoIP services deeper into the enterprise telecommunications market.',
           externalLink: ['https://zoom.us/','Zoom'],
           linkName: 'zoom.us',
           icons: ['Python', 'NodeJS', 'Jenkins', 'AWS', 'Typescript']
@@ -120,7 +120,7 @@ export default {
           backgroundColor: 'rgb(0,0,0)',
           projectTitle: 'IBM',
           subHeading: 'Software Developer',
-          bodyText: 'Played a critical role in overhauling and scaling CI/CD pipelines, guaranteeing code quality and stability. Implmented new elements in order to display Cognos analytical and financial data to customers when they need it the most.',
+          bodyText: 'Played a critical role in overhauling and scaling CI/CD pipelines, guaranteeing code quality and stability. Implemented new elements in order to display Cognos analytical and financial data to customers when they need it the most.',
           externalLink: ['https://www.ibm.com/products/cognos-analytics','IBM'],
           linkName: 'IBM Cognos Analytics',
           icons: ['Javascript', 'CSS3', 'React', 'Jenkins', 'Docker', 'Kubernetes', 'Typescript']
@@ -150,7 +150,7 @@ export default {
         {
           imgURL:'MerlinWebPic.png',
           projectTitle:'merlinzhao.me',
-          bodyText:'My portfolio website coded and personally designed using Vue.js. I encorperated resuable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!',
+          bodyText:'My portfolio website coded and personally designed using Vue.js. I incorporated reusable components with props for increased flexibility. This project was a great way for me to dive deeper into web development!',
           icons: ['Javascript', 'VueJS', 'CSS3', 'HTML5', 'GCP'],
           gitLink:'https://github.com/merlinzhao/merlinzhao_web',
           externalLink:['http://www.merlinzhao.me', 'View on web'],
