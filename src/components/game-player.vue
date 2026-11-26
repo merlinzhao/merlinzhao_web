@@ -65,7 +65,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Cousine&display=swap");
 
 .gamePlayer {
   width: 100%;
