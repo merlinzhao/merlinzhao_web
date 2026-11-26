@@ -16,19 +16,19 @@
       <button
         v-if="page === 'home'"
         class="footerButton"
-        @click="nav('projects')"
+        @click="$router.push('/projects')"
       >
         <i class="fas fa-code" />
       </button>
       <button
         v-if="page === 'project'"
         class="footerButton"
-        @click="$router.go(-1)"
+        @click="$router.push('/')"
       >
         <i class="fas fa-home" />
       </button>
-      <button class="footerButton">
-        <i class="fas fa-arrow-alt-circle-up" @click="toTop" />
+      <button class="footerButton" @click="toTop">
+        <i class="fas fa-arrow-alt-circle-up" />
       </button>
 
       <button
@@ -48,7 +48,7 @@
       Made from scratch with ❤️ and a lot of Googling
       <br />Special thanks: <br />My MacBook
       <br />stackoverflow.com<br />Starbucks<br /><br />merlinzhao.me V2.0<br />©
-      2023 merlin zhao
+      {{ year }} merlin zhao
     </p>
   </div>
 </template>
@@ -61,13 +61,12 @@ export default {
       default: "home",
     },
   },
+  data() {
+    return { year: new Date().getFullYear() };
+  },
   methods: {
     toTop() {
       this.$emit("scrollTo");
-    },
-    nav(event) {
-      if (event != "projects") return;
-      this.$router.push({ path: event });
     },
   },
 };

@@ -1,9 +1,8 @@
 <template>
-  <div class="projectCard" :ref="projectTitle">
+  <div class="projectCard">
     <div
       class="imageRow"
       :style="{
-        backgroundSize: sizeBackground,
         backgroundColor: backgroundColor,
         backgroundImage:
           'url(' + require('../assets/images/' + imgURL + '') + ')',
@@ -29,7 +28,7 @@
       </div>
       <div class="col-3 rightCol" style="font-size: 2em; cursor: pointer">
         <i
-          @click="openLink()"
+          @click="openUrl(externalLink[0])"
           v-if="externalLink[1]"
           class="fas fa-external-link-square-alt githubLogo icon"
         >
@@ -39,7 +38,7 @@
           </div>
         </i>
         <i
-          @click="openLink()"
+          @click="openUrl(gitLink)"
           v-if="gitLink != 'none'"
           class="fab fa-github githubLogo icon"
         >
@@ -59,13 +58,9 @@ import { skillIcons } from "../skills.js";
 export default {
 
   props: {
-    isEmpty: {
-      type: Boolean,
-      default: false,
-    },
     imgURL: {
       type: String,
-      default: "kang.jpg",
+      required: true,
     },
     backgroundColor: {
       type: String,
@@ -95,29 +90,15 @@ export default {
       type: Array,
       default: () => [],
     },
-    sizeBackground: {
-      type: String,
-      default: "contain",
-    },
   },
   computed: {
     iconData() {
       return skillIcons(this.icons);
     },
   },
-  mounted() {
-    this.$nextTick(() => {
-      if (this.isEmpty) {
-        const background = this.$refs[this.projectTitle];
-        background.style.height = "0px";
-        background.style.opacity = "0";
-      }
-    });
-  },
   methods: {
-    openLink() {
-      if (this.externalLink[1]) window.open(this.externalLink[0]);
-      else if (this.gitLink != "none") window.open(this.gitLink);
+    openUrl(url) {
+      window.open(url, "_blank", "noopener");
     },
   },
 };
@@ -141,6 +122,7 @@ export default {
   height: 220px;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: contain;
   transition: filter 0.3s ease-out;
 }
 

@@ -56,7 +56,7 @@ export default {
     },
     imgURL: {
       type: String,
-      default: "kang.jpg",
+      default: "none",
     },
     projectTitle: {
       type: String,
@@ -133,10 +133,6 @@ export default {
     openUrl(url) {
       if (url.startsWith("/")) this.$router.push(url);
       else window.open(url);
-    },
-    openLink() {
-      if (this.externalLink[1]) window.open(this.externalLink[0]);
-      else if (this.gitLink != "none") window.open(this.gitLink);
     },
   },
 };

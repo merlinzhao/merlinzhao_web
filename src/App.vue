@@ -59,7 +59,7 @@ export default {
   --bg-projectCard: white;
   --bg-projectCard-hover: rgb(245, 245, 245);
   --PC-subhead: #333;
-  --gitHub-logo: #16166;
+  --gitHub-logo: #666;
 
   /* menu box colors */
   --side-nav: #666;

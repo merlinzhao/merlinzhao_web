@@ -4,7 +4,6 @@
       <div class="night-mode-button">
         <label
           @click="toggleTheme"
-          for="night-mode"
           class="label"
           :class="{ day: isLight }"
         >
@@ -67,8 +66,12 @@ export default {
       // Auto-close the menu after 8s
       if (this.isOpen) this.timeout = setTimeout(() => (this.isOpen = false), 8000);
     },
-    scrollTo(event_id) {
-      document.getElementById(event_id).scrollIntoView({ behavior: "smooth" });
+    // Sections live on the home page; from other pages, go there first
+    // and let the router scroll to the section.
+    scrollTo(id) {
+      const section = document.getElementById(id);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
+      else this.$router.push({ path: "/", hash: `#${id}` });
     },
   },
 };
