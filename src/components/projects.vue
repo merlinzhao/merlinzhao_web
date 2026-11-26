@@ -1,7 +1,7 @@
 <template>
   <div class="background">
-    <sideMenu class="side-menu" />
-    <mobile-menu class="mobile-menu" />
+    <sideMenu />
+    <mobile-menu />
 
     <div class="projectRowOut" ref="top">
       <div class="projectRow" style="color: white">
@@ -14,7 +14,7 @@
     </div>
     <div class="projectContainer">
       <div class="center row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPadding">
           <project-card-large
             :projectTitle="'Advanced Micro Devices'"
             :bodyText="'Job description coming soon'"
@@ -50,7 +50,7 @@
             :backgroundColor="'#222'"
           />
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPaddingL">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 cardPadding">
           <project-card-large
             :projectTitle="'Menlolab Inc.'"
             :bodyText="'I created key interactive data interfaces for a web application, as well as streamlining communication between the frontend and docker components. I also heavily focused on error detection and bug fixes of existing services. '"
@@ -172,7 +172,6 @@ export default {
   background: var(--bg-e4e4e4);
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: flex-start;
   align-items: center;
   padding-top: calc(5% + 25px);
@@ -181,11 +180,6 @@ export default {
 .projectRowOut {
   width: 100%;
   margin-bottom: 25px;
-}
-.mobile-menu {
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
 }
 
 .projectCenter {
@@ -207,18 +201,6 @@ export default {
   padding: 10px 5px 0px 5px;
 }
 
-.cardPaddingL {
-  padding: 10px 5px 0px 5px;
-}
-
-@media only screen and (max-width: 833px) {
-  .side-menu {
-    visibility: hidden;
-  }
-  .mobile-menu {
-    visibility: visible;
-  }
-}
 </style>
 
 

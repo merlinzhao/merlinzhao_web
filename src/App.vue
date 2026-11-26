@@ -58,9 +58,6 @@ export default {
   --sub-three: #356288;
   --sub-four: #76bed8;
 
-  /* blurs */
-  --blur-one: rgba(180, 180, 180, 0);
-  --blur-one-hover: rgba(180, 180, 180, 0.3);
 
   /* GENERIC */
   --white: white;
@@ -101,9 +98,6 @@ export default {
   --sub-three: #fe875d;
   --sub-four: #c94242;
 
-  /* blurs */
-  --blur-one: rgba(0, 0, 0, 0.4);
-  --blur-one-hover: rgba(0, 0, 0, 0.7);
 
   /* GENERIC */
   --white: black;
@@ -112,18 +106,70 @@ export default {
 
 /* ==================================== */
 
+/* Hover label above a tech or link icon:
+   <i class="icon ..."><div class="tool"><p class="toolText">Name</p><i></i></div></i> */
+.icon {
+  position: relative;
+}
+.icon .tool {
+  position: absolute;
+  z-index: 99;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #777;
+  font-family: "Roboto", sans-serif;
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 18pt;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.toolText {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* the little arrow under the label */
+.icon .tool i {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+.icon .tool i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #777;
+}
+/* only on devices that can hover, so taps don't leave labels stuck open */
+@media (hover: hover) and (pointer: fine) {
+  .icon:hover .tool {
+    visibility: visible;
+    opacity: 0.95;
+  }
+}
+
 #app {
   height: 100%;
   width: 100%;
   font-family: "Roboto", sans-serif;
   min-width: 300px;
 }
-.headingOne {
-  line-height: 65pt;
-  font-size: 65pt;
-  font-weight: bolder;
-}
-
 .headingOneHalf {
   line-height: 67pt;
   font-size: 60pt;
@@ -170,14 +216,6 @@ export default {
   cursor: pointer;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 20pt;
-  margin-left: 50px;
-}
-
 .openNavButton {
   font-size: 20pt;
   cursor: pointer;
@@ -203,13 +241,6 @@ export default {
   }
   .sidenav a {
     font-size: 18px;
-  }
-}
-@supports (backdrop-filter: none) {
-  .navBG {
-    background: rgba(0, 0, 0, 0.85);
-    -webkit-backdrop-filter: blur(10px) !important;
-    backdrop-filter: blur(10px);
   }
 }
 
@@ -247,11 +278,6 @@ export default {
     line-height: 40pt;
     font-size: 36pt;
     font-weight: 500;
-  }
-}
-@supports not (backdrop-filter: none) {
-  .navBG {
-    background: rgba(17, 17, 17, 0.85);
   }
 }
 </style>

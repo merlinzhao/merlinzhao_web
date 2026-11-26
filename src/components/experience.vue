@@ -24,6 +24,7 @@
           :icons="card.icons"
           :photoLeft="card.photoLeft"
           :photoCover="card.photoCover"
+          :photoInset="card.photoInset"
           :gitLink="card.gitLink"
         />
         <!-- playable Space Escape card, right after the Menlolab card -->
@@ -107,6 +108,7 @@ export default {
         {
           imgURL: 'zoom.png',
           backgroundColor: 'rgb(32, 92, 243)',
+          photoInset: true,
           projectTitle: 'Zoom',
           subHeading: 'Software Engineer',
           bodyText: 'Implemented new features for the Zoom Phone product line, bringing VoIP services deeper into the enterprise telecommunications market.',
@@ -221,7 +223,6 @@ export default {
   background: var(--bg-eee);
   display: flex;
   flex-direction: row;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
   transition: background 0.3s ease-out;
@@ -237,7 +238,6 @@ export default {
 
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
 

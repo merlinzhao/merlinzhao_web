@@ -4,17 +4,7 @@
     <span class="openNavButton" @click="openNav()">
       <i class="fas fa-bars"></i>
     </span>
-    <div class="night-mode-button">
-      <label
-        @click="toggleTheme"
-        class="label"
-        :class="{ day: isLight }"
-      >
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <div class="blob" :class="{ 'day-blob': isLight }"></div>
-      </label>
-    </div>
+    <theme-toggle class="toggle-box" />
     <a class="about-box" @click="scrollTo('scroll_about')">About Me</a>
     <a class="exp-box" @click="scrollTo('scroll_exp')">Experience</a>
     <a class="contact-box" @click="scrollTo('scroll_contact')">Contact</a>
@@ -34,19 +24,11 @@
 </template>
 
 <script>
-import { themeState, applyTheme, toggleTheme } from "../theme.js";
+import themeToggle from "./theme-toggle.vue";
 
 export default {
-  computed: {
-    isLight() {
-      return themeState.theme !== "dark";
-    },
-  },
-  mounted() {
-    applyTheme();
-  },
+  components: { themeToggle },
   methods: {
-    toggleTheme,
     // Sections live on the home page; from other pages, go there first
     // and let the router scroll to the section.
     scrollTo(id) {
@@ -62,6 +44,13 @@ export default {
 .menu-box {
   height: 380px;
   width: 250px;
+  z-index: 100;
+}
+/* Below 1100px the mobile menu takes over */
+@media only screen and (max-width: 1100px) {
+  .menu-box {
+    visibility: hidden;
+  }
 }
 
 .menu-box:hover .glass-box {
@@ -77,6 +66,7 @@ export default {
   transition: opacity 0.5s ease-out;
 }
 
+.toggle-box,
 .about-box,
 .exp-box,
 .contact-box,
@@ -85,6 +75,9 @@ export default {
   transform: translateX(-120px);
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   opacity: 0;
+}
+.toggle-box {
+  margin-left: 32px;
 }
 /* Stagger the links sliding in */
 .exp-box {
@@ -104,6 +97,7 @@ export default {
 .contact-box:hover {
   cursor: pointer;
 }
+.menu-box:hover .toggle-box,
 .menu-box:hover .about-box,
 .menu-box:hover .exp-box,
 .menu-box:hover .contact-box,
@@ -128,56 +122,4 @@ export default {
   opacity: 0;
 }
 
-/* =============================================================================================== */
-.night-mode-button {
-  margin-top: 50px;
-}
-.label {
-  font-size: 22px;
-  margin-left: 32px;
-  background-color: rgb(19, 26, 48);
-  display: flex;
-  height: 35px;
-  border-radius: 50px;
-  width: 100px;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 0 15px;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-
-  transform: translateX(-120px);
-  transition: all 0.4s ease-in-out;
-  transition-delay: 0s;
-  opacity: 0;
-}
-
-.label .fa-moon {
-  color: rgb(255, 255, 255);
-}
-label .fa-sun {
-  color: rgb(255, 255, 255);
-}
-
-.menu-box:hover .label {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.blob {
-  position: absolute;
-  left: 50%;
-  width: 51%;
-  height: 101%;
-  background: rgb(255, 255, 255);
-  border-radius: 50px;
-  transition: 0.5s ease all;
-}
-
-.day-blob {
-  left: 0;
-}
-.day {
-  background-color: rgb(241, 177, 0);
-}
 </style>

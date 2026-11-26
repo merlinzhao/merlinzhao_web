@@ -85,7 +85,6 @@ export default {
   max-width: 1240px;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
   opacity: 0;
@@ -98,7 +97,6 @@ export default {
   transition: 0.3s all ease-out;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
 }
@@ -144,7 +142,6 @@ export default {
   box-shadow: 8px 12px 12px #0000002d;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-out;

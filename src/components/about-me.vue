@@ -80,8 +80,8 @@
               :key="skill.icon"
               :class="`devicon-${skill.icon} colored icon`"
             >
-              <div class="tool regText modalR">
-                <p class="modalText">{{ skill.name }}</p>
+              <div class="tool">
+                <p class="toolText">{{ skill.name }}</p>
                 <i></i>
               </div>
             </i>
@@ -159,7 +159,6 @@ export default {
   background: var(--bg-eee);
   display: flex;
   flex-direction: row;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: flex-start;
   transition: background 0.3s ease-out;
@@ -197,7 +196,6 @@ export default {
   background: transparent;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
 
@@ -237,73 +235,6 @@ export default {
 
 .devCol .icon:not(:last-child) {
   margin-right: 10px;
-}
-/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
-/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
-/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODA */
-.modalR {
-  visibility: visible;
-}
-
-.modalText {
-  margin: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/* Anchor each hover label to its own icon, centered just above it */
-.icon {
-  position: relative;
-}
-
-.icon .tool {
-  min-width: 100px;
-  bottom: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffffff;
-  background-color: #777;
-  font-weight: 400;
-  font-size: 11pt;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 99;
-  box-sizing: border-box;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s;
-  padding: 5px;
-  text-align: center;
-  font-family: "Roboto";
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .icon:hover .tool {
-    position: absolute;
-    visibility: visible;
-    opacity: 0.95;
-  }
-
-  .icon .tool i {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -12px;
-    width: 24px;
-    height: 12px;
-    overflow: hidden;
-  }
-
-  .icon .tool i::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: #777;
-    box-shadow: 0 1px 8px transparent;
-  }
 }
 
 /* ======================================================================== */
