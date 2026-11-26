@@ -7,7 +7,7 @@
   >
     <div
       class="col-xs-12 col-sm-6 col-md-6 col-lg-6 photoCard"
-      :class="{ 'photoCard-cover': photoCover }"
+      :class="{ 'photoCard-cover': photoCover, 'photoCard-inset': photoInset }"
       :style="photoStyle"
     >
       <!-- optional live content (e.g. a playable game) in place of the photo -->
@@ -29,8 +29,8 @@
           :class="icon.class"
           style="margin-right: 5px"
         >
-          <div class="tool regText modalR">
-            <p class="modalText">{{ icon.name }}</p>
+          <div class="tool">
+            <p class="toolText">{{ icon.name }}</p>
             <i></i>
           </div>
         </i>
@@ -101,6 +101,12 @@ export default {
       default: "Web",
     },
     photoCover: {
+      type: Boolean,
+      default: false,
+    },
+    // Pad the photo on the left and right (25px, 15px on phones); the image
+    // is sized inside the padding while backgroundColor fills the whole card
+    photoInset: {
       type: Boolean,
       default: false,
     },
@@ -216,6 +222,11 @@ export default {
   background-size: cover !important;
 }
 
+.photoCard-inset {
+  padding: 0 25px;
+  background-origin: content-box;
+}
+
 .iconRow {
   height: 100px;
   position: relative;
@@ -226,65 +237,6 @@ export default {
   font-size: 17pt;
 }
 
-/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
-/* MODAL MODAL MODAL MODAL MODAL MODAL MODAL MODAL */
-.modalR {
-  visibility: visible;
-}
-
-.modalText {
-  margin: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.icon .tool {
-  min-width: 100px;
-  top: 10px;
-  transform: translate(calc(-50% + 10px), -62%);
-  color: #ffffff;
-  background-color: #777;
-  font-weight: 400;
-  font-size: 11pt;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 99;
-  box-sizing: border-box;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s;
-  padding: 5px;
-  text-align: center;
-  font-family: "Roboto";
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .icon:hover .tool {
-    position: absolute;
-    visibility: visible;
-    opacity: 0.95;
-  }
-
-  .icon .tool i {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -12px;
-    width: 24px;
-    height: 12px;
-    overflow: hidden;
-  }
-
-  .icon .tool i::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background-color: #777;
-    box-shadow: 0 1px 8px transparent;
-  }
-}
 
 /* STACKED: full-width card, text on top, photo/game below */
 .expCBg.stacked {
@@ -309,6 +261,9 @@ export default {
 }
 
 @media only screen and (max-width: 575px) {
+  .photoCard-inset {
+    padding: 0 15px;
+  }
   .expCBg,
   .expCBg.photoRight {
     flex-direction: column;

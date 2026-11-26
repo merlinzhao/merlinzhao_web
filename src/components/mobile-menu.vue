@@ -1,17 +1,7 @@
 <template>
   <div class="menu-box" :class="{ 'menu-box-open': isOpen }">
     <div class="sidenav headingThree" :class="{ 'sidenav-open': isOpen }">
-      <div class="night-mode-button">
-        <label
-          @click="toggleTheme"
-          class="label"
-          :class="{ day: isLight }"
-        >
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <div class="blob" :class="{ 'day-blob': isLight }"></div>
-        </label>
-      </div>
+      <theme-toggle />
       <a class="item-box" @click="scrollTo('scroll_about')">About Me</a>
       <a class="item-box" @click="scrollTo('scroll_exp')">Experience</a>
       <a class="item-box" @click="scrollTo('scroll_contact')">Contact</a>
@@ -38,28 +28,20 @@
 </template>
 
 <script>
-import { themeState, applyTheme, toggleTheme } from "../theme.js";
+import themeToggle from "./theme-toggle.vue";
 
 export default {
+  components: { themeToggle },
   data() {
     return {
       isOpen: false,
       timeout: null,
     };
   },
-  computed: {
-    isLight() {
-      return themeState.theme !== "dark";
-    },
-  },
-  mounted() {
-    applyTheme();
-  },
   beforeDestroy() {
     clearTimeout(this.timeout);
   },
   methods: {
-    toggleTheme,
     arrowClick() {
       clearTimeout(this.timeout);
       this.isOpen = !this.isOpen;
@@ -79,6 +61,9 @@ export default {
 
 <style scoped>
 .menu-box {
+  position: fixed;
+  z-index: 100;
+  visibility: hidden;
   width: 100vw;
   height: 50px;
   backdrop-filter: blur(10px);
@@ -95,7 +80,6 @@ export default {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
   transition: transform 0.7s ease-out;
@@ -113,7 +97,6 @@ export default {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
   opacity: 1;
@@ -132,51 +115,11 @@ export default {
 .item-box {
   padding-left: 8px;
 }
-/* =============================================================================================== */
-.night-mode-button {
-  margin-top: 50px;
-}
-.label {
-  font-size: 22px;
-  background-color: rgb(19, 26, 48);
-  display: flex;
-  height: 35px;
-  border-radius: 50px;
-  width: 100px;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 0 15px;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-
-  transition-delay: 0s;
-}
-
-.label .fa-moon {
-  color: rgb(255, 255, 255);
-}
-label .fa-sun {
-  color: rgb(255, 255, 255);
-}
-
-.blob {
-  position: absolute;
-  left: 50%;
-  width: 51%;
-  height: 101%;
-  background: rgb(255, 255, 255);
-  border-radius: 50px;
-  transition: 0.5s ease all;
-}
-
-.day-blob {
-  left: 0;
-}
-.day {
-  background-color: rgb(241, 177, 0);
-}
+/* Shown below 1100px, where it replaces the side menu */
 @media only screen and (max-width: 1100px) {
+  .menu-box {
+    visibility: visible;
+  }
   .headingThree {
     line-height: 24pt;
     font-size: 20pt;

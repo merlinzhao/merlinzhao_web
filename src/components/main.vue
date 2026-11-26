@@ -1,7 +1,7 @@
 <template>
   <div>
-    <sideMenu class="side-menu" style="position: fixed; z-index: 100" />
-    <mobile-menu class="mobile-menu" />
+    <sideMenu />
+    <mobile-menu />
 
     <div class="intro" ref="top">
       <div class="center">
@@ -134,7 +134,6 @@ export default {
   transition: background 0.5s ease-out;
   display: flex;
   flex-direction: column;
-  -webkit-box-orient: vertical;
   justify-content: center;
   align-items: center;
 
@@ -189,12 +188,6 @@ export default {
   align-items: center;
 }
 
-.mobile-menu {
-  visibility: hidden;
-  position: fixed;
-  z-index: 100;
-}
-
 /* =============================================================================================== */
 /* ========================= HELLO HELLO HELLO HELLO HELLO HELLO HELLO =========================== */
 /* =============================================================================================== */
@@ -225,9 +218,6 @@ export default {
     width: 225px !important;
     transform: translateY(-10px) !important;
   }
-  .headingThree {
-    font-size: 16pt;
-  }
 }
 @media only screen and (max-width: 767px) {
   .center {
@@ -239,15 +229,6 @@ export default {
     text-align: center;
     width: 450px;
     transform: translateY(-25px);
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .mobile-menu {
-    visibility: visible;
-  }
-  .side-menu {
-    visibility: hidden;
   }
 }
 </style>

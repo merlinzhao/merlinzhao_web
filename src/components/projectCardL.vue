@@ -20,8 +20,8 @@
         <div class="col-9 leftCol">
           <div v-for="icon in iconData" :key="icon.name">
             <i :class="icon.class" style="margin-right: 5px">
-              <div class="tool regText modalText">
-                <p style="margin: 0px">{{ icon.name }}</p>
+              <div class="tool">
+                <p class="toolText">{{ icon.name }}</p>
                 <i></i>
               </div>
             </i>
@@ -33,8 +33,8 @@
             v-if="gitLink != 'none'"
             class="fab fa-github githubLogo icon"
           >
-            <div class="tool regText modalR">
-              <p class="modalText">View on GitHub</p>
+            <div class="tool">
+              <p class="toolText">View on GitHub</p>
               <i></i>
             </div>
           </i>
@@ -43,8 +43,8 @@
             v-if="externalLink[1]"
             class="fas fa-external-link-square-alt githubLogo icon"
           >
-            <div class="tool regText modalR">
-              <p class="modalText">{{ externalLink[1] }}</p>
+            <div class="tool">
+              <p class="toolText">{{ externalLink[1] }}</p>
               <i></i>
             </div>
           </i>
@@ -185,7 +185,6 @@ export default {
   padding: 0px;
 }
 .projectCard:hover .leftCol {
-  opacity: 1;
   filter: saturate(1);
 }
 .rightCol {
@@ -201,57 +200,6 @@ export default {
 }
 .projectCard:hover .githubLogo {
   color: var(--black);
-}
-.modalText {
-  margin: 0px;
-}
-
-.icon .tool {
-  min-width: 100px;
-  top: -20px;
-  transform: translate(calc(-50% + 10px), -62%);
-  color: #ffffff;
-  background-color: #555;
-  font-weight: 400;
-  font-size: 11pt;
-  border-radius: 5px;
-  position: absolute;
-  z-index: 99;
-  box-sizing: border-box;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s;
-  font-family: initial;
-  padding: 5px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.icon:hover .tool {
-  position: absolute;
-  visibility: visible;
-  opacity: 0.95;
-}
-
-.icon .tool i {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -12px;
-  width: 24px;
-  height: 12px;
-  overflow: hidden;
-}
-
-.icon .tool i::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background-color: #555;
-  box-shadow: 0 1px 8px transparent;
 }
 
 @media only screen and (max-width: 991px) {
