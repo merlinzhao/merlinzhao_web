@@ -32,16 +32,28 @@
 <script>
 export default {
   name: "gamePlayer",
+  props: {
+    // fills the space around the picture before the game starts
+    posterColor: {
+      type: String,
+      default: "#222",
+    },
+  },
   data() {
     return {
       // the game is ~6 MB, so it only loads once the visitor presses Play
       started: false,
       gameUrl: process.env.BASE_URL + "space-esc/index.html",
-      posterStyle: {
+    };
+  },
+  computed: {
+    posterStyle() {
+      return {
+        backgroundColor: this.posterColor,
         backgroundImage:
           "url(" + require("../assets/images/SpacePic.png") + ")",
-      },
-    };
+      };
+    },
   },
   methods: {
     // The game is served from this same site, so we can reach into its page:
@@ -94,8 +106,9 @@ export default {
   border: 0;
   padding: 0;
   cursor: pointer;
-  background-color: #222;
-  background-size: cover;
+  /* show the whole picture; the box is game-shaped (900:780), the picture wider */
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   align-items: center;
