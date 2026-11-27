@@ -32,7 +32,7 @@
           v-if="card.projectTitle === 'Menlolab Inc.'"
           :key="'game' + index"
           :imgURL="'none'"
-          :backgroundColor="'#222'"
+          :backgroundColor="'grey'"
           :projectTitle="'Space Escape'"
           :subHeading="'Playable in your browser on desktop'"
           :bodyText="'My Galaga-inspired Python game, compiled to run on the web. Arrow keys or WASD to move, Space to shoot. Reach 1000 points to escape!'"
@@ -45,7 +45,7 @@
           stacked
         >
           <template #photo>
-            <game-player />
+            <game-player posterColor="grey" />
           </template>
         </expCard>
       </template>
